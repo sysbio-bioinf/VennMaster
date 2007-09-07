@@ -1,0 +1,22 @@
+;; Object scripts/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "scripts/"
+  :tables (list 
+   (semanticdb-table "gorand.py"
+    :major-mode 'python-mode
+    :tags '(("\"\"\"
+gorand.py
+
+Randomized finding of Gene Ontology terms.
+
+$Id$
+\"\"\"" code nil nil [20 87]) ("os" include nil nil [89 125]) ("loadGenes" function (:arguments (("fname" variable nil (reparse-symbol function_parameters) [141 146]))) nil [127 297]) ("random" code nil nil [300 316]) ("wd" code nil nil [317 339]) ("resultDir" variable nil nil [340 366]) ("totalGeneFile" code nil nil [367 428]) ("changedGeneFile" code nil nil [429 493]) ("allGenes" variable nil nil [543 578]) ("changedGenes" variable nil nil [579 620]) ("numChanged" variable nil nil [621 651]) ("numRuns" variable nil nil [652 666]) ("changedGeneList" code nil nil [668 710]) ("fd" variable nil nil [711 742]) ("fd" code nil nil [743 773]) ("for" code nil nil [774 991]) ("fd" code nil nil [994 1004]) ("javaPath" variable nil nil [1025 1042]) ("dbConnection" variable nil nil [1043 1108]) ("dbDriver" variable nil nil [1109 1143]) ("dbUser" variable nil nil [1144 1159]) ("dbPassword" variable nil nil [1160 1179]) ("P" variable nil nil [1529 1565]) ("P" variable nil nil [1566 2097]) ("cmd" variable nil nil [2120 2144]) ("start" function nil nil [2146 2530]))
+    :file "gorand.py"
+    :pointmax 2600
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

@@ -1,0 +1,422 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>VennMaster Software Documentation</title>
+	<link href="standard.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" >	
+  </head>
+
+  <body>
+  
+  	<!-- <div class="back"><a href="../index.html">back</a></div> -->
+		<table>
+  	 <tr>
+  	 <td><h1>VennMaster Software Documentation</h1>
+  	 <b>A tool for drawing area proportional Euler diagrams.</b>
+  	 </td>
+  	     <td><img src="pic/venn1.jpg"></td>
+		  </tr>
+	</table>
+		<h2>0. Introduction</h2>
+		<span class="venn">VennMaster</span> is a tool for drawing area proportional
+	Venn/Euler-diagrams by importing gene lists from
+	<a href="http://discover.nci.nih.gov/gominer/">GoMiner</a>.
+	
+	<h2>1. Installation</h2>The software requires the Java runtime environment 1.5.0 (JRE 5.0) which can be downloaded from <a target="_blank" href="http://java.sun.com/j2se/1.5.0/download.jsp">java.sun.com</a>.
+	
+	<ol>
+		<li>Install JRE 5.0 (1.5.0) if it is not available on your system.</li>
+		<li>Download the <a href="#download">current VennMaster version</a> and unpack the file into a directory. MacOS X users can alternatively use the .dmg disk image.</li>
+		<li>Start <span class="venn">VennMaster</span> by
+			<ul>
+				<li>Windows: Double click on <tt>venn.bat</tt> in the installation
+					directory.</li>
+				<li>Unix/Linux/MacOS X: Call <tt>venn.sh</tt> from the command line
+					(ensure that your java executable is in the search path)
+					in the installation directory.</li>
+				<li>MacOS X with disk image: Open the disk image with a double click
+					and drag the <tt>VennMaster-xxx.app</tt> icon to your applications folder.</li>
+			</ul>
+			<b>Hint:</b> It is <b>not</b> recommended to call 
+			<span class="venn">VennMaster</span> by a direct
+			click on the <tt>venn.jar</tt> file since the standard memory assignment 
+			is too low for the most Euler arrangements.
+		</li>
+	</ol>	
+	
+	VennMaster is packed into a single zip archive which must be unzipped (e.g. using WinZip) into
+	the desired directory (e.g. "C:\Program Files\" or your home directory).
+	Call <tt>venn.sh</tt> in the VennMaster directory from the command line 
+	(Linux or Mac OS X) or double click <tt>venn.bat</tt> under
+	Microsoft Windows in the file explorer.<br>When using many categories VennMaster may report an <b>out of memory</b> error.
+	In these cases reduce the number of categories by specifying other import filter settings or
+        open <tt>venn.sh</tt> (Linux or Mac OS X) or <tt>venn.bat</tt> (Windows) with a text editor
+        (e.g. vi or notepad) and change the memory size by editing the two <tt>-X</tt> options of the java call.
+	The <tt>-X</tt> options specify the memory size (in MB) assigned
+	to the software. These can be adapted depending on the available memory and the problem size
+	(number of categories/elements). The standard settings are usually  too small for the most problems 
+    (<tt>2MB</tt> for Sun Java 1.5 on linux and <tt>1MB</tt> on win).
+    
+	<h4><a name="download">Download</a></h4>
+	  	<a href="http://www.informatik.uni-ulm.de/ni/staff/HKestler/vennm/files/VennMaster-0.33.6.zip">VennMaster-0.33.6.zip</a> (Version 0.33.6)<br>
+	  	<a href="http://www.informatik.uni-ulm.de/ni/staff/HKestler/vennm/files/VennMaster-0.33.6.dmg">VennMaster-0.33.6.dmg</a> (MacOSX disk image)
+	
+
+	<h3>2. License</h3>
+	VennMaster and the VennMaster source code are licensed under a<br>
+<!--Creative Commons License-->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">
+<img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">
+Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License</a>.
+<!--/Creative Commons License-->
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<Work rdf:about="">
+		<license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+		<dc:title>VennMaster</dc:title>
+		<dc:date>2005</dc:date>
+		<dc:identifier>http://www.informatik.uni-ulm.de/ni/mitarbeiter/HKestler/vennm/files/VennMaster-src-0.17-20051012.zip</dc:identifier>
+		<dc:description>VennMaster is a software for visualizing set relations via area proportional Euler diagrams.</dc:description>
+		<dc:creator><Agent><dc:title>A Mueller and HA Kestler</dc:title></Agent></dc:creator>
+		<dc:rights><Agent><dc:title>A Mueller and HA Kestler</dc:title></Agent></dc:rights>
+		<dc:type>Software</dc:type>
+		<dc:source rdf:resource="http://www.informatik.uni-ulm.de/ni/mitarbeiter/HKestler/vennm/index.html" />
+	</Work>
+	<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.5/">
+		<permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+		<permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+		<requires rdf:resource="http://web.resource.org/cc/Notice"/>
+		<requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+		<prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/>
+		<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+		<requires rdf:resource="http://web.resource.org/cc/ShareAlike"/>
+	</License>
+</rdf:RDF>
+-->
+
+	<h2>Running VennMaster</h2>The following steps lead to an Euler diagram:<ol>
+		<li><a href="#import">Import a data set</a></li>
+		<li><a href="#filtering">Filter the data</a> (only for data formats B and C)</li>
+		<li><a href="#explore">Explore the Euler diagram</a></li>
+	</ol>
+	
+	
+	<h3><a name="format">1. Import File Formats</a></h3>
+	VennMaster can import three different file formats.
+	
+	<h4><a name="format_A">A. List File Format</a></h4>
+	This is a very simple tab delimited file format with an element/group pair in each
+	line which can easily be generated by e.g. Microsoft Excel or OpenOffice.
+	<p>
+	  Toy example:<br>
+	<tt>
+	  cat mammal<br>
+	  dog mammal<br>
+	  rose plant<br>
+      rose spiny<br>
+	  dog animal<br>
+	  lobster animal<br>
+	  lobster spiny<br>
+		:<br>
+		:<br>
+	</tt>
+	  This example can be downloaded: <a href="files/example1.list">example1.list</a>.
+  </p>
+
+	<h4><a name="format_B">B. </a><a href="(EmptyReference!)"><a name="format_B">GoMiner</a></a><a name="format_B"> Export File Format</a></h4>
+	
+	VennMaster can import <b>the pair of GoMiner summary export and 
+	gene-category export files</b>.
+	A brief summary of using GoMiner to generate these files is given in the
+	Appendix below.
+	An example file pair can be downloaded:
+	<a href="files/go1.se">go1.se</a>
+	<a href="files/go1.gce">go1.gce</a>.
+	
+	
+	
+	<h4><a name="format_C">B. </a><a href="(EmptyReference!)"><a name="format_C">High-Throughput GoMiner</a></a><a name="format_C"> Export File Format</a></h4>
+	
+	VennMaster can import the single .gce-file which can be exported by
+	the new high-throughput GoMiner.	
+	
+	
+	
+	<h3><a name="import">2. Importing the Input Files</a></h3>
+	
+	<h4>A. List File</h4>
+	Choose the menu point <em>Open List</em> in the <em>File</em> menu and
+	navigate to a file in the format described in <a href="#format_A">section 1a</a>.
+	
+	
+	<h4>B. GoMiner Export File</h4>
+	
+	<ol>
+		<li>Choose <em>Open GoMiner file</em> from the VennMaster <em>File</em> menu.</li>
+		<li>In the first appearing <em>file open</em> dialog select the summary
+		export (.se) file and press OK.</li>
+		<li>In the subsequent <em>file open</em> dialog select the gene-category
+		export (.gce) file.</li>
+		<li>Continue with <a href="#filtering">filtering</a>.</li>
+	</ol>
+	
+	
+	<h4>C. High-Throughput GoMiner Export File</h4>
+	
+	The export file format of the high-throughput GoMiner is now a single .gce file
+	with a new column containing the false discovery rate (FDR).
+	
+	
+	
+
+	<h3><a name="filtering">2. Filtering</a></h3>
+	For file format B and C (GoMiner) the number of categories have to be
+	reduced with the interactive filtering panel.
+	<center><img alt="VennMaster filtering panel" src="pic/filter.png"></center>
+	The four parameters have to be adjusted until the number filtered categories
+	(field <tt>#filtered categories</tt>) is satisfying. 
+	The number of filtered categories and elements are immediately adjusted
+	when changing the filter values.
+	More than 10 categories
+	are not recommended since the simulation time and memory consumtion
+	gets very high and the generated diagram is not easy to read.
+	Click on the <em>Update</em> button to start the simulation with the current
+	filter settings. The <em>Reset</em> button sets the filter settings back to the
+	currently shown diagram. Normally the filter dialog should react immediately
+	when changing the filter parameters. If not press on the <em>Filter</em>
+	button.
+
+
+	<h3><a name="explore">4. Interactive Exploration</a></h3>
+	<center><img src="pic/VennMaster-1.png"></center>
+	<p>
+	VennMaster allows the interactive exploration of the sets.
+	When moving the mouse slowly over the polygon arrangement, the region under the mouse will
+	be highlighted and the corresponding sets are shown in a small tool tip window.
+	When a region is selected with the left mouse button the details of the selection are
+	listed in the "Categories" tab of the information pane on the bottom.
+	</p>
+	<p>
+	The upper panel shows the categories (for GoMiner files additional information is shown
+	such as the TermID, nChanged, nTotal, pValue, and FDR).
+	A double-click on a GO TermID opens a web browser with a direct link to
+	<a href="http://www.geneontology.org">www.geneontology.org</a>.
+	The lower pane shows a global information of the currently selected (intersection) set
+	such as the number of involved groups and the number of elements in the intersection.
+	Then all elements in the (intersection) set are listed in the lines below.
+	With a double-click on a gene name a web browser is opened with a link to
+	<a href="http://www.genecards.org">www.genecards.org</a>.
+	If a single polygon is selected it can be moved by drag and drop. Subsequently, the optimization
+	process can be started (Options/Optimize) on the modified arrangement.
+	When pressing the control button while selecting polygons, multiple regions can be selected and
+	their corresponding elements are shown in the "Selection" region.
+	</p>
+	<p>
+	  Set intersections for which no corresponding geometric intersection exists are listed in
+	  the "Inconsistencies" field of the information panel.
+	  Each entry consists of a list of categories <tt>{ C1, C2 ..., Cn } : u</tt> with an integer
+	  <tt>u > 0</tt> describing the number of elements in the shown intersection set.
+	<!--  <center><img src="pics/inconsistencies1.jpg"></center> -->
+    </p>
+	
+	
+	<h4><a name="keys">Key Commands</a></h4>
+	
+	VennMaster enables to copy and paste the contents of the 
+	category table and the gene list with the following
+	key commands:
+	<ol>
+	   <li>Select one or more cells of the category table or gene list with
+	     the mouse.</li>
+	   <li>Press <tt>ctrl+A</tt> to select the whole table.</li>
+	   <li>Press <tt>ctrl+C</tt> to copy the data into the clipboard.</li>
+	   <li>Go to the target application (e.g. Excel or a word processing program) and paste the data.</li>
+	</ol>
+	
+	
+	<!-- ++++++++++++++++++++++++++++ APPENDIX ++++++++++++++++++++++++++++++ -->
+	<div class="sep">&nbsp;</div>
+	<h2>Appendix</h2>
+	<h3>1. Generating GoMiner summary export (.se) and gene-category export files (.gce)</h3>
+	
+	After processing the data with 
+	<A href="http://discover.nci.nih.gov/gominer">GoMiner (http://discover.nci.nih.gov/gominer)</A> the
+    summary export (.se) and category-genes export files (.gce) have to be exported via 
+	the middle panel of the GoMiner graphical user interface (GUI).
+	The desired root category node needs to be selected by a single left click, and the
+	context menu activated by a single right click.
+	The two menu items
+	<ul>
+		<li><em>Export summary data to text file</em> - creates the summary export (.se) file
+			<p><img src="pic/se.jpg" border="0"></p></li>
+		<li><em>Export genes by category</em> - creates the gene-category export (.gce) file
+			<p><img src="pic/gce.jpg" border="0"></p></li>
+	</ul>
+	should be selected this way to save the .se and .gce files to disk.
+	
+	
+	<h3>2. The Parameter Dialog</h3>
+	Optimization and visualization parameters can be configured via the parameter dialog
+	(menu Options/Options).
+	
+	
+	<h4>A. Visualization/Global Options</h4>
+	
+	<center><img alt="" src="pic/options_global.png"></center>
+	
+	<br>
+	<table class="param" cellspacing="0">
+		<tr><td>size factor<br>(default 1.0)</td>
+		  <td>Can be adapted to grow/shrink the polygons to fit better in the bounding box
+		  which may occur if the intersections between sets is very small (so the diagram
+		  is too wide for the bounding box - reduce e.g. to 0.7 in those cases).</td></tr>	
+		<tr><td>number of edges<br>(default 16)</td>
+		  <td>How many edges should the polygons have (>=3)</td></tr>
+  		<tr><td>Seed<br>(default 173)</td>
+		  <td>The random seed value ensures reproducible results (for
+		  one software version). Other solutions are found if this
+		  value is changed. For negative values the current system time
+		  is used as random seed.</td></tr>
+ 		<tr><td>Update interval<br>(default 10)</td>
+		  <td>The number of optimization steps after which the currently best
+		  solution is shown while the optimization is running.</td></tr>
+	</table>
+	
+	<h4>B. Error Function</h4>
+	
+	
+	<center><img alt="Error Function Options" src="pic/options_errf.png"></center>
+	
+		<table class="param" cellspacing="0">
+			<tr><td width="30%">error function type<br>(default 1)</td>
+				<td>0=old error function, 1=new error function</td></tr>		
+			<tr><td>max intersections<br>(default 6)</td>
+				<td>The maximum number of sets which will observed when evaluating the error function</td></tr>
+			<tr><td>alpha<br>(default 10.0)</td>
+				<td>Error function weight for unwanted intersection</td></tr>
+			<tr><td>beta<br>(default 20.0)</td>
+				<td>Error function weight for missing intersections</td></tr>
+			<tr><td>gamma<br>(default 5.0)</td>
+				<td>&nbsp;</td></tr>
+			<tr><td>delta<br>(default 400.0)</td>
+				<td>Pressure term for more compact solutions</td></tr>
+			<tr><td>min scale<br>(default 1.0)</td>
+				<td>Allow changes of the polygon radii (<i>experimental</i>).</td></tr>
+			<tr><td>max scale<br>(default 1.0)</td>
+				<td>Allow changes of the polygon radii (<i>experimental</i>).</td></tr>	
+		</table>
+	
+	<h4>C. Optimization Options</h4>
+	
+	Different optimizers can be chosen in the <it>Optimizer</it> panel
+	(The <i>Evolutionary new</i> is experimental).
+	
+	<h5>i) Evolutionary Optimization</h5>
+	
+	<center><img alt="Evolutionary Optimization Options" src="pic/options_opt_evo.png"></center>
+	
+	The mutation parameters (like <em>min mutation</em> and <em>max mutation</em>)
+	behave relative to the bounding box where the individuals "live". So a mutation rate of 0.2
+	can move an polygon 1/5-th of the total bounding box.
+	<br>
+	
+	<br>
+	<table class="param" cellspacing="0">
+		<tr><td>tau<br>(default 1.0)</td>
+		  <td>Mutation basis parameter (mutation of the mutation parameter)</td></tr>
+		<tr><td>min mutation<br>(default 0.01)</td>
+		  <td>Lower bound for the mutation rate</td></tr>
+		<tr><td>max mutation<br>(default 0.2)</td>
+		  <td>Upper bound for the mutation rate</td></tr>
+		<tr><td>generation size<br>(default 30)</td>
+		  <td>How many individuals are in the generation (25-100 individuals are reasonable).</td></tr>
+		<tr><td>clone fraction<br>(default 0.2)</td>
+		  <td>The best individual has N=<em>clone fraction</em> * <em>generation size</em>
+			outcomes. The individual with rank <em>r</em> has at most <em>min(1,N/r)</em> outcomes.</td></tr>
+		<tr><td>max opt steps<br>(default 200)</td>
+		  <td>Maximum number of optimization steps. Increase this value for better
+		  	solutions.</td></tr>
+		<tr><td>max const steps<br>(default 25)</td>
+		  <td>Stopping condition for the evolutionary algorithm. 
+			If there is no cost improvement in the best individual within 
+			<em>max const steps</em> epochs the optimization will be stopped.
+			Increase this value for better solutions.</td></tr>
+	</table>
+	
+	
+	<h5>ii) Particle Swarm Optimization</h5>
+	
+	<center><img alt="Particle Swarm Optimization Options" src="pic/options_opt_swarm.png"></center>
+	
+	
+
+	<br>
+	<table class="param" cellspacing="0">
+		<tr><td>numParticles<br>(default 30)</td>
+		  <td>How many particles are in the swarm (25-100 individuals are reasonable).
+		  Each particle represents a solution to the problem.</td></tr>
+		<tr><td>cGlobal<br>(default 0.5)</td>
+		  <td>The velocity of each individual is influenced by the global
+		  optimum (that is: the best individual to its best iteration up to now).</td></tr>
+		  <tr><td>cLocal<br>(default 0.5)</td>
+		  <td>The velocity of each individual is influenced by the local
+		  optimum (that is: the optimum of the respective individual up to now).</td></tr>
+		<tr><td>maxIterations<br>(default 200)</td>
+		  <td>Maximum number of optimization steps. Increase this value for better
+		  	solutions.</td></tr>
+		<tr><td>maxConstIterations<br>(default 25)</td>
+		  <td>Stopping condition for the evolutionary algorithm. 
+			If there is no cost improvement in the globally best particle within 
+			<em>maxConstIterations</em> epochs the optimization will be stopped.
+			Increase this value for better solutions.</td></tr>
+		<tr><td>reflect<br>(default <i>true</i>)</td>
+			<td>If reflect is checked the particles are reflected at the bounding box
+				(the domain of the optimization problem) resulting in an inverted
+				velocity vector in the corresponding coordinates.</td></tr>
+	</table>
+	
+	<h3>3. Command line options</h3>
+	
+	The functionality of VennMaster can be automated from the command line to enable batch processing
+	of multiple files.
+	
+	Type the following call in your VennMaster installation directory:
+	
+<pre>
+java -Xms256m -Xmx256m -jar venn.jar <i>arguments ...</i>
+</pre>
+
+The two <tt>-X</tt> options are necessary to adapt the memory assignment
+to VennMaster. For larger problems it may be necessary to increase those values (e.g. to 512).
+
+
+<dl>
+<dt>-help,-?</dt><dd>displays help information</dd>
+<dt>--version, -v</dt><dd>displays the version number of VennMaster</dd>
+<dt>--cfg <i>file.xml</i></dt><dd>configuration file</dd>
+<dt>--ocfg <i>file.xml</i></dt><dd>configuration file output</dd>
+<dt>--list <i>file.list</i></dt><dd>list file input</dd>
+<dt>--gce <i>input.gce</i></dt><dd>GoMiner gene-category export file</dd>
+<dt>--se <i>input.se</i></dt><dd>GoMiner summary export file</dd>
+<dt>--htgce <i>ht-input.gce</i></dt><dd>High-Throughput GoMiner gce file</dd>
+<dt>--filter <i>file.xml</i></dt><dd>filter file (for GoMiner)</dd>
+<dt>--ofilter <i>file.xml</i></dt><dd>filter file output</dd>
+<dt>--svg <i>file.svg</i></dt><dd>SVG file output</dd>
+<dt>--sim <i>file.txt</i></dt><dd>simulation errors output</dd>
+<dt>--prof <i>file.txt</i></dt><dd>error profile output for the last simulation</dd>
+</dl>
+		<p></p>
+		<p></p>
+		<p>
+	
+	The original version of this page is available at
+	<a href="http://www.informatik.uni-ulm.de/ni/staff/HKestler/vennm/doc.html">http://www.informatik.uni-ulm.de/ni/staff/HKestler/vennm/doc.html</a>.
+</p>
+		<hr>
+    <address><a href="mailto:hans.kestler@medizin.uni-ulm.de">Andr&eacute; M&uuml;ller &amp; Hans A. Kestler</a></address>
+	<div class="modified">Last modified: 2006-05-26</div>
+  </body>
+</html>
+

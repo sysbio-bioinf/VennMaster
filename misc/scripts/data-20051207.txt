@@ -1,0 +1,18 @@
+gceFile	seFile	minTotal	maxTotal	maxPValue
+1b-2 hoch genes.txt	1b-2 hoch summary.txt	100	999999	0.05
+1b-2 reguliert genes.txt	1b-2 reguliert summary.txt	100	999999	0.05
+1b-2 runter genes.txt	1b-2 runter summary.txt	100	999999	0.05
+1b-3 hoch genes.txt	1b-3 hoch summary.txt	350	999999	0.05
+1b-3 reguliert genes.txt	1b-3 reguliert summary.txt	300	999999	0.05
+1b-3 runter genes.txt	1b-3 runter summary.txt	50	999999	0.05
+1b-D hoch genes.txt	1b-D hoch summary.txt	100	999999	0.05
+#1b-D runter genes.txt	1b-D runter summary.txt	10	999999	0.05
+2-3 hoch genes.txt	2-3 hoch summary.txt	100	999999	0.05
+#2-3 runter genes.txt	2-3 runter summary.txt	1	999999	0.05
+2-D hoch genes.txt	2-D hoch summary.txt	20	999999	0.05
+2-D reguliert genes.txt	2-D reguliert summary.txt	20	999999	0.05
+2-D runter genes.txt	2-D runter summary.txt	20	999999	0.05
+3-D hoch genes.txt	3-D hoch summary.txt	20	999999	0.05
+3-D reguliert genes.txt	3-D reguliert summary.txt	40	150	0.05
+alle regulierte genes.txt	alle regulierte summary.txt	100	999999	0.05
+2-D runter genes.txt	2-D runter summary.txt	100	999999	0.05

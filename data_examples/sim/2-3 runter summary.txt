@@ -1,0 +1,3010 @@
+GO ID	Total	Under	Over	Change	P-Value (Under)	P-Value (Over)	P-Value (Changed)	Term
+45793	1	0	0	0	1	1	1	positive regulation of cell size
+45792	1	0	0	0	1	1	1	negative regulation of cell size
+45787	1	0	0	0	1	1	1	positive regulation of cell cycle
+45786	40	1	0	1	0.2644	1	0.2644	negative regulation of cell cycle
+45785	2	0	0	0	1	1	1	positive regulation of cell adhesion
+45773	1	0	0	0	1	1	1	positive regulation of axon extension
+45768	1	0	0	0	1	1	1	positive regulation of anti-apoptosis
+45767	3	0	0	0	1	1	1	regulation of anti-apoptosis
+45766	1	0	0	0	1	1	1	positive regulation of angiogenesis
+45765	12	0	0	0	1	1	1	regulation of angiogenesis
+45761	9	0	0	0	1	1	1	regulation of adenylate cyclase activity
+45749	3	0	0	0	1	1	1	negative regulation of S phase of mitotic cell cycle
+45746	2	0	0	0	1	1	1	negative regulation of Notch signaling pathway
+45744	2	0	0	0	1	1	1	negative regulation of G-protein coupled receptor protein signaling pathway
+45739	2	0	0	0	1	1	1	positive regulation of DNA repair
+45736	3	0	0	0	1	1	1	negative regulation of CDK activity
+19483	1	0	0	0	1	1	1	beta-alanine biosynthesis
+45727	1	0	0	0	1	1	1	positive regulation of protein biosynthesis
+19482	1	0	0	0	1	1	1	beta-alanine metabolism
+19478	1	0	0	0	1	1	1	D-amino acid catabolism
+19471	1	0	0	0	1	1	1	4-hydroxyproline metabolism
+45705	1	0	0	0	1	1	1	negative regulation of salivary gland determination
+45704	1	0	0	0	1	1	1	regulation of salivary gland determination
+7498	27	0	0	0	1	1	1	mesoderm development
+7494	1	0	0	0	1	1	1	midgut development
+7492	4	0	0	0	1	1	1	endoderm development
+19452	1	0	0	0	1	1	1	L-cysteine catabolism to taurine
+7487	2	0	0	0	1	1	1	analia morphogenesis (sensu Holometabola)
+7486	1	0	0	0	1	1	1	female genital morphogenesis (sensu Holometabola)
+7485	1	0	0	0	1	1	1	male genital morphogenesis (sensu Holometabola)
+7484	1	0	0	0	1	1	1	genital morphogenesis (sensu Holometabola)
+7483	2	0	0	0	1	1	1	genital disc metamorphosis
+7482	1	0	0	0	1	1	1	haltere morphogenesis
+7481	1	0	0	0	1	1	1	haltere disc metamorphosis
+7480	1	0	0	0	1	1	1	leg morphogenesis (sensu Holometabola)
+19448	1	0	0	0	1	1	1	L-cysteine catabolism
+19441	1	0	0	0	1	1	1	tryptophan catabolism to kynurenine
+7478	1	0	0	0	1	1	1	leg disc metamorphosis
+7476	6	0	0	0	1	1	1	wing morphogenesis
+7472	6	0	0	0	1	1	1	wing disc metamorphosis
+19439	10	0	0	0	1	1	1	aromatic compound catabolism
+19438	8	0	0	0	1	1	1	aromatic compound biosynthesis
+19433	1	0	0	0	1	1	1	triacylglycerol catabolism
+19430	4	0	0	0	1	1	1	removal of superoxide radicals
+7468	1	0	0	0	1	1	1	regulation of rhodopsin gene activity
+7467	4	0	0	0	1	1	1	photoreceptor differentiation (sensu Drosophila)
+15074	4	0	0	0	1	1	1	DNA integration
+7464	1	0	0	0	1	1	1	R3/R4 cell fate commitment
+19427	1	0	0	0	1	1	1	acetate utilization
+7459	2	0	0	0	1	1	1	photoreceptor fate commitment (sensu Drosophila)
+7456	7	0	0	0	1	1	1	eye morphogenesis (sensu Drosophila)
+7455	5	0	0	0	1	1	1	eye-antennal disc metamorphosis
+7452	11	0	0	0	1	1	1	imaginal disc metamorphosis
+19413	4	0	0	0	1	1	1	acetate biosynthesis
+7446	1	0	0	0	1	1	1	imaginal disc growth
+7444	14	0	0	0	1	1	1	imaginal disc development
+7443	1	0	0	0	1	1	1	Malpighian tubule morphogenesis
+7442	1	0	0	0	1	1	1	hindgut morphogenesis
+19400	1	0	0	0	1	1	1	alditol metabolism
+7439	1	0	0	0	1	1	1	ectodermal gut morphogenesis
+7438	1	0	0	0	1	1	1	oenocyte development
+7435	4	0	0	0	1	1	1	salivary gland morphogenesis
+7432	1	0	0	0	1	1	1	salivary gland determination
+7431	8	0	0	0	1	1	1	salivary gland development
+7430	1	0	0	0	1	1	1	"terminal branching of trachea, cytoplasmic projection extension (sensu Insecta)"
+7427	2	0	0	0	1	1	1	tracheal cell migration (sensu Insecta)
+7425	1	0	0	0	1	1	1	tracheal cell fate determination (sensu Insecta)
+7424	11	0	0	0	1	1	1	tracheal system development (sensu Insecta)
+7423	15	0	0	0	1	1	1	sensory organ development
+7422	34	0	0	0	1	1	1	peripheral nervous system development
+15031	245	2	0	2	0.5639	1	0.5639	protein transport
+7420	34	0	0	0	1	1	1	brain development
+7419	2	0	0	0	1	1	1	ventral cord development
+7417	86	0	0	0	1	1	1	central nervous system development
+7416	16	0	0	0	1	1	1	synaptogenesis
+7413	1	0	0	0	1	1	1	fasciculation of neuron
+7411	35	0	0	0	1	1	1	axon guidance
+7409	44	0	0	0	1	1	1	axonogenesis
+7406	1	0	0	0	1	1	1	suppression of neuroblast proliferation
+7405	2	0	0	0	1	1	1	neuroblast proliferation
+7403	3	0	0	0	1	1	1	glial cell fate determination
+15012	5	0	0	0	1	1	1	heparan sulfate proteoglycan biosynthesis
+7401	2	0	0	0	1	1	1	pan-neural process
+7400	6	0	0	0	1	1	1	neuroblast cell fate determination
+46184	1	0	0	0	1	1	1	aldehyde biosynthesis
+18993	1	0	0	0	1	1	1	somatic sex determination
+18992	1	0	0	0	1	1	1	germ-line sex determination
+46165	14	0	0	0	1	1	1	alcohol biosynthesis
+46164	37	0	0	0	1	1	1	alcohol catabolism
+46158	1	0	0	0	1	1	1	ocellus pigment metabolism
+46156	1	0	0	0	1	1	1	siroheme metabolism
+46152	1	0	0	0	1	1	1	ommochrome metabolism
+6999	2	0	0	0	1	1	1	nuclear pore organization and biogenesis
+6997	103	1	0	1	0.5488	1	0.5488	nuclear organization and biogenesis
+6996	240	1	0	1	0.8477	1	0.8477	organelle organization and biogenesis
+6992	1	0	0	0	1	1	1	"sterol depletion response, sterol regulatory element binding-protein cleavage"
+6991	2	0	0	0	1	1	1	response to sterol depletion
+6990	1	0	0	0	1	1	1	"unfolded protein response, target gene transcriptional activation"
+46149	2	0	0	0	1	1	1	pigment catabolism
+46148	14	0	0	0	1	1	1	pigment biosynthesis
+46146	4	0	0	0	1	1	1	tetrahydrobiopterin metabolism
+18958	10	0	0	0	1	1	1	phenol metabolism
+6986	4	0	0	0	1	1	1	response to unfolded protein
+6983	1	0	0	0	1	1	1	response to ER-overload
+6982	1	0	0	0	1	1	1	response to lipid hydroperoxide
+6980	1	0	0	0	1	1	1	redox signal response
+46139	5	0	0	0	1	1	1	coenzyme and prosthetic group catabolism
+46138	23	0	0	0	1	1	1	coenzyme and prosthetic group biosynthesis
+46131	1	0	0	0	1	1	1	pyrimidine ribonucleoside metabolism
+6979	29	1	0	1	0.1994	1	0.1994	response to oxidative stress
+6978	2	0	0	0	1	1	1	"DNA damage response, signal transduction by p53 class mediator resulting in transcription of p21 class mediator"
+6977	2	0	0	0	1	1	1	"DNA damage response, signal transduction by p53 class mediator resulting in cell cycle arrest"
+6975	2	0	0	0	1	1	1	DNA damage induced protein phosphorylation
+6974	109	1	0	1	0.5695	1	0.5695	response to DNA damage stimulus
+6973	1	0	0	0	1	1	1	intracellular accumulation of glycerol
+6972	2	0	0	0	1	1	1	hyperosmotic response
+6971	2	0	0	0	1	1	1	hypotonic response
+6970	8	0	0	0	1	1	1	response to osmotic stress
+46129	1	0	0	0	1	1	1	purine ribonucleoside biosynthesis
+46128	6	1	0	1	0.0449	1	0.0449	purine ribonucleoside metabolism
+6968	53	0	0	0	1	1	1	cellular defense response
+6967	1	0	0	0	1	1	1	antifungal polypeptide induction
+6966	3	0	0	0	1	1	1	antifungal humoral response (sensu Protostomia)
+6965	2	0	0	0	1	1	1	anti-Gram-positive bacterial polypeptide induction
+6963	4	0	0	0	1	1	1	antibacterial polypeptide induction
+6961	1	0	0	0	1	1	1	antibacterial humoral response (sensu Protostomia)
+6960	4	0	0	0	1	1	1	antimicrobial humoral response (sensu Protostomia)
+46118	1	0	0	0	1	1	1	7-methylguanosine biosynthesis
+46116	1	0	0	0	1	1	1	queuosine metabolism
+46114	1	0	0	0	1	1	1	guanosine biosynthesis
+46112	9	0	0	0	1	1	1	nucleobase biosynthesis
+6959	92	1	0	1	0.5084	1	0.5084	humoral immune response
+6958	17	0	0	0	1	1	1	"complement activation, classical pathway"
+6957	8	0	0	0	1	1	1	"complement activation, alternative pathway"
+6956	21	0	0	0	1	1	1	complement activation
+6955	350	1	0	1	0.9378	1	0.9378	immune response
+6954	84	1	0	1	0.4768	1	0.4768	inflammatory response
+6953	14	0	0	0	1	1	1	acute-phase response
+6952	385	2	0	2	0.8039	1	0.8039	defense response
+6950	451	4	0	4	0.4541	1	0.4541	response to stress
+6949	1	0	0	0	1	1	1	syncytium formation
+6948	1	0	0	0	1	1	1	viral-induced cell-cell fusion
+6944	23	0	0	0	1	1	1	membrane fusion
+6942	4	0	0	0	1	1	1	regulation of striated muscle contraction
+6941	17	0	0	0	1	1	1	striated muscle contraction
+6940	2	0	0	0	1	1	1	regulation of smooth muscle contraction
+6939	15	0	0	0	1	1	1	smooth muscle contraction
+6938	1	0	0	0	1	1	1	sarcomere alignment
+6937	13	0	0	0	1	1	1	regulation of muscle contraction
+6936	79	0	0	0	1	1	1	muscle contraction
+6935	49	0	0	0	1	1	1	chemotaxis
+6932	1	0	0	0	1	1	1	"substrate-bound cell migration, cell contraction"
+6930	3	0	0	0	1	1	1	"substrate-bound cell migration, cell extension"
+6929	6	0	0	0	1	1	1	substrate-bound cell migration
+6928	212	0	0	0	1	1	1	cell motility
+6927	1	0	0	0	1	1	1	"programmed cell death, transformed cells"
+6921	6	0	0	0	1	1	1	disassembly of cell structures
+6919	18	0	0	0	1	1	1	caspase activation
+6917	70	0	0	0	1	1	1	induction of apoptosis
+6916	56	1	0	1	0.3499	1	0.3499	anti-apoptosis
+6915	205	3	0	3	0.2037	1	0.2037	apoptosis
+6914	5	0	0	0	1	1	1	autophagy
+6913	62	0	0	0	1	1	1	nucleocytoplasmic transport
+6912	1	0	0	0	1	1	1	phagosome formation
+6911	3	0	0	0	1	1	1	"phagocytosis, engulfment"
+6910	1	0	0	0	1	1	1	"phagocytosis, binding"
+10166	2	0	0	0	1	1	1	wax metabolism
+6909	12	0	0	0	1	1	1	phagocytosis
+6907	2	0	0	0	1	1	1	pinocytosis
+6906	4	0	0	0	1	1	1	vesicle fusion
+6904	8	0	0	0	1	1	1	vesicle docking during the process of exocytosis
+6903	6	0	0	0	1	1	1	vesicle targeting
+10159	1	0	0	0	1	1	1	specification of organ position
+6900	1	0	0	0	1	1	1	vesicle budding
+10152	1	0	0	0	1	1	1	pollen maturation
+45685	1	0	0	0	1	1	1	regulation of glial cell differentiation
+45672	1	0	0	0	1	1	1	positive regulation of osteoclast differentiation
+45671	2	0	0	0	1	1	1	negative regulation of osteoclast differentiation
+45670	5	0	0	0	1	1	1	regulation of osteoclast differentiation
+45669	1	0	0	0	1	1	1	positive regulation of osteoblast differentiation
+45667	1	0	0	0	1	1	1	regulation of osteoblast differentiation
+45666	2	0	0	0	1	1	1	positive regulation of neuron differentiation
+45664	4	0	0	0	1	1	1	regulation of neuron differentiation
+45653	2	0	0	0	1	1	1	negative regulation of megakaryocyte differentiation
+45652	2	0	0	0	1	1	1	regulation of megakaryocyte differentiation
+45650	2	0	0	0	1	1	1	negative regulation of macrophage differentiation
+10119	1	0	0	0	1	1	1	regulation of stomatal movement
+10118	1	0	0	0	1	1	1	stomatal movement
+45649	2	0	0	0	1	1	1	regulation of macrophage differentiation
+19395	13	0	0	0	1	1	1	fatty acid oxidation
+45638	4	0	0	0	1	1	1	negative regulation of myeloid blood cell differentiation
+45637	5	0	0	0	1	1	1	regulation of myeloid blood cell differentiation
+45630	2	0	0	0	1	1	1	positive regulation of T-helper 2 cell differentiation
+45628	2	0	0	0	1	1	1	regulation of T-helper 2 cell differentiation
+45627	1	0	0	0	1	1	1	positive regulation of T-helper 1 cell differentiation
+45625	1	0	0	0	1	1	1	regulation of T-helper 1 cell differentiation
+45624	2	0	0	0	1	1	1	positive regulation of T-helper cell differentiation
+45622	3	0	0	0	1	1	1	regulation of T-helper cell differentiation
+45621	3	0	0	0	1	1	1	positive regulation of lymphocyte differentiation
+45620	2	0	0	0	1	1	1	negative regulation of lymphocyte differentiation
+19377	3	0	0	0	1	1	1	glycolipid catabolism
+19376	1	0	0	0	1	1	1	galactolipid catabolism
+45619	7	0	0	0	1	1	1	regulation of lymphocyte differentiation
+19374	1	0	0	0	1	1	1	galactolipid metabolism
+19370	5	0	0	0	1	1	1	leukotriene biosynthesis
+45610	1	0	0	0	1	1	1	regulation of hemocyte differentiation
+19364	1	0	0	0	1	1	1	pyridine nucleotide catabolism
+19363	1	0	0	0	1	1	1	pyridine nucleotide biosynthesis
+19362	9	0	0	0	1	1	1	pyridine nucleotide metabolism
+7399	280	0	0	0	1	1	1	neurogenesis
+45603	1	0	0	0	1	1	1	positive regulation of endothelial cell differentiation
+7398	46	0	0	0	1	1	1	ectoderm development
+45602	1	0	0	0	1	1	1	negative regulation of endothelial cell differentiation
+45601	2	0	0	0	1	1	1	regulation of endothelial cell differentiation
+7396	1	0	0	0	1	1	1	suture of dorsal opening
+7393	1	0	0	0	1	1	1	"dorsal closure, leading edge cell fate determination"
+7392	1	0	0	0	1	1	1	initiation of dorsal closure
+7391	7	0	0	0	1	1	1	dorsal closure
+7390	1	0	0	0	1	1	1	germ-band shortening
+19354	1	0	0	0	1	1	1	siroheme biosynthesis
+19350	1	0	0	0	1	1	1	teichoic acid biosynthesis
+7389	77	0	0	0	1	1	1	pattern specification
+7388	2	0	0	0	1	1	1	posterior compartment specification
+7387	2	0	0	0	1	1	1	anterior compartment specification
+7386	5	0	0	0	1	1	1	compartment specification
+7384	1	0	0	0	1	1	1	"specification of segmental identity, thorax"
+7380	1	0	0	0	1	1	1	"specification of segmental identity, head"
+19349	1	0	0	0	1	1	1	ribitol metabolism
+19344	1	0	0	0	1	1	1	cysteine biosynthesis
+19343	1	0	0	0	1	1	1	cysteine biosynthesis via cystathione
+7379	15	0	0	0	1	1	1	segment specification
+7369	15	0	0	0	1	1	1	gastrulation
+7368	7	0	0	0	1	1	1	determination of left/right symmetry
+7367	2	0	0	0	1	1	1	segment polarity determination
+7366	1	0	0	0	1	1	1	periodic partitioning by pair rule gene
+7365	2	0	0	0	1	1	1	periodic partitioning
+7362	2	0	0	0	1	1	1	terminal region determination
+19323	1	0	0	0	1	1	1	pentose catabolism
+19321	1	0	0	0	1	1	1	pentose metabolism
+19320	37	0	0	0	1	1	1	hexose catabolism
+7354	2	0	0	0	1	1	1	"zygotic determination of anterior/posterior axis, embryo"
+7352	2	0	0	0	1	1	1	zygotic determination of dorsal/ventral axis
+7351	7	0	0	0	1	1	1	regional subdivision
+7350	9	0	0	0	1	1	1	blastoderm segmentation
+19319	14	0	0	0	1	1	1	hexose biosynthesis
+19318	62	0	0	0	1	1	1	hexose metabolism
+19317	5	0	0	0	1	1	1	fucose catabolism
+7349	2	0	0	0	1	1	1	cellularization
+7346	8	0	0	0	1	1	1	regulation of mitotic cell cycle
+7342	1	0	0	0	1	1	1	fusion of sperm to egg plasma membrane
+7341	2	0	0	0	1	1	1	penetration of zona pellucida
+7340	2	0	0	0	1	1	1	acrosome reaction
+7339	1	0	0	0	1	1	1	binding of sperm to zona pellucida
+7338	10	0	0	0	1	1	1	fertilization (sensu Animalia)
+7329	2	0	0	0	1	1	1	positive regulation of transcription from Pol II promoter by pheromones
+7323	1	0	0	0	1	1	1	peptide pheromone maturation
+7320	1	0	0	0	1	1	1	insemination
+7318	2	0	0	0	1	1	1	pole plasm protein localization
+7317	2	0	0	0	1	1	1	regulation of pole plasm oskar mRNA localization
+7316	2	0	0	0	1	1	1	pole plasm RNA localization
+7315	2	0	0	0	1	1	1	pole plasm assembly
+7314	2	0	0	0	1	1	1	oocyte anterior/posterior axis determination
+7312	1	0	0	0	1	1	1	oocyte nucleus migration
+7311	1	0	0	0	1	1	1	"maternal determination of dorsal/ventral axis, oocyte, germ-line encoded"
+7310	2	0	0	0	1	1	1	oocyte dorsal/ventral axis determination
+7309	3	0	0	0	1	1	1	oocyte axis determination
+7308	3	0	0	0	1	1	1	oocyte construction
+7306	3	0	0	0	1	1	1	insect chorion formation
+7304	4	0	0	0	1	1	1	eggshell formation (sensu Insecta)
+7303	1	0	0	0	1	1	1	"cytoplasmic transport, nurse cell to oocyte"
+7301	1	0	0	0	1	1	1	ovarian ring canal formation
+7300	1	0	0	0	1	1	1	nurse cell/oocyte transport (sensu Insecta)
+46087	1	0	0	0	1	1	1	cytidine metabolism
+46085	1	0	0	0	1	1	1	adenosine metabolism
+46083	2	0	0	0	1	1	1	adenine metabolism
+46080	2	0	0	0	1	1	1	dUTP metabolism
+46075	3	0	0	0	1	1	1	dTTP metabolism
+46073	2	0	0	0	1	1	1	dTMP metabolism
+46072	2	0	0	0	1	1	1	dTDP metabolism
+46070	1	0	0	0	1	1	1	dGTP metabolism
+46068	6	0	0	0	1	1	1	cGMP metabolism
+46058	8	0	0	0	1	1	1	cAMP metabolism
+46056	1	0	0	0	1	1	1	dADP metabolism
+46051	5	0	0	0	1	1	1	UTP metabolism
+6898	10	0	0	0	1	1	1	receptor mediated endocytosis
+6897	65	0	0	0	1	1	1	endocytosis
+6896	2	0	0	0	1	1	1	Golgi to vacuole transport
+6895	3	0	0	0	1	1	1	Golgi to endosome transport
+6894	1	0	0	0	1	1	1	Golgi to secretory vesicle transport
+6893	3	0	0	0	1	1	1	Golgi to plasma membrane transport
+6892	15	0	0	0	1	1	1	post-Golgi transport
+6891	12	0	0	0	1	1	1	intra-Golgi transport
+6890	3	0	0	0	1	1	1	"retrograde transport, Golgi to ER"
+46044	1	0	0	0	1	1	1	TMP metabolism
+46040	4	0	0	0	1	1	1	IMP metabolism
+6888	15	0	0	0	1	1	1	ER to Golgi transport
+6887	36	0	0	0	1	1	1	exocytosis
+6886	229	2	0	2	0.5266	1	0.5266	intracellular protein transport
+6885	7	0	0	0	1	1	1	regulation of pH
+6884	3	0	0	0	1	1	1	regulation of cell volume
+6883	1	0	0	0	1	1	1	sodium ion homeostasis
+6882	2	0	0	0	1	1	1	zinc ion homeostasis
+46039	6	0	0	0	1	1	1	GTP metabolism
+6880	3	0	0	0	1	1	1	intracellular iron ion storage
+46037	3	0	0	0	1	1	1	GMP metabolism
+46036	5	0	0	0	1	1	1	CTP metabolism
+46034	11	0	0	0	1	1	1	ATP metabolism
+46033	1	0	0	0	1	1	1	AMP metabolism
+46031	1	0	0	0	1	1	1	ADP metabolism
+6879	13	0	0	0	1	1	1	iron ion homeostasis
+6878	9	0	0	0	1	1	1	copper ion homeostasis
+6875	37	0	0	0	1	1	1	metal ion homeostasis
+6874	14	0	0	0	1	1	1	calcium ion homeostasis
+6873	50	0	0	0	1	1	1	cell ion homeostasis
+6869	37	1	0	1	0.2472	1	0.2472	lipid transport
+6865	24	0	0	0	1	1	1	amino acid transport
+6863	2	0	0	0	1	1	1	purine transport
+6862	1	0	0	0	1	1	1	nucleotide transport
+46019	2	0	0	0	1	1	1	regulation of transcription from Pol II promoter by pheromones
+46015	2	0	0	0	1	1	1	regulation of transcription by glucose
+46012	2	0	0	0	1	1	1	positive regulation of oskar mRNA translation
+46011	2	0	0	0	1	1	1	regulation of oskar mRNA translation
+6857	4	0	0	0	1	1	1	oligopeptide transport
+6854	1	0	0	0	1	1	1	ATP/ADP exchange
+6851	1	0	0	0	1	1	1	mitochondrial calcium ion transport
+46006	3	0	0	0	1	1	1	regulation of activated T-cell proliferation
+6848	1	0	0	0	1	1	1	pyruvate transport
+6843	1	0	0	0	1	1	1	mitochondrial citrate transport
+6842	1	0	0	0	1	1	1	tricarboxylic acid transport
+10092	1	0	0	0	1	1	1	specification of organ identity
+10090	1	0	0	0	1	1	1	trichome morphogenesis (sensu Magnoliophyta)
+6839	15	0	0	0	1	1	1	mitochondrial transport
+6836	15	0	0	0	1	1	1	neurotransmitter transport
+6835	5	0	0	0	1	1	1	dicarboxylic acid transport
+6833	11	0	0	0	1	1	1	water transport
+6829	3	0	0	0	1	1	1	zinc ion transport
+6828	2	0	0	0	1	1	1	manganese ion transport
+6827	2	0	0	0	1	1	1	high affinity iron ion transport
+6826	11	0	0	0	1	1	1	iron ion transport
+6825	5	0	0	0	1	1	1	copper ion transport
+6824	4	0	0	0	1	1	1	cobalt ion transport
+6821	29	0	0	0	1	1	1	chloride transport
+6820	64	0	0	0	1	1	1	anion transport
+10073	1	0	0	0	1	1	1	meristem maintenance
+6818	36	0	0	0	1	1	1	hydrogen transport
+6817	6	0	0	0	1	1	1	phosphate transport
+6816	40	1	0	1	0.2644	1	0.2644	calcium ion transport
+6814	44	0	0	0	1	1	1	sodium ion transport
+6813	65	0	0	0	1	1	1	potassium ion transport
+6812	187	1	0	1	0.7673	1	0.7673	cation transport
+6811	274	1	0	1	0.8842	1	0.8842	ion transport
+6810	845	6	0	6	0.6428	1	0.6428	transport
+45597	8	0	0	0	1	1	1	positive regulation of cell differentiation
+45596	8	0	0	0	1	1	1	negative regulation of cell differentiation
+45595	31	0	0	0	1	1	1	regulation of cell differentiation
+6809	9	0	0	0	1	1	1	nitric oxide biosynthesis
+6808	2	0	0	0	1	1	1	regulation of nitrogen utilization
+6807	26	0	0	0	1	1	1	nitrogen metabolism
+6805	19	0	0	0	1	1	1	xenobiotic metabolism
+6803	1	0	0	0	1	1	1	glutathione conjugation reaction
+6801	9	0	0	0	1	1	1	superoxide metabolism
+6800	37	1	0	1	0.2472	1	0.2472	oxygen and reactive oxygen species metabolism
+10053	1	0	0	0	1	1	1	root epidermal cell differentiation
+45582	3	0	0	0	1	1	1	positive regulation of T-cell differentiation
+45580	5	0	0	0	1	1	1	regulation of T-cell differentiation
+10044	1	0	0	0	1	1	1	response to aluminum ion
+45579	1	0	0	0	1	1	1	positive regulation of B-cell differentiation
+45578	2	0	0	0	1	1	1	negative regulation of B-cell differentiation
+45577	3	0	0	0	1	1	1	regulation of B-cell differentiation
+45576	1	0	0	0	1	1	1	mast cell activation
+45571	1	0	0	0	1	1	1	negative regulation of imaginal disc growth
+45570	1	0	0	0	1	1	1	regulation of imaginal disc growth
+10038	6	0	0	0	1	1	1	response to metal ion
+10035	8	0	0	0	1	1	1	response to inorganic substance
+10033	7	0	0	0	1	1	1	response to organic substance
+10026	1	0	0	0	1	1	1	trichome differentiation (sensu Magnoliophyta)
+10025	2	0	0	0	1	1	1	wax biosynthesis
+10022	1	0	0	0	1	1	1	meristem determinacy
+10016	4	0	0	0	1	1	1	shoot morphogenesis
+10015	3	0	0	0	1	1	1	root morphogenesis
+45540	2	0	0	0	1	1	1	regulation of cholesterol biosynthesis
+19299	1	0	0	0	1	1	1	rhamnose metabolism
+10003	3	0	0	0	1	1	1	gastrulation (sensu Mammalia)
+10002	2	0	0	0	1	1	1	cardioblast differentiation
+19296	1	0	0	0	1	1	1	coenzyme M metabolism
+10001	4	0	0	0	1	1	1	glial cell differentiation
+19295	1	0	0	0	1	1	1	coenzyme M biosynthesis
+19279	1	0	0	0	1	1	1	methionine biosynthesis from L-homoserine via cystathione
+19277	1	0	0	0	1	1	1	UDP-N-acetylgalactosamine biosynthesis
+19276	1	0	0	0	1	1	1	UDP-N-acetylgalactosamine metabolism
+7294	1	0	0	0	1	1	1	oocyte cell fate determination (sensu Insecta)
+7293	3	0	0	0	1	1	1	egg chamber formation (sensu Insecta)
+7292	27	0	0	0	1	1	1	female gamete generation
+19255	1	0	0	0	1	1	1	glucose 1-phosphate metabolism
+19253	1	0	0	0	1	1	1	reductive pentose-phosphate cycle
+7288	2	0	0	0	1	1	1	sperm axoneme assembly
+7286	11	0	0	0	1	1	1	spermatid development
+7283	75	0	0	0	1	1	1	spermatogenesis
+7282	1	0	0	0	1	1	1	cystoblast cell division
+7281	10	1	0	1	0.0737	1	0.0737	germ-cell development
+19242	1	0	0	0	1	1	1	methylglyoxal biosynthesis
+7276	113	1	0	1	0.5828	1	0.5828	gametogenesis
+7275	1074	7	0	7	0.741	1	0.741	development
+7274	3	0	0	0	1	1	1	neuromuscular synaptic transmission
+7273	11	0	0	0	1	1	1	regulation of synapse
+7271	14	0	0	0	1	1	1	"synaptic transmission, cholinergic"
+7270	18	0	0	0	1	1	1	nerve-nerve synaptic transmission
+19236	6	0	0	0	1	1	1	response to pheromone
+19233	7	0	0	0	1	1	1	perception of pain
+7269	29	0	0	0	1	1	1	neurotransmitter secretion
+7268	147	0	0	0	1	1	1	synaptic transmission
+7267	287	0	0	0	1	1	1	cell-cell signaling
+7266	17	0	0	0	1	1	1	Rho protein signal transduction
+7265	23	0	0	0	1	1	1	RAS protein signal transduction
+7264	91	2	0	2	0.1519	1	0.1519	small GTPase mediated signal transduction
+7263	5	0	0	0	1	1	1	nitric oxide mediated signal transduction
+7262	3	0	0	0	1	1	1	STAT protein nuclear translocation
+7261	1	0	0	0	1	1	1	STAT protein dimerization
+7260	4	0	0	0	1	1	1	tyrosine phosphorylation of STAT protein
+19229	3	0	0	0	1	1	1	regulation of vasoconstriction
+19228	4	0	0	0	1	1	1	generation of action potential
+19226	152	0	0	0	1	1	1	transmission of nerve impulse
+19222	48	0	0	0	1	1	1	regulation of metabolism
+19221	6	0	0	0	1	1	1	cytokine and chemokine mediated signaling pathway
+19220	3	0	0	0	1	1	1	regulation of phosphate metabolism
+7259	15	0	0	0	1	1	1	JAK-STAT cascade
+7257	4	0	0	0	1	1	1	activation of JUNK
+7254	19	0	0	0	1	1	1	JNK cascade
+7253	2	0	0	0	1	1	1	cytoplasmic sequestering of NF-kappaB
+7252	2	0	0	0	1	1	1	I-kappaB phosphorylation
+7250	7	0	0	0	1	1	1	activation of NF-kappaB-inducing kinase
+19218	1	0	0	0	1	1	1	regulation of steroid metabolism
+19217	4	0	0	0	1	1	1	regulation of fatty acid metabolism
+19216	2	0	0	0	1	1	1	regulation of lipid metabolism
+7249	19	0	0	0	1	1	1	NIK-I-kappaB/NF-kappaB cascade
+7243	100	0	0	0	1	1	1	protein kinase cascade
+7242	395	3	0	3	0.5891	1	0.5891	intracellular signaling cascade
+7234	1	0	0	0	1	1	1	osmosensory signaling pathway via two-component system
+7231	3	0	0	0	1	1	1	osmosensory signaling pathway
+7229	32	0	0	0	1	1	1	integrin-mediated signaling pathway
+7226	1	0	0	0	1	1	1	regulation of smoothened receptor activity by patched
+7224	2	0	0	0	1	1	1	smoothened receptor signaling pathway
+7223	12	0	0	0	1	1	1	frizzled-2 signaling pathway
+7222	10	0	0	0	1	1	1	frizzled signaling pathway
+7219	10	0	0	0	1	1	1	Notch signaling pathway
+7218	52	0	0	0	1	1	1	neuropeptide signaling pathway
+7217	3	0	0	0	1	1	1	tachykinin signaling pathway
+7216	1	0	0	0	1	1	1	metabotropic glutamate receptor signaling pathway
+7215	9	0	0	0	1	1	1	glutamate signaling pathway
+7214	9	0	0	0	1	1	1	gamma-aminobutyric acid signaling pathway
+7213	4	0	0	0	1	1	1	"acetyl choline receptor signaling, muscarinic pathway"
+7212	5	0	0	0	1	1	1	dopamine receptor signaling pathway
+7210	2	0	0	0	1	1	1	serotonin receptor signaling pathway
+7208	1	0	0	0	1	1	1	"serotonin receptor, phospholipase C activating pathway"
+7207	3	0	0	0	1	1	1	"muscarinic acetyl choline receptor, phospholipase C activating pathway"
+7206	1	0	0	0	1	1	1	"metabotropic glutamate receptor, phospholipase C activating pathway"
+7205	12	0	0	0	1	1	1	protein kinase C activation
+7204	24	0	0	0	1	1	1	cytosolic calcium ion concentration elevation
+7202	8	0	0	0	1	1	1	phospholipase C activation
+7200	46	0	0	0	1	1	1	"G-protein signaling, coupled to IP3 second messenger (phospholipase C activating)"
+6796	318	2	0	2	0.7078	1	0.7078	phosphate metabolism
+6793	318	2	0	2	0.7078	1	0.7078	phosphorus metabolism
+6791	2	0	0	0	1	1	1	sulfur utilization
+6790	30	0	0	0	1	1	1	sulfur metabolism
+6788	1	0	0	0	1	1	1	heme oxidation
+6787	3	0	0	0	1	1	1	porphyrin catabolism
+6783	6	0	0	0	1	1	1	heme biosynthesis
+6780	2	0	0	0	1	1	1	uroporphyrinogen III biosynthesis
+6779	7	0	0	0	1	1	1	porphyrin biosynthesis
+6778	10	0	0	0	1	1	1	porphyrin metabolism
+6777	2	0	0	0	1	1	1	Mo-molybdopterin cofactor biosynthesis
+6776	4	0	0	0	1	1	1	vitamin A metabolism
+6775	6	0	0	0	1	1	1	fat-soluble vitamin metabolism
+6772	1	0	0	0	1	1	1	thiamin metabolism
+6771	1	0	0	0	1	1	1	vitamin B2 metabolism
+6769	9	0	0	0	1	1	1	nicotinamide metabolism
+6768	4	0	0	0	1	1	1	biotin metabolism
+6767	17	0	0	0	1	1	1	water-soluble vitamin metabolism
+6766	24	0	0	0	1	1	1	vitamin metabolism
+6760	8	0	0	0	1	1	1	folic acid and derivative metabolism
+6754	9	0	0	0	1	1	1	ATP biosynthesis
+6753	9	0	0	0	1	1	1	nucleoside phosphate metabolism
+6752	17	0	0	0	1	1	1	group transfer coenzyme metabolism
+6750	6	0	0	0	1	1	1	glutathione biosynthesis
+6749	9	0	0	0	1	1	1	glutathione metabolism
+6744	2	0	0	0	1	1	1	ubiquinone biosynthesis
+6743	2	0	0	0	1	1	1	ubiquinone metabolism
+6742	1	0	0	0	1	1	1	NADPH catabolism
+6740	8	0	0	0	1	1	1	NADPH regeneration
+6739	9	0	0	0	1	1	1	NADPH metabolism
+6736	1	0	0	0	1	1	1	NADH biosynthesis
+6734	1	0	0	0	1	1	1	NADH metabolism
+6733	10	0	0	0	1	1	1	oxidoreduction coenzyme metabolism
+6732	52	0	0	0	1	1	1	coenzyme metabolism
+6731	62	0	0	0	1	1	1	coenzyme and prosthetic group metabolism
+6730	17	0	0	0	1	1	1	one-carbon compound metabolism
+6729	4	0	0	0	1	1	1	tetrahydrobiopterin biosynthesis
+6727	1	0	0	0	1	1	1	ommochrome biosynthesis
+6726	2	0	0	0	1	1	1	eye pigment biosynthesis
+6725	57	0	0	0	1	1	1	aromatic compound metabolism
+6722	1	0	0	0	1	1	1	triterpenoid metabolism
+6721	2	0	0	0	1	1	1	terpenoid metabolism
+6720	13	0	0	0	1	1	1	isoprenoid metabolism
+45497	1	0	0	0	1	1	1	female analia morphogenesis (sensu Holometabola)
+45496	1	0	0	0	1	1	1	male analia morphogenesis (sensu Holometabola)
+6707	3	0	0	0	1	1	1	cholesterol catabolism
+6706	4	0	0	0	1	1	1	steroid catabolism
+6703	1	0	0	0	1	1	1	estrogen biosynthesis
+6701	1	0	0	0	1	1	1	progesterone biosynthesis
+6700	8	0	0	0	1	1	1	C21-steroid hormone biosynthesis
+45475	1	0	0	0	1	1	1	locomotor rhythm
+45471	2	0	0	0	1	1	1	response to ethanol
+45468	1	0	0	0	1	1	1	regulation of R8 spacing
+45467	1	0	0	0	1	1	1	R7 development
+45466	1	0	0	0	1	1	1	R7 differentiation
+45465	1	0	0	0	1	1	1	R8 differentiation
+45463	1	0	0	0	1	1	1	R8 development
+45454	1	0	0	0	1	1	1	cell redox homeostasis
+45453	4	0	0	0	1	1	1	bone resorption
+45451	2	0	0	0	1	1	1	pole plasm oskar mRNA localization
+45450	2	0	0	0	1	1	1	bicoid mRNA localization
+45449	718	3	0	3	0.9269	1	0.9269	regulation of transcription
+45446	4	0	0	0	1	1	1	endothelial cell differentiation
+45445	4	0	0	0	1	1	1	myoblast differentiation
+45444	4	0	0	0	1	1	1	adipocyte differentiation
+45433	1	0	0	0	1	1	1	"male courtship behavior (sensu Insecta), song production"
+45428	2	0	0	0	1	1	1	regulation of nitric oxide biosynthesis
+45426	2	0	0	0	1	1	1	quinone cofactor biosynthesis
+45425	1	0	0	0	1	1	1	positive regulation of granulocyte macrophage colony-stimulating factor biosynthesis
+45423	1	0	0	0	1	1	1	regulation of granulocyte macrophage colony-stimulating factor biosynthesis
+45410	4	0	0	0	1	1	1	positive regulation of interleukin-6 biosynthesis
+45408	5	0	0	0	1	1	1	regulation of interleukin-6 biosynthesis
+45404	3	0	0	0	1	1	1	positive regulation of interleukin-4 biosynthesis
+7199	1	0	0	0	1	1	1	"G-protein signaling, coupled to cGMP nucleotide second messenger"
+45402	3	0	0	0	1	1	1	regulation of interleukin-4 biosynthesis
+7197	2	0	0	0	1	1	1	"muscarinic acetyl choline receptor, adenylate cyclase inhibiting pathway"
+7195	2	0	0	0	1	1	1	"dopamine receptor, adenylate cyclase inhibiting pathway"
+7194	9	0	0	0	1	1	1	negative regulation of adenylate cyclase activity
+7193	18	0	0	0	1	1	1	"G-protein signaling, adenylate cyclase inhibiting pathway"
+7191	3	0	0	0	1	1	1	"dopamine receptor, adenylate cyclase activating pathway"
+7190	19	0	0	0	1	1	1	adenylate cyclase activation
+7189	23	0	0	0	1	1	1	"G-protein signaling, adenylate cyclase activating pathway"
+7188	50	0	0	0	1	1	1	"G-protein signaling, coupled to cAMP nucleotide second messenger"
+7187	58	0	0	0	1	1	1	"G-protein signaling, coupled to cyclic nucleotide second messenger"
+7186	305	1	0	1	0.91	1	0.91	G-protein coupled receptor protein signaling pathway
+7185	12	0	0	0	1	1	1	transmembrane receptor protein tyrosine phosphatase signaling pathway
+7184	2	0	0	0	1	1	1	SMAD protein nuclear translocation
+7183	4	0	0	0	1	1	1	SMAD protein heteromerization
+7182	2	0	0	0	1	1	1	common-partner SMAD protein phosphorylation
+7181	4	0	0	0	1	1	1	transforming growth factor beta receptor complex assembly
+7180	2	0	0	0	1	1	1	transforming growth factor beta ligand binding to type II receptor
+7179	27	0	0	0	1	1	1	transforming growth factor beta receptor signaling pathway
+7178	34	0	0	0	1	1	1	transmembrane receptor protein serine/threonine kinase signaling pathway
+7176	4	0	0	0	1	1	1	regulation of epidermal growth factor receptor activity
+7175	2	0	0	0	1	1	1	negative regulation of epidermal growth factor receptor activity
+7173	11	0	0	0	1	1	1	epidermal growth factor receptor signaling pathway
+7172	5	0	0	0	1	1	1	signal complex formation
+7171	3	0	0	0	1	1	1	transmembrane receptor protein tyrosine kinase activation (dimerization)
+7170	2	0	0	0	1	1	1	transmembrane receptor protein tyrosine kinase ligand binding
+7169	70	0	0	0	1	1	1	transmembrane receptor protein tyrosine kinase signaling pathway
+7168	2	0	0	0	1	1	1	receptor guanylyl cyclase signaling pathway
+7167	113	0	0	0	1	1	1	enzyme linked receptor protein signaling pathway
+7166	560	1	0	1	0.9894	1	0.9894	cell surface receptor linked signal transduction
+7165	1098	5	0	5	0.944	1	0.944	signal transduction
+7164	7	0	0	0	1	1	1	establishment of tissue polarity
+7163	17	0	0	0	1	1	1	establishment and/or maintenance of cell polarity
+7162	8	0	0	0	1	1	1	negative regulation of cell adhesion
+7161	1	0	0	0	1	1	1	calcium-independent cell-matrix adhesion
+7160	38	0	0	0	1	1	1	cell-matrix adhesion
+7159	6	0	0	0	1	1	1	leukocyte cell adhesion
+7158	3	0	0	0	1	1	1	neuronal cell adhesion
+7157	55	1	0	1	0.3448	1	0.3448	heterophilic cell adhesion
+7156	55	0	0	0	1	1	1	homophilic cell adhesion
+7155	304	1	0	1	0.9093	1	0.9093	cell adhesion
+7154	1421	7	0	7	0.947	1	0.947	cell communication
+7152	1	0	0	0	1	1	1	spore wall assembly (sensu Saccharomyces)
+7151	2	0	0	0	1	1	1	sporulation (sensu Saccharomyces)
+7150	6	0	0	0	1	1	1	growth pattern
+7144	1	0	0	0	1	1	1	female meiosis I
+7143	5	0	0	0	1	1	1	female meiosis
+7141	4	0	0	0	1	1	1	male meiosis I
+7140	9	0	0	0	1	1	1	male meiosis
+19102	1	0	0	0	1	1	1	male somatic sex determination
+19101	1	0	0	0	1	1	1	female somatic sex determination
+19100	1	0	0	0	1	1	1	male germ-line sex determination
+7133	1	0	0	0	1	1	1	meiotic anaphase I
+7131	6	0	0	0	1	1	1	meiotic recombination
+7130	3	0	0	0	1	1	1	synaptonemal complex formation
+7129	5	0	0	0	1	1	1	synapsis
+1822	7	0	0	0	1	1	1	kidney development
+7128	10	0	0	0	1	1	1	meiotic prophase I
+7127	13	0	0	0	1	1	1	meiosis I
+1820	1	0	0	0	1	1	1	serotonin secretion
+7126	34	1	0	1	0.2296	1	0.2296	meiosis
+7124	4	0	0	0	1	1	1	pseudohyphal growth
+7121	4	0	0	0	1	1	1	polar budding
+7120	1	0	0	0	1	1	1	axial budding
+1819	13	0	0	0	1	1	1	positive regulation of cytokine production
+1818	6	0	0	0	1	1	1	negative regulation of cytokine production
+1817	21	0	0	0	1	1	1	regulation of cytokine production
+1816	26	0	0	0	1	1	1	cytokine production
+7119	5	0	0	0	1	1	1	isotropic bud growth
+1812	1	0	0	0	1	1	1	positive regulation of type I hypersensitivity
+7118	5	0	0	0	1	1	1	apical bud growth
+7117	5	0	0	0	1	1	1	bud growth
+1810	1	0	0	0	1	1	1	regulation of type I hypersensitivity
+7114	9	0	0	0	1	1	1	budding
+7113	3	0	0	0	1	1	1	endomitotic cell cycle
+1805	1	0	0	0	1	1	1	positive regulation of type III hypersensitivity
+1803	1	0	0	0	1	1	1	regulation of type III hypersensitivity
+1802	1	0	0	0	1	1	1	type III hypersensitivity
+7103	1	0	0	0	1	1	1	spindle pole body duplication (sensu Saccharomyces)
+7102	3	0	0	0	1	1	1	spindle pole body and microtubule cycle (sensu Saccharomyces)
+7100	1	0	0	0	1	1	1	centrosome separation
+6699	3	0	0	0	1	1	1	bile acid biosynthesis
+6696	3	0	0	0	1	1	1	ergosterol biosynthesis
+6695	15	0	0	0	1	1	1	cholesterol biosynthesis
+6694	35	0	0	0	1	1	1	steroid biosynthesis
+6693	7	0	0	0	1	1	1	prostaglandin metabolism
+6692	7	0	0	0	1	1	1	prostanoid metabolism
+6691	6	0	0	0	1	1	1	leukotriene metabolism
+6690	12	0	0	0	1	1	1	icosanoid metabolism
+6689	1	0	0	0	1	1	1	ganglioside catabolism
+6688	5	0	0	0	1	1	1	glycosphingolipid biosynthesis
+6687	12	0	0	0	1	1	1	glycosphingolipid metabolism
+6683	1	0	0	0	1	1	1	galactosylceramide catabolism
+6681	1	0	0	0	1	1	1	galactosylceramide metabolism
+6677	1	0	0	0	1	1	1	glycosylceramide metabolism
+6672	7	0	0	0	1	1	1	ceramide metabolism
+6665	21	1	0	1	0.1486	1	0.1486	sphingolipid metabolism
+6664	14	0	0	0	1	1	1	glycolipid metabolism
+6663	2	0	0	0	1	1	1	platelet activating factor biosynthesis
+6662	10	0	0	0	1	1	1	glycerol ether metabolism
+6661	1	0	0	0	1	1	1	phosphatidylinositol biosynthesis
+6657	1	0	0	0	1	1	1	CDP-choline pathway
+6656	2	0	0	0	1	1	1	phosphatidylcholine biosynthesis
+6654	2	0	0	0	1	1	1	phosphatidic acid biosynthesis
+6650	13	1	0	1	0.0947	1	0.0947	glycerophospholipid metabolism
+6646	1	0	0	0	1	1	1	phosphatidylethanolamine biosynthesis
+6644	25	1	0	1	0.1744	1	0.1744	phospholipid metabolism
+6643	46	2	0	2	0.0474	1	0.0474	membrane lipid metabolism
+6641	8	0	0	0	1	1	1	triacylglycerol metabolism
+6639	9	0	0	0	1	1	1	acylglycerol metabolism
+6638	9	0	0	0	1	1	1	neutral lipid metabolism
+6637	6	0	0	0	1	1	1	acyl-CoA metabolism
+6636	4	0	0	0	1	1	1	fatty acid desaturation
+6635	11	0	0	0	1	1	1	fatty acid beta-oxidation
+6633	22	0	0	0	1	1	1	fatty acid biosynthesis
+6631	61	0	0	0	1	1	1	fatty acid metabolism
+6629	230	2	0	2	0.529	1	0.529	lipid metabolism
+6627	3	0	0	0	1	1	1	mitochondrial processing
+6626	10	0	0	0	1	1	1	protein-mitochondrial targeting
+6625	5	0	0	0	1	1	1	protein-peroxisome targeting
+6623	4	0	0	0	1	1	1	protein-vacuolar targeting
+6622	1	0	0	0	1	1	1	protein-lysosome targeting
+6621	2	0	0	0	1	1	1	protein-ER retention
+6620	2	0	0	0	1	1	1	posttranslational membrane targeting
+6616	3	0	0	0	1	1	1	"SRP-dependent cotranslational membrane targeting, translocation"
+6614	3	0	0	0	1	1	1	SRP-dependent cotranslational membrane targeting
+6613	8	0	0	0	1	1	1	cotranslational membrane targeting
+6612	13	0	0	0	1	1	1	protein-membrane targeting
+6611	6	0	0	0	1	1	1	protein-nucleus export
+6610	4	0	0	0	1	1	1	ribosomal protein-nucleus import
+6609	1	0	0	0	1	1	1	mRNA-binding (hnRNP) protein-nucleus import
+6608	3	0	0	0	1	1	1	snRNP protein-nucleus import
+6607	11	0	0	0	1	1	1	NLS-bearing substrate-nucleus import
+6606	43	0	0	0	1	1	1	protein-nucleus import
+6605	117	0	0	0	1	1	1	protein targeting
+6603	2	0	0	0	1	1	1	phosphocreatine metabolism
+6601	3	0	0	0	1	1	1	creatine biosynthesis
+6600	3	0	0	0	1	1	1	creatine metabolism
+45368	2	0	0	0	1	1	1	positive regulation of interleukin-13 biosynthesis
+45366	2	0	0	0	1	1	1	regulation of interleukin-13 biosynthesis
+45362	2	0	0	0	1	1	1	positive regulation of interleukin-1 biosynthesis
+45360	2	0	0	0	1	1	1	regulation of interleukin-1 biosynthesis
+45355	1	0	0	0	1	1	1	negative regulation of interferon-alpha biosynthesis
+45354	1	0	0	0	1	1	1	regulation of interferon-alpha biosynthesis
+45351	1	0	0	0	1	1	1	interferon type I biosynthesis
+45349	1	0	0	0	1	1	1	interferon-alpha biosynthesis
+45348	1	0	0	0	1	1	1	positive regulation of MHC class II biosynthesis
+45347	1	0	0	0	1	1	1	negative regulation of MHC class II biosynthesis
+45346	1	0	0	0	1	1	1	regulation of MHC class II biosynthesis
+45343	1	0	0	0	1	1	1	regulation of MHC class I biosynthesis
+45342	1	0	0	0	1	1	1	MHC class II biosynthesis
+45341	1	0	0	0	1	1	1	MHC class I biosynthesis
+19098	6	0	0	0	1	1	1	reproductive behavior
+19094	2	0	0	0	1	1	1	pole plasm mRNA localization
+45333	18	0	0	0	1	1	1	cellular respiration
+19089	2	0	0	0	1	1	1	viral transmission
+19087	1	0	0	0	1	1	1	viral transformation
+19083	1	0	0	0	1	1	1	viral transcription
+19080	1	0	0	0	1	1	1	viral genome expression
+45324	1	0	0	0	1	1	1	late endosome to vacuole transport
+45321	48	1	0	1	0.3084	1	0.3084	immune cell activation
+19079	8	0	0	0	1	1	1	viral genome replication
+19076	1	0	0	0	1	1	1	viral release
+45313	2	0	0	0	1	1	1	rhabdomere membrane biogenesis
+19069	1	0	0	0	1	1	1	viral capsid assembly
+19068	1	0	0	0	1	1	1	viral assembly
+19067	1	0	0	0	1	1	1	"viral assembly, maturation, egress, and release"
+1798	2	0	0	0	1	1	1	positive regulation of type IIa hypersensitivity
+19063	1	0	0	0	1	1	1	virion penetration
+19062	2	0	0	0	1	1	1	virion attachment
+1796	2	0	0	0	1	1	1	regulation of type IIa hypersensitivity
+1794	2	0	0	0	1	1	1	type IIa hypersensitivity
+7099	2	0	0	0	1	1	1	centriole replication
+7098	4	0	0	0	1	1	1	centrosome cycle
+7097	4	0	0	0	1	1	1	nuclear migration
+7096	2	0	0	0	1	1	1	regulation of exit from mitosis
+7095	1	0	0	0	1	1	1	mitotic G2 checkpoint
+7094	6	0	0	0	1	1	1	mitotic spindle checkpoint
+7093	10	0	0	0	1	1	1	mitotic checkpoint
+7091	3	0	0	0	1	1	1	mitotic metaphase/anaphase transition
+7090	4	0	0	0	1	1	1	regulation of S phase of mitotic cell cycle
+19059	3	0	0	0	1	1	1	initiation of viral infection
+19058	9	0	0	0	1	1	1	viral infectious cycle
+7089	6	0	0	0	1	1	1	traversing start control point of mitotic cell cycle
+1782	2	0	0	0	1	1	1	B-cell homeostasis
+7088	19	0	0	0	1	1	1	regulation of mitosis
+1781	1	0	0	0	1	1	1	"programmed cell death, neutrophils"
+1780	1	0	0	0	1	1	1	neutrophil homeostasis
+19049	1	0	0	0	1	1	1	viral host defense evasion
+19048	3	0	0	0	1	1	1	virus-host interaction
+1778	1	0	0	0	1	1	1	plasma membrane repair
+1776	4	0	0	0	1	1	1	immune cell homeostasis
+1775	48	1	0	1	0.3084	1	0.3084	cell activation
+1774	1	0	0	0	1	1	1	microglial cell activation
+1773	3	0	0	0	1	1	1	dendritic cell activation
+7076	8	0	0	0	1	1	1	mitotic chromosome condensation
+1766	1	0	0	0	1	1	1	lipid raft polarization
+1764	4	0	0	0	1	1	1	neuronal migration
+1763	8	0	0	0	1	1	1	branching morphogenesis
+1762	1	0	0	0	1	1	1	beta-alanine transport
+7067	63	0	0	0	1	1	1	mitosis
+7066	1	0	0	0	1	1	1	female meiosis sister chromatid cohesion
+7065	1	0	0	0	1	1	1	male meiosis sister chromatid cohesion
+7064	1	0	0	0	1	1	1	mitotic sister chromatid cohesion
+7062	6	0	0	0	1	1	1	sister chromatid cohesion
+7060	1	0	0	0	1	1	1	male meiosis chromosome segregation
+1757	1	0	0	0	1	1	1	somite specification
+1756	6	0	0	0	1	1	1	somitogenesis
+1755	2	0	0	0	1	1	1	neural crest cell migration
+1754	8	0	0	0	1	1	1	eye photoreceptor cell differentiation
+7059	17	0	0	0	1	1	1	chromosome segregation
+1752	1	0	0	0	1	1	1	eye photoreceptor fate commitment (sensu Drosophila)
+1751	4	0	0	0	1	1	1	eye photoreceptor differentiation (sensu Drosophila)
+7054	1	0	0	0	1	1	1	male meiosis I spindle assembly (sensu Animalia)
+7053	1	0	0	0	1	1	1	male meiotic spindle assembly (sensu Animalia)
+7052	7	0	0	0	1	1	1	mitotic spindle assembly
+7051	12	0	0	0	1	1	1	spindle assembly
+7050	24	0	0	0	1	1	1	cell cycle arrest
+1747	7	0	0	0	1	1	1	eye morphogenesis (sensu Mammalia)
+1745	5	0	0	0	1	1	1	compound eye morphogenesis (sensu Drosophila)
+7049	391	3	0	3	0.5819	1	0.5819	cell cycle
+1742	1	0	0	0	1	1	1	oenocyte differentiation
+7047	6	0	0	0	1	1	1	cell wall organization and biogenesis
+7046	51	0	0	0	1	1	1	ribosome biogenesis
+7044	4	0	0	0	1	1	1	cell-substrate junction assembly
+7043	3	0	0	0	1	1	1	intercellular junction assembly
+7041	6	1	0	1	0.0449	1	0.0449	lysosomal transport
+7040	8	1	0	1	0.0594	1	0.0594	lysosome organization and biogenesis
+1738	5	0	0	0	1	1	1	morphogenesis of a polarized epithelium
+1737	1	0	0	0	1	1	1	establishment of wing hair orientation
+1736	5	0	0	0	1	1	1	establishment of planar polarity
+7039	1	0	0	0	1	1	1	vacuolar protein catabolism
+7034	3	0	0	0	1	1	1	vacuolar transport
+7033	13	0	0	0	1	1	1	vacuole organization and biogenesis
+7032	14	1	0	1	0.1016	1	0.1016	endosome organization and biogenesis
+7031	12	0	0	0	1	1	1	peroxisome organization and biogenesis
+7030	5	0	0	0	1	1	1	Golgi organization and biogenesis
+7028	301	1	0	1	0.9071	1	0.9071	cytoplasm organization and biogenesis
+7026	6	0	0	0	1	1	1	microtubule stabilization
+7025	6	0	0	0	1	1	1	beta-tubulin folding
+7024	1	0	0	0	1	1	1	alpha-tubulin folding
+7023	4	0	0	0	1	1	1	post-chaperonin tubulin folding pathway
+7022	3	0	0	0	1	1	1	chaperonin-mediated tubulin folding
+7021	14	0	0	0	1	1	1	tubulin folding
+7020	14	0	0	0	1	1	1	microtubule nucleation
+1719	7	0	0	0	1	1	1	inhibition of caspase activation
+7018	19	0	0	0	1	1	1	microtubule-based movement
+7017	72	0	0	0	1	1	1	microtubule-based process
+1710	4	0	0	0	1	1	1	mesoderm cell fate commitment
+7016	8	0	0	0	1	1	1	cytoskeletal anchoring
+7015	16	0	0	0	1	1	1	actin filament organization
+7010	186	0	0	0	1	1	1	cytoskeleton organization and biogenesis
+1709	15	0	0	0	1	1	1	cell fate determination
+1708	5	0	0	0	1	1	1	cell fate specification
+1707	6	0	0	0	1	1	1	mesoderm formation
+1704	6	0	0	0	1	1	1	formation of primary germ layer
+7009	5	0	0	0	1	1	1	plasma membrane organization and biogenesis
+1702	3	0	0	0	1	1	1	gastrulation (sensu Deuterostomia)
+1701	14	0	0	0	1	1	1	embryonic development (sensu Mammalia)
+1700	8	0	0	0	1	1	1	embryonic development (sensu Insecta)
+7006	1	0	0	0	1	1	1	mitochondrial membrane organization and biogenesis
+7005	15	0	0	0	1	1	1	mitochondrion organization and biogenesis
+7004	9	0	0	0	1	1	1	telomerase-dependent telomere maintenance
+7001	97	1	0	1	0.5272	1	0.5272	chromosome organization and biogenesis (sensu Eukarya)
+7000	3	0	0	0	1	1	1	nucleolus organization and biogenesis
+6599	5	0	0	0	1	1	1	phosphagen metabolism
+6597	2	0	0	0	1	1	1	spermine biosynthesis
+6596	3	0	0	0	1	1	1	polyamine biosynthesis
+6595	5	0	0	0	1	1	1	polyamine metabolism
+6592	2	0	0	0	1	1	1	ornithine biosynthesis
+6591	3	0	0	0	1	1	1	ornithine metabolism
+6590	4	0	0	0	1	1	1	thyroid hormone generation
+6587	2	0	0	0	1	1	1	serotonin biosynthesis from tryptophan
+6586	6	0	0	0	1	1	1	indolalkylamine metabolism
+6585	1	0	0	0	1	1	1	dopamine biosynthesis from tyrosine
+6584	10	0	0	0	1	1	1	catecholamine metabolism
+6583	6	0	0	0	1	1	1	melanin biosynthesis from tyrosine
+6582	7	0	0	0	1	1	1	melanin metabolism
+6580	1	0	0	0	1	1	1	ethanolamine metabolism
+6576	25	0	0	0	1	1	1	biogenic amine metabolism
+6575	36	0	0	0	1	1	1	amino acid derivative metabolism
+6574	1	0	0	0	1	1	1	valine catabolism
+6573	2	0	0	0	1	1	1	valine metabolism
+6572	4	0	0	0	1	1	1	tyrosine catabolism
+6570	10	0	0	0	1	1	1	tyrosine metabolism
+6569	3	0	0	0	1	1	1	tryptophan catabolism
+6568	4	0	0	0	1	1	1	tryptophan metabolism
+6566	1	0	0	0	1	1	1	threonine metabolism
+6565	2	0	0	0	1	1	1	L-serine catabolism
+6564	6	0	0	0	1	1	1	L-serine biosynthesis
+6563	8	0	0	0	1	1	1	L-serine metabolism
+6562	2	0	0	0	1	1	1	proline catabolism
+6561	5	0	0	0	1	1	1	proline biosynthesis
+6560	7	0	0	0	1	1	1	proline metabolism
+6559	7	0	0	0	1	1	1	phenylalanine catabolism
+6558	8	0	0	0	1	1	1	L-phenylalanine metabolism
+6555	8	0	0	0	1	1	1	methionine metabolism
+6553	1	0	0	0	1	1	1	lysine metabolism
+6552	3	0	0	0	1	1	1	leucine catabolism
+6551	3	0	0	0	1	1	1	leucine metabolism
+6550	1	0	0	0	1	1	1	isoleucine catabolism
+6549	1	0	0	0	1	1	1	isoleucine metabolism
+6548	5	0	0	0	1	1	1	histidine catabolism
+6547	6	0	0	0	1	1	1	histidine metabolism
+6546	5	0	0	0	1	1	1	glycine catabolism
+6545	2	0	0	0	1	1	1	glycine biosynthesis
+6544	7	0	0	0	1	1	1	glycine metabolism
+6542	6	0	0	0	1	1	1	glutamine biosynthesis
+6541	11	0	0	0	1	1	1	glutamine metabolism
+6540	1	0	0	0	1	1	1	glutamate decarboxylation to succinate
+6538	3	0	0	0	1	1	1	glutamate catabolism
+6537	6	0	0	0	1	1	1	glutamate biosynthesis
+6536	9	0	0	0	1	1	1	glutamate metabolism
+6535	1	0	0	0	1	1	1	cysteine biosynthesis from serine
+6534	4	0	0	0	1	1	1	cysteine metabolism
+6533	3	0	0	0	1	1	1	aspartate catabolism
+6531	4	0	0	0	1	1	1	aspartate metabolism
+6529	1	0	0	0	1	1	1	asparagine biosynthesis
+6528	1	0	0	0	1	1	1	asparagine metabolism
+6527	5	0	0	0	1	1	1	arginine catabolism
+6526	8	0	0	0	1	1	1	arginine biosynthesis
+6525	11	0	0	0	1	1	1	arginine metabolism
+6523	1	0	0	0	1	1	1	alanine biosynthesis
+6522	1	0	0	0	1	1	1	alanine metabolism
+6520	107	0	0	0	1	1	1	amino acid metabolism
+2168	3	0	0	0	1	1	1	larval development (sensu Insecta)
+2165	4	0	0	0	1	1	1	larval/pupal development (sensu Insecta)
+2164	5	0	0	0	1	1	1	larval development
+6519	134	0	0	0	1	1	1	amino acid and derivative metabolism
+6518	2	0	0	0	1	1	1	peptide metabolism
+6517	3	0	0	0	1	1	1	protein deglycosylation
+6516	4	0	0	0	1	1	1	glycoprotein catabolism
+6515	6	0	0	0	1	1	1	misfolded or incompletely synthesized protein catabolism
+6513	2	0	0	0	1	1	1	protein monoubiquitination
+6512	53	0	0	0	1	1	1	ubiquitin cycle
+6511	60	0	0	0	1	1	1	ubiquitin-dependent protein catabolism
+6510	1	0	0	0	1	1	1	ATP-dependent proteolysis
+6508	256	2	0	2	0.5883	1	0.5883	proteolysis and peptidolysis
+6507	1	0	0	0	1	1	1	GPI anchor release
+6506	2	0	0	0	1	1	1	GPI anchor biosynthesis
+6505	4	0	0	0	1	1	1	GPI anchor metabolism
+45229	6	0	0	0	1	1	1	external encapsulating structure organization and biogenesis
+45226	1	0	0	0	1	1	1	extracellular polysaccharide biosynthesis
+45217	2	0	0	0	1	1	1	intercellular junction maintenance
+45216	5	0	0	0	1	1	1	intercellular junction assembly and/or maintenance
+45213	3	0	0	0	1	1	1	neurotransmitter receptor metabolism
+45210	1	0	0	0	1	1	1	FasL biosynthesis
+1696	1	0	0	0	1	1	1	gastric acid secretion
+1682	1	0	0	0	1	1	1	tRNA 5'-leader removal
+1678	2	0	0	0	1	1	1	cell glucose homeostasis
+1675	2	0	0	0	1	1	1	acrosome formation
+1672	1	0	0	0	1	1	1	regulation of chromatin assembly/disassembly
+1667	1	0	0	0	1	1	1	ameboid cell migration
+1666	6	0	0	0	1	1	1	response to hypoxia
+1662	2	0	0	0	1	1	1	behavioral fear response
+1660	1	0	0	0	1	1	1	fever
+1659	1	0	0	0	1	1	1	thermoregulation
+1658	4	0	0	0	1	1	1	ureteric bud branching
+1657	6	0	0	0	1	1	1	ureteric bud development
+1656	7	0	0	0	1	1	1	metanephros development
+1655	8	0	0	0	1	1	1	urogenital system development
+1654	22	0	0	0	1	1	1	eye morphogenesis
+1649	2	0	0	0	1	1	1	osteoblast differentiation
+6499	1	0	0	0	1	1	1	N-terminal protein myristoylation
+6497	8	0	0	0	1	1	1	protein lipidation
+6496	1	0	0	0	1	1	1	terminal N-glycosylation
+6494	1	0	0	0	1	1	1	terminal glycosylation
+6493	7	0	0	0	1	1	1	O-linked glycosylation
+6491	4	0	0	0	1	1	1	N-glycan processing
+6488	2	0	0	0	1	1	1	dolichol-linked oligosaccharide biosynthesis
+6487	22	0	0	0	1	1	1	N-linked glycosylation
+6486	40	0	0	0	1	1	1	protein amino acid glycosylation
+6481	2	0	0	0	1	1	1	C-terminal protein amino acid methylation
+6479	7	0	0	0	1	1	1	protein amino acid methylation
+6478	1	0	0	0	1	1	1	peptidyl-tyrosine sulfation
+6477	3	0	0	0	1	1	1	protein amino acid sulfation
+6476	5	0	0	0	1	1	1	protein amino acid deacetylation
+6475	1	0	0	0	1	1	1	internal protein amino acid acetylation
+6474	1	0	0	0	1	1	1	N-terminal protein amino acid acetylation
+6473	10	0	0	0	1	1	1	protein amino acid acetylation
+6471	5	0	0	0	1	1	1	protein amino acid ADP-ribosylation
+6470	53	0	0	0	1	1	1	protein amino acid dephosphorylation
+6469	7	0	0	0	1	1	1	negative regulation of protein kinase activity
+6468	239	2	0	2	0.5502	1	0.5502	protein amino acid phosphorylation
+6467	2	0	0	0	1	1	1	protein thiol-disulfide exchange
+6465	1	0	0	0	1	1	1	signal peptide processing
+6464	458	3	0	3	0.6917	1	0.6917	protein modification
+6462	7	0	0	0	1	1	1	"protein complex assembly, multichaperone pathway"
+6461	59	1	0	1	0.3648	1	0.3648	protein complex assembly
+6457	70	1	0	1	0.4167	1	0.4167	protein folding
+6451	1	0	0	0	1	1	1	translational readthrough
+6450	1	0	0	0	1	1	1	regulation of translational fidelity
+18410	2	0	0	0	1	1	1	peptide/protein carboxyl-terminal blocking
+6449	2	0	0	0	1	1	1	regulation of translational termination
+6448	2	0	0	0	1	1	1	regulation of translational elongation
+6446	19	0	0	0	1	1	1	regulation of translational initiation
+6445	35	0	0	0	1	1	1	regulation of translation
+18409	1	0	0	0	1	1	1	peptide/protein amino-terminal blocking
+18401	1	0	0	0	1	1	1	peptidyl-proline hydroxylation to 4-hydroxy-L-proline
+6438	2	0	0	0	1	1	1	valyl-tRNA aminoacylation
+6437	2	0	0	0	1	1	1	tyrosyl-tRNA aminoacylation
+6436	3	0	0	0	1	1	1	tryptophanyl-tRNA aminoacylation
+6435	1	0	0	0	1	1	1	threonyl-tRNA aminoacylation
+6434	1	0	0	0	1	1	1	seryl-tRNA aminoacylation
+6433	2	0	0	0	1	1	1	prolyl-tRNA aminoacylation
+6432	3	0	0	0	1	1	1	phenylalanyl-tRNA aminoacylation
+6431	1	0	0	0	1	1	1	methionyl-tRNA aminoacylation
+6430	1	0	0	0	1	1	1	lysyl-tRNA aminoacylation
+6429	1	0	0	0	1	1	1	leucyl-tRNA aminoacylation
+6428	1	0	0	0	1	1	1	isoleucyl-tRNA aminoacylation
+6427	2	0	0	0	1	1	1	histidyl-tRNA aminoacylation
+6426	2	0	0	0	1	1	1	glycyl-tRNA aminoacylation
+6425	1	0	0	0	1	1	1	glutaminyl-tRNA aminoacylation
+6424	3	0	0	0	1	1	1	glutamyl-tRNA aminoacylation
+6423	2	0	0	0	1	1	1	cysteinyl-tRNA aminoacylation
+6422	3	0	0	0	1	1	1	aspartyl-tRNA aminoacylation
+6421	2	0	0	0	1	1	1	asparaginyl-tRNA aminoacylation
+6420	2	0	0	0	1	1	1	arginyl-tRNA aminoacylation
+6418	18	0	0	0	1	1	1	tRNA aminoacylation for protein translation
+6417	13	0	0	0	1	1	1	regulation of protein biosynthesis
+6415	3	0	0	0	1	1	1	translational termination
+6414	13	0	0	0	1	1	1	translational elongation
+6413	28	0	0	0	1	1	1	translational initiation
+6412	254	1	0	1	0.8639	1	0.8639	protein biosynthesis
+45197	2	0	0	0	1	1	1	establishment and/or maintenance of epithelial cell polarity
+45191	2	0	0	0	1	1	1	regulation of isotype switching
+45190	3	0	0	0	1	1	1	isotype switching
+6409	1	0	0	0	1	1	1	tRNA-nucleus export
+6408	3	0	0	0	1	1	1	snRNA-nucleus export
+6407	1	0	0	0	1	1	1	rRNA-nucleus export
+6406	13	0	0	0	1	1	1	mRNA-nucleus export
+6405	14	0	0	0	1	1	1	RNA-nucleus export
+6403	18	0	0	0	1	1	1	RNA localization
+6402	8	0	0	0	1	1	1	mRNA catabolism
+6401	15	0	0	0	1	1	1	RNA catabolism
+6400	19	0	0	0	1	1	1	tRNA modification
+45189	2	0	0	0	1	1	1	connective tissue growth factor biosynthesis
+45188	1	0	0	0	1	1	1	"regulation of circadian sleep/wake cycle, non-REM sleep"
+45187	4	0	0	0	1	1	1	"regulation of circadian sleep/wake cycle, sleep"
+45185	1	0	0	0	1	1	1	maintenance of protein localization
+45176	1	0	0	0	1	1	1	apical protein localization
+45175	1	0	0	0	1	1	1	basal protein localization
+45168	1	0	0	0	1	1	1	cell-cell signaling involved in cell fate commitment
+45165	26	0	0	0	1	1	1	cell fate commitment
+45162	1	0	0	0	1	1	1	clustering of voltage gated sodium channels
+45161	2	0	0	0	1	1	1	ion channel clustering
+2011	2	0	0	0	1	1	1	morphogenesis of an epithelial sheet
+2009	24	0	0	0	1	1	1	morphogenesis of an epithelium
+5996	62	0	0	0	1	1	1	monosaccharide metabolism
+5992	1	0	0	0	1	1	1	trehalose biosynthesis
+5991	1	0	0	0	1	1	1	trehalose metabolism
+5990	1	0	0	0	1	1	1	lactose catabolism
+45143	1	0	0	0	1	1	1	"meiosis I, chromosome segregation"
+5989	2	0	0	0	1	1	1	lactose biosynthesis
+5988	2	0	0	0	1	1	1	lactose metabolism
+5984	2	0	0	0	1	1	1	disaccharide metabolism
+5983	1	0	0	0	1	1	1	starch catabolism
+5982	1	0	0	0	1	1	1	starch metabolism
+5980	3	0	0	0	1	1	1	glycogen catabolism
+45136	1	0	0	0	1	1	1	development of secondary sexual characteristics
+45132	3	0	0	0	1	1	1	meiotic chromosome segregation
+5978	9	0	0	0	1	1	1	glycogen biosynthesis
+5977	19	0	0	0	1	1	1	glycogen metabolism
+5976	25	0	0	0	1	1	1	polysaccharide metabolism
+5975	170	0	0	0	1	1	1	carbohydrate metabolism
+45124	2	0	0	0	1	1	1	regulation of bone resorption
+45123	3	0	0	0	1	1	1	cellular extravasation
+45116	1	0	0	0	1	1	1	protein neddylation
+45104	1	0	0	0	1	1	1	intermediate filament cytoskeleton organization and biogenesis
+45103	3	0	0	0	1	1	1	intermediate filament-based process
+1580	1	0	0	0	1	1	1	"perception of bitter taste, sensory transduction of chemical stimulus"
+1578	1	0	0	0	1	1	1	microtubule bundling
+1573	1	0	0	0	1	1	1	ganglioside metabolism
+1569	2	0	0	0	1	1	1	patterning of blood vessels
+1568	42	0	0	0	1	1	1	blood vessel development
+1561	2	0	0	0	1	1	1	fatty acid alpha-oxidation
+1558	41	0	0	0	1	1	1	regulation of cell growth
+1542	1	0	0	0	1	1	1	ovulation (sensu Mammalia)
+1541	3	0	0	0	1	1	1	ovarian follicle development
+1539	1	0	0	0	1	1	1	ciliary/flagellar motility
+1525	39	0	0	0	1	1	1	angiogenesis
+1523	3	0	0	0	1	1	1	retinoid metabolism
+1516	4	0	0	0	1	1	1	prostaglandin biosynthesis
+1514	1	0	0	0	1	1	1	selenocysteine incorporation
+1508	6	0	0	0	1	1	1	regulation of action potential
+1507	2	0	0	0	1	1	1	acetylcholine breakdown in synaptic cleft
+1505	47	0	0	0	1	1	1	regulation of neurotransmitter levels
+1504	6	0	0	0	1	1	1	neurotransmitter uptake
+1503	25	0	0	0	1	1	1	ossification
+1502	9	0	0	0	1	1	1	cartilage condensation
+1501	86	0	0	0	1	1	1	skeletal development
+18377	1	0	0	0	1	1	1	protein myristoylation
+6399	26	0	0	0	1	1	1	tRNA metabolism
+6398	2	0	0	0	1	1	1	histone mRNA 3'-end processing
+6397	83	0	0	0	1	1	1	mRNA processing
+6396	152	0	0	0	1	1	1	RNA processing
+6390	1	0	0	0	1	1	1	transcription from mitochondrial promoter
+6388	2	0	0	0	1	1	1	tRNA splicing
+6384	2	0	0	0	1	1	1	transcription initiation from Pol III promoter
+6383	9	0	0	0	1	1	1	transcription from Pol III promoter
+6382	1	0	0	0	1	1	1	adenosine to inosine editing
+6381	4	0	0	0	1	1	1	mRNA editing
+18348	3	0	0	0	1	1	1	protein amino acid geranylgeranylation
+18347	2	0	0	0	1	1	1	protein amino acid farnesylation
+18346	5	0	0	0	1	1	1	protein amino acid prenylation
+18344	3	0	0	0	1	1	1	protein geranylgeranylation
+18343	2	0	0	0	1	1	1	protein farnesylation
+18342	5	0	0	0	1	1	1	protein prenylation
+6379	2	0	0	0	1	1	1	mRNA cleavage
+6378	8	0	0	0	1	1	1	mRNA polyadenylation
+6376	8	0	0	0	1	1	1	mRNA splice site selection
+6371	4	0	0	0	1	1	1	mRNA splicing
+6370	2	0	0	0	1	1	1	mRNA capping
+6369	2	0	0	0	1	1	1	transcription termination from Pol II promoter
+6368	4	0	0	0	1	1	1	RNA elongation from Pol II promoter
+6367	22	0	0	0	1	1	1	transcription initiation from Pol II promoter
+6366	260	0	0	0	1	1	1	transcription from Pol II promoter
+6365	4	0	0	0	1	1	1	35S primary transcript processing
+6364	23	0	0	0	1	1	1	rRNA processing
+6361	2	0	0	0	1	1	1	transcription initiation from Pol I promoter
+6360	6	0	0	0	1	1	1	transcription from Pol I promoter
+6359	3	0	0	0	1	1	1	regulation of transcription from Pol III promoter
+6357	163	0	0	0	1	1	1	regulation of transcription from Pol II promoter
+6356	4	0	0	0	1	1	1	regulation of transcription from Pol I promoter
+6355	699	3	0	3	0.9178	1	0.9178	"regulation of transcription, DNA-dependent"
+6354	6	0	0	0	1	1	1	RNA elongation
+6353	3	0	0	0	1	1	1	transcription termination
+6352	27	0	0	0	1	1	1	transcription initiation
+6351	723	3	0	3	0.9291	1	0.9291	"transcription, DNA-dependent"
+6350	759	3	0	3	0.9435	1	0.9435	transcription
+18319	1	0	0	0	1	1	1	protein amino acid myristoylation
+6349	5	0	0	0	1	1	1	imprinting
+6348	6	0	0	0	1	1	1	chromatin silencing at telomere
+6347	2	0	0	0	1	1	1	chromatin silencing at HML and HMR (sensu Saccharomyces)
+6345	1	0	0	0	1	1	1	loss of chromatin silencing
+6343	1	0	0	0	1	1	1	establishment of chromatin silencing
+6342	12	0	0	0	1	1	1	chromatin silencing
+6338	23	0	0	0	1	1	1	chromatin remodeling
+6335	2	0	0	0	1	1	1	DNA replication-dependent nucleosome assembly
+6334	18	0	0	0	1	1	1	nucleosome assembly
+6333	36	0	0	0	1	1	1	chromatin assembly/disassembly
+6325	77	1	0	1	0.4475	1	0.4475	establishment and/or maintenance of chromatin architecture
+6323	80	1	0	1	0.4603	1	0.4603	DNA packaging
+6314	1	0	0	0	1	1	1	intron homing
+6313	1	0	0	0	1	1	1	DNA transposition
+6312	6	0	0	0	1	1	1	mitotic recombination
+6310	37	0	0	0	1	1	1	DNA recombination
+45091	2	0	0	0	1	1	1	regulation of retroviral genome replication
+45090	2	0	0	0	1	1	1	retroviral genome replication
+6309	6	0	0	0	1	1	1	DNA fragmentation
+6308	7	1	0	1	0.0521	1	0.0521	DNA catabolism
+6307	2	0	0	0	1	1	1	DNA dealkylation
+6306	12	0	0	0	1	1	1	DNA methylation
+6305	12	0	0	0	1	1	1	DNA alkylation
+6304	13	0	0	0	1	1	1	DNA modification
+6303	4	0	0	0	1	1	1	double-strand break repair via nonhomologous end-joining
+6302	7	0	0	0	1	1	1	double-strand break repair
+6301	3	0	0	0	1	1	1	postreplication repair
+45089	2	0	0	0	1	1	1	positive regulation of innate immune response
+45088	3	0	0	0	1	1	1	regulation of innate immune response
+45087	86	1	0	1	0.4849	1	0.4849	innate immune response
+45086	3	0	0	0	1	1	1	positive regulation of interleukin-2 biosynthesis
+45084	6	0	0	0	1	1	1	positive regulation of interleukin-12 biosynthesis
+45083	2	0	0	0	1	1	1	negative regulation of interleukin-12 biosynthesis
+45082	2	0	0	0	1	1	1	positive regulation of interleukin-10 biosynthesis
+45080	2	0	0	0	1	1	1	positive regulation of chemokine biosynthesis
+45079	1	0	0	0	1	1	1	negative regulation of chemokine biosynthesis
+45078	3	0	0	0	1	1	1	positive regulation of interferon-gamma biosynthesis
+45077	3	0	0	0	1	1	1	negative regulation of interferon-gamma biosynthesis
+45076	3	0	0	0	1	1	1	regulation of interleukin-2 biosynthesis
+45075	7	0	0	0	1	1	1	regulation of interleukin-12 biosynthesis
+45074	2	0	0	0	1	1	1	regulation of interleukin-10 biosynthesis
+45073	3	0	0	0	1	1	1	regulation of chemokine biosynthesis
+45072	5	0	0	0	1	1	1	regulation of interferon-gamma biosynthesis
+45070	1	0	0	0	1	1	1	positive regulation of viral genome replication
+45069	2	0	0	0	1	1	1	regulation of viral genome replication
+45065	1	0	0	0	1	1	1	cytotoxic T-cell differentiation
+45064	2	0	0	0	1	1	1	T-helper 2 cell differentiation
+45063	1	0	0	0	1	1	1	T-helper 1 cell differentiation
+45061	1	0	0	0	1	1	1	thymic T-cell selection
+45059	1	0	0	0	1	1	1	positive thymic T-cell selection
+45058	3	0	0	0	1	1	1	T-cell selection
+45053	1	0	0	0	1	1	1	protein-Golgi retention
+45047	15	0	0	0	1	1	1	protein-ER targeting
+45045	85	0	0	0	1	1	1	secretory pathway
+45034	4	0	0	0	1	1	1	neuroblast cell division
+45026	5	0	0	0	1	1	1	plasma membrane fusion
+45022	2	0	0	0	1	1	1	early endosome to late endosome transport
+45019	1	0	0	0	1	1	1	negative regulation of nitric oxide biosynthesis
+45017	1	0	0	0	1	1	1	glycerolipid biosynthesis
+45014	1	0	0	0	1	1	1	negative regulation of transcription by glucose
+45013	1	0	0	0	1	1	1	negative regulation of transcription by carbon catabolites
+45011	2	0	0	0	1	1	1	actin cable assembly
+45010	2	0	0	0	1	1	1	actin nucleation
+45005	12	0	0	0	1	1	1	maintenance of fidelity during DNA-dependent DNA replication
+45003	1	0	0	0	1	1	1	double-strand break repair via synthesis-dependent strand annealing
+45002	1	0	0	0	1	1	1	double-strand break repair via single-strand annealing
+1403	5	0	0	0	1	1	1	invasive growth (sensu Saccharomyces)
+1402	1	0	0	0	1	1	1	signal transduction during filamentous growth
+18276	1	0	0	0	1	1	1	isopeptide cross-linking via N6-glycyl-L-lysine
+18262	1	0	0	0	1	1	1	isopeptide cross-linking
+6299	1	0	0	0	1	1	1	short patch mismatch repair system
+6298	12	0	0	0	1	1	1	mismatch repair
+6296	1	0	0	0	1	1	1	"nucleotide-excision repair, DNA incision, 5'-to lesion"
+6290	1	0	0	0	1	1	1	pyrimidine dimer repair
+6289	18	0	0	0	1	1	1	nucleotide-excision repair
+6287	1	0	0	0	1	1	1	"base-excision repair, gap-filling"
+6285	1	0	0	0	1	1	1	"base-excision repair, AP site formation"
+6284	13	0	0	0	1	1	1	base-excision repair
+6283	2	0	0	0	1	1	1	transcription-coupled nucleotide-excision repair
+6282	2	0	0	0	1	1	1	regulation of DNA repair
+6281	86	1	0	1	0.4849	1	0.4849	DNA repair
+6280	2	0	0	0	1	1	1	mutagenesis
+6278	1	0	0	0	1	1	1	RNA-dependent DNA replication
+6277	1	0	0	0	1	1	1	DNA amplification
+6276	1	0	0	0	1	1	1	plasmid maintenance
+6275	5	0	0	0	1	1	1	regulation of DNA replication
+6274	1	0	0	0	1	1	1	DNA replication termination
+6273	1	0	0	0	1	1	1	lagging strand elongation
+6272	3	0	0	0	1	1	1	leading strand elongation
+6271	5	0	0	0	1	1	1	DNA strand elongation
+6270	7	0	0	0	1	1	1	DNA replication initiation
+6269	2	0	0	0	1	1	1	"DNA replication, priming"
+6268	4	0	0	0	1	1	1	DNA unwinding
+6267	2	0	0	0	1	1	1	pre-replicative complex formation and maintenance
+6266	3	0	0	0	1	1	1	DNA ligation
+6265	5	0	0	0	1	1	1	DNA topological change
+6261	36	0	0	0	1	1	1	DNA-dependent DNA replication
+6260	73	0	0	0	1	1	1	DNA replication
+6259	229	3	0	3	0.2524	1	0.2524	DNA metabolism
+18212	11	0	0	0	1	1	1	peptidyl-tyrosine modification
+6244	2	0	0	0	1	1	1	pyrimidine nucleotide catabolism
+6241	5	0	0	0	1	1	1	CTP biosynthesis
+18208	1	0	0	0	1	1	1	peptidyl-proline modification
+18206	2	0	0	0	1	1	1	peptidyl-methionine modification
+18205	2	0	0	0	1	1	1	peptidyl-lysine modification
+18201	1	0	0	0	1	1	1	peptidyl-glycine modification
+6235	3	0	0	0	1	1	1	dTTP biosynthesis
+6233	2	0	0	0	1	1	1	dTDP biosynthesis
+6231	2	0	0	0	1	1	1	dTMP biosynthesis
+6230	1	0	0	0	1	1	1	TMP biosynthesis
+6228	5	0	0	0	1	1	1	UTP biosynthesis
+921	1	0	0	0	1	1	1	septin ring assembly
+6223	1	0	0	0	1	1	1	uracil salvage
+6221	12	0	0	0	1	1	1	pyrimidine nucleotide biosynthesis
+6220	17	0	0	0	1	1	1	pyrimidine nucleotide metabolism
+917	3	0	0	0	1	1	1	barrier septum formation
+910	54	0	0	0	1	1	1	cytokinesis
+6213	1	0	0	0	1	1	1	pyrimidine nucleoside metabolism
+904	8	0	0	0	1	1	1	cellular morphogenesis during differentiation
+902	56	0	0	0	1	1	1	cellular morphogenesis
+6207	6	0	0	0	1	1	1	'de novo' pyrimidine base biosynthesis
+6206	7	0	0	0	1	1	1	pyrimidine base metabolism
+6203	1	0	0	0	1	1	1	dGTP catabolism
+6200	1	0	0	0	1	1	1	ATP catabolism
+1308	1	0	0	0	1	1	1	loss of chromatin silencing during replicative cell aging
+1304	1	0	0	0	1	1	1	progressive alteration of chromatin during replicative cell aging
+1302	1	0	0	0	1	1	1	replicative cell aging
+1301	1	0	0	0	1	1	1	progressive alteration of chromatin during cell aging
+18193	16	0	0	0	1	1	1	peptidyl-amino acid modification
+6196	1	0	0	0	1	1	1	AMP catabolism
+6195	3	0	0	0	1	1	1	purine nucleotide catabolism
+18159	1	0	0	0	1	1	1	peptidyl-methionine oxidation
+18158	1	0	0	0	1	1	1	protein amino acid oxidation
+6189	4	0	0	0	1	1	1	'de novo' IMP biosynthesis
+6188	4	0	0	0	1	1	1	IMP biosynthesis
+40037	1	0	0	0	1	1	1	negative regulation of fibroblast growth factor receptor signaling pathway
+6183	6	0	0	0	1	1	1	GTP biosynthesis
+40036	1	0	0	0	1	1	1	regulation of fibroblast growth factor receptor signaling pathway
+6182	6	0	0	0	1	1	1	cGMP biosynthesis
+18149	4	0	0	0	1	1	1	peptide cross-linking
+18144	1	0	0	0	1	1	1	RNA-protein covalent cross-linking
+18143	1	0	0	0	1	1	1	nucleic acid-protein covalent cross-linking
+6177	2	0	0	0	1	1	1	GMP biosynthesis
+40029	27	0	0	0	1	1	1	"regulation of gene expression, epigenetic"
+6173	1	0	0	0	1	1	1	dADP biosynthesis
+6172	1	0	0	0	1	1	1	ADP biosynthesis
+6171	8	0	0	0	1	1	1	cAMP biosynthesis
+40023	2	0	0	0	1	1	1	nuclear positioning
+40020	2	0	0	0	1	1	1	regulation of meiosis
+6168	2	0	0	0	1	1	1	adenine salvage
+6166	4	0	0	0	1	1	1	purine ribonucleoside salvage
+6165	1	0	0	0	1	1	1	nucleoside diphosphate phosphorylation
+40018	1	0	0	0	1	1	1	positive regulation of body size
+6164	22	0	0	0	1	1	1	purine nucleotide biosynthesis
+6163	25	0	0	0	1	1	1	purine nucleotide metabolism
+40016	2	0	0	0	1	1	1	embryonic cleavage
+40015	2	0	0	0	1	1	1	negative regulation of body size
+40014	5	0	0	0	1	1	1	regulation of body size
+40012	1	0	0	0	1	1	1	regulation of locomotion
+40011	2	0	0	0	1	1	1	locomotion
+40009	1	0	0	0	1	1	1	regulation of growth rate
+40008	14	0	0	0	1	1	1	regulation of growth
+40007	34	1	0	1	0.2296	1	0.2296	growth
+6144	6	0	0	0	1	1	1	purine base metabolism
+18108	10	0	0	0	1	1	1	peptidyl-tyrosine phosphorylation
+6139	1136	7	0	7	0.7963	1	0.7963	"nucleobase, nucleoside, nucleotide and nucleic acid metabolism"
+6134	1	0	0	0	1	1	1	dihydrobiopterin reduction
+6129	15	0	0	0	1	1	1	protein-disulfide reduction
+6128	2	0	0	0	1	1	1	oxidized glutathione reduction
+6125	1	0	0	0	1	1	1	thioredoxin pathway
+6122	2	0	0	0	1	1	1	"mitochondrial electron transport, ubiquinol to cytochrome c"
+6120	13	0	0	0	1	1	1	"mitochondrial electron transport, NADH to ubiquinone"
+6119	18	0	0	0	1	1	1	oxidative phosphorylation
+6118	137	1	0	1	0.6544	1	0.6544	electron transport
+6113	4	0	0	0	1	1	1	fermentation
+6112	23	0	0	0	1	1	1	energy reserve metabolism
+6110	1	0	0	0	1	1	1	regulation of glycolysis
+6109	1	0	0	0	1	1	1	regulation of carbohydrate metabolism
+6108	3	0	0	0	1	1	1	malate metabolism
+6106	1	0	0	0	1	1	1	fumarate metabolism
+6105	1	0	0	0	1	1	1	succinate metabolism
+6104	1	0	0	0	1	1	1	succinyl-CoA metabolism
+6102	3	0	0	0	1	1	1	isocitrate metabolism
+6101	2	0	0	0	1	1	1	citrate metabolism
+6100	10	0	0	0	1	1	1	TCA intermediate metabolism
+18065	2	0	0	0	1	1	1	protein-cofactor linkage
+6099	15	0	0	0	1	1	1	tricarboxylic acid cycle
+6098	8	0	0	0	1	1	1	pentose-phosphate shunt
+6097	3	0	0	0	1	1	1	glyoxylate cycle
+6096	26	0	0	0	1	1	1	glycolysis
+6094	11	0	0	0	1	1	1	gluconeogenesis
+6092	52	0	0	0	1	1	1	main pathways of carbohydrate metabolism
+6091	138	0	0	0	1	1	1	energy pathways
+6090	4	0	0	0	1	1	1	pyruvate metabolism
+6086	2	0	0	0	1	1	1	acetyl-CoA biosynthesis from pyruvate
+6085	4	0	0	0	1	1	1	acetyl-CoA biosynthesis
+6084	9	0	0	0	1	1	1	acetyl-CoA metabolism
+6083	5	0	0	0	1	1	1	acetate metabolism
+6082	199	0	0	0	1	1	1	organic acid metabolism
+6081	9	0	0	0	1	1	1	aldehyde metabolism
+6080	1	0	0	0	1	1	1	mannan metabolism
+6073	20	0	0	0	1	1	1	glucan metabolism
+6072	2	0	0	0	1	1	1	glycerol-3-phosphate metabolism
+6071	3	0	0	0	1	1	1	glycerol metabolism
+768	1	0	0	0	1	1	1	syncytium formation by plasma membrane fusion
+767	1	0	0	0	1	1	1	cellular morphogenesis during conjugation
+6069	5	0	0	0	1	1	1	ethanol oxidation
+6067	5	0	0	0	1	1	1	ethanol metabolism
+6066	121	0	0	0	1	1	1	alcohol metabolism
+6065	1	0	0	0	1	1	1	UDP-glucuronate biosynthesis
+6064	1	0	0	0	1	1	1	glucuronate catabolism
+6063	3	0	0	0	1	1	1	uronic acid metabolism
+6060	1	0	0	0	1	1	1	sorbitol metabolism
+754	1	0	0	0	1	1	1	adaptation to pheromone during conjugation with cellular fusion
+753	1	0	0	0	1	1	1	cellular morphogenesis during conjugation with cellular fusion
+6059	1	0	0	0	1	1	1	hexitol metabolism
+750	2	0	0	0	1	1	1	signal transduction during conjugation with cellular fusion
+6055	1	0	0	0	1	1	1	CMP-N-acetylneuraminate biosynthesis
+6054	1	0	0	0	1	1	1	N-acetylneuraminate metabolism
+6051	1	0	0	0	1	1	1	N-acetylmannosamine metabolism
+6050	1	0	0	0	1	1	1	mannosamine metabolism
+749	2	0	0	0	1	1	1	response to pheromone during conjugation with cellular fusion
+747	8	0	0	0	1	1	1	conjugation with cellular fusion
+746	8	0	0	0	1	1	1	conjugation
+742	1	0	0	0	1	1	1	karyogamy during conjugation with cellular fusion
+6048	1	0	0	0	1	1	1	UDP-N-acetylglucosamine biosynthesis
+741	2	0	0	0	1	1	1	karyogamy
+6047	2	0	0	0	1	1	1	UDP-N-acetylglucosamine metabolism
+6045	2	0	0	0	1	1	1	N-acetylglucosamine biosynthesis
+6044	5	0	0	0	1	1	1	N-acetylglucosamine metabolism
+6043	1	0	0	0	1	1	1	glucosamine catabolism
+6042	2	0	0	0	1	1	1	glucosamine biosynthesis
+6041	5	0	0	0	1	1	1	glucosamine metabolism
+6040	7	0	0	0	1	1	1	amino sugar metabolism
+735	1	0	0	0	1	1	1	removal of nonhomologous ends
+731	1	0	0	0	1	1	1	DNA repair synthesis
+6033	1	0	0	0	1	1	1	chitin localization
+6032	2	0	0	0	1	1	1	chitin catabolism
+6031	1	0	0	0	1	1	1	chitin biosynthesis
+6030	4	0	0	0	1	1	1	chitin metabolism
+726	5	0	0	0	1	1	1	non-recombinational repair
+725	4	0	0	0	1	1	1	recombinational repair
+724	3	0	0	0	1	1	1	double-strand break repair via homologous recombination
+6029	7	0	0	0	1	1	1	proteoglycan metabolism
+723	16	0	0	0	1	1	1	telomere maintenance
+6027	3	0	0	0	1	1	1	glycosaminoglycan catabolism
+6026	3	0	0	0	1	1	1	aminoglycan catabolism
+6024	10	0	0	0	1	1	1	glycosaminoglycan biosynthesis
+6023	11	0	0	0	1	1	1	aminoglycan biosynthesis
+6022	16	0	0	0	1	1	1	aminoglycan metabolism
+6021	2	0	0	0	1	1	1	myo-inositol biosynthesis
+6020	2	0	0	0	1	1	1	myo-inositol metabolism
+6014	1	0	0	0	1	1	1	D-ribose metabolism
+6013	1	0	0	0	1	1	1	mannose metabolism
+6012	4	0	0	0	1	1	1	galactose metabolism
+6011	1	0	0	0	1	1	1	UDP-glucose metabolism
+6010	3	0	0	0	1	1	1	glucose 6-phosphate utilization
+6008	1	0	0	0	1	1	1	glucose 1-phosphate utilization
+9997	1	0	0	0	1	1	1	negative regulation of cardioblast cell fate
+6007	33	0	0	0	1	1	1	glucose catabolism
+9996	1	0	0	0	1	1	1	negative regulation of cell fate
+6006	47	0	0	0	1	1	1	glucose metabolism
+6005	2	0	0	0	1	1	1	L-fucose biosynthesis
+9994	1	0	0	0	1	1	1	oocyte differentiation
+6004	8	0	0	0	1	1	1	fucose metabolism
+9993	9	0	0	0	1	1	1	oogenesis (sensu Insecta)
+6003	2	0	0	0	1	1	1	"fructose 2,6-bisphosphate metabolism"
+6002	4	0	0	0	1	1	1	fructose 6-phosphate metabolism
+9991	8	0	0	0	1	1	1	response to extracellular stimulus
+6000	9	0	0	0	1	1	1	fructose metabolism
+9988	2	0	0	0	1	1	1	cell-cell recognition
+9987	2768	16	0	16	0.968	1	0.968	cellular process
+9968	9	0	0	0	1	1	1	negative regulation of signal transduction
+9967	3	0	0	0	1	1	1	positive regulation of signal transduction
+9966	33	1	0	1	0.2236	1	0.2236	regulation of signal transduction
+9965	4	0	0	0	1	1	1	leaf morphogenesis
+9958	1	0	0	0	1	1	1	positive gravitropism
+9955	1	0	0	0	1	1	1	adaxial/abaxial pattern formation
+9954	1	0	0	0	1	1	1	proximal/distal pattern formation
+9953	10	0	0	0	1	1	1	dorsal/ventral pattern formation
+9952	21	0	0	0	1	1	1	anterior/posterior pattern formation
+9950	4	0	0	0	1	1	1	dorsal/ventral axis specification
+9948	9	0	0	0	1	1	1	anterior/posterior axis specification
+9935	1	0	0	0	1	1	1	nutrient uptake
+9933	2	0	0	0	1	1	1	meristem organization
+9932	1	0	0	0	1	1	1	tip growth
+9926	3	0	0	0	1	1	1	auxin polar transport
+9914	3	0	0	0	1	1	1	hormone transport
+9913	5	0	0	0	1	1	1	epidermal cell differentiation
+9912	1	0	0	0	1	1	1	hair cell fate commitment
+9910	1	1	0	1	0.0076	1	0.0076	negative regulation of flower development
+9909	3	1	0	1	0.0227	1	0.0227	regulation of flower development
+9908	6	1	0	1	0.0449	1	0.0449	flower development
+9901	1	0	0	0	1	1	1	anther dehiscence
+9900	1	0	0	0	1	1	1	dehiscence
+50982	46	0	0	0	1	1	1	detection of mechanical stimulus
+5513	5	0	0	0	1	1	1	calcium ion sensing
+50957	81	1	0	1	0.4644	1	0.4644	equilibrioception
+50954	46	0	0	0	1	1	1	sensory perception of mechanical stimulus
+50953	81	1	0	1	0.4644	1	0.4644	sensory perception of light
+50931	2	0	0	0	1	1	1	pigment cell differentiation
+50930	1	0	0	0	1	1	1	induction of positive chemotaxis
+50927	1	0	0	0	1	1	1	positive regulation of positive chemotaxis
+50926	1	0	0	0	1	1	1	regulation of positive chemotaxis
+50921	1	0	0	0	1	1	1	positive regulation of chemotaxis
+50920	1	0	0	0	1	1	1	regulation of chemotaxis
+50918	1	0	0	0	1	1	1	positive chemotaxis
+50913	1	0	0	0	1	1	1	perception of bitter taste
+50912	1	0	0	0	1	1	1	"perception of taste, sensory transduction of chemical stimulus"
+50909	2	0	0	0	1	1	1	perception of taste
+50907	1	0	0	0	1	1	1	sensory transduction of chemical stimulus
+50906	1	0	0	0	1	1	1	sensory transduction
+50905	152	0	0	0	1	1	1	neuromuscular physiological process
+50900	12	0	0	0	1	1	1	immune cell migration
+9894	5	0	0	0	1	1	1	regulation of catabolism
+9893	13	0	0	0	1	1	1	positive regulation of metabolism
+9892	8	0	0	0	1	1	1	negative regulation of metabolism
+9891	13	0	0	0	1	1	1	positive regulation of biosynthesis
+9890	7	0	0	0	1	1	1	negative regulation of biosynthesis
+9889	34	0	0	0	1	1	1	regulation of biosynthesis
+9888	74	0	0	0	1	1	1	histogenesis
+9887	694	2	0	2	0.9765	1	0.9765	organogenesis
+9880	20	0	0	0	1	1	1	embryonic pattern specification
+9877	1	0	0	0	1	1	1	nodulation
+9875	1	0	0	0	1	1	1	pollen-pistil interaction
+9865	1	0	0	0	1	1	1	pollen tube adhesion
+9863	2	0	0	0	1	1	1	salicylic acid mediated signaling pathway
+9862	2	0	0	0	1	1	1	"systemic acquired resistance, salicylic acid mediated signaling pathway"
+9861	4	0	0	0	1	1	1	jasmonic acid/ethylene-dependent systemic resistance
+9860	1	0	0	0	1	1	1	pollen tube growth
+9858	1	0	0	0	1	1	1	compatible pollen-pistil interaction
+9856	1	0	0	0	1	1	1	post-pollination
+9855	8	0	0	0	1	1	1	determination of bilateral symmetry
+9854	2	0	0	0	1	1	1	oxidative photosynthetic carbon pathway
+9853	4	0	0	0	1	1	1	photorespiration
+9851	1	0	0	0	1	1	1	auxin biosynthesis
+9850	2	0	0	0	1	1	1	auxin metabolism
+9847	1	0	0	0	1	1	1	spore germination
+9844	1	0	0	0	1	1	1	germination
+9835	1	0	0	0	1	1	1	ripening
+9832	1	0	0	0	1	1	1	cell wall biosynthesis (sensu Magnoliophyta)
+9826	4	0	0	0	1	1	1	cell elongation
+9825	5	0	0	0	1	1	1	cell expansion
+9816	1	0	0	0	1	1	1	"defense response to pathogenic bacteria, incompatible interaction"
+9814	7	0	0	0	1	1	1	"defense response to pathogen, incompatible interaction"
+9813	2	0	0	0	1	1	1	flavonoid biosynthesis
+9812	2	0	0	0	1	1	1	flavonoid metabolism
+9809	2	0	0	0	1	1	1	lignin biosynthesis
+9808	2	0	0	0	1	1	1	lignin metabolism
+9807	2	0	0	0	1	1	1	lignan biosynthesis
+9806	2	0	0	0	1	1	1	lignan metabolism
+50896	847	5	0	5	0.7982	1	0.7982	response to stimulus
+50895	4	0	0	0	1	1	1	response to circadian rhythm
+50892	1	0	0	0	1	1	1	intestinal absorption
+50885	81	1	0	1	0.4644	1	0.4644	regulation of balance
+50881	81	1	0	1	0.4644	1	0.4644	musculoskeletal movement
+50880	4	0	0	0	1	1	1	regulation of blood vessel size
+50879	230	1	0	1	0.8349	1	0.8349	organismal movement
+50878	59	2	0	2	0.0737	1	0.0737	regulation of body fluids
+50877	298	1	0	1	0.9048	1	0.9048	neurophysiological process
+50876	30	0	0	0	1	1	1	reproductive physiological process
+50875	2019	14	0	14	0.733	1	0.733	cellular physiological process
+50874	794	4	0	4	0.8767	1	0.8767	organismal physiological process
+16999	1	0	0	0	1	1	1	antibiotic metabolism
+16998	2	0	0	0	1	1	1	cell wall catabolism
+50832	5	0	0	0	1	1	1	defense response to fungi
+50830	2	0	0	0	1	1	1	defense response to Gram-positive bacteria
+16973	3	0	0	0	1	1	1	poly(A)+ mRNA-nucleus export
+50819	5	0	0	0	1	1	1	negative regulation of coagulation
+50818	5	0	0	0	1	1	1	regulation of coagulation
+50817	50	2	0	2	0.055	1	0.055	coagulation
+50808	16	0	0	0	1	1	1	synapse organization and biogenesis
+50802	4	0	0	0	1	1	1	"circadian sleep/wake cycle, sleep"
+50801	50	0	0	0	1	1	1	ion homeostasis
+16926	1	0	0	0	1	1	1	protein desumoylation
+16925	1	0	0	0	1	1	1	protein sumoylation
+578	7	0	0	0	1	1	1	embryonic axis specification
+12503	1	0	0	0	1	1	1	induction of non-apoptotic programmed cell death
+12502	71	0	0	0	1	1	1	induction of programmed cell death
+12501	209	3	0	3	0.2117	1	0.2117	programmed cell death
+9799	8	0	0	0	1	1	1	determination of symmetry
+9798	12	0	0	0	1	1	1	axis specification
+9796	1	0	0	0	1	1	1	cellularization (sensu Animalia)
+9795	44	0	0	0	1	1	1	embryonic morphogenesis
+9792	41	0	0	0	1	1	1	embryonic development (sensu Animalia)
+9791	11	1	0	1	0.0807	1	0.0807	post-embryonic development
+9790	96	0	0	0	1	1	1	embryonic development
+9789	1	0	0	0	1	1	1	positive regulation of abscisic acid mediated signaling
+9787	1	0	0	0	1	1	1	regulation of abscisic acid mediated signaling
+9785	1	0	0	0	1	1	1	blue light signaling pathway
+9775	1	0	0	0	1	1	1	photosynthetic electron transport in cytochrome b6/f
+9767	1	0	0	0	1	1	1	photosynthetic electron transport
+9755	3	0	0	0	1	1	1	hormone mediated signaling
+9751	2	0	0	0	1	1	1	response to salicylic acid stimulus
+9744	2	0	0	0	1	1	1	response to sucrose stimulus
+9743	2	0	0	0	1	1	1	response to carbohydrate stimulus
+9742	1	0	0	0	1	1	1	brassinosteroid mediated signaling
+9741	1	0	0	0	1	1	1	response to brassinosteroid stimulus
+9738	1	0	0	0	1	1	1	abscisic acid mediated signaling
+9737	3	0	0	0	1	1	1	response to abscisic acid stimulus
+9734	1	0	0	0	1	1	1	auxin mediated signaling
+9733	3	0	0	0	1	1	1	response to auxin stimulus
+9729	1	0	0	0	1	1	1	detection of brassinosteroid stimulus
+9726	2	0	0	0	1	1	1	detection of endogenous stimulus
+9725	9	0	0	0	1	1	1	response to hormone stimulus
+9723	1	0	0	0	1	1	1	response to ethylene stimulus
+9720	2	0	0	0	1	1	1	detection of hormone stimulus
+9719	120	1	0	1	0.605	1	0.605	response to endogenous stimulus
+9718	1	0	0	0	1	1	1	anthocyanin biosynthesis
+9712	1	0	0	0	1	1	1	catechol metabolism
+50798	3	0	0	0	1	1	1	activated T-cell proliferation
+50796	1	0	0	0	1	1	1	regulation of insulin secretion
+50795	7	0	0	0	1	1	1	regulation of behavior
+50794	268	1	0	1	0.8785	1	0.8785	regulation of cellular process
+50792	3	0	0	0	1	1	1	regulation of viral life cycle
+50791	40	0	0	0	1	1	1	regulation of physiological process
+50790	35	0	0	0	1	1	1	regulation of enzyme activity
+50789	332	1	0	1	0.9279	1	0.9279	regulation of biological process
+50787	2	0	0	0	1	1	1	detoxification of mercury ion
+50783	2	0	0	0	1	1	1	cocaine metabolism
+50778	3	0	0	0	1	1	1	positive regulation of immune response
+50776	4	0	0	0	1	1	1	regulation of immune response
+50774	2	0	0	0	1	1	1	negative regulation of dendrite morphogenesis
+50773	3	0	0	0	1	1	1	regulation of dendrite morphogenesis
+50769	1	0	0	0	1	1	1	positive regulation of neurogenesis
+50768	2	0	0	0	1	1	1	negative regulation of neurogenesis
+50767	4	0	0	0	1	1	1	regulation of neurogenesis
+50766	5	0	0	0	1	1	1	positive regulation of phagocytosis
+50764	5	0	0	0	1	1	1	regulation of phagocytosis
+50760	1	0	0	0	1	1	1	negative regulation of thymidylate synthase biosynthesis
+50758	1	0	0	0	1	1	1	regulation of thymidylate synthase biosynthesis
+50757	1	0	0	0	1	1	1	thymidylate synthase biosynthesis
+50756	1	0	0	0	1	1	1	fractalkine metabolism
+50755	4	0	0	0	1	1	1	chemokine metabolism
+50754	1	0	0	0	1	1	1	positive regulation of fractalkine biosynthesis
+50752	1	0	0	0	1	1	1	regulation of fractalkine biosynthesis
+50751	1	0	0	0	1	1	1	fractalkine biosynthesis
+50731	1	0	0	0	1	1	1	positive regulation of peptidyl-tyrosine phosphorylation
+50730	5	0	0	0	1	1	1	regulation of peptidyl-tyrosine phosphorylation
+50727	1	0	0	0	1	1	1	regulation of inflammatory response
+50725	1	0	0	0	1	1	1	positive regulation of interleukin-1 beta biosynthesis
+50722	1	0	0	0	1	1	1	regulation of interleukin-1 beta biosynthesis
+50720	1	0	0	0	1	1	1	interleukin-1 beta biosynthesis
+50715	1	0	0	0	1	1	1	positive regulation of cytokine secretion
+50714	3	0	0	0	1	1	1	positive regulation of protein secretion
+50708	3	0	0	0	1	1	1	regulation of protein secretion
+50707	1	0	0	0	1	1	1	regulation of cytokine secretion
+20027	3	0	0	0	1	1	1	hemoglobin metabolism
+20012	1	0	0	0	1	1	1	evasion of host immune response
+9699	3	0	0	0	1	1	1	phenylpropanoid biosynthesis
+9698	3	0	0	0	1	1	1	phenylpropanoid metabolism
+9695	3	0	0	0	1	1	1	jasmonic acid biosynthesis
+9694	3	0	0	0	1	1	1	jasmonic acid metabolism
+9693	1	0	0	0	1	1	1	ethylene biosynthesis
+9692	1	0	0	0	1	1	1	ethylene metabolism
+9684	1	0	0	0	1	1	1	indoleacetic acid biosynthesis
+9683	1	0	0	0	1	1	1	indoleacetic acid metabolism
+9664	1	0	0	0	1	1	1	cell wall organization and biogenesis (sensu Magnoliophyta)
+9653	770	2	0	2	0.9868	1	0.9868	morphogenesis
+9651	2	0	0	0	1	1	1	salinity response
+9649	2	0	0	0	1	1	1	entrainment of circadian clock
+9648	5	0	0	0	1	1	1	response to photoperiod
+9638	1	0	0	0	1	1	1	phototropism
+9637	1	0	0	0	1	1	1	response to blue light
+9636	11	0	0	0	1	1	1	response to toxin
+9635	1	0	0	0	1	1	1	response to herbicide
+9631	1	0	0	0	1	1	1	cold acclimation
+9630	2	0	0	0	1	1	1	gravitropism
+9629	2	0	0	0	1	1	1	response to gravity
+9628	233	0	0	0	1	1	1	response to abiotic stimulus
+9627	2	0	0	0	1	1	1	systemic acquired resistance
+9626	2	0	0	0	1	1	1	hypersensitive response
+9624	1	0	0	0	1	1	1	response to nematodes
+9621	2	0	0	0	1	1	1	response to pathogenic fungi
+9620	8	0	0	0	1	1	1	response to fungi
+9618	13	0	0	0	1	1	1	response to pathogenic bacteria
+9617	26	0	0	0	1	1	1	response to bacteria
+9615	9	0	0	0	1	1	1	response to virus
+9613	227	1	0	1	0.8309	1	0.8309	response to pest/pathogen/parasite
+9611	142	2	0	2	0.2947	1	0.2947	response to wounding
+9607	428	2	0	2	0.8503	1	0.8503	response to biotic stimulus
+9606	2	0	0	0	1	1	1	tropism
+9605	706	4	0	4	0.807	1	0.807	response to external stimulus
+50679	1	0	0	0	1	1	1	positive regulation of epithelial cell proliferation
+50678	1	0	0	0	1	1	1	regulation of epithelial cell proliferation
+50677	1	0	0	0	1	1	1	positive regulation of urothelial cell proliferation
+50675	1	0	0	0	1	1	1	regulation of urothelial cell proliferation
+50674	1	0	0	0	1	1	1	urothelial cell proliferation
+50673	1	0	0	0	1	1	1	epithelial cell proliferation
+50672	1	0	0	0	1	1	1	negative regulation of lymphocyte proliferation
+50671	7	0	0	0	1	1	1	positive regulation of lymphocyte proliferation
+50670	7	0	0	0	1	1	1	regulation of lymphocyte proliferation
+50667	2	0	0	0	1	1	1	homocysteine metabolism
+50666	2	0	0	0	1	1	1	regulation of homocysteine metabolism
+50663	1	0	0	0	1	1	1	cytokine secretion
+50658	14	0	0	0	1	1	1	RNA transport
+50657	14	0	0	0	1	1	1	nucleic acid transport
+50654	1	0	0	0	1	1	1	chondroitin sulfate proteoglycan metabolism
+50650	1	0	0	0	1	1	1	chondroitin sulfate proteoglycan biosynthesis
+398	47	0	0	0	1	1	1	"nuclear mRNA splicing, via spliceosome"
+394	2	0	0	0	1	1	1	"RNA splicing, via endonucleolytic cleavage and ligation"
+387	3	0	0	0	1	1	1	spliceosomal snRNP biogenesis
+377	47	0	0	0	1	1	1	"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"
+375	47	0	0	0	1	1	1	"RNA splicing, via transesterification reactions"
+321	1	0	0	0	1	1	1	re-entry into mitotic cell cycle after pheromone arrest
+320	3	0	0	0	1	1	1	re-entry into mitotic cell cycle
+305	1	0	0	0	1	1	1	response to oxygen radicals
+9598	3	0	0	0	1	1	1	detection of pathogenic bacteria
+303	1	0	0	0	1	1	1	response to superoxide
+9597	1	0	0	0	1	1	1	detection of virus
+302	6	0	0	0	1	1	1	response to reactive oxygen species
+9596	8	0	0	0	1	1	1	detection of pest/pathogen/parasite
+301	2	0	0	0	1	1	1	"retrograde transport, vesicle recycling within Golgi"
+9595	8	0	0	0	1	1	1	detection of biotic stimulus
+9593	6	0	0	0	1	1	1	detection of chemical substance
+9589	1	0	0	0	1	1	1	detection of UV
+17196	1	0	0	0	1	1	1	N-terminal peptidyl-methionine acetylation
+9586	2	0	0	0	1	1	1	rhodopsin mediated phototransduction
+9585	1	0	0	0	1	1	1	"red, far-red light phototransduction"
+9584	2	0	0	0	1	1	1	detection of visible light
+9583	15	0	0	0	1	1	1	detection of light
+9582	66	0	0	0	1	1	1	detection of abiotic stimulus
+9581	171	1	0	1	0.7358	1	0.7358	detection of external stimulus
+9566	10	0	0	0	1	1	1	fertilization
+9555	2	0	0	0	1	1	1	male gametophyte development
+9552	2	0	0	0	1	1	1	gamete generation (sensu Magnoliophyta)
+17158	4	0	0	0	1	1	1	regulation of calcium ion-dependent exocytosis
+17157	8	0	0	0	1	1	1	regulation of exocytosis
+17156	5	0	0	0	1	1	1	calcium ion-dependent exocytosis
+17148	2	0	0	0	1	1	1	negative regulation of protein biosynthesis
+17145	3	0	0	0	1	1	1	stem cell renewal
+17144	2	0	0	0	1	1	1	drug metabolism
+17121	3	0	0	0	1	1	1	phospholipid scrambling
+42994	5	0	0	0	1	1	1	cytoplasmic sequestering of transcription factor
+42993	4	0	0	0	1	1	1	positive regulation of transcription factor-nucleus import
+42992	5	0	0	0	1	1	1	negative regulation of transcription factor-nucleus import
+42991	9	0	0	0	1	1	1	transcription factor-nucleus import
+42990	9	0	0	0	1	1	1	regulation of transcription factor-nucleus import
+42989	1	0	0	0	1	1	1	sequestering of actin monomers
+42982	2	0	0	0	1	1	1	amyloid precursor protein metabolism
+42981	128	1	0	1	0.6291	1	0.6291	regulation of apoptosis
+48285	1	0	0	0	1	1	1	organelle fission
+48284	3	0	0	0	1	1	1	organelle fusion
+42977	1	0	0	0	1	1	1	tyrosine phosphorylation of JAK2 protein
+42976	1	0	0	0	1	1	1	tyrosine phosphorylation of JAK protein
+48278	8	0	0	0	1	1	1	vesicle docking
+48276	3	0	0	0	1	1	1	gastrulation (sensu Vertebrata)
+48272	1	0	0	0	1	1	1	trichome morphogenesis
+48271	1	0	0	0	1	1	1	trichome differentiation
+48268	2	0	0	0	1	1	1	clathrin cage assembly
+48265	3	0	0	0	1	1	1	response to pain
+48263	1	0	0	0	1	1	1	determination of dorsal identity
+48262	1	0	0	0	1	1	1	determination of dorsoventral asymmetry
+48260	1	0	0	0	1	1	1	positive regulation of receptor mediated endocytosis
+48259	1	0	0	0	1	1	1	regulation of receptor mediated endocytosis
+48255	1	0	0	0	1	1	1	mRNA stabilization
+48246	1	0	0	0	1	1	1	macrophage chemotaxis
+48234	1	0	0	0	1	1	1	male gamete generation (sensu Magnoliophyta)
+48232	76	0	0	0	1	1	1	male gamete generation
+48229	2	0	0	0	1	1	1	gametophyte development
+42921	1	0	0	0	1	1	1	glucocorticoid receptor signaling pathway
+30903	1	0	0	0	1	1	1	notochord development
+30901	1	0	0	0	1	1	1	midbrain development
+30900	2	0	0	0	1	1	1	forebrain development
+290	1	0	0	0	1	1	1	deadenylation-dependent decapping
+289	2	0	0	0	1	1	1	poly(A) tail shortening
+288	4	0	0	0	1	1	1	"mRNA catabolism, deadenylation-dependent"
+283	7	0	0	0	1	1	1	establishment of cell polarity (sensu Saccharomyces)
+280	89	1	0	1	0.4968	1	0.4968	nuclear division
+16601	1	0	0	0	1	1	1	RAC protein signal transduction
+279	98	1	0	1	0.5309	1	0.5309	M phase
+278	180	0	0	0	1	1	1	mitotic cell cycle
+272	5	0	0	0	1	1	1	polysaccharide catabolism
+271	12	0	0	0	1	1	1	polysaccharide biosynthesis
+270	1	0	0	0	1	1	1	peptidoglycan metabolism
+266	1	0	0	0	1	1	1	mitochondrial fission
+256	1	0	0	0	1	1	1	allantoin catabolism
+255	2	0	0	0	1	1	1	allantoin metabolism
+245	15	0	0	0	1	1	1	spliceosome assembly
+244	2	0	0	0	1	1	1	assembly of spliceosomal tri-snRNP
+238	5	0	0	0	1	1	1	zygotene
+226	42	0	0	0	1	1	1	microtubule cytoskeleton organization and biogenesis
+212	2	0	0	0	1	1	1	meiotic spindle assembly
+209	2	0	0	0	1	1	1	protein polyubiquitination
+9454	1	0	0	0	1	1	1	aerotaxis
+9453	1	0	0	0	1	1	1	energy taxis
+17062	1	0	0	0	1	1	1	cytochrome bc(1) complex biogenesis
+9452	2	0	0	0	1	1	1	RNA capping
+9451	27	0	0	0	1	1	1	RNA modification
+9449	1	0	0	0	1	1	1	aminobutyrate biosynthesis
+9448	2	0	0	0	1	1	1	aminobutyrate metabolism
+9441	2	0	0	0	1	1	1	glycolate metabolism
+9440	2	0	0	0	1	1	1	cyanate catabolism
+9439	3	0	0	0	1	1	1	cyanate metabolism
+9438	1	0	0	0	1	1	1	methylglyoxal metabolism
+9437	1	0	0	0	1	1	1	carnitine metabolism
+9435	1	0	0	0	1	1	1	NAD biosynthesis
+9432	1	0	0	0	1	1	1	SOS response
+17038	1	0	0	0	1	1	1	protein import
+9416	25	0	0	0	1	1	1	response to light
+9415	2	0	0	0	1	1	1	response to water
+9414	2	0	0	0	1	1	1	response to water deprivation
+9411	3	0	0	0	1	1	1	response to UV
+9410	20	0	0	0	1	1	1	response to xenobiotic stimulus
+48193	38	0	0	0	1	1	1	Golgi vesicle transport
+9409	6	0	0	0	1	1	1	response to cold
+9408	20	0	0	0	1	1	1	response to heat
+17015	3	0	0	0	1	1	1	regulation of transforming growth factor beta receptor signaling pathway
+9405	16	1	0	1	0.1153	1	0.1153	pathogenesis
+9404	2	0	0	0	1	1	1	toxin metabolism
+9401	2	0	0	0	1	1	1	phosphoenolpyruvate-dependent sugar phosphotransferase system
+17004	2	0	0	0	1	1	1	cytochrome biogenesis
+17001	1	0	0	0	1	1	1	antibiotic catabolism
+17000	1	0	0	0	1	1	1	antibiotic biosynthesis
+50482	1	0	0	0	1	1	1	arachidonic acid secretion
+48172	2	0	0	0	1	1	1	regulation of short-term neuronal synaptic plasticity
+48170	1	0	0	0	1	1	1	positive regulation of long-term neuronal synaptic plasticity
+48169	4	0	0	0	1	1	1	regulation of long-term neuronal synaptic plasticity
+48168	8	0	0	0	1	1	1	regulation of neuronal synaptic plasticity
+48167	9	0	0	0	1	1	1	regulation of synaptic plasticity
+30890	1	0	0	0	1	1	1	positive regulation of B-cell proliferation
+30888	1	0	0	0	1	1	1	regulation of B-cell proliferation
+30887	1	0	0	0	1	1	1	positive regulation of dendritic cell activation
+48151	2	0	0	0	1	1	1	hyperphosphorylation
+30885	1	0	0	0	1	1	1	regulation of dendritic cell activation
+48146	2	0	0	0	1	1	1	positive regulation of fibroblast proliferation
+30879	1	0	0	0	1	1	1	mammary gland development
+48145	2	0	0	0	1	1	1	regulation of fibroblast proliferation
+48144	2	0	0	0	1	1	1	fibroblast proliferation
+48143	1	0	0	0	1	1	1	astrocyte activation
+16598	1	0	0	0	1	1	1	protein arginylation
+42830	2	0	0	0	1	1	1	defense response to pathogenic bacteria
+30866	2	0	0	0	1	1	1	cortical actin cytoskeleton organization and biogenesis
+30865	2	0	0	0	1	1	1	cortical cytoskeleton organization and biogenesis
+42829	8	0	0	0	1	1	1	defense response to pathogen
+42828	8	0	0	0	1	1	1	response to pathogen
+50435	2	0	0	0	1	1	1	beta-amyloid metabolism
+16582	23	0	0	0	1	1	1	non-covalent chromatin modification
+42823	1	0	0	0	1	1	1	pyridoxal phosphate biosynthesis
+42822	1	0	0	0	1	1	1	pyridoxal phosphate metabolism
+30856	1	0	0	0	1	1	1	regulation of epithelial cell differentiation
+30855	5	0	0	0	1	1	1	epithelial cell differentiation
+30851	1	0	0	0	1	1	1	granulocyte differentiation
+30850	1	0	0	0	1	1	1	prostate gland development
+16579	5	0	0	0	1	1	1	protein deubiquitination
+42819	1	0	0	0	1	1	1	vitamin B6 biosynthesis
+16575	3	0	0	0	1	1	1	histone deacetylation
+16574	1	0	0	0	1	1	1	histone ubiquitination
+16573	8	0	0	0	1	1	1	histone acetylation
+42816	2	0	0	0	1	1	1	vitamin B6 metabolism
+16571	5	0	0	0	1	1	1	histone methylation
+16570	15	0	0	0	1	1	1	histone modification
+30847	1	0	0	0	1	1	1	"transcription termination from Pol II promoter, poly(A)-independent"
+48112	2	0	0	0	1	1	1	oocyte anterior/posterior axis determination (sensu Insecta)
+48111	2	0	0	0	1	1	1	oocyte axis determination (sensu Insecta)
+48110	2	0	0	0	1	1	1	oocyte construction (sensu Insecta)
+16569	15	0	0	0	1	1	1	covalent chromatin modification
+16568	47	1	0	1	0.3031	1	0.3031	chromatin modification
+16567	15	0	0	0	1	1	1	protein ubiquitination
+30838	1	0	0	0	1	1	1	positive regulation of actin filament polymerization
+30837	1	0	0	0	1	1	1	negative regulation of actin filament polymerization
+48103	2	0	0	0	1	1	1	somatic stem cell renewal
+30833	2	0	0	0	1	1	1	regulation of actin filament polymerization
+30832	5	0	0	0	1	1	1	regulation of actin filament length
+16556	4	0	0	0	1	1	1	mRNA modification
+16554	1	0	0	0	1	1	1	cytidine to uridine editing
+16553	2	0	0	0	1	1	1	base conversion/substitution editing
+16547	5	0	0	0	1	1	1	RNA editing
+16545	1	0	0	0	1	1	1	"male courtship behavior (sensu Insecta), wing vibration"
+16542	1	0	0	0	1	1	1	male courtship behavior (sensu Insecta)
+16540	2	0	0	0	1	1	1	protein autoprocessing
+16539	3	0	0	0	1	1	1	protein splicing
+16525	7	0	0	0	1	1	1	negative regulation of angiogenesis
+189	1	0	0	0	1	1	1	nuclear translocation of MAPK
+188	9	0	0	0	1	1	1	inactivation of MAPK
+187	18	0	0	0	1	1	1	activation of MAPK
+186	2	0	0	0	1	1	1	activation of MAPKK
+185	1	0	0	0	1	1	1	activation of MAPKKK
+184	1	0	0	0	1	1	1	"mRNA catabolism, nonsense-mediated"
+183	2	0	0	0	1	1	1	chromatin silencing at ribosomal DNA
+165	42	0	0	0	1	1	1	MAPKKK cascade
+162	1	0	0	0	1	1	1	tryptophan biosynthesis
+161	1	0	0	0	1	1	1	MAPKKK cascade during osmolarity sensing
+160	10	0	0	0	1	1	1	two-component signal transduction system (phosphorelay)
+154	3	0	0	0	1	1	1	rRNA modification
+147	2	0	0	0	1	1	1	actin cortical patch assembly
+122	42	0	0	0	1	1	1	negative regulation of transcription from Pol II promoter
+115	2	0	0	0	1	1	1	S-specific transcription in mitotic cell cycle
+114	6	0	0	0	1	1	1	G1-specific transcription in mitotic cell cycle
+105	3	0	0	0	1	1	1	histidine biosynthesis
+9399	2	0	0	0	1	1	1	nitrogen fixation
+103	2	0	0	0	1	1	1	sulfate assimilation
+9397	1	0	0	0	1	1	1	folic acid and derivative catabolism
+101	1	0	0	0	1	1	1	sulfur amino acid transport
+9396	2	0	0	0	1	1	1	folic acid and derivative biosynthesis
+9395	4	0	0	0	1	1	1	phospholipid catabolism
+9373	3	0	0	0	1	1	1	regulation of transcription by pheromones
+9372	1	0	0	0	1	1	1	quorum sensing
+9371	2	0	0	0	1	1	1	positive regulation of transcription by pheromones
+9314	30	0	0	0	1	1	1	response to radiation
+9312	2	0	0	0	1	1	1	oligosaccharide biosynthesis
+9311	5	0	0	0	1	1	1	oligosaccharide metabolism
+9310	38	0	0	0	1	1	1	amine catabolism
+9309	42	0	0	0	1	1	1	amine biosynthesis
+9308	153	0	0	0	1	1	1	amine metabolism
+9307	1	0	0	0	1	1	1	DNA restriction
+9306	11	1	0	1	0.0807	1	0.0807	protein secretion
+42787	1	0	0	0	1	1	1	protein ubiquitination during ubiquitin-dependent protein catabolism
+42780	1	0	0	0	1	1	1	tRNA 3'-processing
+42775	14	0	0	0	1	1	1	ATP synthesis coupled electron transport (sensu Eukarya)
+42773	14	0	0	0	1	1	1	ATP synthesis coupled electron transport
+42772	2	0	0	0	1	1	1	"DNA damage response, signal transduction resulting in transcription"
+42770	19	0	0	0	1	1	1	"DNA damage response, signal transduction"
+48071	1	0	0	0	1	1	1	sex-specific pigmentation
+48069	2	0	0	0	1	1	1	eye pigmentation
+48066	19	0	0	0	1	1	1	pigmentation
+48065	1	0	0	0	1	1	1	"male courtship behavior (sensu Insecta), wing extension"
+42753	1	0	0	0	1	1	1	positive regulation of circadian rhythm
+42752	5	0	0	0	1	1	1	regulation of circadian rhythm
+48056	1	0	0	0	1	1	1	R3/R4 differentiation (sensu Drosophila)
+42749	4	0	0	0	1	1	1	regulation of circadian sleep/wake cycle
+42748	1	0	0	0	1	1	1	"circadian sleep/wake cycle, non-REM sleep"
+42745	4	0	0	0	1	1	1	circadian sleep/wake cycle
+42742	13	0	0	0	1	1	1	defense response to bacteria
+48048	8	0	0	0	1	1	1	embryonic eye morphogenesis
+48041	3	0	0	0	1	1	1	focal adhesion formation
+42733	1	0	0	0	1	1	1	digit morphogenesis
+42732	1	0	0	0	1	1	1	D-xylose metabolism
+16486	3	0	0	0	1	1	1	peptide hormone processing
+16485	14	0	0	0	1	1	1	protein processing
+42727	1	0	0	0	1	1	1	vitamin B2 and derivative biosynthesis
+42726	1	0	0	0	1	1	1	vitamin B2 and derivative metabolism
+16482	1	0	0	0	1	1	1	cytoplasmic transport
+42725	1	0	0	0	1	1	1	thiamin and derivative catabolism
+16481	81	0	0	0	1	1	1	negative regulation of transcription
+42724	1	0	0	0	1	1	1	thiamin and derivative biosynthesis
+42723	1	0	0	0	1	1	1	thiamin and derivative metabolism
+48025	1	0	0	0	1	1	1	"negative regulation of nuclear mRNA splicing, via spliceosome"
+48024	1	0	0	0	1	1	1	"regulation of nuclear mRNA splicing, via spliceosome"
+16478	1	0	0	0	1	1	1	negative regulation of translation
+16477	83	0	0	0	1	1	1	cell migration
+48016	1	0	0	0	1	1	1	inositol phosphate-mediated signaling
+48015	1	0	0	0	1	1	1	phosphoinositide-mediated signaling
+48014	1	0	0	0	1	1	1	Tie receptor signaling pathway
+48011	1	0	0	0	1	1	1	nerve growth factor receptor signaling pathway
+42706	2	0	0	0	1	1	1	eye photoreceptor cell fate commitment
+48009	4	0	0	0	1	1	1	insulin-like growth factor receptor signaling pathway
+48008	1	0	0	0	1	1	1	platelet-derived growth factor receptor signaling pathway
+48006	2	0	0	0	1	1	1	"antigen presentation, endogenous lipid antigen"
+48004	2	0	0	0	1	1	1	"antigen presentation, endogenous peptide antigen"
+48003	2	0	0	0	1	1	1	"antigen presentation, lipid antigen"
+48002	2	0	0	0	1	1	1	"antigen presentation, peptide antigen"
+16458	16	0	0	0	1	1	1	gene silencing
+30728	1	0	0	0	1	1	1	ovulation
+30725	1	0	0	0	1	1	1	ring canal formation
+30722	1	0	0	0	1	1	1	oocyte nucleus positioning
+16446	3	0	0	0	1	1	1	somatic hypermutation of antibody genes
+16445	3	0	0	0	1	1	1	generation of antibody gene diversity
+16444	3	0	0	0	1	1	1	somatic cell DNA recombination
+16441	2	0	0	0	1	1	1	posttranscriptional gene silencing
+16440	12	0	0	0	1	1	1	transcriptional gene silencing
+30716	1	0	0	0	1	1	1	oocyte cell fate determination
+30713	1	0	0	0	1	1	1	stalk formation
+30707	6	0	0	0	1	1	1	ovarian follicle cell development (sensu Insecta)
+30706	1	0	0	0	1	1	1	oocyte differentiation (sensu Insecta)
+30705	20	0	0	0	1	1	1	cytoskeleton-dependent intracellular transport
+30703	4	0	0	0	1	1	1	eggshell formation
+98	4	0	0	0	1	1	1	sulfur amino acid catabolism
+97	5	0	0	0	1	1	1	sulfur amino acid biosynthesis
+96	15	0	0	0	1	1	1	sulfur amino acid metabolism
+92	1	0	0	0	1	1	1	mitotic anaphase B
+90	10	0	0	0	1	1	1	mitotic anaphase
+89	3	0	0	0	1	1	1	mitotic metaphase
+88	8	0	0	0	1	1	1	mitotic prophase
+87	65	0	0	0	1	1	1	M phase of mitotic cell cycle
+86	27	0	0	0	1	1	1	G2/M transition of mitotic cell cycle
+85	3	0	0	0	1	1	1	G2 phase of mitotic cell cycle
+84	76	0	0	0	1	1	1	S phase of mitotic cell cycle
+83	1	0	0	0	1	1	1	G1/S-specific transcription in mitotic cell cycle
+82	40	0	0	0	1	1	1	G1/S transition of mitotic cell cycle
+80	15	0	0	0	1	1	1	G1 phase of mitotic cell cycle
+79	21	0	0	0	1	1	1	regulation of CDK activity
+77	9	0	0	0	1	1	1	"DNA damage response, signal transduction resulting in cell cycle arrest"
+76	7	0	0	0	1	1	1	DNA replication checkpoint
+75	29	0	0	0	1	1	1	cell cycle checkpoint
+74	230	2	0	2	0.529	1	0.529	regulation of cell cycle
+72	18	0	0	0	1	1	1	M-phase specific microtubule process
+71	1	0	0	0	1	1	1	mitotic spindle assembly (sensu Saccharomyces)
+70	6	0	0	0	1	1	1	mitotic chromosome segregation
+69	2	0	0	0	1	1	1	centromere/kinetochore complex maturation
+67	95	0	0	0	1	1	1	DNA replication and chromosome cycle
+66	1	0	0	0	1	1	1	mitochondrial ornithine transport
+65	1	0	0	0	1	1	1	nuclear migration (sensu Saccharomyces)
+60	12	0	0	0	1	1	1	"protein-nucleus import, translocation"
+59	8	0	0	0	1	1	1	"protein-nucleus import, docking"
+55	2	0	0	0	1	1	1	ribosomal large subunit-nucleus export
+54	2	0	0	0	1	1	1	ribosome-nucleus export
+53	1	0	0	0	1	1	1	argininosuccinate metabolism
+52	1	0	0	0	1	1	1	citrulline metabolism
+51	11	0	0	0	1	1	1	urea cycle intermediate metabolism
+50	7	0	0	0	1	1	1	urea cycle
+42	2	0	0	0	1	1	1	protein-Golgi targeting
+41	21	0	0	0	1	1	1	transition metal ion transport
+15995	1	0	0	0	1	1	1	chlorophyll biosynthesis
+15994	1	0	0	0	1	1	1	chlorophyll metabolism
+15993	1	0	0	0	1	1	1	molecular hydrogen transport
+15992	29	0	0	0	1	1	1	proton transport
+15991	4	0	0	0	1	1	1	ATP hydrolysis coupled proton transport
+15988	6	0	0	0	1	1	1	"energy coupled proton transport, against electrochemical gradient"
+15986	3	0	0	0	1	1	1	ATP synthesis coupled proton transport
+15985	3	0	0	0	1	1	1	"energy coupled proton transport, down electrochemical gradient"
+15980	92	0	0	0	1	1	1	energy derivation by oxidation of organic compounds
+27	5	0	0	0	1	1	1	ribosomal large subunit assembly and maintenance
+22	3	0	0	0	1	1	1	mitotic spindle elongation
+15979	1	0	0	0	1	1	1	photosynthesis
+15977	4	0	0	0	1	1	1	carbon utilization by fixation of carbon dioxide
+15976	4	0	0	0	1	1	1	carbon utilization
+15975	1	0	0	0	1	1	1	energy derivation by oxidation of reduced inorganic compounds
+19	2	0	0	0	1	1	1	regulation of mitotic recombination
+18	5	0	0	0	1	1	1	regulation of DNA recombination
+12	4	0	0	0	1	1	1	single strand break repair
+11	4	0	0	0	1	1	1	vacuole inheritance
+9299	1	0	0	0	1	1	1	mRNA transcription
+4	325	3	0	3	0.4545	1	0.4545	biological_process unknown
+3	134	1	0	1	0.6461	1	0.6461	reproduction
+2	5	0	0	0	1	1	1	mitochondrial genome maintenance
+1	4	0	0	0	1	1	1	mitochondrion inheritance
+9296	3	0	0	0	1	1	1	flagellum biogenesis
+9294	6	0	0	0	1	1	1	DNA mediated transformation
+9292	6	0	0	0	1	1	1	genetic transfer
+9291	1	0	0	0	1	1	1	unidirectional conjugation
+9290	6	0	0	0	1	1	1	cellular DNA uptake
+15955	1	0	0	0	1	1	1	pyrimidine deoxyribonucleotide interconversion
+15953	1	0	0	0	1	1	1	pyrimidine nucleotide interconversion
+15949	1	0	0	0	1	1	1	"nucleobase, nucleoside and nucleotide interconversion"
+15948	1	0	0	0	1	1	1	methanogenesis
+15947	1	0	0	0	1	1	1	methane metabolism
+15946	1	0	0	0	1	1	1	methanol oxidation
+15945	1	0	0	0	1	1	1	methanol metabolism
+15942	1	0	0	0	1	1	1	formate metabolism
+15940	1	0	0	0	1	1	1	pantothenate biosynthesis
+9273	1	0	0	0	1	1	1	cell wall biosynthesis (sensu Bacteria)
+9272	1	0	0	0	1	1	1	cell wall biosynthesis (sensu Fungi)
+15939	1	0	0	0	1	1	1	pantothenate metabolism
+15937	1	0	0	0	1	1	1	coenzyme A biosynthesis
+15936	2	0	0	0	1	1	1	coenzyme A metabolism
+15931	21	0	0	0	1	1	1	"nucleobase, nucleoside, nucleotide and nucleic acid transport"
+9268	2	0	0	0	1	1	1	response to pH
+9267	2	0	0	0	1	1	1	cellular response to starvation
+9266	32	0	0	0	1	1	1	response to temperature
+9264	4	0	0	0	1	1	1	deoxyribonucleotide catabolism
+9263	6	0	0	0	1	1	1	deoxyribonucleotide biosynthesis
+9262	10	0	0	0	1	1	1	deoxyribonucleotide metabolism
+9261	2	0	0	0	1	1	1	ribonucleotide catabolism
+9260	24	0	0	0	1	1	1	ribonucleotide biosynthesis
+43112	3	0	0	0	1	1	1	receptor metabolism
+9259	25	0	0	0	1	1	1	ribonucleotide metabolism
+9258	1	0	0	0	1	1	1	10-formyltetrahydrofolate catabolism
+9256	1	0	0	0	1	1	1	10-formyltetrahydrofolate metabolism
+43109	1	0	0	0	1	1	1	regulation of smoothened receptor activity
+9253	1	0	0	0	1	1	1	peptidoglycan catabolism
+9252	1	0	0	0	1	1	1	peptidoglycan biosynthesis
+9251	4	0	0	0	1	1	1	glucan catabolism
+9250	9	0	0	0	1	1	1	glucan biosynthesis
+43101	4	0	0	0	1	1	1	purine salvage
+43100	1	0	0	0	1	1	1	pyrimidine base salvage
+15918	3	0	0	0	1	1	1	sterol transport
+15917	1	0	0	0	1	1	1	aminophospholipid transport
+15914	1	1	0	1	0.0076	1	0.0076	phospholipid transport
+15910	1	0	0	0	1	1	1	peroxisomal long-chain fatty acid import
+9249	1	0	0	0	1	1	1	protein-lipoylation
+9247	6	0	0	0	1	1	1	glycolipid biosynthesis
+9245	1	0	0	0	1	1	1	lipid A biosynthesis
+9241	2	0	0	0	1	1	1	polyisoprenoid biosynthesis
+15909	2	0	0	0	1	1	1	long-chain fatty acid transport
+15908	4	0	0	0	1	1	1	fatty acid transport
+15904	1	0	0	0	1	1	1	tetracycline transport
+9236	2	0	0	0	1	1	1	vitamin B12 biosynthesis
+9235	2	0	0	0	1	1	1	vitamin B12 metabolism
+9234	1	0	0	0	1	1	1	vitamin K2 biosynthesis
+9233	1	0	0	0	1	1	1	vitamin K2 metabolism
+9231	1	0	0	0	1	1	1	vitamin B2 biosynthesis
+9230	1	0	0	0	1	1	1	thiamin catabolism
+9228	1	0	0	0	1	1	1	thiamin biosynthesis
+9226	2	0	0	0	1	1	1	nucleotide-sugar biosynthesis
+9225	6	0	0	0	1	1	1	nucleotide-sugar metabolism
+9223	2	0	0	0	1	1	1	pyrimidine deoxyribonucleotide catabolism
+9221	4	0	0	0	1	1	1	pyrimidine deoxyribonucleotide biosynthesis
+9220	6	0	0	0	1	1	1	pyrimidine ribonucleotide biosynthesis
+9219	6	0	0	0	1	1	1	pyrimidine deoxyribonucleotide metabolism
+9218	6	0	0	0	1	1	1	pyrimidine ribonucleotide metabolism
+9217	1	0	0	0	1	1	1	purine deoxyribonucleoside triphosphate catabolism
+9215	1	0	0	0	1	1	1	purine deoxyribonucleoside triphosphate metabolism
+9212	3	0	0	0	1	1	1	pyrimidine deoxyribonucleoside triphosphate biosynthesis
+9211	4	0	0	0	1	1	1	pyrimidine deoxyribonucleoside triphosphate metabolism
+42698	4	0	0	0	1	1	1	menstrual cycle
+9209	5	0	0	0	1	1	1	pyrimidine ribonucleoside triphosphate biosynthesis
+9208	5	0	0	0	1	1	1	pyrimidine ribonucleoside triphosphate metabolism
+9207	1	0	0	0	1	1	1	purine ribonucleoside triphosphate catabolism
+9206	14	0	0	0	1	1	1	purine ribonucleoside triphosphate biosynthesis
+9205	16	0	0	0	1	1	1	purine ribonucleoside triphosphate metabolism
+9204	1	0	0	0	1	1	1	deoxyribonucleoside triphosphate catabolism
+9203	1	0	0	0	1	1	1	ribonucleoside triphosphate catabolism
+9202	3	0	0	0	1	1	1	deoxyribonucleoside triphosphate biosynthesis
+9201	14	0	0	0	1	1	1	ribonucleoside triphosphate biosynthesis
+9200	5	0	0	0	1	1	1	deoxyribonucleoside triphosphate metabolism
+42686	1	0	0	0	1	1	1	regulation of cardioblast cell fate
+42685	1	0	0	0	1	1	1	cardioblast cell fate specification
+42684	1	0	0	0	1	1	1	cardioblast cell fate commitment
+42661	1	0	0	0	1	1	1	regulation of mesoderm cell fate
+42659	2	0	0	0	1	1	1	regulation of cell fate
+30682	1	0	0	0	1	1	1	evasion of host defense response
+42632	3	0	0	0	1	1	1	cholesterol homeostasis
+42619	1	0	0	0	1	1	1	poly-hydroxybutyrate biosynthesis
+42618	1	0	0	0	1	1	1	poly-hydroxybutyrate metabolism
+30648	1	0	0	0	1	1	1	aminoglycoside antibiotic biosynthesis
+30647	1	0	0	0	1	1	1	aminoglycoside antibiotic metabolism
+30641	11	0	0	0	1	1	1	hydrogen ion homeostasis
+16360	1	0	0	0	1	1	1	sensory organ precursor cell fate determination
+16358	7	0	0	0	1	1	1	dendrite morphogenesis
+16350	1	0	0	0	1	1	1	maintenance of oocyte identity (sensu Insecta)
+16339	11	0	0	0	1	1	1	calcium-dependent cell-cell adhesion
+16337	129	1	0	1	0.632	1	0.632	cell-cell adhesion
+16336	1	0	0	0	1	1	1	establishment and/or maintenance of polarity of larval imaginal disc epithelium
+16335	1	0	0	0	1	1	1	morphogenesis of larval imaginal disc epithelium
+16334	2	0	0	0	1	1	1	establishment and/or maintenance of polarity of follicular epithelium
+16333	3	0	0	0	1	1	1	morphogenesis of follicular epithelium
+16332	1	0	0	0	1	1	1	establishment and/or maintenance of polarity of embryonic epithelium
+16331	9	0	0	0	1	1	1	morphogenesis of embryonic epithelium
+16330	1	0	0	0	1	1	1	second mitotic wave (sensu Drosophila)
+16325	1	0	0	0	1	1	1	oocyte microtubule cytoskeleton organization
+16322	2	0	0	0	1	1	1	neuronal remodeling
+16319	2	0	0	0	1	1	1	mushroom body development
+16318	1	0	0	0	1	1	1	ommatidial rotation
+16311	53	0	0	0	1	1	1	dephosphorylation
+16310	261	2	0	2	0.5991	1	0.5991	phosphorylation
+43096	2	0	0	0	1	1	1	purine base salvage
+43094	7	0	0	0	1	1	1	metabolic compound salvage
+43086	18	0	0	0	1	1	1	negative regulation of enzyme activity
+43085	1	0	0	0	1	1	1	positive regulation of enzyme activity
+15893	1	0	0	0	1	1	1	drug transport
+15891	97	0	0	0	1	1	1	siderochrome transport
+43071	1	0	0	0	1	1	1	positive regulation of non-apoptotic programmed cell death
+43070	1	0	0	0	1	1	1	regulation of non-apoptotic programmed cell death
+15889	2	0	0	0	1	1	1	vitamin B12 transport
+15888	1	0	0	0	1	1	1	thiamin transport
+15884	3	0	0	0	1	1	1	folate transport
+43068	71	0	0	0	1	1	1	positive regulation of programmed cell death
+43067	71	0	0	0	1	1	1	regulation of programmed cell death
+43066	58	1	0	1	0.3599	1	0.3599	negative regulation of apoptosis
+43065	70	0	0	0	1	1	1	positive regulation of apoptosis
+43064	3	0	0	0	1	1	1	flagellum organization and biogenesis
+43063	1	0	0	0	1	1	1	intercellular bridge organization and biogenesis
+43062	27	0	0	0	1	1	1	extracellular structure organization and biogenesis
+15875	8	0	0	0	1	1	1	vitamin/cofactor transport
+15872	2	0	0	0	1	1	1	dopamine transport
+15870	1	0	0	0	1	1	1	acetylcholine transport
+15864	1	0	0	0	1	1	1	pyrimidine nucleoside transport
+15860	1	0	0	0	1	1	1	purine nucleoside transport
+9199	16	0	0	0	1	1	1	ribonucleoside triphosphate metabolism
+9197	2	0	0	0	1	1	1	pyrimidine deoxyribonucleoside diphosphate biosynthesis
+9196	2	0	0	0	1	1	1	pyrimidine deoxyribonucleoside diphosphate metabolism
+43049	1	0	0	0	1	1	1	otic placode formation
+9190	13	0	0	0	1	1	1	cyclic nucleotide biosynthesis
+15858	4	0	0	0	1	1	1	nucleoside transport
+15855	1	0	0	0	1	1	1	pyrimidine transport
+15853	1	0	0	0	1	1	1	adenine transport
+15851	2	0	0	0	1	1	1	nucleobase transport
+9189	3	0	0	0	1	1	1	deoxyribonucleoside diphosphate biosynthesis
+9188	1	0	0	0	1	1	1	ribonucleoside diphosphate biosynthesis
+9187	15	0	0	0	1	1	1	cyclic nucleotide metabolism
+9186	3	0	0	0	1	1	1	deoxyribonucleoside diphosphate metabolism
+43039	18	0	0	0	1	1	1	tRNA aminoacylation
+9185	1	0	0	0	1	1	1	ribonucleoside diphosphate metabolism
+43038	18	0	0	0	1	1	1	amino acid activation
+43037	70	0	0	0	1	1	1	translation
+9183	1	0	0	0	1	1	1	purine deoxyribonucleoside diphosphate biosynthesis
+9182	1	0	0	0	1	1	1	purine deoxyribonucleoside diphosphate metabolism
+9180	1	0	0	0	1	1	1	purine ribonucleoside diphosphate biosynthesis
+15849	33	0	0	0	1	1	1	organic acid transport
+15844	1	0	0	0	1	1	1	monoamine transport
+15840	2	0	0	0	1	1	1	urea transport
+9179	1	0	0	0	1	1	1	purine ribonucleoside diphosphate metabolism
+9177	2	0	0	0	1	1	1	pyrimidine deoxyribonucleoside monophosphate biosynthesis
+9176	2	0	0	0	1	1	1	pyrimidine deoxyribonucleoside monophosphate metabolism
+43029	1	0	0	0	1	1	1	T-cell homeostasis
+9174	1	0	0	0	1	1	1	pyrimidine ribonucleoside monophosphate biosynthesis
+9173	1	0	0	0	1	1	1	pyrimidine ribonucleoside monophosphate metabolism
+43026	8	0	0	0	1	1	1	regulation of caspase activation
+15837	27	0	0	0	1	1	1	amine/polyamine transport
+15833	5	0	0	0	1	1	1	peptide transport
+9169	1	0	0	0	1	1	1	purine ribonucleoside monophosphate catabolism
+9168	7	0	0	0	1	1	1	purine ribonucleoside monophosphate biosynthesis
+9167	8	0	0	0	1	1	1	purine ribonucleoside monophosphate metabolism
+9166	9	0	0	0	1	1	1	nucleotide catabolism
+9165	45	0	0	0	1	1	1	nucleotide biosynthesis
+43017	2	0	0	0	1	1	1	positive regulation of tumor necrosis factor-beta biosynthesis
+9163	1	0	0	0	1	1	1	nucleoside biosynthesis
+43016	2	0	0	0	1	1	1	regulation of tumor necrosis factor-beta biosynthesis
+9162	2	0	0	0	1	1	1	deoxyribonucleoside monophosphate metabolism
+9161	11	0	0	0	1	1	1	ribonucleoside monophosphate metabolism
+43011	2	0	0	0	1	1	1	dendritic cell differentiation
+43010	7	0	0	0	1	1	1	eye morphogenesis (sensu Vertebrata)
+15824	1	0	0	0	1	1	1	L-proline transport
+15822	1	0	0	0	1	1	1	L-ornithine transport
+9158	1	0	0	0	1	1	1	ribonucleoside monophosphate catabolism
+9157	2	0	0	0	1	1	1	deoxyribonucleoside monophosphate biosynthesis
+9156	10	0	0	0	1	1	1	ribonucleoside monophosphate biosynthesis
+43009	20	0	0	0	1	1	1	embryonic development (sensu Vertebrata)
+9155	1	0	0	0	1	1	1	purine deoxyribonucleotide catabolism
+9154	2	0	0	0	1	1	1	purine ribonucleotide catabolism
+9153	1	0	0	0	1	1	1	purine deoxyribonucleotide biosynthesis
+9152	21	0	0	0	1	1	1	purine ribonucleotide biosynthesis
+9151	2	0	0	0	1	1	1	purine deoxyribonucleotide metabolism
+9150	22	0	0	0	1	1	1	purine ribonucleotide metabolism
+15819	1	0	0	0	1	1	1	L-lysine transport
+15817	1	0	0	0	1	1	1	L-histidine transport
+15813	2	0	0	0	1	1	1	L-glutamate transport
+15810	1	0	0	0	1	1	1	L-aspartate transport
+9148	3	0	0	0	1	1	1	pyrimidine nucleoside triphosphate biosynthesis
+9147	8	0	0	0	1	1	1	pyrimidine nucleoside triphosphate metabolism
+9146	2	0	0	0	1	1	1	purine nucleoside triphosphate catabolism
+9145	14	0	0	0	1	1	1	purine nucleoside triphosphate biosynthesis
+9144	17	0	0	0	1	1	1	purine nucleoside triphosphate metabolism
+9143	2	0	0	0	1	1	1	nucleoside triphosphate catabolism
+9142	16	0	0	0	1	1	1	nucleoside triphosphate biosynthesis
+9141	20	0	0	0	1	1	1	nucleoside triphosphate metabolism
+15809	1	0	0	0	1	1	1	L-arginine transport
+15807	6	0	0	0	1	1	1	L-amino acid transport
+15806	1	0	0	0	1	1	1	S-methylmethionine transport
+15804	4	0	0	0	1	1	1	neutral amino acid transport
+15802	2	0	0	0	1	1	1	basic amino acid transport
+15800	2	0	0	0	1	1	1	acidic amino acid transport
+9139	2	0	0	0	1	1	1	pyrimidine nucleoside diphosphate biosynthesis
+9138	2	0	0	0	1	1	1	pyrimidine nucleoside diphosphate metabolism
+9136	1	0	0	0	1	1	1	purine nucleoside diphosphate biosynthesis
+9135	1	0	0	0	1	1	1	purine nucleoside diphosphate metabolism
+9133	3	0	0	0	1	1	1	nucleoside diphosphate biosynthesis
+9132	3	0	0	0	1	1	1	nucleoside diphosphate metabolism
+9130	2	0	0	0	1	1	1	pyrimidine nucleoside monophosphate biosynthesis
+9129	2	0	0	0	1	1	1	pyrimidine nucleoside monophosphate metabolism
+9128	1	0	0	0	1	1	1	purine nucleoside monophosphate catabolism
+9127	7	0	0	0	1	1	1	purine nucleoside monophosphate biosynthesis
+9126	8	0	0	0	1	1	1	purine nucleoside monophosphate metabolism
+46968	2	0	0	0	1	1	1	peptide antigen transport
+9125	1	0	0	0	1	1	1	nucleoside monophosphate catabolism
+9124	11	0	0	0	1	1	1	nucleoside monophosphate biosynthesis
+9123	12	0	0	0	1	1	1	nucleoside monophosphate metabolism
+9120	1	0	0	0	1	1	1	deoxyribonucleoside metabolism
+9119	6	1	0	1	0.0449	1	0.0449	ribonucleoside metabolism
+9117	73	0	0	0	1	1	1	nucleotide metabolism
+9116	13	1	0	1	0.0947	1	0.0947	nucleoside metabolism
+9113	4	0	0	0	1	1	1	purine base biosynthesis
+9112	12	0	0	0	1	1	1	nucleobase metabolism
+9111	2	0	0	0	1	1	1	vitamin catabolism
+9110	3	0	0	0	1	1	1	vitamin biosynthesis
+42596	2	0	0	0	1	1	1	fear response
+42594	2	0	0	0	1	1	1	response to starvation
+42593	2	0	0	0	1	1	1	glucose homeostasis
+42592	69	0	0	0	1	1	1	homeostasis
+42591	2	0	0	0	1	1	1	"antigen presentation, exogenous antigen via MHC class II"
+42590	1	0	0	0	1	1	1	"antigen presentation, exogenous antigen via MHC class I"
+9109	2	0	0	0	1	1	1	coenzyme catabolism
+9108	17	0	0	0	1	1	1	coenzyme biosynthesis
+9103	2	0	0	0	1	1	1	lipopolysaccharide biosynthesis
+9102	1	0	0	0	1	1	1	biotin biosynthesis
+9101	43	0	0	0	1	1	1	glycoprotein biosynthesis
+9100	47	0	0	0	1	1	1	glycoprotein metabolism
+46942	33	0	0	0	1	1	1	carboxylic acid transport
+46939	1	0	0	0	1	1	1	nucleotide phosphorylation
+42573	2	0	0	0	1	1	1	retinoic acid metabolism
+46928	2	0	0	0	1	1	1	regulation of neurotransmitter secretion
+30595	12	0	0	0	1	1	1	immune cell chemotaxis
+30593	9	0	0	0	1	1	1	neutrophil chemotaxis
+46916	21	0	0	0	1	1	1	transition metal ion homeostasis
+42559	5	0	0	0	1	1	1	pteridine and derivative biosynthesis
+42558	6	0	0	0	1	1	1	pteridine and derivative metabolism
+42552	6	0	0	0	1	1	1	myelination
+42551	10	0	0	0	1	1	1	nerve maturation
+46907	290	3	0	3	0.3815	1	0.3815	intracellular transport
+46903	51	1	0	1	0.3243	1	0.3243	secretion
+46902	1	0	0	0	1	1	1	regulation of mitochondrial membrane permeability
+42546	3	0	0	0	1	1	1	cell wall biosynthesis
+42545	1	0	0	0	1	1	1	cell wall modification
+42542	2	0	0	0	1	1	1	response to hydrogen peroxide
+42541	3	0	0	0	1	1	1	hemoglobin biosynthesis
+30574	13	0	0	0	1	1	1	collagen catabolism
+30573	2	0	0	0	1	1	1	bile acid catabolism
+42538	1	0	0	0	1	1	1	hyperosmotic salinity response
+42535	2	0	0	0	1	1	1	positive regulation of tumor necrosis factor-alpha biosynthesis
+42534	2	0	0	0	1	1	1	regulation of tumor necrosis factor-alpha biosynthesis
+42533	2	0	0	0	1	1	1	tumor necrosis factor-alpha biosynthesis
+42532	2	0	0	0	1	1	1	negative regulation of tyrosine phosphorylation of STAT protein
+42518	2	0	0	0	1	1	1	negative regulation of tyrosine phosphorylation of Stat3 protein
+42516	3	0	0	0	1	1	1	regulation of tyrosine phosphorylation of Stat3 protein
+30542	1	0	0	0	1	1	1	plasmid partitioning (sensu Bacteria)
+30541	1	0	0	0	1	1	1	plasmid partitioning
+30540	1	0	0	0	1	1	1	female genital morphogenesis
+16267	1	0	0	0	1	1	1	"O-glycan processing, core 1"
+16266	1	0	0	0	1	1	1	O-glycan processing
+16265	229	3	0	3	0.2524	1	0.2524	death
+42509	3	0	0	0	1	1	1	regulation of tyrosine phosphorylation of STAT protein
+8655	1	0	0	0	1	1	1	pyrimidine salvage
+8654	10	0	0	0	1	1	1	phospholipid biosynthesis
+8653	2	0	0	0	1	1	1	lipopolysaccharide metabolism
+8652	32	0	0	0	1	1	1	amino acid biosynthesis
+42503	3	0	0	0	1	1	1	tyrosine phosphorylation of Stat3 protein
+30539	2	0	0	0	1	1	1	male genital morphogenesis
+30538	2	0	0	0	1	1	1	genital morphogenesis
+30537	2	0	0	0	1	1	1	larval behavior
+30536	1	0	0	0	1	1	1	larval feeding behavior
+30534	6	0	0	0	1	1	1	adult behavior
+8645	11	0	0	0	1	1	1	hexose transport
+8643	17	0	0	0	1	1	1	carbohydrate transport
+30522	5	0	0	0	1	1	1	intracellular receptor-mediated signaling pathway
+30521	1	0	0	0	1	1	1	androgen receptor signaling pathway
+30520	4	0	0	0	1	1	1	estrogen receptor signaling pathway
+8637	6	0	0	0	1	1	1	apoptotic mitochondrial changes
+16246	2	0	0	0	1	1	1	RNA interference
+16245	1	0	0	0	1	1	1	hyperphosphorylation of RNA polymerase II
+8635	2	0	0	0	1	1	1	caspase activation via cytochrome c
+16244	1	0	0	0	1	1	1	non-apoptotic programmed cell death
+8634	2	0	0	0	1	1	1	negative regulation of survival gene product activity
+8632	32	0	0	0	1	1	1	apoptotic program
+8631	2	0	0	0	1	1	1	induction of apoptosis by oxidative stress
+8630	8	0	0	0	1	1	1	"DNA damage response, signal transduction resulting in induction of apoptosis"
+30518	5	0	0	0	1	1	1	steroid hormone receptor signaling pathway
+30517	1	0	0	0	1	1	1	negative regulation of axon extension
+30516	4	0	0	0	1	1	1	regulation of axon extension
+30514	2	0	0	0	1	1	1	negative regulation of BMP signaling pathway
+30513	1	0	0	0	1	1	1	positive regulation of BMP signaling pathway
+30512	2	0	0	0	1	1	1	negative regulation of transforming growth factor beta receptor signaling pathway
+30511	1	0	0	0	1	1	1	positive regulation of transforming growth factor beta receptor signaling pathway
+30510	2	0	0	0	1	1	1	regulation of BMP signaling pathway
+8629	14	0	0	0	1	1	1	induction of apoptosis by intracellular signals
+8628	4	0	0	0	1	1	1	induction of apoptosis by hormones
+16237	1	0	0	0	1	1	1	microautophagy
+8625	3	0	0	0	1	1	1	induction of apoptosis via death domain receptors
+8624	14	0	0	0	1	1	1	induction of apoptosis by extracellular signals
+16233	1	0	0	0	1	1	1	telomere capping
+30509	5	0	0	0	1	1	1	BMP signaling pathway
+30503	1	0	0	0	1	1	1	regulation of cell redox homeostasis
+30502	3	0	0	0	1	1	1	negative regulation of bone mineralization
+30500	4	0	0	0	1	1	1	regulation of bone mineralization
+8618	1	0	0	0	1	1	1	7-methylguanosine metabolism
+8617	2	1	0	1	0.0152	1	0.0152	guanosine metabolism
+16226	2	0	0	0	1	1	1	iron-sulfur cluster assembly
+8616	1	0	0	0	1	1	1	queuosine biosynthesis
+8615	1	0	0	0	1	1	1	pyridoxine biosynthesis
+8614	2	0	0	0	1	1	1	pyridoxine metabolism
+8612	1	0	0	0	1	1	1	hypusine biosynthesis from peptidyl-lysine
+8611	1	0	0	0	1	1	1	ether lipid biosynthesis
+8610	76	0	0	0	1	1	1	lipid biosynthesis
+16204	1	0	0	0	1	1	1	determination of muscle attachment site
+16203	3	0	0	0	1	1	1	muscle attachment
+16202	1	0	0	0	1	1	1	regulation of myogenesis
+15791	1	0	0	0	1	1	1	polyol transport
+15788	1	0	0	0	1	1	1	UDP-N-acetylglucosamine transport
+15785	1	0	0	0	1	1	1	UDP-galactose transport
+15781	2	0	0	0	1	1	1	pyrimidine nucleotide-sugar transport
+15780	2	0	0	0	1	1	1	nucleotide-sugar transport
+15772	1	0	0	0	1	1	1	oligosaccharide transport
+15768	1	0	0	0	1	1	1	maltose transport
+15766	1	0	0	0	1	1	1	disaccharide transport
+9099	1	0	0	0	1	1	1	valine biosynthesis
+9098	1	0	0	0	1	1	1	leucine biosynthesis
+9097	1	0	0	0	1	1	1	isoleucine biosynthesis
+9096	1	0	0	0	1	1	1	"aromatic amino acid family biosynthesis, anthranilate pathway"
+9094	1	0	0	0	1	1	1	L-phenylalanine biosynthesis
+9093	1	0	0	0	1	1	1	cysteine catabolism
+9092	1	0	0	0	1	1	1	homoserine metabolism
+15758	11	0	0	0	1	1	1	glucose transport
+15755	1	0	0	0	1	1	1	fructose transport
+9089	1	0	0	0	1	1	1	lysine biosynthesis via diaminopimelate
+9088	1	0	0	0	1	1	1	threonine biosynthesis
+9087	2	0	0	0	1	1	1	methionine catabolism
+9086	5	0	0	0	1	1	1	methionine biosynthesis
+9085	1	0	0	0	1	1	1	lysine biosynthesis
+9084	18	0	0	0	1	1	1	glutamine family amino acid biosynthesis
+9083	4	0	0	0	1	1	1	branched chain family amino acid catabolism
+9082	2	0	0	0	1	1	1	branched chain family amino acid biosynthesis
+9081	6	0	0	0	1	1	1	branched chain family amino acid metabolism
+15749	11	0	0	0	1	1	1	monosaccharide transport
+15746	1	0	0	0	1	1	1	citrate transport
+9079	1	0	0	0	1	1	1	pyruvate family amino acid biosynthesis
+9078	1	0	0	0	1	1	1	pyruvate family amino acid metabolism
+9077	5	0	0	0	1	1	1	histidine family amino acid catabolism
+9076	3	0	0	0	1	1	1	histidine family amino acid biosynthesis
+9075	6	0	0	0	1	1	1	histidine family amino acid metabolism
+9074	9	0	0	0	1	1	1	aromatic amino acid family catabolism
+9073	1	0	0	0	1	1	1	aromatic amino acid family biosynthesis
+9072	16	0	0	0	1	1	1	aromatic amino acid family metabolism
+9071	7	0	0	0	1	1	1	serine family amino acid catabolism
+9070	7	0	0	0	1	1	1	serine family amino acid biosynthesis
+15734	1	0	0	0	1	1	1	taurine transport
+9069	17	0	0	0	1	1	1	serine family amino acid metabolism
+9068	5	0	0	0	1	1	1	aspartate family amino acid catabolism
+9067	5	0	0	0	1	1	1	aspartate family amino acid biosynthesis
+9066	11	0	0	0	1	1	1	aspartate family amino acid metabolism
+9065	7	0	0	0	1	1	1	glutamine family amino acid catabolism
+9064	28	0	0	0	1	1	1	glutamine family amino acid metabolism
+9063	35	0	0	0	1	1	1	amino acid catabolism
+9062	2	0	0	0	1	1	1	fatty acid catabolism
+9061	2	0	0	0	1	1	1	anaerobic respiration
+9060	15	0	0	0	1	1	1	aerobic respiration
+15724	1	0	0	0	1	1	1	formate transport
+15722	3	0	0	0	1	1	1	canalicular bile acid transport
+15721	3	0	0	0	1	1	1	bile acid transport
+9059	401	1	0	1	0.9592	1	0.9592	macromolecule biosynthesis
+9058	490	2	0	2	0.9001	1	0.9001	biosynthesis
+9057	279	2	0	2	0.6363	1	0.6363	macromolecule catabolism
+9056	414	3	0	3	0.6221	1	0.6221	catabolism
+9052	3	0	0	0	1	1	1	"pentose-phosphate shunt, non-oxidative branch"
+15718	6	0	0	0	1	1	1	monocarboxylic acid transport
+15711	15	0	0	0	1	1	1	organic anion transport
+9048	2	0	0	0	1	1	1	"dosage compensation, by inactivation of X chromosome"
+46888	4	0	0	0	1	1	1	negative regulation of hormone secretion
+46887	2	0	0	0	1	1	1	positive regulation of hormone secretion
+46884	3	0	0	0	1	1	1	follicle-stimulating hormone secretion
+46883	4	0	0	0	1	1	1	regulation of hormone secretion
+46882	3	0	0	0	1	1	1	negative regulation of follicle-stimulating hormone secretion
+46881	2	0	0	0	1	1	1	positive regulation of follicle-stimulating hormone secretion
+46880	3	0	0	0	1	1	1	regulation of follicle-stimulating hormone secretion
+15701	3	0	0	0	1	1	1	bicarbonate transport
+15700	1	0	0	0	1	1	1	arsenite transport
+46879	9	0	0	0	1	1	1	hormone secretion
+46851	3	0	0	0	1	1	1	negative regulation of bone remodeling
+46850	7	0	0	0	1	1	1	regulation of bone remodeling
+42495	1	0	0	0	1	1	1	detection of triacylated bacterial lipoprotein
+42494	1	0	0	0	1	1	1	detection of bacterial lipoprotein
+42493	19	0	0	0	1	1	1	response to drug
+42491	4	0	0	0	1	1	1	hair cell differentiation
+42490	4	0	0	0	1	1	1	mechanoreceptor differentiation
+46849	26	0	0	0	1	1	1	bone remodeling
+46843	3	0	0	0	1	1	1	dorsal appendage formation
+42487	1	0	0	0	1	1	1	regulation of odontogenesis (sensu Vertebrata)
+42476	9	0	0	0	1	1	1	odontogenesis
+42475	5	0	0	0	1	1	1	odontogenesis (sensu Vertebrata)
+42472	8	0	0	0	1	1	1	inner ear morphogenesis
+42471	9	0	0	0	1	1	1	ear morphogenesis
+46824	5	0	0	0	1	1	1	positive regulation of nucleocytoplasmic transport
+46823	2	0	0	0	1	1	1	negative regulation of nucleocytoplasmic transport
+46822	10	0	0	0	1	1	1	regulation of nucleocytoplasmic transport
+42462	7	0	0	0	1	1	1	eye photoreceptor cell development
+42461	7	0	0	0	1	1	1	photoreceptor cell development
+30497	1	0	0	0	1	1	1	fatty acid elongation
+30494	1	0	0	0	1	1	1	bacteriochlorophyll biosynthesis
+30493	1	0	0	0	1	1	1	bacteriochlorophyll metabolism
+42455	1	0	0	0	1	1	1	ribonucleoside biosynthesis
+42451	1	0	0	0	1	1	1	purine nucleoside biosynthesis
+42450	1	0	0	0	1	1	1	arginine biosynthesis via ornithine
+30489	4	0	0	0	1	1	1	processing of 27S pre-rRNA
+46800	2	0	0	0	1	1	1	enhancement of virulence
+42448	2	0	0	0	1	1	1	progesterone metabolism
+8595	6	0	0	0	1	1	1	"determination of anterior/posterior axis, embryo"
+8594	4	0	0	0	1	1	1	photoreceptor cell morphogenesis (sensu Drosophila)
+8593	2	0	0	0	1	1	1	regulation of Notch signaling pathway
+42446	13	0	0	0	1	1	1	hormone biosynthesis
+42445	27	0	0	0	1	1	1	hormone metabolism
+42441	2	0	0	0	1	1	1	eye pigment metabolism
+42440	18	0	0	0	1	1	1	pigment metabolism
+30476	1	0	0	0	1	1	1	spore wall assembly (sensu Fungi)
+30474	1	0	0	0	1	1	1	spindle pole body duplication (sensu Fungi)
+30473	1	0	0	0	1	1	1	nuclear migration (sensu Fungi)
+30472	1	0	0	0	1	1	1	mitotic spindle assembly (sensu Fungi)
+30471	3	0	0	0	1	1	1	spindle pole body and microtubule cycle (sensu Fungi)
+8589	1	0	0	0	1	1	1	regulation of smoothened receptor signaling pathway
+8588	2	0	0	0	1	1	1	release of cytoplasmic sequestered NF-kappaB
+16197	12	1	0	1	0.0878	1	0.0878	endosome transport
+8587	1	0	0	0	1	1	1	wing margin morphogenesis
+8586	2	0	0	0	1	1	1	wing vein morphogenesis
+42439	3	0	0	0	1	1	1	ethanolamine and derivative metabolism
+8585	6	0	0	0	1	1	1	female gonad development
+42438	7	0	0	0	1	1	1	melanin biosynthesis
+8584	7	0	0	0	1	1	1	male gonad development
+16192	175	2	0	2	0.3873	1	0.3873	vesicle-mediated transport
+42436	3	0	0	0	1	1	1	indole derivative catabolism
+8582	2	0	0	0	1	1	1	regulation of synaptic growth at neuromuscular junction
+42435	5	0	0	0	1	1	1	indole derivative biosynthesis
+42434	7	0	0	0	1	1	1	indole derivative metabolism
+42430	7	0	0	0	1	1	1	indole and derivative metabolism
+30468	7	0	0	0	1	1	1	establishment of cell polarity (sensu Fungi)
+30467	7	0	0	0	1	1	1	establishment and/or maintenance of cell polarity (sensu Fungi)
+30466	2	0	0	0	1	1	1	chromatin silencing at silent mating-type cassette (sensu Fungi)
+42428	2	0	0	0	1	1	1	serotonin metabolism
+16183	1	0	0	0	1	1	1	synaptic vesicle coating
+42427	2	0	0	0	1	1	1	serotonin biosynthesis
+16181	20	0	0	0	1	1	1	synaptic vesicle transport
+16180	1	0	0	0	1	1	1	snRNA processing
+42424	3	0	0	0	1	1	1	catecholamine catabolism
+42423	5	0	0	0	1	1	1	catecholamine biosynthesis
+42420	3	0	0	0	1	1	1	dopamine catabolism
+42417	5	0	0	0	1	1	1	dopamine metabolism
+42416	2	0	0	0	1	1	1	dopamine biosynthesis
+42412	1	0	0	0	1	1	1	taurine biosynthesis
+30449	2	0	0	0	1	1	1	regulation of complement activation
+30447	6	0	0	0	1	1	1	filamentous growth
+42403	4	0	0	0	1	1	1	thyroid hormone metabolism
+42402	6	0	0	0	1	1	1	biogenic amine catabolism
+42401	11	0	0	0	1	1	1	biogenic amine biosynthesis
+30437	4	0	0	0	1	1	1	sporulation (sensu Fungi)
+30436	1	0	0	0	1	1	1	sporulation (sensu Bacteria)
+30435	5	0	0	0	1	1	1	sporulation
+30433	5	0	0	0	1	1	1	ER-associated protein catabolism
+30432	1	0	0	0	1	1	1	peristalsis
+30431	4	0	0	0	1	1	1	sleep
+8544	40	0	0	0	1	1	1	epidermal differentiation
+8543	5	0	0	0	1	1	1	fibroblast growth factor receptor signaling pathway
+8535	4	0	0	0	1	1	1	cytochrome c oxidase biogenesis
+16132	2	0	0	0	1	1	1	brassinosteroid biosynthesis
+16131	2	0	0	0	1	1	1	brassinosteroid metabolism
+16129	2	0	0	0	1	1	1	phytosteroid biosynthesis
+16128	2	0	0	0	1	1	1	phytosteroid metabolism
+16127	3	0	0	0	1	1	1	sterol catabolism
+16126	20	0	0	0	1	1	1	sterol biosynthesis
+16125	43	0	0	0	1	1	1	sterol metabolism
+16117	1	0	0	0	1	1	1	carotenoid biosynthesis
+16116	1	0	0	0	1	1	1	carotenoid metabolism
+16114	2	0	0	0	1	1	1	terpenoid biosynthesis
+16109	1	0	0	0	1	1	1	tetraterpenoid biosynthesis
+16108	1	0	0	0	1	1	1	tetraterpenoid metabolism
+16104	1	0	0	0	1	1	1	triterpenoid biosynthesis
+15698	42	0	0	0	1	1	1	inorganic anion transport
+15695	2	0	0	0	1	1	1	organic cation transport
+15694	2	0	0	0	1	1	1	mercury ion transport
+15689	1	0	0	0	1	1	1	molybdate ion transport
+15680	2	0	0	0	1	1	1	intracellular copper ion transport
+15679	1	0	0	0	1	1	1	plasma membrane copper ion transport
+15674	60	1	0	1	0.3697	1	0.3697	"di-, tri-valent inorganic cation transport"
+15672	117	0	0	0	1	1	1	monovalent inorganic cation transport
+15671	7	0	0	0	1	1	1	oxygen transport
+15669	7	0	0	0	1	1	1	gas transport
+15628	1	0	0	0	1	1	1	type II protein secretion system
+46795	2	0	0	0	1	1	1	intracellular virion transport
+46794	2	0	0	0	1	1	1	virion transport
+46786	1	0	0	0	1	1	1	viral replication complex formation and maintenance
+46777	5	0	0	0	1	1	1	autophosphorylation
+42398	20	0	0	0	1	1	1	amino acid derivative biosynthesis
+42396	5	0	0	0	1	1	1	phosphagen biosynthesis
+42391	2	0	0	0	1	1	1	regulation of membrane potential
+42386	2	0	0	0	1	1	1	hemocyte differentiation
+46731	1	0	0	0	1	1	1	passive viral induction of host immune response
+46730	1	0	0	0	1	1	1	viral induction of host immune response
+42375	2	0	0	0	1	1	1	quinone cofactor metabolism
+42373	1	0	0	0	1	1	1	vitamin K metabolism
+42371	1	0	0	0	1	1	1	vitamin K biosynthesis
+42365	2	0	0	0	1	1	1	water-soluble vitamin catabolism
+42364	2	0	0	0	1	1	1	water-soluble vitamin biosynthesis
+42362	1	0	0	0	1	1	1	fat-soluble vitamin biosynthesis
+46718	3	0	0	0	1	1	1	viral entry
+46717	2	0	0	0	1	1	1	acid secretion
+46716	2	0	0	0	1	1	1	muscle maintenance
+46713	1	0	0	0	1	1	1	boron transport
+42359	1	0	0	0	1	1	1	vitamin D metabolism
+42355	4	0	0	0	1	1	1	L-fucose catabolism
+42354	6	0	0	0	1	1	1	L-fucose metabolism
+42353	2	0	0	0	1	1	1	fucose biosynthesis
+42351	2	0	0	0	1	1	1	'de novo' GDP-L-fucose biosynthesis
+42350	2	0	0	0	1	1	1	GDP-L-fucose biosynthesis
+30389	1	0	0	0	1	1	1	fructosamine metabolism
+30384	8	1	0	1	0.0594	1	0.0594	phosphoinositide metabolism
+30383	4	0	0	0	1	1	1	host-pathogen interaction
+46700	1	0	0	0	1	1	1	heterocycle catabolism
+42348	6	0	0	0	1	1	1	NF-kappaB-nucleus import
+42347	2	0	0	0	1	1	1	negative regulation of NF-kappaB-nucleus import
+42346	4	0	0	0	1	1	1	positive regulation of NF-kappaB-nucleus import
+42345	6	0	0	0	1	1	1	regulation of NF-kappaB-nucleus import
+16096	2	0	0	0	1	1	1	polyisoprenoid metabolism
+42335	1	0	0	0	1	1	1	cuticle biosynthesis
+42330	49	0	0	0	1	1	1	taxis
+16089	1	0	0	0	1	1	1	"aromatic amino acid family biosynthesis, shikimate pathway"
+16083	6	0	0	0	1	1	1	synaptic vesicle fusion
+42326	2	0	0	0	1	1	1	negative regulation of phosphorylation
+16082	2	0	0	0	1	1	1	synaptic vesicle priming
+42325	3	0	0	0	1	1	1	regulation of phosphorylation
+16081	6	0	0	0	1	1	1	synaptic vesicle docking
+16080	3	0	0	0	1	1	1	synaptic vesicle targeting
+16079	15	0	0	0	1	1	1	synaptic vesicle exocytosis
+16074	1	0	0	0	1	1	1	snoRNA metabolism
+16073	1	0	0	0	1	1	1	snRNA metabolism
+16072	23	0	0	0	1	1	1	rRNA metabolism
+16071	94	0	0	0	1	1	1	mRNA metabolism
+16070	166	0	0	0	1	1	1	RNA metabolism
+42310	4	0	0	0	1	1	1	vasoconstriction
+16068	2	0	0	0	1	1	1	type I hypersensitivity
+16066	19	0	0	0	1	1	1	cellular defense response (sensu Vertebrata)
+16065	4	0	0	0	1	1	1	humoral defense mechanism (sensu Protostomia)
+16064	65	1	0	1	0.3936	1	0.3936	humoral defense mechanism (sensu Vertebrata)
+42308	2	0	0	0	1	1	1	negative regulation of protein-nucleus import
+42307	5	0	0	0	1	1	1	positive regulation of protein-nucleus import
+42306	10	0	0	0	1	1	1	regulation of protein-nucleus import
+16061	1	0	0	0	1	1	1	regulation of light-activated channel activity
+16060	1	0	0	0	1	1	1	metarhodopsin inactivation
+30336	4	0	0	0	1	1	1	negative regulation of cell migration
+30335	1	0	0	0	1	1	1	positive regulation of cell migration
+30334	10	0	0	0	1	1	1	regulation of cell migration
+30333	17	0	0	0	1	1	1	antigen processing
+30330	6	0	0	0	1	1	1	"DNA damage response, signal transduction by p53 class mediator"
+16059	1	0	0	0	1	1	1	deactivation of rhodopsin mediated signaling
+16056	1	0	0	0	1	1	1	rhodopsin mediated signaling
+16055	47	0	0	0	1	1	1	Wnt receptor signaling pathway
+16054	4	0	0	0	1	1	1	organic acid catabolism
+16053	33	0	0	0	1	1	1	organic acid biosynthesis
+16052	45	0	0	0	1	1	1	carbohydrate catabolism
+16051	40	0	0	0	1	1	1	carbohydrate biosynthesis
+16050	2	0	0	0	1	1	1	vesicle organization and biogenesis
+30327	1	0	0	0	1	1	1	prenylated protein catabolism
+30326	12	0	0	0	1	1	1	limb morphogenesis
+30324	12	0	0	0	1	1	1	lung development
+30323	12	0	0	0	1	1	1	respiratory tube development
+30322	1	0	0	0	1	1	1	stabilization of membrane potential
+30321	1	0	0	0	1	1	1	transepithelial chloride transport
+16049	59	0	0	0	1	1	1	cell growth
+16046	1	0	0	0	1	1	1	detection of fungi
+16045	4	0	0	0	1	1	1	detection of bacteria
+16044	9	0	0	0	1	1	1	membrane organization and biogenesis
+16043	435	2	0	2	0.8568	1	0.8568	cell organization and biogenesis
+16042	38	0	0	0	1	1	1	lipid catabolism
+30318	2	0	0	0	1	1	1	melanocyte differentiation
+30317	5	0	0	0	1	1	1	sperm motility
+30316	6	0	0	0	1	1	1	osteoclast differentiation
+16036	1	0	0	0	1	1	1	cellular response to phosphate starvation
+16032	11	0	0	0	1	1	1	viral life cycle
+30308	12	0	0	0	1	1	1	negative regulation of cell growth
+30307	5	0	0	0	1	1	1	positive regulation of cell growth
+30302	1	0	0	0	1	1	1	deoxynucleotide transport
+30301	2	0	0	0	1	1	1	cholesterol transport
+30300	1	0	0	0	1	1	1	regulation of cholesterol absorption
+8406	17	0	0	0	1	1	1	gonad development
+19987	1	0	0	0	1	1	1	negative regulation of anti-apoptosis
+19985	1	0	0	0	1	1	1	bypass DNA synthesis
+19954	9	0	0	0	1	1	1	asexual reproduction
+19953	127	1	0	1	0.6261	1	0.6261	sexual reproduction
+19950	1	0	0	0	1	1	1	SMT3-dependent protein catabolism
+19942	1	0	0	0	1	1	1	NEDD8 class-dependent protein catabolism
+19941	61	0	0	0	1	1	1	modification-dependent protein catabolism
+19935	62	0	0	0	1	1	1	cyclic-nucleotide-mediated signaling
+19934	1	0	0	0	1	1	1	cGMP-mediated signaling
+19933	54	0	0	0	1	1	1	cAMP-mediated signaling
+19932	71	0	0	0	1	1	1	second-messenger-mediated signaling
+35103	1	0	0	0	1	1	1	sterol regulatory element binding-protein cleavage
+46698	2	0	0	0	1	1	1	metamorphosis (sensu Insecta)
+46690	1	0	0	0	1	1	1	response to tellurium ion
+46689	3	0	0	0	1	1	1	response to mercury ion
+46688	1	0	0	0	1	1	1	response to copper ion
+46685	3	0	0	0	1	1	1	response to arsenate
+46677	1	0	0	0	1	1	1	response to antibiotic
+46676	1	0	0	0	1	1	1	negative regulation of insulin secretion
+46668	1	0	0	0	1	1	1	regulation of retinal programmed cell death
+46666	1	0	0	0	1	1	1	retinal programmed cell death
+46665	1	0	0	0	1	1	1	amnioserosa maintenance
+46663	1	0	0	0	1	1	1	"dorsal closure, leading edge cell differentiation"
+46660	1	0	0	0	1	1	1	female sex differentiation
+46655	1	0	0	0	1	1	1	folic acid metabolism
+46654	1	0	0	0	1	1	1	tetrahydrofolate biosynthesis
+46653	2	0	0	0	1	1	1	tetrahydrofolate metabolism
+46652	4	0	0	0	1	1	1	thymocyte differentiation
+46651	14	1	0	1	0.1016	1	0.1016	lymphocyte proliferation
+46649	43	1	0	1	0.2812	1	0.2812	lymphocyte activation
+42278	6	1	0	1	0.0449	1	0.0449	purine nucleoside metabolism
+42273	1	0	0	0	1	1	1	ribosomal large subunit biogenesis
+46626	1	0	0	0	1	1	1	regulation of insulin receptor signaling pathway
+46622	1	0	0	0	1	1	1	positive regulation of organ size
+46620	2	0	0	0	1	1	1	regulation of organ size
+42267	1	0	0	0	1	1	1	natural killer cell mediated cytolysis
+42262	2	0	0	0	1	1	1	DNA protection
+30299	2	0	0	0	1	1	1	cholesterol absorption
+42257	5	0	0	0	1	1	1	ribosomal subunit assembly
+42255	6	0	0	0	1	1	1	ribosome assembly
+42254	55	0	0	0	1	1	1	ribosome biogenesis and assembly
+42253	2	0	0	0	1	1	1	granulocyte macrophage colony-stimulating factor biosynthesis
+30282	12	0	0	0	1	1	1	bone mineralization
+46606	2	0	0	0	1	1	1	negative regulation of centrosome cycle
+46605	2	0	0	0	1	1	1	regulation of centrosome cycle
+42249	1	0	0	0	1	1	1	establishment of polarity of embryonic epithelium
+46600	2	0	0	0	1	1	1	negative regulation of centriole replication
+42246	4	1	0	1	0.0301	1	0.0301	tissue regeneration
+42244	1	0	0	0	1	1	1	spore wall assembly
+30279	3	0	0	0	1	1	1	negative regulation of ossification
+30278	5	0	0	0	1	1	1	regulation of ossification
+30277	3	0	0	0	1	1	1	maintenance of gastrointestinal epithelium
+8380	55	0	0	0	1	1	1	RNA splicing
+42231	3	0	0	0	1	1	1	interleukin-13 biosynthesis
+30263	1	0	0	0	1	1	1	apoptotic chromosome condensation
+30262	6	0	0	0	1	1	1	apoptotic nuclear changes
+30261	16	0	0	0	1	1	1	chromosome condensation
+42226	6	0	0	0	1	1	1	interleukin-6 biosynthesis
+8371	23	0	0	0	1	1	1	obsolete biological process
+42222	2	0	0	0	1	1	1	interleukin-1 biosynthesis
+42221	113	0	0	0	1	1	1	response to chemical substance
+30259	1	0	0	0	1	1	1	lipid glycosylation
+30258	1	0	0	0	1	1	1	lipid modification
+30252	1	0	0	0	1	1	1	growth hormone secretion
+8366	10	0	0	0	1	1	1	nerve ensheathment
+42219	6	0	0	0	1	1	1	amino acid derivative catabolism
+42214	2	0	0	0	1	1	1	terpene metabolism
+8361	10	0	0	0	1	1	1	regulation of cell size
+8360	5	0	0	0	1	1	1	regulation of cell shape
+30245	1	0	0	0	1	1	1	cellulose catabolism
+30243	1	0	0	0	1	1	1	cellulose metabolism
+8356	5	0	0	0	1	1	1	asymmetric cytokinesis
+8355	2	0	0	0	1	1	1	olfactory learning
+8354	5	0	0	0	1	1	1	germ-cell migration
+30239	1	0	0	0	1	1	1	myofibril assembly
+30238	3	0	0	0	1	1	1	male sex determination
+30237	1	0	0	0	1	1	1	female sex determination
+30236	2	0	0	0	1	1	1	anti-inflammatory response
+8347	4	0	0	0	1	1	1	glia cell migration
+8344	5	0	0	0	1	1	1	adult locomotory behavior
+8340	4	0	0	0	1	1	1	determination of adult life span
+30225	5	0	0	0	1	1	1	macrophage differentiation
+30224	1	0	0	0	1	1	1	monocyte differentiation
+30222	1	0	0	0	1	1	1	eosinophil differentiation
+30220	1	0	0	0	1	1	1	platelet formation
+8334	4	0	0	0	1	1	1	histone mRNA metabolism
+8333	3	1	0	1	0.0227	1	0.0227	endosome to lysosome transport
+30219	3	0	0	0	1	1	1	megakaryocyte differentiation
+30218	9	0	0	0	1	1	1	erythrocyte differentiation
+30217	9	0	0	0	1	1	1	T-cell differentiation
+30216	4	0	0	0	1	1	1	keratinocyte differentiation
+30213	3	0	0	0	1	1	1	hyaluronan biosynthesis
+30212	3	0	0	0	1	1	1	hyaluronan metabolism
+30206	1	0	0	0	1	1	1	chondroitin sulfate biosynthesis
+30204	1	0	0	0	1	1	1	chondroitin sulfate metabolism
+30203	15	0	0	0	1	1	1	glycosaminoglycan metabolism
+30201	6	0	0	0	1	1	1	heparan sulfate proteoglycan metabolism
+8315	2	0	0	0	1	1	1	meiotic G2/MI transition
+8306	1	0	0	0	1	1	1	associative learning
+8300	1	0	0	0	1	1	1	isoprenoid catabolism
+19886	10	0	0	0	1	1	1	"antigen processing, exogenous antigen via MHC class II"
+19885	7	0	0	0	1	1	1	"antigen processing, endogenous antigen via MHC class I"
+19884	11	0	0	0	1	1	1	"antigen presentation, exogenous antigen"
+19883	8	0	0	0	1	1	1	"antigen presentation, endogenous antigen"
+19882	20	0	0	0	1	1	1	antigen presentation
+19877	1	0	0	0	1	1	1	diaminopimelate biosynthesis
+19872	1	0	0	0	1	1	1	streptomycin biosynthesis
+35088	2	0	0	0	1	1	1	establishment and/or maintenance of apical/basal cell polarity
+35084	2	0	0	0	1	1	1	flagellum axoneme biogenesis
+35082	2	0	0	0	1	1	1	axoneme biogenesis
+35081	4	0	0	0	1	1	1	induction of programmed cell death by hormones
+19860	1	0	0	0	1	1	1	uracil metabolism
+19858	1	0	0	0	1	1	1	cytosine metabolism
+19856	6	0	0	0	1	1	1	pyrimidine base biosynthesis
+19853	1	0	0	0	1	1	1	L-ascorbic acid biosynthesis
+19852	2	0	0	0	1	1	1	L-ascorbic acid metabolism
+19836	2	0	0	0	1	1	1	hemolysis
+19835	10	0	0	0	1	1	1	cytolysis
+35051	2	0	0	0	1	1	1	cardiac cell differentiation
+35050	4	0	0	0	1	1	1	embryonic heart tube development
+19827	1	0	0	0	1	1	1	stem cell maintenance
+35036	1	0	0	0	1	1	1	sperm-egg recognition
+35029	1	0	0	0	1	1	1	"dorsal closure, leading edge cell fate commitment"
+35028	1	0	0	0	1	1	1	leading edge cell fate determination
+35027	1	0	0	0	1	1	1	leading edge cell fate commitment
+35026	2	0	0	0	1	1	1	leading edge cell differentiation
+46599	2	0	0	0	1	1	1	regulation of centriole replication
+46597	1	0	0	0	1	1	1	negative regulation of virion penetration
+46596	1	0	0	0	1	1	1	regulation of virion penetration
+46590	2	0	0	0	1	1	1	leg morphogenesis
+46588	1	0	0	0	1	1	1	negative regulation of calcium-dependent cell-cell adhesion
+46586	1	0	0	0	1	1	1	regulation of calcium-dependent cell-cell adhesion
+46579	2	0	0	0	1	1	1	positive regulation of RAS protein signal transduction
+46578	3	0	0	0	1	1	1	regulation of RAS protein signal transduction
+46552	3	0	0	0	1	1	1	photoreceptor cell fate commitment
+46548	1	0	0	0	1	1	1	retinal rod cell development
+46541	1	0	0	0	1	1	1	saliva secretion
+46530	9	0	0	0	1	1	1	photoreceptor cell differentiation
+42176	2	0	0	0	1	1	1	regulation of protein catabolism
+46521	3	0	0	0	1	1	1	sphingoid catabolism
+42168	9	0	0	0	1	1	1	heme metabolism
+42167	2	0	0	0	1	1	1	heme catabolism
+30199	4	0	0	0	1	1	1	collagen fibril organization
+30198	26	0	0	0	1	1	1	extracellular matrix organization and biogenesis
+30195	4	0	0	0	1	1	1	negative regulation of blood coagulation
+30193	4	0	0	0	1	1	1	regulation of blood coagulation
+46519	8	0	0	0	1	1	1	sphingoid metabolism
+46516	1	0	0	0	1	1	1	hypusine metabolism
+46515	1	0	0	0	1	1	1	hypusine biosynthesis
+46514	2	0	0	0	1	1	1	ceramide catabolism
+42158	8	0	0	0	1	1	1	lipoprotein biosynthesis
+42157	10	0	0	0	1	1	1	lipoprotein metabolism
+30187	2	0	0	0	1	1	1	melatonin biosynthesis
+30186	2	0	0	0	1	1	1	melatonin metabolism
+30183	11	0	0	0	1	1	1	B-cell differentiation
+30182	15	0	0	0	1	1	1	neuron differentiation
+30181	1	0	0	0	1	1	1	sodium:calcium exchange
+30180	2	0	0	0	1	1	1	solute:solute exchange
+46504	1	0	0	0	1	1	1	glycerol ether biosynthesis
+46503	1	0	0	0	1	1	1	glycerolipid catabolism
+8299	9	0	0	0	1	1	1	isoprenoid biosynthesis
+8298	4	0	0	0	1	1	1	"mRNA localization, intracellular"
+46502	2	0	0	0	1	1	1	uroporphyrinogen III metabolism
+8295	2	0	0	0	1	1	1	spermidine biosynthesis
+8293	3	0	0	0	1	1	1	torso signaling pathway
+8292	1	0	0	0	1	1	1	acetylcholine biosynthesis
+42145	2	0	0	0	1	1	1	"homotypic vacuole fusion, non-autophagic"
+8291	1	0	0	0	1	1	1	acetylcholine metabolism
+42144	4	0	0	0	1	1	1	"vacuole fusion, non-autophagic"
+30178	5	0	0	0	1	1	1	negative regulation of Wnt receptor signaling pathway
+30177	1	0	0	0	1	1	1	positive regulation of Wnt receptor signaling pathway
+8286	10	0	0	0	1	1	1	insulin receptor signaling pathway
+8285	66	0	0	0	1	1	1	negative regulation of cell proliferation
+8284	66	0	0	0	1	1	1	positive regulation of cell proliferation
+8283	584	5	0	5	0.4636	1	0.4636	cell proliferation
+42136	6	0	0	0	1	1	1	neurotransmitter biosynthesis
+42135	5	0	0	0	1	1	1	neurotransmitter catabolism
+42133	13	0	0	0	1	1	1	neurotransmitter metabolism
+42130	1	0	0	0	1	1	1	negative regulation of T-cell proliferation
+30168	8	1	0	1	0.0594	1	0.0594	platelet activation
+30166	5	0	0	0	1	1	1	proteoglycan biosynthesis
+30163	264	2	0	2	0.6055	1	0.6055	protein catabolism
+30162	2	0	0	0	1	1	1	regulation of proteolysis and peptidolysis
+8277	17	1	0	1	0.1221	1	0.1221	regulation of G-protein coupled receptor protein signaling pathway
+42129	6	0	0	0	1	1	1	regulation of T-cell proliferation
+42128	1	0	0	0	1	1	1	nitrate assimilation
+42127	154	0	0	0	1	1	1	regulation of cell proliferation
+42126	1	0	0	0	1	1	1	nitrate metabolism
+8272	8	0	0	0	1	1	1	sulfate transport
+42121	1	0	0	0	1	1	1	alginic acid biosynthesis
+42120	1	0	0	0	1	1	1	alginic acid metabolism
+30155	15	0	0	0	1	1	1	regulation of cell adhesion
+30154	162	0	0	0	1	1	1	cell differentiation
+30153	1	0	0	0	1	1	1	bacteriocin immunity
+30150	1	0	0	0	1	1	1	mitochondrial matrix protein import
+42119	2	0	0	0	1	1	1	neutrophil activation
+42117	1	0	0	0	1	1	1	monocyte activation
+42116	2	0	0	0	1	1	1	macrophage activation
+42113	18	1	0	1	0.1288	1	0.1288	B-cell activation
+42110	23	0	0	0	1	1	1	T-cell activation
+30149	5	0	0	0	1	1	1	sphingolipid catabolism
+30148	6	0	0	0	1	1	1	sphingolipid biosynthesis
+30147	1	0	0	0	1	1	1	natriuresis
+30146	2	0	0	0	1	1	1	diuresis
+8258	1	0	0	0	1	1	1	head involution
+42109	2	0	0	0	1	1	1	tumor necrosis factor-beta biosynthesis
+42108	12	0	0	0	1	1	1	positive regulation of cytokine biosynthesis
+42107	26	0	0	0	1	1	1	cytokine metabolism
+42104	3	0	0	0	1	1	1	positive regulation of activated T-cell proliferation
+42102	6	0	0	0	1	1	1	positive regulation of T-cell proliferation
+42100	6	1	0	1	0.0449	1	0.0449	B-cell proliferation
+30111	10	0	0	0	1	1	1	regulation of Wnt receptor signaling pathway
+8228	2	0	0	0	1	1	1	opsonization
+8220	3	0	0	0	1	1	1	necrosis
+30104	3	0	0	0	1	1	1	water homeostasis
+30101	3	0	0	0	1	1	1	natural killer cell activation
+30100	7	0	0	0	1	1	1	regulation of endocytosis
+8219	223	3	0	3	0.2401	1	0.2401	cell death
+8218	1	0	0	0	1	1	1	bioluminescence
+8217	18	0	0	0	1	1	1	regulation of blood pressure
+8216	2	0	0	0	1	1	1	spermidine metabolism
+8215	3	0	0	0	1	1	1	spermine metabolism
+8213	8	0	0	0	1	1	1	protein amino acid alkylation
+8210	3	0	0	0	1	1	1	estrogen metabolism
+8207	9	0	0	0	1	1	1	C21-steroid hormone metabolism
+8206	8	0	0	0	1	1	1	bile acid metabolism
+8204	3	0	0	0	1	1	1	ergosterol metabolism
+8203	37	0	0	0	1	1	1	cholesterol metabolism
+8202	70	0	0	0	1	1	1	steroid metabolism
+19795	3	0	0	0	1	1	1	nonprotein amino acid biosynthesis
+19794	4	0	0	0	1	1	1	nonprotein amino acid metabolism
+19754	2	0	0	0	1	1	1	one-carbon compound catabolism
+19753	1	0	0	0	1	1	1	one-carbon compound biosynthesis
+19752	197	0	0	0	1	1	1	carboxylic acid metabolism
+19751	3	0	0	0	1	1	1	polyol metabolism
+19748	3	0	0	0	1	1	1	secondary metabolism
+19746	1	0	0	0	1	1	1	hopanoid biosynthesis
+19745	1	0	0	0	1	1	1	pentacyclic triterpenoid biosynthesis
+19744	1	0	0	0	1	1	1	hopanoid metabolism
+19742	1	0	0	0	1	1	1	pentacyclic triterpenoid metabolism
+19740	2	0	0	0	1	1	1	nitrogen utilization
+19735	41	1	0	1	0.27	1	0.27	antimicrobial humoral response (sensu Vertebrata)
+19733	2	0	0	0	1	1	1	antibacterial humoral response (sensu Vertebrata)
+19732	4	0	0	0	1	1	1	antifungal humoral response
+19731	6	0	0	0	1	1	1	antibacterial humoral response
+19730	46	1	0	1	0.2977	1	0.2977	antimicrobial humoral response
+19725	64	0	0	0	1	1	1	cell homeostasis
+19722	7	0	0	0	1	1	1	calcium-mediated signaling
+19720	2	0	0	0	1	1	1	Mo-molybdopterin cofactor metabolism
+46498	1	0	0	0	1	1	1	S-adenosylhomocysteine metabolism
+46493	1	0	0	0	1	1	1	lipid A metabolism
+46489	3	0	0	0	1	1	1	phosphoinositide biosynthesis
+46488	4	1	0	1	0.0301	1	0.0301	phosphatidylinositol metabolism
+46487	3	0	0	0	1	1	1	glyoxylate metabolism
+46486	10	0	0	0	1	1	1	glycerolipid metabolism
+46485	1	0	0	0	1	1	1	ether lipid metabolism
+46483	40	0	0	0	1	1	1	heterocycle metabolism
+46479	1	0	0	0	1	1	1	glycosphingolipid catabolism
+46477	1	0	0	0	1	1	1	glycosylceramide catabolism
+46474	7	0	0	0	1	1	1	glycerophospholipid biosynthesis
+46473	2	0	0	0	1	1	1	phosphatidic acid metabolism
+46470	2	0	0	0	1	1	1	phosphatidylcholine metabolism
+46469	2	0	0	0	1	1	1	platelet activating factor metabolism
+46467	16	0	0	0	1	1	1	membrane lipid biosynthesis
+46466	9	0	0	0	1	1	1	membrane lipid catabolism
+46464	1	0	0	0	1	1	1	acylglycerol catabolism
+46461	1	0	0	0	1	1	1	neutral lipid catabolism
+46457	4	0	0	0	1	1	1	prostanoid biosynthesis
+46456	8	0	0	0	1	1	1	icosanoid biosynthesis
+46451	1	0	0	0	1	1	1	diaminopimelate metabolism
+42098	9	0	0	0	1	1	1	T-cell proliferation
+42097	3	0	0	0	1	1	1	interleukin-4 biosynthesis
+42095	6	0	0	0	1	1	1	interferon-gamma biosynthesis
+42094	4	0	0	0	1	1	1	interleukin-2 biosynthesis
+42093	4	0	0	0	1	1	1	T-helper cell differentiation
+42092	6	0	0	0	1	1	1	T-helper 2 type immune response
+42091	2	0	0	0	1	1	1	interleukin-10 biosynthesis
+42090	7	0	0	0	1	1	1	interleukin-12 biosynthesis
+42089	25	0	0	0	1	1	1	cytokine biosynthesis
+42088	17	0	0	0	1	1	1	T-helper 1 type immune response
+42087	17	0	0	0	1	1	1	cell-mediated immune response
+46439	1	0	0	0	1	1	1	L-cysteine metabolism
+42078	1	0	0	0	1	1	1	germ-line stem cell renewal
+42074	2	0	0	0	1	1	1	cell migration during gastrulation
+46425	2	0	0	0	1	1	1	regulation of JAK-STAT cascade
+42069	2	0	0	0	1	1	1	regulation of catecholamine metabolism
+42067	2	0	0	0	1	1	1	establishment of ommatidial polarity (sensu Drosophila)
+42063	9	0	0	0	1	1	1	gliogenesis
+42060	9	1	0	1	0.0665	1	0.0665	wound healing
+30099	23	0	0	0	1	1	1	myeloid blood cell differentiation
+30098	25	0	0	0	1	1	1	lymphocyte differentiation
+30097	61	0	0	0	1	1	1	hemopoiesis
+30091	1	0	0	0	1	1	1	protein repair
+46416	1	0	0	0	1	1	1	D-amino acid metabolism
+42059	2	0	0	0	1	1	1	negative regulation of epidermal growth factor receptor signaling pathway
+42058	2	0	0	0	1	1	1	regulation of epidermal growth factor receptor signaling pathway
+42055	5	0	0	0	1	1	1	neuronal lineage restriction
+42053	2	0	0	0	1	1	1	regulation of dopamine metabolism
+42052	2	0	0	0	1	1	1	rhabdomere development
+42051	4	0	0	0	1	1	1	eye photoreceptor development (sensu Drosophila)
+42049	1	0	0	0	1	1	1	cell acyl-CoA homeostasis
+42044	12	0	0	0	1	1	1	fluid transport
+30073	5	0	0	0	1	1	1	insulin secretion
+30072	5	0	0	0	1	1	1	peptide hormone secretion
+42036	6	0	0	0	1	1	1	negative regulation of cytokine biosynthesis
+42035	20	0	0	0	1	1	1	regulation of cytokine biosynthesis
+42033	4	0	0	0	1	1	1	chemokine biosynthesis
+42026	1	0	0	0	1	1	1	protein refolding
+30050	1	0	0	0	1	1	1	vesicle transport along actin filament
+30048	5	0	0	0	1	1	1	actin filament-based movement
+30046	1	0	0	0	1	1	1	parallel actin filament bundle formation
+30042	1	0	0	0	1	1	1	actin filament depolymerization
+30041	5	0	0	0	1	1	1	actin filament polymerization
+8156	3	0	0	0	1	1	1	negative regulation of DNA replication
+8154	11	0	0	0	1	1	1	actin polymerization and/or depolymerization
+8152	2630	20	0	20	0.5714	1	0.5714	metabolism
+8151	1748	12	0	12	0.73	1	0.73	cell growth and/or maintenance
+8150	4471	34	0	34	0.6597	1	0.6597	biological_process
+45990	2	0	0	0	1	1	1	regulation of transcription by carbon catabolites
+30036	51	0	0	0	1	1	1	actin cytoskeleton organization and biogenesis
+30033	2	0	0	0	1	1	1	microvillus biogenesis
+30032	3	0	0	0	1	1	1	lamellipodium biogenesis
+30031	8	0	0	0	1	1	1	cell projection biogenesis
+30030	8	0	0	0	1	1	1	cell projection organization and biogenesis
+45987	1	0	0	0	1	1	1	positive regulation of smooth muscle contraction
+30029	53	0	0	0	1	1	1	actin filament-based process
+30026	2	0	0	0	1	1	1	manganese ion homeostasis
+30012	7	0	0	0	1	1	1	establishment and/or maintenance of cell polarity (sensu Saccharomyces)
+30010	9	0	0	0	1	1	1	establishment of cell polarity
+30005	34	0	0	0	1	1	1	"di-, tri-valent inorganic cation homeostasis"
+30004	12	0	0	0	1	1	1	monovalent inorganic cation homeostasis
+30003	47	0	0	0	1	1	1	cation homeostasis
+30001	151	1	0	1	0.6905	1	0.6905	metal ion transport
+45955	1	0	0	0	1	1	1	negative regulation of calcium ion-dependent exocytosis
+8105	4	0	0	0	1	1	1	asymmetric protein localization
+8104	15	0	0	0	1	1	1	protein localization
+45946	2	0	0	0	1	1	1	positive regulation of translation
+8103	1	0	0	0	1	1	1	oocyte microtubule cytoskeleton polarization
+45944	24	0	0	0	1	1	1	positive regulation of transcription from Pol II promoter
+45941	46	0	0	0	1	1	1	positive regulation of transcription
+45939	1	0	0	0	1	1	1	negative regulation of steroid metabolism
+19695	1	0	0	0	1	1	1	choline metabolism
+45936	2	0	0	0	1	1	1	negative regulation of phosphate metabolism
+45933	1	0	0	0	1	1	1	positive regulation of muscle contraction
+45931	1	0	0	0	1	1	1	positive regulation of mitotic cell cycle
+45930	3	0	0	0	1	1	1	negative regulation of mitotic cell cycle
+19685	1	0	0	0	1	1	1	"photosynthesis, dark reaction"
+19684	1	0	0	0	1	1	1	"photosynthesis, light reaction"
+45927	1	0	0	0	1	1	1	positive regulation of growth
+45926	2	0	0	0	1	1	1	negative regulation of growth
+45924	1	0	0	0	1	1	1	regulation of female receptivity
+45920	1	0	0	0	1	1	1	negative regulation of exocytosis
+19674	1	0	0	0	1	1	1	NAD metabolism
+45917	1	0	0	0	1	1	1	positive regulation of complement activation
+45916	1	0	0	0	1	1	1	negative regulation of complement activation
+19670	1	0	0	0	1	1	1	glutamate fermentation
+45910	1	0	0	0	1	1	1	negative regulation of DNA recombination
+19665	1	0	0	0	1	1	1	amino acid fermentation
+19660	1	0	0	0	1	1	1	glycolytic fermentation
+19652	1	0	0	0	1	1	1	propionate fermentation
+19645	1	0	0	0	1	1	1	anaerobic electron transport
+19642	1	0	0	0	1	1	1	anaerobic glycolysis
+19614	1	0	0	0	1	1	1	catechol catabolism
+19605	2	0	0	0	1	1	1	butyrate metabolism
+7638	5	0	0	0	1	1	1	mechanosensory behavior
+7635	4	0	0	0	1	1	1	chemosensory behavior
+7632	2	0	0	0	1	1	1	visual behavior
+7631	17	0	0	0	1	1	1	feeding behavior
+7628	3	0	0	0	1	1	1	adult walking behavior
+7626	15	0	0	0	1	1	1	locomotory behavior
+7625	1	0	0	0	1	1	1	grooming behavior
+7624	1	0	0	0	1	1	1	ultradian rhythm
+7623	21	0	0	0	1	1	1	circadian rhythm
+7622	26	0	0	0	1	1	1	rhythmic behavior
+7620	2	0	0	0	1	1	1	copulation
+7619	4	0	0	0	1	1	1	courtship behavior
+7618	2	0	0	0	1	1	1	mating
+7617	6	0	0	0	1	1	1	mating behavior
+7616	3	0	0	0	1	1	1	long-term memory
+7614	1	0	0	0	1	1	1	short-term memory
+7613	8	0	0	0	1	1	1	memory
+7612	11	0	0	0	1	1	1	learning
+7611	27	0	0	0	1	1	1	learning and/or memory
+7610	102	0	0	0	1	1	1	behavior
+46399	1	0	0	0	1	1	1	glucuronate biosynthesis
+46398	1	0	0	0	1	1	1	UDP-glucuronate metabolism
+46395	4	0	0	0	1	1	1	carboxylic acid catabolism
+46394	33	0	0	0	1	1	1	carboxylic acid biosynthesis
+7608	18	0	0	0	1	1	1	perception of smell
+7607	7	0	0	0	1	1	1	taste perception
+7606	21	0	0	0	1	1	1	sensory perception of chemical stimulus
+7605	45	0	0	0	1	1	1	perception of sound
+7603	1	0	0	0	1	1	1	"phototransduction, visible light"
+7602	13	0	0	0	1	1	1	phototransduction
+7601	81	1	0	1	0.4644	1	0.4644	visual perception
+7600	154	1	0	1	0.6977	1	0.6977	sensory perception
+46381	1	0	0	0	1	1	1	CMP-N-acetylneuraminate metabolism
+46380	1	0	0	0	1	1	1	N-acetylneuraminate biosynthesis
+46379	1	0	0	0	1	1	1	extracellular polysaccharide metabolism
+46374	1	0	0	0	1	1	1	teichoic acid metabolism
+46373	1	0	0	0	1	1	1	L-arabinose metabolism
+46368	2	0	0	0	1	1	1	GDP-L-fucose metabolism
+46365	37	0	0	0	1	1	1	monosaccharide catabolism
+46364	14	0	0	0	1	1	1	monosaccharide biosynthesis
+46358	2	0	0	0	1	1	1	butyrate biosynthesis
+46352	1	0	0	0	1	1	1	disaccharide catabolism
+46351	2	0	0	0	1	1	1	disaccharide biosynthesis
+46349	3	0	0	0	1	1	1	amino sugar biosynthesis
+46348	1	0	0	0	1	1	1	amino sugar catabolism
+46343	1	0	0	0	1	1	1	streptomycin metabolism
+46340	1	0	0	0	1	1	1	diacylglycerol catabolism
+46339	2	0	0	0	1	1	1	diacylglycerol metabolism
+46337	1	0	0	0	1	1	1	phosphatidylethanolamine metabolism
+46335	1	0	0	0	1	1	1	ethanolamine biosynthesis
+46331	1	0	0	0	1	1	1	lateral inhibition
+46330	1	0	0	0	1	1	1	positive regulation of JNK cascade
+46329	2	0	0	0	1	1	1	negative regulation of JNK cascade
+46328	4	0	0	0	1	1	1	regulation of JNK cascade
+46325	1	0	0	0	1	1	1	negative regulation of glucose import
+46324	1	0	0	0	1	1	1	regulation of glucose import
+46323	1	0	0	0	1	1	1	glucose import
+46314	2	0	0	0	1	1	1	phosphocreatine biosynthesis
+8099	3	0	0	0	1	1	1	synaptic vesicle endocytosis
+8089	1	0	0	0	1	1	1	anterograde axon cargo transport
+8088	3	0	0	0	1	1	1	axon cargo transport
+8078	2	0	0	0	1	1	1	mesoderm cell migration
+8069	1	0	0	0	1	1	1	"dorsal/ventral axis determination, follicular epithelium (sensu Insecta)"
+8065	2	0	0	0	1	1	1	establishment of blood/nerve barrier
+8064	4	0	0	0	1	1	1	regulation of actin polymerization and/or depolymerization
+8063	5	0	0	0	1	1	1	Toll signaling pathway
+8062	1	0	0	0	1	1	1	eclosion rhythm
+45898	3	0	0	0	1	1	1	regulation of transcriptional preinitiation complex formation
+8055	1	0	0	0	1	1	1	ocellus pigment biosynthesis
+8054	4	0	0	0	1	1	1	cyclin catabolism
+8053	1	0	0	0	1	1	1	mitochondrial fusion
+8052	1	0	0	0	1	1	1	sensory organ determination
+45893	36	0	0	0	1	1	1	"positive regulation of transcription, DNA-dependent"
+45892	60	0	0	0	1	1	1	"negative regulation of transcription, DNA-dependent"
+8049	2	0	0	0	1	1	1	male courtship behavior
+8045	3	0	0	0	1	1	1	motor axon guidance
+45884	2	0	0	0	1	1	1	regulation of survival gene product activity
+8038	4	0	0	0	1	1	1	neuronal cell recognition
+8037	7	0	0	0	1	1	1	cell recognition
+8033	9	0	0	0	1	1	1	tRNA processing
+45860	1	0	0	0	1	1	1	positive regulation of protein kinase activity
+45859	8	0	0	0	1	1	1	regulation of protein kinase activity
+8016	16	0	0	0	1	1	1	regulation of heart rate
+8015	55	0	0	0	1	1	1	circulation
+45839	1	0	0	0	1	1	1	negative regulation of mitosis
+45836	1	0	0	0	1	1	1	positive regulation of meiosis
+45835	1	0	0	0	1	1	1	negative regulation of meiosis
+19585	3	0	0	0	1	1	1	glucuronate metabolism
+19572	1	0	0	0	1	1	1	L-arabinose catabolism
+45815	1	0	0	0	1	1	1	"positive regulation of gene expression, epigenetic"
+45814	12	0	0	0	1	1	1	"negative regulation of gene expression, epigenetic"
+19568	1	0	0	0	1	1	1	arabinose catabolism
+19566	1	0	0	0	1	1	1	arabinose metabolism
+45807	5	0	0	0	1	1	1	positive regulation of endocytosis
+45806	2	0	0	0	1	1	1	negative regulation of endocytosis
+7599	53	2	0	2	0.061	1	0.061	hemostasis
+7596	50	2	0	2	0.055	1	0.055	blood coagulation
+7595	7	0	0	0	1	1	1	lactation
+7589	3	0	0	0	1	1	1	fluid secretion
+7588	26	0	0	0	1	1	1	excretion
+7587	1	0	0	0	1	1	1	sugar utilization
+7586	28	0	0	0	1	1	1	digestion
+7585	18	1	0	1	0.1288	1	0.1288	respiratory gaseous exchange
+7584	6	0	0	0	1	1	1	response to nutrients
+7582	3918	30	0	30	0.5729	1	0.5729	physiological process
+19546	1	0	0	0	1	1	1	arginine deiminase pathway
+19541	1	0	0	0	1	1	1	propionate metabolism
+19538	1081	7	0	7	0.7476	1	0.7476	protein metabolism
+19532	1	0	0	0	1	1	1	oxalate transport
+19530	1	0	0	0	1	1	1	taurine metabolism
+7569	2	0	0	0	1	1	1	cell aging
+7568	9	0	0	0	1	1	1	aging
+7567	3	0	0	0	1	1	1	parturition
+7566	3	0	0	0	1	1	1	embryo implantation
+7565	20	0	0	0	1	1	1	pregnancy
+7562	1	0	0	0	1	1	1	eclosion
+7560	1	0	0	0	1	1	1	imaginal disc morphogenesis
+19521	1	0	0	0	1	1	1	D-gluconate metabolism
+19520	1	0	0	0	1	1	1	aldonic acid metabolism
+7552	2	0	0	0	1	1	1	metamorphosis
+19519	1	0	0	0	1	1	1	pentitol metabolism
+19512	1	0	0	0	1	1	1	lactose catabolism via tagatose-6-phosphate
+19511	1	0	0	0	1	1	1	peptidyl-proline hydroxylation
+19510	1	0	0	0	1	1	1	S-adenosylhomocysteine catabolism
+7549	3	0	0	0	1	1	1	dosage compensation
+7548	7	0	0	0	1	1	1	sex differentiation
+7538	1	0	0	0	1	1	1	primary sex determination
+7534	1	0	0	0	1	1	1	gene conversion at MAT locus
+7533	1	0	0	0	1	1	1	mating-type switching/recombination
+7532	1	0	0	0	1	1	1	"regulation of transcription, mating-type specific"
+7531	2	0	0	0	1	1	1	mating-type determination
+7530	9	0	0	0	1	1	1	sex determination
+7529	1	0	0	0	1	1	1	establishment of synaptic specificity at neuromuscular junction
+7528	6	0	0	0	1	1	1	neuromuscular junction development
+7525	1	0	0	0	1	1	1	somatic muscle development
+7520	1	0	0	0	1	1	1	myoblast fusion
+7519	16	0	0	0	1	1	1	myogenesis
+7517	81	0	0	0	1	1	1	muscle development
+7516	6	0	0	0	1	1	1	hemocyte development
+7515	13	0	0	0	1	1	1	lymph gland development
+7509	3	0	0	0	1	1	1	mesoderm migration
+7507	27	0	0	0	1	1	1	heart development
+7506	1	0	0	0	1	1	1	gonadal mesoderm development
+7502	1	0	0	0	1	1	1	gut mesoderm development
+7501	3	0	0	0	1	1	1	mesoderm cell fate specification
+7500	1	0	0	0	1	1	1	mesoderm cell fate determination
+46283	1	0	0	0	1	1	1	anthocyanin metabolism
+46271	1	0	0	0	1	1	1	phenylpropanoid catabolism
+46246	2	0	0	0	1	1	1	terpene biosynthesis
+46219	4	0	0	0	1	1	1	indolalkylamine biosynthesis
+46218	3	0	0	0	1	1	1	indolalkylamine catabolism
+46209	9	0	0	0	1	1	1	nitric oxide metabolism

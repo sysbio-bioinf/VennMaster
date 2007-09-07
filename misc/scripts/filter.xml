@@ -1,0 +1,12 @@
+<doc>
+  <venn.db.GODataFilter>
+    <params>
+      <minTotal>40</minTotal>
+      <maxTotal>140</maxTotal>
+      <maxPValue>0.05</maxPValue>
+      <maxFDR>1.0</maxFDR>
+    </params>
+    <changeListeners/>
+    <eventsActive>true</eventsActive>
+  </venn.db.GODataFilter>
+</doc>

@@ -1,0 +1,1941 @@
+GO ID	Total	Under	Over	Change	P-Value (Under)	P-Value (Over)	P-Value (Changed)	Term
+0008026	2	0	0	1	1,0000	1,0000	0,1186	ATP-dependent helicase activity
+0008023	1	0	0	0	1,0000	1,0000	1,0000	transcription elongation factor complex
+0008022	4	0	0	0	1,0000	1,0000	1,0000	protein C-terminus binding
+0008016	2	0	0	0	1,0000	1,0000	1,0000	regulation of heart rate
+0008015	17	0	0	0	1,0000	1,0000	1,0000	circulation
+0008009	4	0	0	2	1,0000	1,0000	0,0204	chemokine activity
+0015144	1	0	0	0	1,0000	1,0000	1,0000	carbohydrate transporter activity
+0046246	1	0	0	0	1,0000	1,0000	1,0000	terpene biosynthesis
+0046209	3	0	0	0	1,0000	1,0000	1,0000	nitric oxide metabolism
+0015095	1	0	0	0	1,0000	1,0000	1,0000	magnesium ion transporter activity
+0015082	1	0	0	0	1,0000	1,0000	1,0000	di-, tri-valent inorganic cation transporter activity
+0015078	1	0	0	0	1,0000	1,0000	1,0000	hydrogen ion transporter activity
+0015077	1	0	0	0	1,0000	1,0000	1,0000	monovalent inorganic cation transporter activity
+0015075	3	0	0	0	1,0000	1,0000	1,0000	ion transporter activity
+0015071	3	0	0	0	1,0000	1,0000	1,0000	protein phosphatase type 2C activity
+0015065	1	0	0	0	1,0000	1,0000	1,0000	uridine nucleotide receptor activity
+0015057	1	0	0	0	1,0000	1,0000	1,0000	thrombin receptor activity
+0015056	1	0	0	0	1,0000	1,0000	1,0000	corticotrophin-releasing factor receptor activity
+0015055	1	0	0	0	1,0000	1,0000	1,0000	secretin receptor activity
+0015054	1	0	0	0	1,0000	1,0000	1,0000	gastrin receptor activity
+0015052	1	0	0	0	1,0000	1,0000	1,0000	beta3-adrenergic receptor activity
+0015031	19	0	0	1	1,0000	1,0000	0,7014	protein transport
+0015030	1	0	0	1	1,0000	1,0000	0,0611	Cajal body
+0015026	1	0	0	0	1,0000	1,0000	1,0000	coreceptor activity
+0015020	1	0	0	0	1,0000	1,0000	1,0000	glucuronosyltransferase activity
+0006997	9	0	0	0	1,0000	1,0000	1,0000	nuclear organization and biogenesis
+0006996	30	0	0	2	1,0000	1,0000	0,5581	organelle organization and biogenesis
+0046165	2	0	0	0	1,0000	1,0000	1,0000	alcohol biosynthesis
+0046164	3	0	0	1	1,0000	1,0000	0,1726	alcohol catabolism
+0006986	4	0	0	0	1,0000	1,0000	1,0000	response to unfolded protein
+0018958	1	0	0	0	1,0000	1,0000	1,0000	phenol metabolism
+0006979	3	0	0	0	1,0000	1,0000	1,0000	response to oxidative stress
+0006978	1	0	0	0	1,0000	1,0000	1,0000	DNA damage response, signal transduction by p53 class mediator resulting in transcription of p21 class mediator
+0006975	2	0	0	0	1,0000	1,0000	1,0000	DNA damage induced protein phosphorylation
+0006974	30	0	0	1	1,0000	1,0000	0,8532	response to DNA damage stimulus
+0046148	1	0	0	0	1,0000	1,0000	1,0000	pigment biosynthesis
+0046146	1	0	0	0	1,0000	1,0000	1,0000	tetrahydrobiopterin metabolism
+0006968	7	0	0	0	1,0000	1,0000	1,0000	cellular defense response
+0006959	20	0	0	1	1,0000	1,0000	0,7200	humoral immune response
+0006958	6	0	0	0	1,0000	1,0000	1,0000	complement activation, classical pathway
+0006956	6	0	0	0	1,0000	1,0000	1,0000	complement activation
+0006955	92	0	0	7	1,0000	1,0000	0,3283	immune response
+0006954	31	0	0	3	1,0000	1,0000	0,2933	inflammatory response
+0006953	4	0	0	0	1,0000	1,0000	1,0000	acute-phase response
+0006952	98	0	0	8	1,0000	1,0000	0,2430	defense response
+0006950	115	0	0	5	1,0000	1,0000	0,8529	response to stress
+0006941	2	0	0	0	1,0000	1,0000	1,0000	striated muscle contraction
+0006940	3	0	0	0	1,0000	1,0000	1,0000	regulation of smooth muscle contraction
+0006939	5	0	0	1	1,0000	1,0000	0,2709	smooth muscle contraction
+0006937	6	0	0	1	1,0000	1,0000	0,3157	regulation of muscle contraction
+0006936	17	0	0	2	1,0000	1,0000	0,2789	muscle contraction
+0006935	20	0	0	3	1,0000	1,0000	0,1182	chemotaxis
+0006930	1	0	0	1	1,0000	1,0000	0,0611	substrate-bound cell migration, cell extension
+0006929	1	0	0	1	1,0000	1,0000	0,0611	substrate-bound cell migration
+0006928	54	0	0	7	1,0000	1,0000	0,0412	cell motility
+0006923	2	0	0	0	1,0000	1,0000	1,0000	cleavage of cytoskeletal proteins
+0006922	2	0	0	0	1,0000	1,0000	1,0000	cleavage of lamin
+0006921	2	0	0	0	1,0000	1,0000	1,0000	disassembly of cell structures
+0006919	5	0	0	1	1,0000	1,0000	0,2709	caspase activation
+0006917	20	0	0	0	1,0000	1,0000	1,0000	induction of apoptosis
+0006916	18	0	0	1	1,0000	1,0000	0,6817	anti-apoptosis
+0006915	70	0	0	4	1,0000	1,0000	0,6339	apoptosis
+0006913	5	0	0	0	1,0000	1,0000	1,0000	nucleocytoplasmic transport
+0006909	3	0	0	0	1,0000	1,0000	1,0000	phagocytosis
+0006904	1	0	0	0	1,0000	1,0000	1,0000	vesicle docking during exocytosis
+0006898	2	0	0	0	1,0000	1,0000	1,0000	receptor mediated endocytosis
+0006897	11	0	0	0	1,0000	1,0000	1,0000	endocytosis
+0046068	3	0	0	0	1,0000	1,0000	1,0000	cGMP metabolism
+0006887	2	0	0	0	1,0000	1,0000	1,0000	exocytosis
+0006886	10	0	0	0	1,0000	1,0000	1,0000	intracellular protein transport
+0046058	1	0	0	0	1,0000	1,0000	1,0000	cAMP metabolism
+0046051	1	0	0	0	1,0000	1,0000	1,0000	UTP metabolism
+0006879	3	0	0	0	1,0000	1,0000	1,0000	iron ion homeostasis
+0006878	1	0	0	0	1,0000	1,0000	1,0000	copper ion homeostasis
+0006875	9	0	0	0	1,0000	1,0000	1,0000	metal ion homeostasis
+0006874	4	0	0	0	1,0000	1,0000	1,0000	calcium ion homeostasis
+0006873	10	0	0	0	1,0000	1,0000	1,0000	cell ion homeostasis
+0006869	1	0	0	1	1,0000	1,0000	0,0611	lipid transport
+0046039	1	0	0	0	1,0000	1,0000	1,0000	GTP metabolism
+0046036	1	0	0	0	1,0000	1,0000	1,0000	CTP metabolism
+0046034	1	0	0	0	1,0000	1,0000	1,0000	ATP metabolism
+0046030	2	0	0	0	1,0000	1,0000	1,0000	inositol trisphosphate phosphatase activity
+0006839	1	0	0	0	1,0000	1,0000	1,0000	mitochondrial transport
+0006826	2	0	0	0	1,0000	1,0000	1,0000	iron ion transport
+0006820	3	0	0	0	1,0000	1,0000	1,0000	anion transport
+0006818	1	0	0	0	1,0000	1,0000	1,0000	hydrogen transport
+0006817	3	0	0	0	1,0000	1,0000	1,0000	phosphate transport
+0006814	1	0	0	0	1,0000	1,0000	1,0000	sodium ion transport
+0006812	4	0	0	0	1,0000	1,0000	1,0000	cation transport
+0006811	9	0	0	0	1,0000	1,0000	1,0000	ion transport
+0006810	56	0	0	4	1,0000	1,0000	0,4518	transport
+0006809	3	0	0	0	1,0000	1,0000	1,0000	nitric oxide biosynthesis
+0006807	3	0	0	0	1,0000	1,0000	1,0000	nitrogen metabolism
+0006805	2	0	0	0	1,0000	1,0000	1,0000	xenobiotic metabolism
+0006801	1	0	0	0	1,0000	1,0000	1,0000	superoxide metabolism
+0006800	3	0	0	0	1,0000	1,0000	1,0000	oxygen and reactive oxygen species metabolism
+0010033	1	0	0	0	1,0000	1,0000	1,0000	response to organic substance
+0006796	313	0	0	13	1,0000	1,0000	0,9717	phosphate metabolism
+0006793	313	0	0	13	1,0000	1,0000	0,9717	phosphorus metabolism
+0006783	1	0	0	0	1,0000	1,0000	1,0000	heme biosynthesis
+0006779	1	0	0	0	1,0000	1,0000	1,0000	porphyrin biosynthesis
+0006778	1	0	0	0	1,0000	1,0000	1,0000	porphyrin metabolism
+0006776	3	0	0	0	1,0000	1,0000	1,0000	vitamin A metabolism
+0006775	3	0	0	0	1,0000	1,0000	1,0000	fat-soluble vitamin metabolism
+0006767	1	0	0	1	1,0000	1,0000	0,0611	water-soluble vitamin metabolism
+0006766	4	0	0	1	1,0000	1,0000	0,2233	vitamin metabolism
+0006754	1	0	0	0	1,0000	1,0000	1,0000	ATP biosynthesis
+0006753	1	0	0	0	1,0000	1,0000	1,0000	nucleoside phosphate metabolism
+0006752	1	0	0	0	1,0000	1,0000	1,0000	group transfer coenzyme metabolism
+0006733	1	0	0	1	1,0000	1,0000	0,0611	oxidoreduction coenzyme metabolism
+0006732	2	0	0	1	1,0000	1,0000	0,1186	coenzyme metabolism
+0006730	2	0	0	0	1,0000	1,0000	1,0000	one-carbon compound metabolism
+0006729	1	0	0	0	1,0000	1,0000	1,0000	tetrahydrobiopterin biosynthesis
+0006725	3	0	0	0	1,0000	1,0000	1,0000	aromatic compound metabolism
+0006721	1	0	0	0	1,0000	1,0000	1,0000	terpenoid metabolism
+0006720	1	0	0	0	1,0000	1,0000	1,0000	isoprenoid metabolism
+0006700	1	0	0	0	1,0000	1,0000	1,0000	C21-steroid hormone biosynthesis
+0001880	1	0	0	0	1,0000	1,0000	1,0000	Mullerian duct regression
+0001871	20	0	0	2	1,0000	1,0000	0,3486	pattern binding
+0001819	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of cytokine production
+0001817	1	0	0	0	1,0000	1,0000	1,0000	regulation of cytokine production
+0001816	1	0	0	0	1,0000	1,0000	1,0000	cytokine production
+0006695	4	0	0	0	1,0000	1,0000	1,0000	cholesterol biosynthesis
+0006694	6	0	0	0	1,0000	1,0000	1,0000	steroid biosynthesis
+0006693	1	0	0	0	1,0000	1,0000	1,0000	prostaglandin metabolism
+0006692	1	0	0	0	1,0000	1,0000	1,0000	prostanoid metabolism
+0006690	1	0	0	0	1,0000	1,0000	1,0000	icosanoid metabolism
+0006687	2	0	0	1	1,0000	1,0000	0,1186	glycosphingolipid metabolism
+0006679	1	0	0	0	1,0000	1,0000	1,0000	glucosylceramide biosynthesis
+0006678	1	0	0	0	1,0000	1,0000	1,0000	glucosylceramide metabolism
+0006677	1	0	0	0	1,0000	1,0000	1,0000	glycosylceramide metabolism
+0006672	2	0	0	0	1,0000	1,0000	1,0000	ceramide metabolism
+0006665	5	0	0	1	1,0000	1,0000	0,2709	sphingolipid metabolism
+0006664	3	0	0	1	1,0000	1,0000	0,1726	glycolipid metabolism
+0006661	1	0	0	0	1,0000	1,0000	1,0000	phosphatidylinositol biosynthesis
+0006650	2	0	0	0	1,0000	1,0000	1,0000	glycerophospholipid metabolism
+0006644	2	0	0	0	1,0000	1,0000	1,0000	phospholipid metabolism
+0006643	7	0	0	1	1,0000	1,0000	0,3578	membrane lipid metabolism
+0006636	1	0	0	1	1,0000	1,0000	0,0611	fatty acid desaturation
+0006633	8	0	0	1	1,0000	1,0000	0,3973	fatty acid biosynthesis
+0006631	8	0	0	1	1,0000	1,0000	0,3973	fatty acid metabolism
+0006629	30	0	0	2	1,0000	1,0000	0,5581	lipid metabolism
+0006614	1	0	0	0	1,0000	1,0000	1,0000	SRP-dependent cotranslational protein-membrane targeting
+0006613	1	0	0	0	1,0000	1,0000	1,0000	cotranslational protein-membrane targeting
+0006612	2	0	0	0	1,0000	1,0000	1,0000	protein-membrane targeting
+0006607	1	0	0	0	1,0000	1,0000	1,0000	NLS-bearing substrate-nucleus import
+0006606	3	0	0	0	1,0000	1,0000	1,0000	protein-nucleus import
+0006605	6	0	0	0	1,0000	1,0000	1,0000	protein targeting
+0001775	7	0	0	3	1,0000	1,0000	0,0064	cell activation
+0001774	1	0	0	0	1,0000	1,0000	1,0000	microglial cell activation
+0001772	2	0	0	0	1,0000	1,0000	1,0000	immunological synapse
+0001727	8	0	0	0	1,0000	1,0000	1,0000	lipid kinase activity
+0001719	1	0	0	0	1,0000	1,0000	1,0000	inhibition of caspase activation
+0001709	2	0	0	0	1,0000	1,0000	1,0000	cell fate determination
+0001701	2	0	0	0	1,0000	1,0000	1,0000	embryonic development (sensu Mammalia)
+0006597	1	0	0	0	1,0000	1,0000	1,0000	spermine biosynthesis
+0006596	1	0	0	0	1,0000	1,0000	1,0000	polyamine biosynthesis
+0006595	1	0	0	0	1,0000	1,0000	1,0000	polyamine metabolism
+0006584	1	0	0	0	1,0000	1,0000	1,0000	catecholamine metabolism
+0006576	2	0	0	0	1,0000	1,0000	1,0000	biogenic amine metabolism
+0006575	2	0	0	0	1,0000	1,0000	1,0000	amino acid derivative metabolism
+0006564	1	0	0	0	1,0000	1,0000	1,0000	L-serine biosynthesis
+0006563	1	0	0	0	1,0000	1,0000	1,0000	L-serine metabolism
+0006559	1	0	0	0	1,0000	1,0000	1,0000	L-phenylalanine catabolism
+0006558	1	0	0	0	1,0000	1,0000	1,0000	L-phenylalanine metabolism
+0006541	1	0	0	0	1,0000	1,0000	1,0000	glutamine metabolism
+0006529	1	0	0	0	1,0000	1,0000	1,0000	asparagine biosynthesis
+0006528	1	0	0	0	1,0000	1,0000	1,0000	asparagine metabolism
+0006520	5	0	0	0	1,0000	1,0000	1,0000	amino acid metabolism
+0006519	7	0	0	0	1,0000	1,0000	1,0000	amino acid and derivative metabolism
+0006512	33	0	0	0	1,0000	1,0000	1,0000	ubiquitin cycle
+0006511	19	0	0	0	1,0000	1,0000	1,0000	ubiquitin-dependent protein catabolism
+0006510	1	0	0	0	1,0000	1,0000	1,0000	ATP-dependent proteolysis
+0006509	2	0	0	0	1,0000	1,0000	1,0000	membrane protein ectodomain proteolysis
+0006508	106	0	0	6	1,0000	1,0000	0,6458	proteolysis and peptidolysis
+0006506	1	0	0	0	1,0000	1,0000	1,0000	GPI anchor biosynthesis
+0006505	1	0	0	0	1,0000	1,0000	1,0000	GPI anchor metabolism
+0001672	2	0	0	0	1,0000	1,0000	1,0000	regulation of chromatin assembly or disassembly
+0001666	1	0	0	0	1,0000	1,0000	1,0000	response to hypoxia
+0001664	4	0	0	2	1,0000	1,0000	0,0204	G-protein-coupled receptor binding
+0001653	27	0	0	3	1,0000	1,0000	0,2254	peptide receptor activity
+0001637	6	0	0	1	1,0000	1,0000	0,3157	G-protein chemoattractant receptor activity
+0001636	1	0	0	0	1,0000	1,0000	1,0000	corticotrophin-releasing factor gastric inhibitory peptide-like receptor activity
+0001633	7	0	0	0	1,0000	1,0000	1,0000	secretin-like receptor activity
+0001619	3	0	0	0	1,0000	1,0000	1,0000	lysosphingolipid and lysophosphatidic acid receptor activity
+0001614	12	0	0	0	1,0000	1,0000	1,0000	purinergic nucleotide receptor activity
+0001613	1	0	0	0	1,0000	1,0000	1,0000	A3 adenosine receptor activity, G-protein coupled
+0001612	1	0	0	0	1,0000	1,0000	1,0000	A2B adenosine receptor activity, G-protein coupled
+0001611	1	0	0	0	1,0000	1,0000	1,0000	A2A adenosine receptor activity, G-protein coupled
+0001610	1	0	0	0	1,0000	1,0000	1,0000	A1 adenosine receptor activity, G-protein coupled
+0001609	4	0	0	0	1,0000	1,0000	1,0000	adenosine receptor activity, G-protein coupled
+0001608	12	0	0	0	1,0000	1,0000	1,0000	nucleotide receptor activity, G-protein coupled
+0001603	2	0	0	0	1,0000	1,0000	1,0000	vasopressin-like receptor activity
+0006497	1	0	0	0	1,0000	1,0000	1,0000	protein lipidation
+0006486	1	0	0	0	1,0000	1,0000	1,0000	protein amino acid glycosylation
+0006470	61	0	0	3	1,0000	1,0000	0,7366	protein amino acid dephosphorylation
+0006469	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of protein kinase activity
+0006468	244	0	0	8	1,0000	1,0000	0,9915	protein amino acid phosphorylation
+0006464	345	0	0	11	1,0000	1,0000	0,9988	protein modification
+0006461	9	0	0	0	1,0000	1,0000	1,0000	protein complex assembly
+0006457	9	0	0	1	1,0000	1,0000	0,4344	protein folding
+0006446	4	0	0	1	1,0000	1,0000	0,2233	regulation of translational initiation
+0006445	7	0	0	1	1,0000	1,0000	0,3578	regulation of translation
+0006438	1	0	0	0	1,0000	1,0000	1,0000	valyl-tRNA aminoacylation
+0006419	1	0	0	0	1,0000	1,0000	1,0000	alanyl-tRNA aminoacylation
+0006418	2	0	0	0	1,0000	1,0000	1,0000	tRNA aminoacylation for protein translation
+0006417	10	0	0	1	1,0000	1,0000	0,4693	regulation of protein biosynthesis
+0006414	1	0	0	1	1,0000	1,0000	0,0611	translational elongation
+0006413	5	0	0	1	1,0000	1,0000	0,2709	translational initiation
+0006412	20	0	0	2	1,0000	1,0000	0,3486	protein biosynthesis
+0006406	1	0	0	0	1,0000	1,0000	1,0000	mRNA-nucleus export
+0006405	1	0	0	0	1,0000	1,0000	1,0000	RNA-nucleus export
+0006403	1	0	0	0	1,0000	1,0000	1,0000	RNA localization
+0006402	1	0	0	0	1,0000	1,0000	1,0000	mRNA catabolism
+0006401	2	0	0	0	1,0000	1,0000	1,0000	RNA catabolism
+0006400	2	0	0	0	1,0000	1,0000	1,0000	tRNA modification
+0001599	1	0	0	1	1,0000	1,0000	0,0611	endothelin-A receptor activity
+0001595	2	0	0	0	1,0000	1,0000	1,0000	angiotensin receptor activity
+0001584	72	0	0	4	1,0000	1,0000	0,6567	rhodopsin-like receptor activity
+0001570	1	0	0	0	1,0000	1,0000	1,0000	vasculogenesis
+0001568	8	0	0	1	1,0000	1,0000	0,3973	blood vessel development
+0001565	6	0	0	0	1,0000	1,0000	1,0000	phorbol ester receptor activity
+0001558	11	0	0	0	1,0000	1,0000	1,0000	regulation of cell growth
+0001525	8	0	0	1	1,0000	1,0000	0,3973	angiogenesis
+0001516	1	0	0	0	1,0000	1,0000	1,0000	prostaglandin biosynthesis
+0001509	1	0	0	0	1,0000	1,0000	1,0000	legumain activity
+0001505	1	0	0	0	1,0000	1,0000	1,0000	regulation of neurotransmitter levels
+0001503	2	0	0	0	1,0000	1,0000	1,0000	ossification
+0001502	1	0	0	0	1,0000	1,0000	1,0000	cartilage condensation
+0001501	12	0	0	1	1,0000	1,0000	0,5328	skeletal development
+0006399	2	0	0	0	1,0000	1,0000	1,0000	tRNA metabolism
+0006397	6	0	0	1	1,0000	1,0000	0,3157	mRNA processing
+0006396	11	0	0	1	1,0000	1,0000	0,5020	RNA processing
+0006383	2	0	0	0	1,0000	1,0000	1,0000	transcription from Pol III promoter
+0006378	1	0	0	0	1,0000	1,0000	1,0000	mRNA polyadenylylation
+0006370	1	0	0	0	1,0000	1,0000	1,0000	mRNA capping
+0006368	2	0	0	0	1,0000	1,0000	1,0000	RNA elongation from Pol II promoter
+0006367	10	0	0	1	1,0000	1,0000	0,4693	transcription initiation from Pol II promoter
+0006366	95	0	0	3	1,0000	1,0000	0,9428	transcription from Pol II promoter
+0006360	1	0	0	0	1,0000	1,0000	1,0000	transcription from Pol I promoter
+0006359	2	0	0	0	1,0000	1,0000	1,0000	regulation of transcription from Pol III promoter
+0006357	55	0	0	2	1,0000	1,0000	0,8642	regulation of transcription from Pol II promoter
+0006356	1	0	0	0	1,0000	1,0000	1,0000	regulation of transcription from Pol I promoter
+0006355	211	0	0	8	1,0000	1,0000	0,9641	regulation of transcription, DNA-dependent
+0006354	3	0	0	0	1,0000	1,0000	1,0000	RNA elongation
+0006352	13	0	0	1	1,0000	1,0000	0,5616	transcription initiation
+0006351	215	0	0	8	1,0000	1,0000	0,9695	transcription, DNA-dependent
+0006350	222	0	0	8	1,0000	1,0000	0,9773	transcription
+0006334	2	0	0	0	1,0000	1,0000	1,0000	nucleosome assembly
+0006333	4	0	0	0	1,0000	1,0000	1,0000	chromatin assembly or disassembly
+0006325	6	0	0	0	1,0000	1,0000	1,0000	establishment and/or maintenance of chromatin architecture
+0006323	6	0	0	0	1,0000	1,0000	1,0000	DNA packaging
+0006313	1	0	0	0	1,0000	1,0000	1,0000	DNA transposition
+0006312	1	0	0	0	1,0000	1,0000	1,0000	mitotic recombination
+0006310	10	0	0	0	1,0000	1,0000	1,0000	DNA recombination
+0006306	1	0	0	0	1,0000	1,0000	1,0000	DNA methylation
+0006305	1	0	0	0	1,0000	1,0000	1,0000	DNA alkylation
+0006304	1	0	0	0	1,0000	1,0000	1,0000	DNA modification
+0006303	1	0	0	0	1,0000	1,0000	1,0000	double-strand break repair via nonhomologous end-joining
+0006302	3	0	0	0	1,0000	1,0000	1,0000	double-strand break repair
+0006301	2	0	0	0	1,0000	1,0000	1,0000	postreplication repair
+0018276	1	0	0	0	1,0000	1,0000	1,0000	isopeptide cross-linking via N6-glycyl-L-lysine
+0006298	2	0	0	0	1,0000	1,0000	1,0000	mismatch repair
+0018262	1	0	0	0	1,0000	1,0000	1,0000	isopeptide cross-linking
+0006289	4	0	0	1	1,0000	1,0000	0,2233	nucleotide-excision repair
+0006284	1	0	0	0	1,0000	1,0000	1,0000	base-excision repair
+0006283	1	0	0	0	1,0000	1,0000	1,0000	transcription-coupled nucleotide-excision repair
+0006282	1	0	0	0	1,0000	1,0000	1,0000	regulation of DNA repair
+0006281	22	0	0	1	1,0000	1,0000	0,7538	DNA repair
+0006275	3	0	0	0	1,0000	1,0000	1,0000	regulation of DNA replication
+0006271	2	0	0	0	1,0000	1,0000	1,0000	DNA strand elongation
+0006270	2	0	0	0	1,0000	1,0000	1,0000	DNA replication initiation
+0006265	2	0	0	0	1,0000	1,0000	1,0000	DNA topological change
+0006261	10	0	0	0	1,0000	1,0000	1,0000	DNA-dependent DNA replication
+0006260	16	0	0	0	1,0000	1,0000	1,0000	DNA replication
+0006259	48	0	0	1	1,0000	1,0000	0,9548	DNA metabolism
+0006241	1	0	0	0	1,0000	1,0000	1,0000	CTP biosynthesis
+0018212	2	0	0	1	1,0000	1,0000	0,1186	peptidyl-tyrosine modification
+0018205	1	0	0	0	1,0000	1,0000	1,0000	peptidyl-lysine modification
+0018201	1	0	0	0	1,0000	1,0000	1,0000	peptidyl-glycine modification
+0006228	1	0	0	0	1,0000	1,0000	1,0000	UTP biosynthesis
+0006221	1	0	0	0	1,0000	1,0000	1,0000	pyrimidine nucleotide biosynthesis
+0006220	1	0	0	0	1,0000	1,0000	1,0000	pyrimidine nucleotide metabolism
+0018193	3	0	0	1	1,0000	1,0000	0,1726	peptidyl-amino acid modification
+0006183	1	0	0	0	1,0000	1,0000	1,0000	GTP biosynthesis
+0006182	3	0	0	0	1,0000	1,0000	1,0000	cGMP biosynthesis
+0006171	1	0	0	0	1,0000	1,0000	1,0000	cAMP biosynthesis
+0018149	1	0	0	0	1,0000	1,0000	1,0000	peptide cross-linking
+0006164	2	0	0	0	1,0000	1,0000	1,0000	purine nucleotide biosynthesis
+0006163	2	0	0	0	1,0000	1,0000	1,0000	purine nucleotide metabolism
+0006139	271	0	0	11	1,0000	1,0000	0,9665	nucleobase, nucleoside, nucleotide and nucleic acid metabolism
+0018108	2	0	0	1	1,0000	1,0000	0,1186	peptidyl-tyrosine phosphorylation
+0006119	1	0	0	0	1,0000	1,0000	1,0000	oxidative phosphorylation
+0006118	7	0	0	0	1,0000	1,0000	1,0000	electron transport
+0006112	14	0	0	0	1,0000	1,0000	1,0000	energy reserve metabolism
+0006111	1	0	0	0	1,0000	1,0000	1,0000	regulation of gluconeogenesis
+0006109	1	0	0	0	1,0000	1,0000	1,0000	regulation of carbohydrate metabolism
+0006096	2	0	0	1	1,0000	1,0000	0,1186	glycolysis
+0006094	2	0	0	0	1,0000	1,0000	1,0000	gluconeogenesis
+0006092	4	0	0	1	1,0000	1,0000	0,2233	main pathways of carbohydrate metabolism
+0006091	25	0	0	1	1,0000	1,0000	0,7971	energy pathways
+0006082	13	0	0	1	1,0000	1,0000	0,5616	organic acid metabolism
+0006081	1	0	0	0	1,0000	1,0000	1,0000	aldehyde metabolism
+0006073	13	0	0	0	1,0000	1,0000	1,0000	glucan metabolism
+0006066	18	0	0	1	1,0000	1,0000	0,6817	alcohol metabolism
+0006048	1	0	0	0	1,0000	1,0000	1,0000	UDP-N-acetylglucosamine biosynthesis
+0006047	1	0	0	0	1,0000	1,0000	1,0000	UDP-N-acetylglucosamine metabolism
+0006045	1	0	0	0	1,0000	1,0000	1,0000	N-acetylglucosamine biosynthesis
+0006044	1	0	0	0	1,0000	1,0000	1,0000	N-acetylglucosamine metabolism
+0006042	1	0	0	0	1,0000	1,0000	1,0000	glucosamine biosynthesis
+0006041	1	0	0	0	1,0000	1,0000	1,0000	glucosamine metabolism
+0006040	1	0	0	0	1,0000	1,0000	1,0000	amino sugar metabolism
+0006022	1	0	0	0	1,0000	1,0000	1,0000	aminoglycan metabolism
+0006007	2	0	0	1	1,0000	1,0000	0,1186	glucose catabolism
+0006006	8	0	0	1	1,0000	1,0000	0,3973	glucose metabolism
+0006004	1	0	0	0	1,0000	1,0000	1,0000	fucose metabolism
+0009991	4	0	0	0	1,0000	1,0000	1,0000	response to extracellular stimulus
+0006000	1	0	0	0	1,0000	1,0000	1,0000	fructose metabolism
+0009987	673	0	0	40	1,0000	1,0000	0,6671	cellular process
+0009986	1	0	0	0	1,0000	1,0000	1,0000	cell surface
+0009975	3	0	0	0	1,0000	1,0000	1,0000	cyclase activity
+0009968	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of signal transduction
+0009967	13	0	0	0	1,0000	1,0000	1,0000	positive regulation of signal transduction
+0009966	18	0	0	1	1,0000	1,0000	0,6817	regulation of signal transduction
+0009895	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of catabolism
+0009894	2	0	0	0	1,0000	1,0000	1,0000	regulation of catabolism
+0009893	13	0	0	0	1,0000	1,0000	1,0000	positive regulation of metabolism
+0009892	17	0	0	0	1,0000	1,0000	1,0000	negative regulation of metabolism
+0009891	2	0	0	0	1,0000	1,0000	1,0000	positive regulation of biosynthesis
+0009890	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of biosynthesis
+0009889	10	0	0	1	1,0000	1,0000	0,4693	regulation of biosynthesis
+0009888	16	0	0	0	1,0000	1,0000	1,0000	histogenesis
+0009887	113	0	0	8	1,0000	1,0000	0,3856	organogenesis
+0009855	1	0	0	0	1,0000	1,0000	1,0000	determination of bilateral symmetry
+0016986	1	0	0	0	1,0000	1,0000	1,0000	transcription initiation factor activity
+0016984	1	0	0	0	1,0000	1,0000	1,0000	ribulose-bisphosphate carboxylase activity
+0004999	1	0	0	0	1,0000	1,0000	1,0000	vasoactive intestinal polypeptide receptor activity
+0004998	1	0	0	0	1,0000	1,0000	1,0000	transferrin receptor activity
+0004996	1	0	0	0	1,0000	1,0000	1,0000	thyroid-stimulating hormone receptor activity
+0004995	1	0	0	0	1,0000	1,0000	1,0000	tachykinin receptor activity
+0004994	2	0	0	0	1,0000	1,0000	1,0000	somatostatin receptor activity
+0004993	3	0	0	0	1,0000	1,0000	1,0000	serotonin receptor activity
+0004991	2	0	0	0	1,0000	1,0000	1,0000	parathyroid hormone receptor activity
+0004990	1	0	0	0	1,0000	1,0000	1,0000	oxytocin receptor activity
+0004987	1	0	0	0	1,0000	1,0000	1,0000	kappa-opioid receptor activity
+0004985	1	0	0	0	1,0000	1,0000	1,0000	opioid receptor activity
+0004982	2	0	0	0	1,0000	1,0000	1,0000	N-formyl peptide receptor activity
+0004981	1	0	0	0	1,0000	1,0000	1,0000	muscarinic acetylcholine receptor activity
+0004980	1	0	0	0	1,0000	1,0000	1,0000	melanocyte stimulating hormone receptor activity
+0004977	1	0	0	0	1,0000	1,0000	1,0000	melanocortin receptor activity
+0004969	1	0	0	0	1,0000	1,0000	1,0000	histamine receptor activity
+0004967	1	0	0	0	1,0000	1,0000	1,0000	glucagon receptor activity
+0004964	1	0	0	0	1,0000	1,0000	1,0000	lutropin-choriogonadotropic hormone receptor activity
+0004962	2	0	0	1	1,0000	1,0000	0,1186	endothelin receptor activity
+0004961	1	0	0	0	1,0000	1,0000	1,0000	thromboxane A2 receptor activity
+0004960	5	0	0	1	1,0000	1,0000	0,2709	thromboxane receptor activity
+0004959	1	0	0	1	1,0000	1,0000	0,0611	prostaglandin I receptor activity
+0004958	1	0	0	0	1,0000	1,0000	1,0000	prostaglandin F receptor activity
+0004957	4	0	0	0	1,0000	1,0000	1,0000	prostaglandin E receptor activity
+0004955	6	0	0	1	1,0000	1,0000	0,3157	prostaglandin receptor activity
+0004954	7	0	0	1	1,0000	1,0000	0,3578	prostanoid receptor activity
+0004953	7	0	0	1	1,0000	1,0000	0,3578	icosanoid receptor activity
+0004952	2	0	0	0	1,0000	1,0000	1,0000	dopamine receptor activity
+0004951	1	0	0	0	1,0000	1,0000	1,0000	cholecystokinin receptor activity
+0004950	6	0	0	1	1,0000	1,0000	0,3157	chemokine receptor activity
+0004949	2	0	0	0	1,0000	1,0000	1,0000	cannabinoid receptor activity
+0004948	1	0	0	0	1,0000	1,0000	1,0000	calcitonin receptor activity
+0004947	2	0	0	0	1,0000	1,0000	1,0000	bradykinin receptor activity
+0004946	1	0	0	0	1,0000	1,0000	1,0000	bombesin receptor activity
+0004945	2	0	0	0	1,0000	1,0000	1,0000	angiotensin type II receptor activity
+0004941	1	0	0	0	1,0000	1,0000	1,0000	beta2-adrenergic receptor activity
+0016917	1	0	0	0	1,0000	1,0000	1,0000	GABA receptor activity
+0016910	1	0	0	0	1,0000	1,0000	1,0000	SAP kinase 3 activity
+0004939	2	0	0	0	1,0000	1,0000	1,0000	beta-adrenergic receptor activity
+0004938	2	0	0	0	1,0000	1,0000	1,0000	alpha2-adrenergic receptor activity
+0004937	2	0	0	0	1,0000	1,0000	1,0000	alpha1-adrenergic receptor activity
+0004936	4	0	0	0	1,0000	1,0000	1,0000	alpha-adrenergic receptor activity
+0004935	6	0	0	0	1,0000	1,0000	1,0000	adrenoceptor activity
+0004930	86	0	0	4	1,0000	1,0000	0,7896	G-protein coupled receptor activity
+0016909	6	0	0	0	1,0000	1,0000	1,0000	SAP kinase activity
+0016903	3	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on the aldehyde or oxo group of donors
+0004926	1	0	0	0	1,0000	1,0000	1,0000	non-G-protein coupled 7TM receptor activity
+0004918	1	0	0	0	1,0000	1,0000	1,0000	interleukin-8 receptor activity
+0004907	1	0	0	0	1,0000	1,0000	1,0000	interleukin receptor activity
+0009799	1	0	0	0	1,0000	1,0000	1,0000	determination of symmetry
+0009792	2	0	0	0	1,0000	1,0000	1,0000	embryonic development (sensu Metazoa)
+0009790	4	0	0	0	1,0000	1,0000	1,0000	embryonic development
+0051258	1	0	0	0	1,0000	1,0000	1,0000	protein polymerization
+0009755	1	0	0	0	1,0000	1,0000	1,0000	hormone-mediated signaling
+0009725	1	0	0	0	1,0000	1,0000	1,0000	response to hormone stimulus
+0009719	31	0	0	1	1,0000	1,0000	0,8624	response to endogenous stimulus
+0016895	1	0	0	0	1,0000	1,0000	1,0000	exodeoxyribonuclease activity, producing 5'-phosphomonoesters
+0016894	1	0	0	0	1,0000	1,0000	1,0000	endonuclease activity, active with either ribo- or deoxyribonucleic acids and producing 3'-phosphomonoesters
+0016893	1	0	0	0	1,0000	1,0000	1,0000	endonuclease activity, active with either ribo- or deoxyribonucleic acids and producing 5'-phosphomonoesters
+0016892	1	0	0	0	1,0000	1,0000	1,0000	endoribonuclease activity, producing 3'-phosphomonoesters
+0016891	1	0	0	0	1,0000	1,0000	1,0000	endoribonuclease activity, producing 5'-phosphomonoesters
+0016887	7	0	0	1	1,0000	1,0000	0,3578	ATPase activity
+0016886	2	0	0	0	1,0000	1,0000	1,0000	ligase activity, forming phosphoric ester bonds
+0016884	1	0	0	0	1,0000	1,0000	1,0000	carbon-nitrogen ligase activity, with glutamine as amido-N-donor
+0016881	14	0	0	0	1,0000	1,0000	1,0000	acid-D-amino acid ligase activity
+0016879	15	0	0	0	1,0000	1,0000	1,0000	ligase activity, forming carbon-nitrogen bonds
+0016876	2	0	0	0	1,0000	1,0000	1,0000	ligase activity, forming aminoacyl-tRNA and related compounds
+0016875	2	0	0	0	1,0000	1,0000	1,0000	ligase activity, forming carbon-oxygen bonds
+0016874	17	0	0	0	1,0000	1,0000	1,0000	ligase activity
+0004896	2	0	0	0	1,0000	1,0000	1,0000	hematopoietin/interferon-class (D200-domain) cytokine receptor activity
+0004890	1	0	0	0	1,0000	1,0000	1,0000	GABA-A receptor activity
+0016863	1	0	0	0	1,0000	1,0000	1,0000	intramolecular oxidoreductase activity, transposing C=C bonds
+0016860	1	0	0	0	1,0000	1,0000	1,0000	intramolecular oxidoreductase activity
+0004888	155	0	0	6	1,0000	1,0000	0,9322	transmembrane receptor activity
+0004887	1	0	0	0	1,0000	1,0000	1,0000	thyroid hormone receptor activity
+0016859	2	0	0	1	1,0000	1,0000	0,1186	cis-trans isomerase activity
+0016853	4	0	0	1	1,0000	1,0000	0,2233	isomerase activity
+0004879	11	0	0	0	1,0000	1,0000	1,0000	ligand-dependent nuclear receptor activity
+0004872	198	0	0	7	1,0000	1,0000	0,9734	receptor activity
+0004871	283	0	0	13	1,0000	1,0000	0,9201	signal transducer activity
+0016849	3	0	0	0	1,0000	1,0000	1,0000	phosphorus-oxygen lyase activity
+0004869	1	0	0	0	1,0000	1,0000	1,0000	cysteine protease inhibitor activity
+0004867	30	0	0	0	1,0000	1,0000	1,0000	serine-type endopeptidase inhibitor activity
+0004866	34	0	0	3	1,0000	1,0000	0,3452	endopeptidase inhibitor activity
+0004865	4	0	0	0	1,0000	1,0000	1,0000	type 1 serine/threonine specific protein phosphatase inhibitor activity
+0004864	4	0	0	0	1,0000	1,0000	1,0000	protein phosphatase inhibitor activity
+0004861	5	0	0	0	1,0000	1,0000	1,0000	cyclin-dependent protein kinase inhibitor activity
+0004860	5	0	0	0	1,0000	1,0000	1,0000	protein kinase inhibitor activity
+0016836	2	0	0	0	1,0000	1,0000	1,0000	hydro-lyase activity
+0016835	2	0	0	0	1,0000	1,0000	1,0000	carbon-oxygen lyase activity
+0016831	2	0	0	0	1,0000	1,0000	1,0000	carboxy-lyase activity
+0016830	2	0	0	0	1,0000	1,0000	1,0000	carbon-carbon lyase activity
+0004859	2	0	0	1	1,0000	1,0000	0,1186	phospholipase inhibitor activity
+0004857	45	0	0	4	1,0000	1,0000	0,2938	enzyme inhibitor activity
+0016829	7	0	0	0	1,0000	1,0000	1,0000	lyase activity
+0016820	3	0	0	0	1,0000	1,0000	1,0000	hydrolase activity, acting on acid anhydrides, catalyzing transmembrane movement of substances
+0004843	15	0	0	0	1,0000	1,0000	1,0000	ubiquitin-specific protease activity
+0004842	14	0	0	0	1,0000	1,0000	1,0000	ubiquitin-protein ligase activity
+0004840	3	0	0	0	1,0000	1,0000	1,0000	ubiquitin conjugating enzyme activity
+0016818	13	0	0	1	1,0000	1,0000	0,5616	hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides
+0016817	13	0	0	1	1,0000	1,0000	0,5616	hydrolase activity, acting on acid anhydrides
+0016814	1	0	0	0	1,0000	1,0000	1,0000	hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amidines
+0016810	1	0	0	0	1,0000	1,0000	1,0000	hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds
+0004832	1	0	0	0	1,0000	1,0000	1,0000	valine-tRNA ligase activity
+0016808	1	0	0	0	1,0000	1,0000	1,0000	proprotein convertase activity
+0016806	1	0	0	0	1,0000	1,0000	1,0000	dipeptidyl-peptidase and tripeptidyl-peptidase activity
+0016803	1	0	0	0	1,0000	1,0000	1,0000	ether hydrolase activity
+0016801	1	0	0	0	1,0000	1,0000	1,0000	hydrolase activity, acting on ether bonds
+0004813	1	0	0	0	1,0000	1,0000	1,0000	alanine-tRNA ligase activity
+0004812	2	0	0	0	1,0000	1,0000	1,0000	tRNA ligase activity
+0051188	2	0	0	1	1,0000	1,0000	0,1186	cofactor biosynthesis
+0051186	3	0	0	1	1,0000	1,0000	0,1726	cofactor metabolism
+0051179	56	0	0	4	1,0000	1,0000	0,4518	localization
+0051170	3	0	0	0	1,0000	1,0000	1,0000	nuclear import
+0051169	4	0	0	0	1,0000	1,0000	1,0000	nuclear transport
+0051168	1	0	0	0	1,0000	1,0000	1,0000	nuclear export
+0009653	139	0	0	11	1,0000	1,0000	0,2186	morphogenesis
+0009650	2	0	0	0	1,0000	1,0000	1,0000	UV protection
+0009636	2	0	0	0	1,0000	1,0000	1,0000	response to toxin
+0051124	1	0	0	0	1,0000	1,0000	1,0000	synaptic growth at neuromuscular junction
+0051123	2	0	0	0	1,0000	1,0000	1,0000	transcriptional preinitiation complex formation
+0051119	1	0	0	0	1,0000	1,0000	1,0000	sugar transporter activity
+0009628	46	0	0	3	1,0000	1,0000	0,5435	response to abiotic stimulus
+0009620	1	0	0	0	1,0000	1,0000	1,0000	response to fungi
+0009618	1	0	0	0	1,0000	1,0000	1,0000	response to pathogenic bacteria
+0009617	3	0	0	0	1,0000	1,0000	1,0000	response to bacteria
+0009615	4	0	0	1	1,0000	1,0000	0,2233	response to virus
+0009613	58	0	0	4	1,0000	1,0000	0,4798	response to pest, pathogen or parasite
+0009611	40	0	0	3	1,0000	1,0000	0,4476	response to wounding
+0009607	107	0	0	8	1,0000	1,0000	0,3268	response to biotic stimulus
+0009605	102	0	0	5	1,0000	1,0000	0,7672	response to external stimulus
+0016798	6	0	0	0	1,0000	1,0000	1,0000	hydrolase activity, acting on glycosyl bonds
+0016796	1	0	0	0	1,0000	1,0000	1,0000	exonuclease activity, active with either ribo- or deoxyribonucleic acids and producing 5'-phosphomonoesters
+0016791	95	0	0	6	1,0000	1,0000	0,5330	phosphoric monoester hydrolase activity
+0016790	15	0	0	0	1,0000	1,0000	1,0000	thiolester hydrolase activity
+0016789	6	0	0	1	1,0000	1,0000	0,3157	carboxylic ester hydrolase activity
+0016788	123	0	0	7	1,0000	1,0000	0,6433	hydrolase activity, acting on ester bonds
+0016787	238	0	0	14	1,0000	1,0000	0,6169	hydrolase activity
+0016782	1	0	0	0	1,0000	1,0000	1,0000	transferase activity, transferring sulfur-containing groups
+0016779	4	0	0	0	1,0000	1,0000	1,0000	nucleotidyltransferase activity
+0016776	3	0	0	0	1,0000	1,0000	1,0000	phosphotransferase activity, phosphate group as acceptor
+0016773	258	0	0	8	1,0000	1,0000	0,9956	phosphotransferase activity, alcohol group as acceptor
+0016772	272	0	0	9	1,0000	1,0000	0,9940	transferase activity, transferring phosphorus-containing groups
+0016763	1	0	0	1	1,0000	1,0000	0,0611	transferase activity, transferring pentosyl groups
+0004785	1	0	0	0	1,0000	1,0000	1,0000	copper, zinc superoxide dismutase activity
+0004784	1	0	0	0	1,0000	1,0000	1,0000	superoxide dismutase activity
+0016758	3	0	0	0	1,0000	1,0000	1,0000	transferase activity, transferring hexosyl groups
+0016757	4	0	0	1	1,0000	1,0000	0,2233	transferase activity, transferring glycosyl groups
+0016755	1	0	0	0	1,0000	1,0000	1,0000	transferase activity, transferring amino-acyl groups
+0016747	2	0	0	0	1,0000	1,0000	1,0000	transferase activity, transferring groups other than amino-acyl groups
+0016746	2	0	0	0	1,0000	1,0000	1,0000	transferase activity, transferring acyl groups
+0016740	279	0	0	10	1,0000	1,0000	0,9891	transferase activity
+0016730	1	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on iron-sulfur proteins as donors
+0016728	2	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on CH2 groups, disulfide as acceptor
+0016725	2	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on CH2 groups
+0016721	1	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on superoxide radicals as acceptor
+0004748	2	0	0	0	1,0000	1,0000	1,0000	ribonucleoside-diphosphate reductase activity
+0004743	1	0	0	1	1,0000	1,0000	0,0611	pyruvate kinase activity
+0004740	3	0	0	0	1,0000	1,0000	1,0000	[pyruvate dehydrogenase (lipoamide)] kinase activity
+0016706	1	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, 2-oxoglutarate as one donor, and incorporation of one atom each of oxygen into both donors
+0016705	3	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen
+0016702	2	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on single donors with incorporation of molecular oxygen, incorporation of two atoms of oxygen
+0016701	2	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on single donors with incorporation of molecular oxygen
+0004726	8	0	0	0	1,0000	1,0000	1,0000	non-membrane spanning protein tyrosine phosphatase activity
+0004725	46	0	0	3	1,0000	1,0000	0,5435	protein tyrosine phosphatase activity
+0004722	11	0	0	0	1,0000	1,0000	1,0000	protein serine/threonine phosphatase activity
+0004721	79	0	0	4	1,0000	1,0000	0,7290	phosphoprotein phosphatase activity
+0004720	1	0	0	0	1,0000	1,0000	1,0000	protein-lysine 6-oxidase activity
+0004718	2	0	0	0	1,0000	1,0000	1,0000	Janus kinase activity
+0004716	7	0	0	0	1,0000	1,0000	1,0000	receptor signaling protein tyrosine kinase activity
+0004715	8	0	0	0	1,0000	1,0000	1,0000	non-membrane spanning protein tyrosine kinase activity
+0004714	36	0	0	0	1,0000	1,0000	1,0000	transmembrane receptor protein tyrosine kinase activity
+0004713	115	0	0	2	1,0000	1,0000	0,9956	protein-tyrosine kinase activity
+0004712	6	0	0	0	1,0000	1,0000	1,0000	protein threonine/tyrosine kinase activity
+0004711	1	0	0	0	1,0000	1,0000	1,0000	ribosomal protein S6 kinase activity
+0004709	4	0	0	0	1,0000	1,0000	1,0000	MAP kinase kinase kinase activity
+0004708	6	0	0	0	1,0000	1,0000	1,0000	MAP kinase kinase activity
+0004707	10	0	0	1	1,0000	1,0000	0,4693	MAP kinase activity
+0004705	3	0	0	0	1,0000	1,0000	1,0000	JUN kinase activity
+0004704	2	0	0	0	1,0000	1,0000	1,0000	NF-kappaB-inducing kinase activity
+0004703	4	0	0	0	1,0000	1,0000	1,0000	G-protein coupled receptor kinase activity
+0004702	25	0	0	1	1,0000	1,0000	0,7971	receptor signaling protein serine/threonine kinase activity
+0004701	1	0	0	0	1,0000	1,0000	1,0000	diacylglycerol-activated phospholipid-dependent protein kinase C activity
+0004700	2	0	0	0	1,0000	1,0000	1,0000	atypical protein kinase C activity
+0051097	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of helicase activity
+0051095	1	0	0	0	1,0000	1,0000	1,0000	regulation of helicase activity
+0051094	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of development
+0051093	3	0	0	0	1,0000	1,0000	1,0000	negative regulation of development
+0051089	1	0	0	0	1,0000	1,0000	1,0000	constitutive protein ectodomain proteolysis
+0051082	5	0	0	0	1,0000	1,0000	1,0000	unfolded protein binding
+0009593	1	0	0	0	1,0000	1,0000	1,0000	detection of chemical substance
+0051074	1	0	0	0	1,0000	1,0000	1,0000	protein tetramerization activity
+0009582	11	0	0	0	1,0000	1,0000	1,0000	detection of abiotic stimulus
+0009581	22	0	0	1	1,0000	1,0000	0,7538	detection of external stimulus
+0009573	1	0	0	0	1,0000	1,0000	1,0000	ribulose bisphosphate carboxylase complex (sensu Magnoliophyta)
+0009570	1	0	0	0	1,0000	1,0000	1,0000	chloroplast stroma
+0051055	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of lipid biosynthesis
+0009566	2	0	0	0	1,0000	1,0000	1,0000	fertilization
+0051054	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of DNA metabolism
+0051052	8	0	0	0	1,0000	1,0000	1,0000	regulation of DNA metabolism
+0051050	2	0	0	0	1,0000	1,0000	1,0000	positive regulation of transport
+0051049	3	0	0	0	1,0000	1,0000	1,0000	regulation of transport
+0051028	1	0	0	0	1,0000	1,0000	1,0000	mRNA transport
+0009536	1	0	0	0	1,0000	1,0000	1,0000	plastid
+0009532	1	0	0	0	1,0000	1,0000	1,0000	plastid stroma
+0051019	1	0	0	0	1,0000	1,0000	1,0000	mitogen-activated protein kinase binding
+0051017	1	0	0	1	1,0000	1,0000	0,0611	actin filament bundle formation
+0051015	1	0	0	0	1,0000	1,0000	1,0000	actin filament binding
+0009507	1	0	0	0	1,0000	1,0000	1,0000	chloroplast
+0009506	1	0	0	0	1,0000	1,0000	1,0000	plasmodesma
+0042985	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of amyloid precursor protein biosynthesis
+0042984	1	0	0	0	1,0000	1,0000	1,0000	regulation of amyloid precursor protein biosynthesis
+0042983	1	0	0	0	1,0000	1,0000	1,0000	amyloid precursor protein biosynthesis
+0042982	2	0	0	0	1,0000	1,0000	1,0000	amyloid precursor protein metabolism
+0042981	50	0	0	2	1,0000	1,0000	0,8251	regulation of apoptosis
+0016684	1	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on peroxide as acceptor
+0004697	6	0	0	0	1,0000	1,0000	1,0000	protein kinase C activity
+0004696	1	0	0	0	1,0000	1,0000	1,0000	glycogen synthase kinase 3 activity
+0004694	1	0	0	0	1,0000	1,0000	1,0000	eukaryotic translation initiation factor 2alpha kinase activity
+0004693	9	0	0	0	1,0000	1,0000	1,0000	cyclin-dependent protein kinase activity
+0004692	2	0	0	0	1,0000	1,0000	1,0000	cGMP-dependent protein kinase activity
+0004691	6	0	0	0	1,0000	1,0000	1,0000	cAMP-dependent protein kinase activity
+0004690	8	0	0	0	1,0000	1,0000	1,0000	cyclic nucleotide-dependent protein kinase activity
+0042923	7	0	0	1	1,0000	1,0000	0,3578	neuropeptide binding
+0030949	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of vascular endothelial growth factor receptor signaling pathway
+0030947	1	0	0	0	1,0000	1,0000	1,0000	regulation of vascular endothelial growth factor receptor signaling pathway
+0004689	4	0	0	0	1,0000	1,0000	1,0000	phosphorylase kinase activity
+0004687	1	0	0	0	1,0000	1,0000	1,0000	myosin-light-chain kinase activity
+0004685	6	0	0	0	1,0000	1,0000	1,0000	calcium- and calmodulin-dependent protein kinase activity
+0004684	1	0	0	0	1,0000	1,0000	1,0000	calmodulin-dependent protein kinase I activity
+0004683	11	0	0	0	1,0000	1,0000	1,0000	calmodulin regulated protein kinase activity
+0004682	2	0	0	0	1,0000	1,0000	1,0000	protein kinase CK2 activity
+0004681	3	0	0	0	1,0000	1,0000	1,0000	casein kinase I activity
+0004680	5	0	0	0	1,0000	1,0000	1,0000	casein kinase activity
+0016652	2	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on NADH or NADPH, NAD or NADP as acceptor
+0016651	2	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on NADH or NADPH
+0004679	1	0	0	0	1,0000	1,0000	1,0000	AMP-activated protein kinase activity
+0030935	1	0	0	0	1,0000	1,0000	1,0000	sheet-forming collagen
+0030934	1	0	0	0	1,0000	1,0000	1,0000	anchoring collagen
+0004676	1	0	0	0	1,0000	1,0000	1,0000	3-phosphoinositide-dependent protein kinase activity
+0004675	8	0	0	0	1,0000	1,0000	1,0000	transmembrane receptor protein serine/threonine kinase activity
+0004674	190	0	0	7	1,0000	1,0000	0,9628	protein serine/threonine kinase activity
+0004672	247	0	0	7	1,0000	1,0000	0,9974	protein kinase activity
+0016641	1	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on the CH-NH2 group of donors, oxygen as acceptor
+0004666	1	0	0	0	1,0000	1,0000	1,0000	prostaglandin-endoperoxide synthase activity
+0016638	1	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on the CH-NH2 group of donors
+0004651	1	0	0	0	1,0000	1,0000	1,0000	polynucleotide 5'-phosphatase activity
+0016620	3	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor
+0004647	1	0	0	0	1,0000	1,0000	1,0000	phosphoserine phosphatase activity
+0030902	2	0	0	0	1,0000	1,0000	1,0000	hindbrain development
+0016616	1	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
+0016614	1	0	0	0	1,0000	1,0000	1,0000	oxidoreductase activity, acting on CH-OH group of donors
+0016604	1	0	0	1	1,0000	1,0000	0,0611	nuclear body
+0016602	3	0	0	0	1,0000	1,0000	1,0000	CCAAT-binding factor complex
+0004629	6	0	0	1	1,0000	1,0000	0,3157	phospholipase C activity
+0004620	6	0	0	1	1,0000	1,0000	0,3157	phospholipase activity
+0004601	1	0	0	0	1,0000	1,0000	1,0000	peroxidase activity
+0009452	1	0	0	0	1,0000	1,0000	1,0000	RNA capping
+0009451	2	0	0	0	1,0000	1,0000	1,0000	RNA modification
+0009410	2	0	0	0	1,0000	1,0000	1,0000	response to xenobiotic stimulus
+0009408	1	0	0	0	1,0000	1,0000	1,0000	response to heat
+0009405	2	0	0	0	1,0000	1,0000	1,0000	pathogenesis
+0030894	5	0	0	0	1,0000	1,0000	1,0000	replisome
+0030880	1	0	0	0	1,0000	1,0000	1,0000	RNA polymerase complex
+0016599	3	0	0	0	1,0000	1,0000	1,0000	caveolar membrane
+0016591	13	0	0	0	1,0000	1,0000	1,0000	DNA-directed RNA polymerase II, holoenzyme
+0030866	1	0	0	0	1,0000	1,0000	1,0000	cortical actin cytoskeleton organization and biogenesis
+0030865	1	0	0	0	1,0000	1,0000	1,0000	cortical cytoskeleton organization and biogenesis
+0016579	1	0	0	0	1,0000	1,0000	1,0000	protein deubiquitination
+0016572	1	0	0	0	1,0000	1,0000	1,0000	histone phosphorylation
+0016570	1	0	0	0	1,0000	1,0000	1,0000	histone modification
+0042828	1	0	0	0	1,0000	1,0000	1,0000	response to pathogen
+0016569	1	0	0	0	1,0000	1,0000	1,0000	covalent chromatin modification
+0016568	3	0	0	0	1,0000	1,0000	1,0000	chromatin modification
+0016567	12	0	0	0	1,0000	1,0000	1,0000	protein ubiquitination
+0016564	2	0	0	1	1,0000	1,0000	0,1186	transcriptional repressor activity
+0016563	14	0	0	1	1,0000	1,0000	0,5888	transcriptional activator activity
+0030838	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of actin filament polymerization
+0030833	1	0	0	0	1,0000	1,0000	1,0000	regulation of actin filament polymerization
+0030832	3	0	0	0	1,0000	1,0000	1,0000	regulation of actin filament length
+0042804	1	0	0	0	1,0000	1,0000	1,0000	protein homooligomerization activity
+0042803	4	0	0	0	1,0000	1,0000	1,0000	protein homodimerization activity
+0042802	4	0	0	0	1,0000	1,0000	1,0000	protein self binding
+0016540	1	0	0	0	1,0000	1,0000	1,0000	protein autoprocessing
+0004563	1	0	0	0	1,0000	1,0000	1,0000	beta-N-acetylhexosaminidase activity
+0016534	2	0	0	0	1,0000	1,0000	1,0000	cyclin-dependent protein kinase 5 activator activity
+0016533	2	0	0	0	1,0000	1,0000	1,0000	cyclin-dependent protein kinase 5 activator complex
+0004553	6	0	0	0	1,0000	1,0000	1,0000	hydrolase activity, hydrolyzing O-glycosyl compounds
+0004551	1	0	0	0	1,0000	1,0000	1,0000	nucleotide diphosphatase activity
+0004550	1	0	0	0	1,0000	1,0000	1,0000	nucleoside-diphosphate kinase activity
+0016526	5	0	0	0	1,0000	1,0000	1,0000	G-protein coupled receptor activity, unknown ligand
+0016525	3	0	0	0	1,0000	1,0000	1,0000	negative regulation of angiogenesis
+0004540	3	0	0	0	1,0000	1,0000	1,0000	ribonuclease activity
+0004536	2	0	0	0	1,0000	1,0000	1,0000	deoxyribonuclease activity
+0016505	2	0	0	0	1,0000	1,0000	1,0000	apoptotic protease activator activity
+0016504	2	0	0	0	1,0000	1,0000	1,0000	protease activator activity
+0016502	12	0	0	0	1,0000	1,0000	1,0000	nucleotide receptor activity
+0016500	2	0	0	0	1,0000	1,0000	1,0000	protein-hormone receptor activity
+0047696	1	0	0	0	1,0000	1,0000	1,0000	beta-adrenergic-receptor kinase activity
+0004529	1	0	0	0	1,0000	1,0000	1,0000	exodeoxyribonuclease activity
+0004528	1	0	0	0	1,0000	1,0000	1,0000	phosphodiesterase I activity
+0004527	3	0	0	0	1,0000	1,0000	1,0000	exonuclease activity
+0004523	1	0	0	0	1,0000	1,0000	1,0000	ribonuclease H activity
+0004522	1	0	0	0	1,0000	1,0000	1,0000	pancreatic ribonuclease activity
+0004521	2	0	0	0	1,0000	1,0000	1,0000	endoribonuclease activity
+0004520	1	0	0	0	1,0000	1,0000	1,0000	endodeoxyribonuclease activity
+0004519	6	0	0	0	1,0000	1,0000	1,0000	endonuclease activity
+0004518	7	0	0	0	1,0000	1,0000	1,0000	nuclease activity
+0004516	1	0	0	1	1,0000	1,0000	0,0611	nicotinate phosphoribosyltransferase activity
+0004506	1	0	0	0	1,0000	1,0000	1,0000	squalene monooxygenase activity
+null	2	0	0	0	1,0000	1,0000	1,0000	obsolete_function
+null	1096	0	0	67	1,0000	1,0000	1,0000	all
+0009314	4	0	0	0	1,0000	1,0000	1,0000	response to radiation
+0009310	1	0	0	0	1,0000	1,0000	1,0000	amine catabolism
+0009309	3	0	0	0	1,0000	1,0000	1,0000	amine biosynthesis
+0009308	9	0	0	0	1,0000	1,0000	1,0000	amine metabolism
+0009306	1	0	0	0	1,0000	1,0000	1,0000	protein secretion
+0042772	1	0	0	0	1,0000	1,0000	1,0000	DNA damage response, signal transduction resulting in transcription
+0042770	6	0	0	0	1,0000	1,0000	1,0000	DNA damage response, signal transduction
+0016499	1	0	0	0	1,0000	1,0000	1,0000	orexin receptor activity
+0016494	3	0	0	1	1,0000	1,0000	0,1726	C-X-C chemokine receptor activity
+0016493	3	0	0	1	1,0000	1,0000	0,1726	C-C chemokine receptor activity
+0016492	1	0	0	1	1,0000	1,0000	0,0611	neurotensin receptor activity, G-protein coupled
+0016491	15	0	0	1	1,0000	1,0000	0,6142	oxidoreductase activity
+0042742	2	0	0	0	1,0000	1,0000	1,0000	defense response to bacteria
+0016486	1	0	0	0	1,0000	1,0000	1,0000	peptide hormone processing
+0016485	3	0	0	0	1,0000	1,0000	1,0000	protein processing
+0016481	16	0	0	0	1,0000	1,0000	1,0000	negative regulation of transcription
+0016477	13	0	0	3	1,0000	1,0000	0,0402	cell migration
+0004497	1	0	0	0	1,0000	1,0000	1,0000	monooxygenase activity
+0016469	1	0	0	0	1,0000	1,0000	1,0000	proton-transporting two-sector ATPase complex
+0016462	13	0	0	1	1,0000	1,0000	0,5616	pyrophosphatase activity
+0016460	1	0	0	1	1,0000	1,0000	0,0611	myosin II
+0004484	1	0	0	0	1,0000	1,0000	1,0000	mRNA guanylyltransferase activity
+0016459	5	0	0	1	1,0000	1,0000	0,2709	myosin
+0042708	2	0	0	1	1,0000	1,0000	0,1186	elastase activity
+0004463	1	0	0	0	1,0000	1,0000	1,0000	leukotriene-A4 hydrolase activity
+0004452	1	0	0	0	1,0000	1,0000	1,0000	isopentenyl-diphosphate delta-isomerase activity
+0004445	2	0	0	0	1,0000	1,0000	1,0000	inositol-polyphosphate 5-phosphatase activity
+0004441	1	0	0	0	1,0000	1,0000	1,0000	inositol-1,4-bisphosphate 1-phosphatase activity
+0004439	1	0	0	0	1,0000	1,0000	1,0000	phosphoinositide 5-phosphatase activity
+0004437	6	0	0	1	1,0000	1,0000	0,3157	inositol or phosphatidylinositol phosphatase activity
+0004435	6	0	0	1	1,0000	1,0000	0,3157	phosphoinositide phospholipase C activity
+0004434	6	0	0	1	1,0000	1,0000	0,3157	inositol or phosphatidylinositol phosphodiesterase activity
+0004428	9	0	0	0	1,0000	1,0000	1,0000	inositol or phosphatidylinositol kinase activity
+0004420	1	0	0	0	1,0000	1,0000	1,0000	hydroxymethylglutaryl-CoA reductase (NADPH) activity
+0009266	1	0	0	0	1,0000	1,0000	1,0000	response to temperature
+0009262	1	0	0	0	1,0000	1,0000	1,0000	deoxyribonucleotide metabolism
+0009260	2	0	0	0	1,0000	1,0000	1,0000	ribonucleotide biosynthesis
+0009259	2	0	0	0	1,0000	1,0000	1,0000	ribonucleotide metabolism
+0009251	1	0	0	0	1,0000	1,0000	1,0000	glucan catabolism
+0009250	3	0	0	0	1,0000	1,0000	1,0000	glucan biosynthesis
+0009247	1	0	0	0	1,0000	1,0000	1,0000	glycolipid biosynthesis
+0009241	1	0	0	0	1,0000	1,0000	1,0000	polyisoprenoid biosynthesis
+0009225	1	0	0	0	1,0000	1,0000	1,0000	nucleotide-sugar metabolism
+0009220	1	0	0	0	1,0000	1,0000	1,0000	pyrimidine ribonucleotide biosynthesis
+0009218	1	0	0	0	1,0000	1,0000	1,0000	pyrimidine ribonucleotide metabolism
+0009209	1	0	0	0	1,0000	1,0000	1,0000	pyrimidine ribonucleoside triphosphate biosynthesis
+0009208	1	0	0	0	1,0000	1,0000	1,0000	pyrimidine ribonucleoside triphosphate metabolism
+0009206	2	0	0	0	1,0000	1,0000	1,0000	purine ribonucleoside triphosphate biosynthesis
+0009205	2	0	0	0	1,0000	1,0000	1,0000	purine ribonucleoside triphosphate metabolism
+0009201	2	0	0	0	1,0000	1,0000	1,0000	ribonucleoside triphosphate biosynthesis
+0030695	10	0	0	0	1,0000	1,0000	1,0000	GTPase regulator activity
+0030693	9	0	0	0	1,0000	1,0000	1,0000	caspase activity
+0042626	3	0	0	0	1,0000	1,0000	1,0000	ATPase activity, coupled to transmembrane movement of substances
+0042625	1	0	0	0	1,0000	1,0000	1,0000	ATPase activity, coupled to transmembrane movement of ions
+0042623	6	0	0	1	1,0000	1,0000	0,3157	ATPase activity, coupled
+0004386	5	0	0	1	1,0000	1,0000	0,2709	helicase activity
+0004385	2	0	0	0	1,0000	1,0000	1,0000	guanylate kinase activity
+0004383	3	0	0	0	1,0000	1,0000	1,0000	guanylate cyclase activity
+0004365	1	0	0	0	1,0000	1,0000	1,0000	glyceraldehyde-3-phosphate dehydrogenase (phosphorylating) activity
+0016337	21	0	0	3	1,0000	1,0000	0,1321	cell-cell adhesion
+0030617	2	0	0	0	1,0000	1,0000	1,0000	transforming growth factor beta receptor, inhibitory cytoplasmic mediator activity
+0016327	31	0	0	1	1,0000	1,0000	0,8624	apicolateral plasma membrane
+0004346	1	0	0	0	1,0000	1,0000	1,0000	glucose-6-phosphatase activity
+0030601	1	0	0	0	1,0000	1,0000	1,0000	aminopeptidase B activity
+0016314	1	0	0	0	1,0000	1,0000	1,0000	phosphatidylinositol-3,4,5-trisphosphate 3-phosphatase activity
+0016312	1	0	0	0	1,0000	1,0000	1,0000	inositol bisphosphate phosphatase activity
+0016311	62	0	0	3	1,0000	1,0000	0,7469	dephosphorylation
+0016310	249	0	0	9	1,0000	1,0000	0,9831	phosphorylation
+0004331	1	0	0	0	1,0000	1,0000	1,0000	fructose-2,6-bisphosphate 2-phosphatase activity
+0016309	1	0	0	0	1,0000	1,0000	1,0000	1-phosphatidylinositol-5-phosphate 4-kinase activity
+0016308	1	0	0	0	1,0000	1,0000	1,0000	1-phosphatidylinositol-4-phosphate 5-kinase activity
+0016307	3	0	0	0	1,0000	1,0000	1,0000	phosphatidylinositol phosphate kinase activity
+0016303	7	0	0	0	1,0000	1,0000	1,0000	phosphatidylinositol 3-kinase activity
+0016301	268	0	0	9	1,0000	1,0000	0,9927	kinase activity
+0004301	1	0	0	0	1,0000	1,0000	1,0000	epoxide hydrolase activity
+0009199	2	0	0	0	1,0000	1,0000	1,0000	ribonucleoside triphosphate metabolism
+0009190	4	0	0	0	1,0000	1,0000	1,0000	cyclic nucleotide biosynthesis
+0009187	4	0	0	0	1,0000	1,0000	1,0000	cyclic nucleotide metabolism
+0009186	1	0	0	0	1,0000	1,0000	1,0000	deoxyribonucleoside diphosphate metabolism
+0009166	1	0	0	0	1,0000	1,0000	1,0000	nucleotide catabolism
+0009165	7	0	0	1	1,0000	1,0000	0,3578	nucleotide biosynthesis
+0009152	2	0	0	0	1,0000	1,0000	1,0000	purine ribonucleotide biosynthesis
+0009150	2	0	0	0	1,0000	1,0000	1,0000	purine ribonucleotide metabolism
+0009147	1	0	0	0	1,0000	1,0000	1,0000	pyrimidine nucleoside triphosphate metabolism
+0009145	2	0	0	0	1,0000	1,0000	1,0000	purine nucleoside triphosphate biosynthesis
+0009144	2	0	0	0	1,0000	1,0000	1,0000	purine nucleoside triphosphate metabolism
+0009142	2	0	0	0	1,0000	1,0000	1,0000	nucleoside triphosphate biosynthesis
+0009141	2	0	0	0	1,0000	1,0000	1,0000	nucleoside triphosphate metabolism
+0009132	1	0	0	0	1,0000	1,0000	1,0000	nucleoside diphosphate metabolism
+0009117	10	0	0	1	1,0000	1,0000	0,4693	nucleotide metabolism
+0009110	1	0	0	1	1,0000	1,0000	0,0611	vitamin biosynthesis
+0009108	2	0	0	1	1,0000	1,0000	0,1186	coenzyme biosynthesis
+0009101	2	0	0	0	1,0000	1,0000	1,0000	glycoprotein biosynthesis
+0009100	3	0	0	0	1,0000	1,0000	1,0000	glycoprotein metabolism
+0042598	6	0	0	0	1,0000	1,0000	1,0000	vesicular fraction
+0042592	11	0	0	0	1,0000	1,0000	1,0000	homeostasis
+0042582	1	0	0	0	1,0000	1,0000	1,0000	azurophil granule
+0042579	3	0	0	0	1,0000	1,0000	1,0000	microbody
+0042578	102	0	0	7	1,0000	1,0000	0,4339	phosphoric ester hydrolase activity
+0042577	2	0	0	0	1,0000	1,0000	1,0000	lipid phosphatase activity
+0042575	3	0	0	0	1,0000	1,0000	1,0000	DNA polymerase complex
+0030595	4	0	0	2	1,0000	1,0000	0,0204	immune cell chemotaxis
+0030594	11	0	0	1	1,0000	1,0000	0,5020	neurotransmitter receptor activity
+0030593	3	0	0	2	1,0000	1,0000	0,0106	neutrophil chemotaxis
+0042562	3	0	0	0	1,0000	1,0000	1,0000	hormone binding
+0042559	1	0	0	0	1,0000	1,0000	1,0000	pteridine and derivative biosynthesis
+0042558	1	0	0	0	1,0000	1,0000	1,0000	pteridine and derivative metabolism
+0042557	1	0	0	0	1,0000	1,0000	1,0000	eukaryotic elongation factor-2 kinase activator activity
+0042556	1	0	0	0	1,0000	1,0000	1,0000	eukaryotic elongation factor-2 kinase regulator activity
+0016298	6	0	0	1	1,0000	1,0000	0,3157	lipase activity
+0042552	1	0	0	0	1,0000	1,0000	1,0000	myelination
+0042551	2	0	0	0	1,0000	1,0000	1,0000	nerve maturation
+0030574	9	0	0	2	1,0000	1,0000	0,1004	collagen catabolism
+0016284	2	0	0	0	1,0000	1,0000	1,0000	alanine aminopeptidase activity
+0016281	2	0	0	1	1,0000	1,0000	0,1186	eukaryotic translation initiation factor 4F complex
+0042535	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of tumor necrosis factor-alpha biosynthesis
+0042534	1	0	0	0	1,0000	1,0000	1,0000	regulation of tumor necrosis factor-alpha biosynthesis
+0042533	1	0	0	0	1,0000	1,0000	1,0000	tumor necrosis factor-alpha biosynthesis
+0042532	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of tyrosine phosphorylation of STAT protein
+0030554	266	0	0	8	1,0000	1,0000	0,9971	adenyl nucleotide binding
+0030553	2	0	0	0	1,0000	1,0000	1,0000	3',5'-cGMP binding
+0030552	4	0	0	0	1,0000	1,0000	1,0000	3',5'-cAMP binding
+0004295	31	0	0	1	1,0000	1,0000	0,8624	trypsin activity
+0030551	6	0	0	0	1,0000	1,0000	1,0000	cyclic nucleotide binding
+0004293	2	0	0	0	1,0000	1,0000	1,0000	tissue kallikrein activity
+0016265	74	0	0	4	1,0000	1,0000	0,6785	death
+0004289	3	0	0	1	1,0000	1,0000	0,1726	subtilase activity
+0004286	1	0	0	0	1,0000	1,0000	1,0000	proprotein convertase 2 activity
+0042518	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of tyrosine phosphorylation of Stat3 protein
+0042516	1	0	0	0	1,0000	1,0000	1,0000	regulation of tyrosine phosphorylation of Stat3 protein
+0016251	11	0	0	1	1,0000	1,0000	0,5020	general RNA polymerase II transcription factor activity
+0030539	1	0	0	0	1,0000	1,0000	1,0000	male genitalia morphogenesis
+0004278	1	0	0	0	1,0000	1,0000	1,0000	granzyme B activity
+0004277	1	0	0	0	1,0000	1,0000	1,0000	granzyme A activity
+0004276	1	0	0	1	1,0000	1,0000	0,0611	furin activity
+0030530	2	0	0	0	1,0000	1,0000	1,0000	heterogeneous nuclear ribonucleoprotein complex
+0042509	1	0	0	0	1,0000	1,0000	1,0000	regulation of tyrosine phosphorylation of STAT protein
+0016247	1	0	0	0	1,0000	1,0000	1,0000	channel regulator activity
+0042503	1	0	0	0	1,0000	1,0000	1,0000	tyrosine phosphorylation of Stat3 protein
+0030529	7	0	0	1	1,0000	1,0000	0,3578	ribonucleoprotein complex
+0030528	173	0	0	7	1,0000	1,0000	0,9270	transcription regulator activity
+0030522	2	0	0	1	1,0000	1,0000	0,1186	intracellular receptor-mediated signaling pathway
+0030521	2	0	0	1	1,0000	1,0000	0,1186	androgen receptor signaling pathway
+0004263	30	0	0	1	1,0000	1,0000	0,8532	chymotrypsin activity
+0004261	1	0	0	0	1,0000	1,0000	1,0000	cathepsin G activity
+0030518	2	0	0	1	1,0000	1,0000	0,1186	steroid hormone receptor signaling pathway
+0004252	41	0	0	2	1,0000	1,0000	0,7294	serine-type endopeptidase activity
+0030506	1	0	0	0	1,0000	1,0000	1,0000	ankyrin binding
+0004248	1	0	0	0	1,0000	1,0000	1,0000	stromelysin 1 activity
+0004240	1	0	0	0	1,0000	1,0000	1,0000	mitochondrial processing peptidase activity
+0004234	1	0	0	1	1,0000	1,0000	0,0611	macrophage elastase activity
+0004232	1	0	0	0	1,0000	1,0000	1,0000	interstitial collagenase activity
+0016209	2	0	0	0	1,0000	1,0000	1,0000	antioxidant activity
+0016208	4	0	0	0	1,0000	1,0000	1,0000	AMP binding
+0004229	1	0	0	0	1,0000	1,0000	1,0000	gelatinase B activity
+0004228	1	0	0	0	1,0000	1,0000	1,0000	gelatinase A activity
+0004222	20	0	0	3	1,0000	1,0000	0,1182	metalloendopeptidase activity
+0004221	15	0	0	0	1,0000	1,0000	1,0000	ubiquitin thiolesterase activity
+0004218	1	0	0	0	1,0000	1,0000	1,0000	cathepsin S activity
+0004217	1	0	0	1	1,0000	1,0000	0,0611	cathepsin L activity
+0004214	1	0	0	0	1,0000	1,0000	1,0000	dipeptidyl-peptidase I activity
+0009074	1	0	0	0	1,0000	1,0000	1,0000	aromatic amino acid family catabolism
+0009072	1	0	0	0	1,0000	1,0000	1,0000	aromatic amino acid family metabolism
+0009070	1	0	0	0	1,0000	1,0000	1,0000	serine family amino acid biosynthesis
+0009069	1	0	0	0	1,0000	1,0000	1,0000	serine family amino acid metabolism
+0009067	1	0	0	0	1,0000	1,0000	1,0000	aspartate family amino acid biosynthesis
+0009066	1	0	0	0	1,0000	1,0000	1,0000	aspartate family amino acid metabolism
+0009064	1	0	0	0	1,0000	1,0000	1,0000	glutamine family amino acid metabolism
+0009063	1	0	0	0	1,0000	1,0000	1,0000	amino acid catabolism
+0009059	37	0	0	3	1,0000	1,0000	0,3969	macromolecule biosynthesis
+0009058	51	0	0	4	1,0000	1,0000	0,3802	biosynthesis
+0009057	112	0	0	6	1,0000	1,0000	0,7003	macromolecule catabolism
+0009056	118	0	0	7	1,0000	1,0000	0,5970	catabolism
+0009049	1	0	0	0	1,0000	1,0000	1,0000	aspartic-type signal peptidase activity
+0009003	1	0	0	0	1,0000	1,0000	1,0000	signal peptidase activity
+0042493	1	0	0	0	1,0000	1,0000	1,0000	response to drug
+0042476	1	0	0	0	1,0000	1,0000	1,0000	odontogenesis
+0030484	1	0	0	1	1,0000	1,0000	0,0611	muscle fiber
+0030483	1	0	0	0	1,0000	1,0000	1,0000	site of polarized growth (sensu Fungi)
+0016197	3	0	0	0	1,0000	1,0000	1,0000	endosome transport
+0016192	16	0	0	0	1,0000	1,0000	1,0000	vesicle-mediated transport
+0042446	1	0	0	0	1,0000	1,0000	1,0000	hormone biosynthesis
+0042445	3	0	0	0	1,0000	1,0000	1,0000	hormone metabolism
+0042440	1	0	0	0	1,0000	1,0000	1,0000	pigment metabolism
+0004198	5	0	0	0	1,0000	1,0000	1,0000	calpain activity
+0004197	36	0	0	2	1,0000	1,0000	0,6596	cysteine-type endopeptidase activity
+0004194	2	0	0	0	1,0000	1,0000	1,0000	pepsin A activity
+0004193	1	0	0	0	1,0000	1,0000	1,0000	cathepsin E activity
+0004190	2	0	0	0	1,0000	1,0000	1,0000	aspartic-type endopeptidase activity
+0004180	1	0	0	0	1,0000	1,0000	1,0000	carboxypeptidase activity
+0004179	2	0	0	0	1,0000	1,0000	1,0000	membrane alanyl aminopeptidase activity
+0004177	3	0	0	0	1,0000	1,0000	1,0000	aminopeptidase activity
+0004176	2	0	0	0	1,0000	1,0000	1,0000	ATP-dependent peptidase activity
+0004175	101	0	0	6	1,0000	1,0000	0,5964	endopeptidase activity
+0042401	1	0	0	0	1,0000	1,0000	1,0000	biogenic amine biosynthesis
+0030427	1	0	0	0	1,0000	1,0000	1,0000	site of polarized growth
+0030414	34	0	0	3	1,0000	1,0000	0,3452	protease inhibitor activity
+0016126	5	0	0	0	1,0000	1,0000	1,0000	sterol biosynthesis
+0016125	9	0	0	0	1,0000	1,0000	1,0000	sterol metabolism
+0004143	1	0	0	0	1,0000	1,0000	1,0000	diacylglycerol kinase activity
+0016117	1	0	0	0	1,0000	1,0000	1,0000	carotenoid biosynthesis
+0016116	1	0	0	0	1,0000	1,0000	1,0000	carotenoid metabolism
+0016114	1	0	0	0	1,0000	1,0000	1,0000	terpenoid biosynthesis
+0016109	1	0	0	0	1,0000	1,0000	1,0000	tetraterpenoid biosynthesis
+0016108	1	0	0	0	1,0000	1,0000	1,0000	tetraterpenoid metabolism
+0004128	2	0	0	0	1,0000	1,0000	1,0000	cytochrome-b5 reductase activity
+0035258	1	0	0	0	1,0000	1,0000	1,0000	steroid hormone receptor binding
+0035257	1	0	0	0	1,0000	1,0000	1,0000	nuclear hormone receptor binding
+0035240	2	0	0	0	1,0000	1,0000	1,0000	dopamine binding
+0042398	1	0	0	0	1,0000	1,0000	1,0000	amino acid derivative biosynthesis
+0042393	1	0	0	0	1,0000	1,0000	1,0000	histone binding
+0042379	4	0	0	2	1,0000	1,0000	0,0204	chemokine receptor binding
+0042364	1	0	0	1	1,0000	1,0000	0,0611	water-soluble vitamin biosynthesis
+0030384	2	0	0	0	1,0000	1,0000	1,0000	phosphoinositide metabolism
+0042355	1	0	0	0	1,0000	1,0000	1,0000	L-fucose catabolism
+0042354	1	0	0	0	1,0000	1,0000	1,0000	L-fucose metabolism
+0016096	1	0	0	0	1,0000	1,0000	1,0000	polyisoprenoid metabolism
+0042330	20	0	0	3	1,0000	1,0000	0,1182	taxis
+0016071	7	0	0	1	1,0000	1,0000	0,3578	mRNA metabolism
+0016070	14	0	0	1	1,0000	1,0000	0,5888	RNA metabolism
+0042325	1	0	0	1	1,0000	1,0000	0,0611	regulation of phosphorylation
+0016066	1	0	0	0	1,0000	1,0000	1,0000	cellular defense response (sensu Vertebrata)
+0016064	15	0	0	1	1,0000	1,0000	0,6142	humoral defense mechanism (sensu Vertebrata)
+0004089	2	0	0	0	1,0000	1,0000	1,0000	carbonate dehydratase activity
+0042312	1	0	0	0	1,0000	1,0000	1,0000	regulation of vasodilation
+0016055	12	0	0	0	1,0000	1,0000	1,0000	Wnt receptor signaling pathway
+0042311	1	0	0	0	1,0000	1,0000	1,0000	vasodilation
+0042310	1	0	0	0	1,0000	1,0000	1,0000	vasoconstriction
+0016053	8	0	0	1	1,0000	1,0000	0,3973	organic acid biosynthesis
+0016052	4	0	0	1	1,0000	1,0000	0,2233	carbohydrate catabolism
+0016051	6	0	0	0	1,0000	1,0000	1,0000	carbohydrate biosynthesis
+0030337	1	0	0	0	1,0000	1,0000	1,0000	DNA polymerase processivity factor activity
+0030335	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of cell migration
+0030334	2	0	0	0	1,0000	1,0000	1,0000	regulation of cell migration
+0030333	2	0	0	0	1,0000	1,0000	1,0000	antigen processing
+0030330	1	0	0	0	1,0000	1,0000	1,0000	DNA damage response, signal transduction by p53 class mediator
+0016049	12	0	0	0	1,0000	1,0000	1,0000	cell growth
+0016044	2	0	0	0	1,0000	1,0000	1,0000	membrane organization and biogenesis
+0016043	55	0	0	4	1,0000	1,0000	0,4376	cell organization and biogenesis
+0016042	1	0	0	0	1,0000	1,0000	1,0000	lipid catabolism
+0004066	1	0	0	0	1,0000	1,0000	1,0000	asparagine synthase (glutamine-hydrolyzing) activity
+0004062	1	0	0	0	1,0000	1,0000	1,0000	aryl sulfotransferase activity
+0016032	5	0	0	1	1,0000	1,0000	0,2709	viral life cycle
+0030318	1	0	0	0	1,0000	1,0000	1,0000	melanocyte differentiation
+0016023	3	0	0	0	1,0000	1,0000	1,0000	cytoplasmic vesicle
+0016021	278	0	0	16	1,0000	1,0000	0,6611	integral to membrane
+0016020	327	0	0	18	1,0000	1,0000	0,7508	membrane
+0030308	3	0	0	0	1,0000	1,0000	1,0000	negative regulation of cell growth
+0030307	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of cell growth
+0030303	1	0	0	1	1,0000	1,0000	0,0611	stromelysin 2 activity
+0016012	1	0	0	0	1,0000	1,0000	1,0000	sarcoglycan complex
+0016011	1	0	0	0	1,0000	1,0000	1,0000	dystroglycan complex
+0016010	2	0	0	0	1,0000	1,0000	1,0000	dystrophin-associated glycoprotein complex
+0004035	3	0	0	1	1,0000	1,0000	0,1726	alkaline phosphatase activity
+0019992	13	0	0	0	1,0000	1,0000	1,0000	diacylglycerol binding
+0004029	2	0	0	0	1,0000	1,0000	1,0000	aldehyde dehydrogenase (NAD) activity
+0004028	2	0	0	0	1,0000	1,0000	1,0000	aldehyde dehydrogenase activity
+0004014	1	0	0	0	1,0000	1,0000	1,0000	adenosylmethionine decarboxylase activity
+0004003	1	0	0	0	1,0000	1,0000	1,0000	ATP-dependent DNA helicase activity
+0019965	1	0	0	0	1,0000	1,0000	1,0000	interleukin binding
+0019959	1	0	0	0	1,0000	1,0000	1,0000	interleukin-8 binding
+0019958	3	0	0	1	1,0000	1,0000	0,1726	C-X-C chemokine binding
+0019957	3	0	0	1	1,0000	1,0000	0,1726	C-C chemokine binding
+0019956	6	0	0	1	1,0000	1,0000	0,3157	chemokine binding
+0019955	6	0	0	1	1,0000	1,0000	0,3157	cytokine binding
+0019953	18	0	0	0	1,0000	1,0000	1,0000	sexual reproduction
+0019941	19	0	0	0	1,0000	1,0000	1,0000	modification-dependent protein catabolism
+0019935	34	0	0	2	1,0000	1,0000	0,6280	cyclic-nucleotide-mediated signaling
+0019933	24	0	0	1	1,0000	1,0000	0,7836	cAMP-mediated signaling
+0019932	57	0	0	3	1,0000	1,0000	0,6922	second-messenger-mediated signaling
+0019904	8	0	0	1	1,0000	1,0000	0,3973	protein domain specific binding
+0019901	8	0	0	1	1,0000	1,0000	0,3973	protein kinase binding
+0019900	8	0	0	1	1,0000	1,0000	0,3973	kinase binding
+0035112	1	0	0	0	1,0000	1,0000	1,0000	genitalia morphogenesis
+0042277	28	0	0	3	1,0000	1,0000	0,2421	peptide binding
+0030295	3	0	0	0	1,0000	1,0000	1,0000	protein kinase activator activity
+0030277	1	0	0	0	1,0000	1,0000	1,0000	maintenance of gastrointestinal epithelium
+0030276	1	0	0	0	1,0000	1,0000	1,0000	clathrin binding
+0042246	1	0	0	0	1,0000	1,0000	1,0000	tissue regeneration
+0030261	2	0	0	0	1,0000	1,0000	1,0000	chromosome condensation
+0030258	1	0	0	0	1,0000	1,0000	1,0000	lipid modification
+0042222	1	0	0	0	1,0000	1,0000	1,0000	interleukin-1 biosynthesis
+0042221	30	0	0	3	1,0000	1,0000	0,2761	response to chemical substance
+0030247	20	0	0	2	1,0000	1,0000	0,3486	polysaccharide binding
+0030246	27	0	0	2	1,0000	1,0000	0,5002	carbohydrate binding
+0042214	1	0	0	0	1,0000	1,0000	1,0000	terpene metabolism
+0030236	1	0	0	0	1,0000	1,0000	1,0000	anti-inflammatory response
+0030234	85	0	0	5	1,0000	1,0000	0,6076	enzyme regulator activity
+0030224	1	0	0	1	1,0000	1,0000	0,0611	monocyte differentiation
+0030216	1	0	0	0	1,0000	1,0000	1,0000	keratinocyte differentiation
+0030212	1	0	0	0	1,0000	1,0000	1,0000	hyaluronan metabolism
+0030203	1	0	0	0	1,0000	1,0000	1,0000	glycosaminoglycan metabolism
+0019899	11	0	0	1	1,0000	1,0000	0,5020	enzyme binding
+0019898	1	0	0	0	1,0000	1,0000	1,0000	extrinsic to membrane
+0019897	1	0	0	0	1,0000	1,0000	1,0000	extrinsic to plasma membrane
+0019888	15	0	0	0	1,0000	1,0000	1,0000	protein phosphatase regulator activity
+0019887	15	0	0	0	1,0000	1,0000	1,0000	protein kinase regulator activity
+0019886	1	0	0	0	1,0000	1,0000	1,0000	antigen processing, exogenous antigen via MHC class II
+0019885	1	0	0	0	1,0000	1,0000	1,0000	antigen processing, endogenous antigen via MHC class I
+0019883	1	0	0	0	1,0000	1,0000	1,0000	antigen presentation, endogenous antigen
+0019882	1	0	0	0	1,0000	1,0000	1,0000	antigen presentation
+0019867	2	0	0	0	1,0000	1,0000	1,0000	outer membrane
+0019866	2	0	0	0	1,0000	1,0000	1,0000	inner membrane
+0019865	2	0	0	0	1,0000	1,0000	1,0000	immunoglobulin binding
+0019864	1	0	0	0	1,0000	1,0000	1,0000	IgG binding
+0019863	1	0	0	0	1,0000	1,0000	1,0000	IgE binding
+0035091	2	0	0	0	1,0000	1,0000	1,0000	phosphoinositide binding
+0035088	1	0	0	0	1,0000	1,0000	1,0000	establishment and/or maintenance of apical/basal cell polarity
+0035081	2	0	0	0	1,0000	1,0000	1,0000	induction of programmed cell death by hormones
+0019843	1	0	0	0	1,0000	1,0000	1,0000	rRNA binding
+0019842	3	0	0	0	1,0000	1,0000	1,0000	vitamin binding
+0019841	3	0	0	0	1,0000	1,0000	1,0000	retinol binding
+0019840	4	0	0	1	1,0000	1,0000	0,2233	isoprenoid binding
+0019838	6	0	0	0	1,0000	1,0000	1,0000	growth factor binding
+0019835	3	0	0	0	1,0000	1,0000	1,0000	cytolysis
+0019829	1	0	0	0	1,0000	1,0000	1,0000	cation-transporting ATPase activity
+0035014	1	0	0	0	1,0000	1,0000	1,0000	phosphoinositide 3-kinase regulator activity
+0035005	2	0	0	0	1,0000	1,0000	1,0000	phosphatidylinositol-4-phosphate 3-kinase activity
+0035004	7	0	0	0	1,0000	1,0000	1,0000	phosphoinositide 3-kinase activity
+0042177	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of protein catabolism
+0042176	1	0	0	0	1,0000	1,0000	1,0000	regulation of protein catabolism
+0042175	4	0	0	0	1,0000	1,0000	1,0000	nuclear envelope-endoplasmic reticulum network
+0030199	1	0	0	0	1,0000	1,0000	1,0000	collagen fibril organization
+0030198	3	0	0	0	1,0000	1,0000	1,0000	extracellular matrix organization and biogenesis
+0030197	1	0	0	0	1,0000	1,0000	1,0000	extracellular matrix constituent, lubricant activity
+0030195	3	0	0	0	1,0000	1,0000	1,0000	negative regulation of blood coagulation
+0030193	3	0	0	0	1,0000	1,0000	1,0000	regulation of blood coagulation
+0042169	2	0	0	0	1,0000	1,0000	1,0000	SH2 domain binding
+0042168	1	0	0	0	1,0000	1,0000	1,0000	heme metabolism
+0042166	1	0	0	0	1,0000	1,0000	1,0000	acetylcholine binding
+0042165	11	0	0	1	1,0000	1,0000	0,5020	neurotransmitter binding
+0030183	1	0	0	1	1,0000	1,0000	0,0611	B-cell differentiation
+0030182	1	0	0	0	1,0000	1,0000	1,0000	neuron differentiation
+0042159	1	0	0	0	1,0000	1,0000	1,0000	lipoprotein catabolism
+0042158	1	0	0	0	1,0000	1,0000	1,0000	lipoprotein biosynthesis
+0042157	2	0	0	0	1,0000	1,0000	1,0000	lipoprotein metabolism
+0030165	2	0	0	1	1,0000	1,0000	0,1186	PDZ domain binding
+0030163	109	0	0	6	1,0000	1,0000	0,6737	protein catabolism
+0030162	1	0	0	0	1,0000	1,0000	1,0000	regulation of proteolysis and peptidolysis
+0030161	1	0	0	0	1,0000	1,0000	1,0000	calpain inhibitor activity
+0042133	1	0	0	0	1,0000	1,0000	1,0000	neurotransmitter metabolism
+0042132	1	0	0	0	1,0000	1,0000	1,0000	fructose-bisphosphatase activity
+0030159	1	0	0	0	1,0000	1,0000	1,0000	receptor signaling complex scaffold activity
+0030155	4	0	0	1	1,0000	1,0000	0,2233	regulation of cell adhesion
+0030154	20	0	0	2	1,0000	1,0000	0,3486	cell differentiation
+0042129	1	0	0	0	1,0000	1,0000	1,0000	regulation of T-cell proliferation
+0042127	47	0	0	2	1,0000	1,0000	0,7971	regulation of cell proliferation
+0030149	1	0	0	0	1,0000	1,0000	1,0000	sphingolipid catabolism
+0030148	1	0	0	0	1,0000	1,0000	1,0000	sphingolipid biosynthesis
+0030147	1	0	0	0	1,0000	1,0000	1,0000	natriuresis
+0030146	1	0	0	0	1,0000	1,0000	1,0000	diuresis
+0030145	16	0	0	0	1,0000	1,0000	1,0000	manganese ion binding
+0030141	2	0	0	0	1,0000	1,0000	1,0000	secretory granule
+0042119	1	0	0	1	1,0000	1,0000	0,0611	neutrophil activation
+0042117	1	0	0	0	1,0000	1,0000	1,0000	monocyte activation
+0042113	2	0	0	1	1,0000	1,0000	0,1186	B-cell activation
+0042110	1	0	0	0	1,0000	1,0000	1,0000	T-cell activation
+0042108	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of cytokine biosynthesis
+0042107	1	0	0	0	1,0000	1,0000	1,0000	cytokine metabolism
+0042102	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of T-cell proliferation
+0030111	1	0	0	0	1,0000	1,0000	1,0000	regulation of Wnt receptor signaling pathway
+0030106	1	0	0	0	1,0000	1,0000	1,0000	MHC class I receptor activity
+0030100	2	0	0	0	1,0000	1,0000	1,0000	regulation of endocytosis
+0019752	13	0	0	1	1,0000	1,0000	0,5616	carboxylic acid metabolism
+0019735	10	0	0	1	1,0000	1,0000	0,4693	antimicrobial humoral response (sensu Vertebrata)
+0019730	10	0	0	1	1,0000	1,0000	0,4693	antimicrobial humoral response
+0019725	11	0	0	0	1,0000	1,0000	1,0000	cell homeostasis
+0019722	3	0	0	1	1,0000	1,0000	0,1726	calcium-mediated signaling
+0042098	1	0	0	0	1,0000	1,0000	1,0000	T-cell proliferation
+0042089	1	0	0	0	1,0000	1,0000	1,0000	cytokine biosynthesis
+0042087	1	0	0	0	1,0000	1,0000	1,0000	cell-mediated immune response
+0030099	1	0	0	1	1,0000	1,0000	0,0611	myeloid blood cell differentiation
+0030098	1	0	0	1	1,0000	1,0000	0,0611	lymphocyte differentiation
+0030097	2	0	0	2	1,0000	1,0000	0,0037	hemopoiesis
+0042063	1	0	0	0	1,0000	1,0000	1,0000	gliogenesis
+0042062	1	0	0	0	1,0000	1,0000	1,0000	long-term strengthening of neuromuscular junction
+0042060	1	0	0	0	1,0000	1,0000	1,0000	wound healing
+0030071	1	0	0	0	1,0000	1,0000	1,0000	regulation of mitotic metaphase/anaphase transition
+0042035	1	0	0	0	1,0000	1,0000	1,0000	regulation of cytokine biosynthesis
+0042033	1	0	0	0	1,0000	1,0000	1,0000	chemokine biosynthesis
+0030054	32	0	0	1	1,0000	1,0000	0,8711	cell junction
+0030041	1	0	0	0	1,0000	1,0000	1,0000	actin filament polymerization
+0030036	13	0	0	1	1,0000	1,0000	0,5616	actin cytoskeleton organization and biogenesis
+0030029	13	0	0	1	1,0000	1,0000	0,5616	actin filament-based process
+0045987	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of smooth muscle contraction
+0030005	8	0	0	0	1,0000	1,0000	1,0000	di-, tri-valent inorganic cation homeostasis
+0030003	9	0	0	0	1,0000	1,0000	1,0000	cation homeostasis
+0030001	3	0	0	0	1,0000	1,0000	1,0000	metal ion transport
+0045941	10	0	0	0	1,0000	1,0000	1,0000	positive regulation of transcription
+0045935	11	0	0	0	1,0000	1,0000	1,0000	positive regulation of nucleobase, nucleoside, nucleotide and nucleic acid metabolism
+0045934	16	0	0	0	1,0000	1,0000	1,0000	negative regulation of nucleobase, nucleoside, nucleotide and nucleic acid metabolism
+0045933	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of muscle contraction
+0045931	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of mitotic cell cycle
+0045930	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of mitotic cell cycle
+0045927	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of growth
+0045926	3	0	0	0	1,0000	1,0000	1,0000	negative regulation of growth
+0045923	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of fatty acid metabolism
+0045913	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of carbohydrate metabolism
+0007638	2	0	0	1	1,0000	1,0000	0,1186	mechanosensory behavior
+0007635	1	0	0	0	1,0000	1,0000	1,0000	chemosensory behavior
+0007632	1	0	0	0	1,0000	1,0000	1,0000	visual behavior
+0007631	4	0	0	0	1,0000	1,0000	1,0000	feeding behavior
+0007623	2	0	0	0	1,0000	1,0000	1,0000	circadian rhythm
+0007622	2	0	0	0	1,0000	1,0000	1,0000	rhythmic behavior
+0007620	1	0	0	0	1,0000	1,0000	1,0000	copulation
+0007618	1	0	0	0	1,0000	1,0000	1,0000	mating
+0007617	1	0	0	0	1,0000	1,0000	1,0000	mating behavior
+0007612	1	0	0	0	1,0000	1,0000	1,0000	learning
+0007611	1	0	0	0	1,0000	1,0000	1,0000	learning and/or memory
+0007610	16	0	0	1	1,0000	1,0000	0,6381	behavior
+0007608	2	0	0	0	1,0000	1,0000	1,0000	perception of smell
+0007606	2	0	0	0	1,0000	1,0000	1,0000	sensory perception of chemical stimulus
+0007605	10	0	0	0	1,0000	1,0000	1,0000	perception of sound
+0007601	6	0	0	1	1,0000	1,0000	0,3157	visual perception
+0007600	21	0	0	1	1,0000	1,0000	0,7374	sensory perception
+0045898	2	0	0	0	1,0000	1,0000	1,0000	regulation of transcriptional preinitiation complex formation
+0045893	2	0	0	0	1,0000	1,0000	1,0000	positive regulation of transcription, DNA-dependent
+0045892	14	0	0	0	1,0000	1,0000	1,0000	negative regulation of transcription, DNA-dependent
+0045875	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of sister chromatid cohesion
+0045860	13	0	0	0	1,0000	1,0000	1,0000	positive regulation of protein kinase activity
+0045859	32	0	0	1	1,0000	1,0000	0,8711	regulation of protein kinase activity
+0045842	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of mitotic metaphase/anaphase transition
+0045840	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of mitosis
+0045834	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of lipid metabolism
+0007599	22	0	0	1	1,0000	1,0000	0,7538	hemostasis
+0007596	20	0	0	1	1,0000	1,0000	0,7200	blood coagulation
+0007595	1	0	0	0	1,0000	1,0000	1,0000	lactation
+0007589	2	0	0	0	1,0000	1,0000	1,0000	fluid secretion
+0007588	7	0	0	0	1,0000	1,0000	1,0000	excretion
+0007586	8	0	0	0	1,0000	1,0000	1,0000	digestion
+0007585	2	0	0	1	1,0000	1,0000	0,1186	respiratory gaseous exchange
+0007584	4	0	0	0	1,0000	1,0000	1,0000	response to nutrients
+0007582	931	0	0	56	1,0000	1,0000	0,7002	physiological process
+0045807	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of endocytosis
+0007569	1	0	0	0	1,0000	1,0000	1,0000	cell aging
+0007568	1	0	0	0	1,0000	1,0000	1,0000	aging
+0007567	2	0	0	0	1,0000	1,0000	1,0000	parturition
+0007565	5	0	0	0	1,0000	1,0000	1,0000	pregnancy
+0019538	457	0	0	20	1,0000	1,0000	0,9858	protein metabolism
+0007548	5	0	0	0	1,0000	1,0000	1,0000	sex differentiation
+0007530	1	0	0	0	1,0000	1,0000	1,0000	sex determination
+0007528	1	0	0	0	1,0000	1,0000	1,0000	neuromuscular junction development
+0007520	1	0	0	0	1,0000	1,0000	1,0000	myoblast fusion
+0007519	2	0	0	0	1,0000	1,0000	1,0000	myogenesis
+0007518	1	0	0	0	1,0000	1,0000	1,0000	myoblast cell fate determination
+0007517	20	0	0	1	1,0000	1,0000	0,7200	muscle development
+0007507	3	0	0	0	1,0000	1,0000	1,0000	heart development
+0045793	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of cell size
+0045792	3	0	0	0	1,0000	1,0000	1,0000	negative regulation of cell size
+0045787	2	0	0	0	1,0000	1,0000	1,0000	positive regulation of cell cycle
+0045786	15	0	0	0	1,0000	1,0000	1,0000	negative regulation of cell cycle
+0045785	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of cell adhesion
+0045768	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of anti-apoptosis
+0045767	1	0	0	0	1,0000	1,0000	1,0000	regulation of anti-apoptosis
+0045766	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of angiogenesis
+0045765	4	0	0	0	1,0000	1,0000	1,0000	regulation of angiogenesis
+0045762	8	0	0	1	1,0000	1,0000	0,3973	positive regulation of adenylate cyclase activity
+0045761	13	0	0	1	1,0000	1,0000	0,5616	regulation of adenylate cyclase activity
+0045749	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of S phase of mitotic cell cycle
+0045739	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of DNA repair
+0007499	1	0	0	0	1,0000	1,0000	1,0000	ectoderm and mesoderm interaction
+0007498	4	0	0	0	1,0000	1,0000	1,0000	mesoderm development
+0007492	2	0	0	0	1,0000	1,0000	1,0000	endoderm development
+0045727	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of protein biosynthesis
+0045722	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of gluconeogenesis
+0019439	1	0	0	0	1,0000	1,0000	1,0000	aromatic compound catabolism
+0019438	1	0	0	0	1,0000	1,0000	1,0000	aromatic compound biosynthesis
+0007422	3	0	0	1	1,0000	1,0000	0,1726	peripheral nervous system development
+0007420	4	0	0	0	1,0000	1,0000	1,0000	brain development
+0007417	11	0	0	0	1,0000	1,0000	1,0000	central nervous system development
+0007416	2	0	0	0	1,0000	1,0000	1,0000	synaptogenesis
+0007411	2	0	0	0	1,0000	1,0000	1,0000	axon guidance
+0007409	3	0	0	0	1,0000	1,0000	1,0000	axonogenesis
+0045664	1	0	0	0	1,0000	1,0000	1,0000	regulation of neuron differentiation
+0019395	1	0	0	0	1,0000	1,0000	1,0000	fatty acid oxidation
+0019371	1	0	0	0	1,0000	1,0000	1,0000	cyclooxygenase pathway
+0007399	43	0	0	3	1,0000	1,0000	0,4966	neurogenesis
+0007398	10	0	0	0	1,0000	1,0000	1,0000	ectoderm development
+0019369	1	0	0	0	1,0000	1,0000	1,0000	arachidonic acid metabolism
+0019363	1	0	0	1	1,0000	1,0000	0,0611	pyridine nucleotide biosynthesis
+0019362	1	0	0	1	1,0000	1,0000	0,0611	pyridine nucleotide metabolism
+0007389	4	0	0	1	1,0000	1,0000	0,2233	pattern specification
+0007388	2	0	0	1	1,0000	1,0000	0,1186	posterior compartment specification
+0007387	2	0	0	1	1,0000	1,0000	0,1186	anterior compartment specification
+0007386	2	0	0	1	1,0000	1,0000	0,1186	compartment specification
+0007368	1	0	0	0	1,0000	1,0000	1,0000	determination of left/right symmetry
+0019320	3	0	0	1	1,0000	1,0000	0,1726	hexose catabolism
+0007346	2	0	0	0	1,0000	1,0000	1,0000	regulation of mitotic cell cycle
+0019319	2	0	0	0	1,0000	1,0000	1,0000	hexose biosynthesis
+0019318	9	0	0	1	1,0000	1,0000	0,4344	hexose metabolism
+0019317	1	0	0	0	1,0000	1,0000	1,0000	fucose catabolism
+0007338	2	0	0	0	1,0000	1,0000	1,0000	fertilization (sensu Metazoa)
+0007320	1	0	0	0	1,0000	1,0000	1,0000	insemination
+0045595	3	0	0	0	1,0000	1,0000	1,0000	regulation of cell differentiation
+0045569	1	0	0	0	1,0000	1,0000	1,0000	TRAIL binding
+0045542	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of cholesterol biosynthesis
+0045540	1	0	0	0	1,0000	1,0000	1,0000	regulation of cholesterol biosynthesis
+0007292	1	0	0	0	1,0000	1,0000	1,0000	female gamete generation
+0007286	1	0	0	0	1,0000	1,0000	1,0000	spermatid development
+0007283	11	0	0	0	1,0000	1,0000	1,0000	spermatogenesis
+0007276	15	0	0	0	1,0000	1,0000	1,0000	gametogenesis
+0007275	193	0	0	13	1,0000	1,0000	0,3967	development
+0007274	1	0	0	0	1,0000	1,0000	1,0000	neuromuscular synaptic transmission
+0007271	1	0	0	0	1,0000	1,0000	1,0000	synaptic transmission, cholinergic
+0007270	1	0	0	0	1,0000	1,0000	1,0000	nerve-nerve synaptic transmission
+0007268	18	0	0	2	1,0000	1,0000	0,3023	synaptic transmission
+0007267	53	0	0	7	1,0000	1,0000	0,0376	cell-cell signaling
+0007266	4	0	0	0	1,0000	1,0000	1,0000	Rho protein signal transduction
+0007265	1	0	0	0	1,0000	1,0000	1,0000	Ras protein signal transduction
+0007264	11	0	0	1	1,0000	1,0000	0,5020	small GTPase mediated signal transduction
+0007263	1	0	0	0	1,0000	1,0000	1,0000	nitric oxide mediated signal transduction
+0007260	1	0	0	0	1,0000	1,0000	1,0000	tyrosine phosphorylation of STAT protein
+0019238	1	0	0	0	1,0000	1,0000	1,0000	cyclohydrolase activity
+0007259	7	0	0	0	1,0000	1,0000	1,0000	JAK-STAT cascade
+0007257	3	0	0	0	1,0000	1,0000	1,0000	activation of JUNK
+0007254	11	0	0	1	1,0000	1,0000	0,5020	JNK cascade
+0007252	1	0	0	0	1,0000	1,0000	1,0000	I-kappaB phosphorylation
+0007250	2	0	0	0	1,0000	1,0000	1,0000	activation of NF-kappaB-inducing kinase
+0019229	1	0	0	0	1,0000	1,0000	1,0000	regulation of vasoconstriction
+0019226	18	0	0	2	1,0000	1,0000	0,3023	transmission of nerve impulse
+0019222	235	0	0	10	1,0000	1,0000	0,9376	regulation of metabolism
+0019221	1	0	0	0	1,0000	1,0000	1,0000	cytokine and chemokine mediated signaling pathway
+0019220	1	0	0	1	1,0000	1,0000	0,0611	regulation of phosphate metabolism
+0007249	16	0	0	0	1,0000	1,0000	1,0000	I-kappaB kinase/NF-kappaB cascade
+0007243	68	0	0	1	1,0000	1,0000	0,9881	protein kinase cascade
+0007242	179	0	0	7	1,0000	1,0000	0,9421	intracellular signaling cascade
+0019219	223	0	0	8	1,0000	1,0000	0,9782	regulation of nucleobase, nucleoside, nucleotide and nucleic acid metabolism
+0019217	1	0	0	0	1,0000	1,0000	1,0000	regulation of fatty acid metabolism
+0019216	2	0	0	0	1,0000	1,0000	1,0000	regulation of lipid metabolism
+0019212	4	0	0	0	1,0000	1,0000	1,0000	phosphatase inhibitor activity
+0019211	1	0	0	0	1,0000	1,0000	1,0000	phosphatase activator activity
+0019210	5	0	0	0	1,0000	1,0000	1,0000	kinase inhibitor activity
+0019209	3	0	0	0	1,0000	1,0000	1,0000	kinase activator activity
+0019208	15	0	0	0	1,0000	1,0000	1,0000	phosphatase regulator activity
+0019207	16	0	0	0	1,0000	1,0000	1,0000	kinase regulator activity
+0019205	3	0	0	0	1,0000	1,0000	1,0000	nucleobase, nucleoside, nucleotide kinase activity
+0019204	1	0	0	0	1,0000	1,0000	1,0000	nucleotide phosphatase activity
+0019203	2	0	0	0	1,0000	1,0000	1,0000	carbohydrate phosphatase activity
+0019201	2	0	0	0	1,0000	1,0000	1,0000	nucleotide kinase activity
+0007229	16	0	0	1	1,0000	1,0000	0,6381	integrin-mediated signaling pathway
+0007220	1	0	0	0	1,0000	1,0000	1,0000	Notch receptor processing
+0007219	1	0	0	0	1,0000	1,0000	1,0000	Notch signaling pathway
+0007218	3	0	0	0	1,0000	1,0000	1,0000	neuropeptide signaling pathway
+0007217	1	0	0	0	1,0000	1,0000	1,0000	tachykinin signaling pathway
+0007213	1	0	0	0	1,0000	1,0000	1,0000	acetylcholine receptor signaling, muscarinic pathway
+0007212	2	0	0	0	1,0000	1,0000	1,0000	dopamine receptor signaling pathway
+0007210	2	0	0	0	1,0000	1,0000	1,0000	serotonin receptor signaling pathway
+0007207	1	0	0	0	1,0000	1,0000	1,0000	muscarinic acetylcholine receptor, phospholipase C activating pathway
+0007205	4	0	0	0	1,0000	1,0000	1,0000	protein kinase C activation
+0007204	10	0	0	1	1,0000	1,0000	0,4693	cytosolic calcium ion concentration elevation
+0007202	6	0	0	1	1,0000	1,0000	0,3157	phospholipase C activation
+0007200	23	0	0	1	1,0000	1,0000	0,7692	G-protein signaling, coupled to IP3 second messenger (phospholipase C activating)
+0019199	44	0	0	0	1,0000	1,0000	1,0000	transmembrane receptor protein kinase activity
+0019198	15	0	0	2	1,0000	1,0000	0,2322	transmembrane receptor protein phosphatase activity
+0045449	217	0	0	8	1,0000	1,0000	0,9719	regulation of transcription
+0045445	1	0	0	0	1,0000	1,0000	1,0000	myoblast differentiation
+0045444	1	0	0	0	1,0000	1,0000	1,0000	adipocyte differentiation
+0007195	1	0	0	0	1,0000	1,0000	1,0000	dopamine receptor, adenylate cyclase inhibiting pathway
+0007194	5	0	0	0	1,0000	1,0000	1,0000	negative regulation of adenylate cyclase activity
+0007193	2	0	0	0	1,0000	1,0000	1,0000	G-protein signaling, adenylate cyclase inhibiting pathway
+0007190	8	0	0	1	1,0000	1,0000	0,3973	adenylate cyclase activation
+0007189	9	0	0	1	1,0000	1,0000	0,4344	G-protein signaling, adenylate cyclase activating pathway
+0007188	23	0	0	1	1,0000	1,0000	0,7692	G-protein signaling, coupled to cAMP nucleotide second messenger
+0007187	33	0	0	2	1,0000	1,0000	0,6113	G-protein signaling, coupled to cyclic nucleotide second messenger
+0007186	100	0	0	6	1,0000	1,0000	0,5861	G-protein coupled receptor protein signaling pathway
+0007185	3	0	0	0	1,0000	1,0000	1,0000	transmembrane receptor protein tyrosine phosphatase signaling pathway
+0007183	1	0	0	0	1,0000	1,0000	1,0000	SMAD protein heteromerization
+0007179	8	0	0	0	1,0000	1,0000	1,0000	transforming growth factor beta receptor signaling pathway
+0007178	15	0	0	0	1,0000	1,0000	1,0000	transmembrane receptor protein serine/threonine kinase signaling pathway
+0007173	2	0	0	0	1,0000	1,0000	1,0000	epidermal growth factor receptor signaling pathway
+0007172	4	0	0	0	1,0000	1,0000	1,0000	signal complex formation
+0007171	1	0	0	0	1,0000	1,0000	1,0000	transmembrane receptor protein tyrosine kinase activation (dimerization)
+0007169	41	0	0	0	1,0000	1,0000	1,0000	transmembrane receptor protein tyrosine kinase signaling pathway
+0007168	1	0	0	0	1,0000	1,0000	1,0000	receptor guanylyl cyclase signaling pathway
+0007167	61	0	0	0	1,0000	1,0000	1,0000	enzyme linked receptor protein signaling pathway
+0007166	199	0	0	9	1,0000	1,0000	0,8880	cell surface receptor linked signal transduction
+0007165	389	0	0	20	1,0000	1,0000	0,8711	signal transduction
+0007163	2	0	0	0	1,0000	1,0000	1,0000	establishment and/or maintenance of cell polarity
+0007162	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of cell adhesion
+0007160	18	0	0	1	1,0000	1,0000	0,6817	cell-matrix adhesion
+0019131	1	0	0	0	1,0000	1,0000	1,0000	tripeptidyl-peptidase I activity
+0007159	2	0	0	1	1,0000	1,0000	0,1186	leukocyte cell adhesion
+0007158	1	0	0	0	1,0000	1,0000	1,0000	neuronal cell adhesion
+0007157	3	0	0	1	1,0000	1,0000	0,1726	heterophilic cell adhesion
+0007156	12	0	0	2	1,0000	1,0000	0,1637	homophilic cell adhesion
+0007155	84	0	0	7	1,0000	1,0000	0,2478	cell adhesion
+0007154	446	0	0	26	1,0000	1,0000	0,6725	cell communication
+0007131	3	0	0	0	1,0000	1,0000	1,0000	meiotic recombination
+0007128	3	0	0	0	1,0000	1,0000	1,0000	meiotic prophase I
+0007127	3	0	0	0	1,0000	1,0000	1,0000	meiosis I
+0007126	5	0	0	0	1,0000	1,0000	1,0000	meiosis
+0045362	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of interleukin-1 biosynthesis
+0045360	1	0	0	0	1,0000	1,0000	1,0000	regulation of interleukin-1 biosynthesis
+0019098	1	0	0	0	1,0000	1,0000	1,0000	reproductive behavior
+0045348	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of MHC class II biosynthesis
+0045346	1	0	0	0	1,0000	1,0000	1,0000	regulation of MHC class II biosynthesis
+0045342	1	0	0	0	1,0000	1,0000	1,0000	MHC class II biosynthesis
+0019079	4	0	0	1	1,0000	1,0000	0,2233	viral genome replication
+0007099	1	0	0	0	1,0000	1,0000	1,0000	centriole replication
+0007098	1	0	0	0	1,0000	1,0000	1,0000	centrosome cycle
+0007095	1	0	0	1	1,0000	1,0000	0,0611	mitotic G2 checkpoint
+0007093	3	0	0	1	1,0000	1,0000	0,1726	mitotic checkpoint
+0007091	2	0	0	0	1,0000	1,0000	1,0000	mitotic metaphase/anaphase transition
+0007090	1	0	0	0	1,0000	1,0000	1,0000	regulation of S phase of mitotic cell cycle
+0045323	1	0	0	0	1,0000	1,0000	1,0000	interleukin-1 receptor complex
+0045321	7	0	0	3	1,0000	1,0000	0,0064	immune cell activation
+0007089	4	0	0	0	1,0000	1,0000	1,0000	traversing start control point of mitotic cell cycle
+0007088	8	0	0	1	1,0000	1,0000	0,3973	regulation of mitosis
+0019059	1	0	0	0	1,0000	1,0000	1,0000	initiation of viral infection
+0019058	5	0	0	1	1,0000	1,0000	0,2709	viral infectious cycle
+0007067	26	0	0	1	1,0000	1,0000	0,8098	mitosis
+0007064	1	0	0	0	1,0000	1,0000	1,0000	mitotic sister chromatid cohesion
+0007063	1	0	0	0	1,0000	1,0000	1,0000	regulation of sister chromatid cohesion
+0007062	2	0	0	0	1,0000	1,0000	1,0000	sister chromatid cohesion
+0019031	1	0	0	0	1,0000	1,0000	1,0000	viral envelope
+0007059	2	0	0	0	1,0000	1,0000	1,0000	chromosome segregation
+0007052	3	0	0	0	1,0000	1,0000	1,0000	mitotic spindle assembly
+0007051	3	0	0	0	1,0000	1,0000	1,0000	spindle assembly
+0007050	16	0	0	1	1,0000	1,0000	0,6381	cell cycle arrest
+0019028	1	0	0	0	1,0000	1,0000	1,0000	viral capsid
+0007049	134	0	0	8	1,0000	1,0000	0,5890	cell cycle
+0007044	1	0	0	0	1,0000	1,0000	1,0000	cell-substrate junction assembly
+0007043	2	0	0	1	1,0000	1,0000	0,1186	intercellular junction assembly
+0007041	1	0	0	0	1,0000	1,0000	1,0000	lysosomal transport
+0007040	2	0	0	1	1,0000	1,0000	0,1186	lysosome organization and biogenesis
+0019012	2	0	0	0	1,0000	1,0000	1,0000	virion
+0007032	4	0	0	0	1,0000	1,0000	1,0000	endosome organization and biogenesis
+0007031	1	0	0	0	1,0000	1,0000	1,0000	peroxisome organization and biogenesis
+0019002	2	0	0	0	1,0000	1,0000	1,0000	GMP binding
+0019001	15	0	0	2	1,0000	1,0000	0,2322	guanyl nucleotide binding
+0007028	33	0	0	3	1,0000	1,0000	0,3279	cytoplasm organization and biogenesis
+0007017	6	0	0	0	1,0000	1,0000	1,0000	microtubule-based process
+0007015	1	0	0	1	1,0000	1,0000	0,0611	actin filament organization
+0007010	23	0	0	1	1,0000	1,0000	0,7692	cytoskeleton organization and biogenesis
+0007006	1	0	0	0	1,0000	1,0000	1,0000	mitochondrial membrane organization and biogenesis
+0007005	1	0	0	0	1,0000	1,0000	1,0000	mitochondrion organization and biogenesis
+0007004	2	0	0	0	1,0000	1,0000	1,0000	telomerase-dependent telomere maintenance
+0007001	9	0	0	0	1,0000	1,0000	1,0000	chromosome organization and biogenesis (sensu Eukaryota)
+0045259	1	0	0	0	1,0000	1,0000	1,0000	proton-transporting ATP synthase complex
+0045255	1	0	0	0	1,0000	1,0000	1,0000	hydrogen-translocating F-type ATPase complex
+0045216	3	0	0	1	1,0000	1,0000	0,1726	intercellular junction assembly and/or maintenance
+0045211	1	0	0	0	1,0000	1,0000	1,0000	postsynaptic membrane
+0045202	2	0	0	0	1,0000	1,0000	1,0000	synapse
+0045197	1	0	0	0	1,0000	1,0000	1,0000	establishment and/or maintenance of epithelial cell polarity
+0045192	1	0	0	0	1,0000	1,0000	1,0000	low-density lipoprotein catabolism
+0045182	6	0	0	2	1,0000	1,0000	0,0471	translation regulator activity
+0005996	9	0	0	1	1,0000	1,0000	0,4344	monosaccharide metabolism
+0045165	2	0	0	0	1,0000	1,0000	1,0000	cell fate commitment
+0045161	1	0	0	1	1,0000	1,0000	0,0611	ion channel clustering
+0005980	1	0	0	0	1,0000	1,0000	1,0000	glycogen catabolism
+0005978	3	0	0	0	1,0000	1,0000	1,0000	glycogen biosynthesis
+0005977	13	0	0	0	1,0000	1,0000	1,0000	glycogen metabolism
+0005976	13	0	0	0	1,0000	1,0000	1,0000	polysaccharide metabolism
+0005975	33	0	0	1	1,0000	1,0000	0,8792	carbohydrate metabolism
+0005971	1	0	0	0	1,0000	1,0000	1,0000	ribonucleoside-diphosphate reductase complex
+0005964	3	0	0	0	1,0000	1,0000	1,0000	phosphorylase kinase complex
+0045137	3	0	0	0	1,0000	1,0000	1,0000	development of primary sexual characteristics
+0005956	1	0	0	0	1,0000	1,0000	1,0000	protein kinase CK2 complex
+0005955	3	0	0	0	1,0000	1,0000	1,0000	calcineurin complex
+0005952	6	0	0	0	1,0000	1,0000	1,0000	cAMP-dependent protein kinase complex
+0045125	3	0	0	0	1,0000	1,0000	1,0000	bioactive lipid receptor activity
+0045123	1	0	0	0	1,0000	1,0000	1,0000	cellular extravasation
+0005942	8	0	0	0	1,0000	1,0000	1,0000	phosphoinositide 3-kinase complex
+0005941	25	0	0	0	1,0000	1,0000	1,0000	unlocalized protein complex
+0045111	6	0	0	1	1,0000	1,0000	0,3157	intermediate filament cytoskeleton
+0005938	2	0	0	0	1,0000	1,0000	1,0000	cell cortex
+0005935	1	0	0	0	1,0000	1,0000	1,0000	bud neck
+0005934	1	0	0	0	1,0000	1,0000	1,0000	bud tip
+0005933	1	0	0	0	1,0000	1,0000	1,0000	bud
+0005923	19	0	0	1	1,0000	1,0000	0,7014	tight junction
+0005922	5	0	0	0	1,0000	1,0000	1,0000	connexon complex
+0005921	5	0	0	0	1,0000	1,0000	1,0000	gap junction
+0005918	1	0	0	1	1,0000	1,0000	0,0611	septate junction
+0005913	1	0	0	1	1,0000	1,0000	0,0611	cell-cell adherens junction
+0005912	2	0	0	1	1,0000	1,0000	0,1186	adherens junction
+0005911	31	0	0	1	1,0000	1,0000	0,8624	intercellular junction
+0005905	2	0	0	0	1,0000	1,0000	1,0000	coated pit
+0005903	1	0	0	0	1,0000	1,0000	1,0000	brush border
+0005901	3	0	0	0	1,0000	1,0000	1,0000	caveola
+0045091	1	0	0	1	1,0000	1,0000	0,0611	regulation of retroviral genome replication
+0045090	1	0	0	1	1,0000	1,0000	0,0611	retroviral genome replication
+0045088	1	0	0	0	1,0000	1,0000	1,0000	regulation of innate immune response
+0045087	31	0	0	3	1,0000	1,0000	0,2933	innate immune response
+0045080	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of chemokine biosynthesis
+0045073	1	0	0	0	1,0000	1,0000	1,0000	regulation of chemokine biosynthesis
+0005890	1	0	0	0	1,0000	1,0000	1,0000	sodium:potassium-exchanging ATPase complex
+0005887	174	0	0	9	1,0000	1,0000	0,7645	integral to plasma membrane
+0005886	231	0	0	11	1,0000	1,0000	0,8704	plasma membrane
+0005884	2	0	0	1	1,0000	1,0000	0,1186	actin filament
+0005882	6	0	0	1	1,0000	1,0000	0,3157	intermediate filament
+0005875	3	0	0	0	1,0000	1,0000	1,0000	microtubule associated complex
+0005871	1	0	0	0	1,0000	1,0000	1,0000	kinesin complex
+0045047	1	0	0	0	1,0000	1,0000	1,0000	protein-ER targeting
+0045045	3	0	0	0	1,0000	1,0000	1,0000	secretory pathway
+0005859	1	0	0	1	1,0000	1,0000	0,0611	muscle myosin
+0005856	59	0	0	4	1,0000	1,0000	0,4936	cytoskeleton
+0005853	1	0	0	1	1,0000	1,0000	0,0611	eukaryotic translation elongation factor 1 complex
+0045029	1	0	0	0	1,0000	1,0000	1,0000	UDP-activated nucleotide receptor activity
+0045028	12	0	0	0	1,0000	1,0000	1,0000	purinergic nucleotide receptor activity, G-protein coupled
+0045023	1	0	0	0	1,0000	1,0000	1,0000	G0 to G1 transition
+0005842	1	0	0	0	1,0000	1,0000	1,0000	cytosolic large ribosomal subunit (sensu Eukaryota)
+0005840	3	0	0	0	1,0000	1,0000	1,0000	ribosome
+0045012	1	0	0	0	1,0000	1,0000	1,0000	MHC class II receptor activity
+0005839	3	0	0	0	1,0000	1,0000	1,0000	proteasome core complex (sensu Eukaryota)
+0005830	1	0	0	0	1,0000	1,0000	1,0000	cytosolic ribosome (sensu Eukaryota)
+0045005	2	0	0	0	1,0000	1,0000	1,0000	maintenance of fidelity during DNA-dependent DNA replication
+0005829	28	0	0	1	1,0000	1,0000	0,8329	cytosol
+0005819	9	0	0	0	1,0000	1,0000	1,0000	spindle
+0005815	5	0	0	0	1,0000	1,0000	1,0000	microtubule organizing center
+0005813	5	0	0	0	1,0000	1,0000	1,0000	centrosome
+0000930	1	0	0	0	1,0000	1,0000	1,0000	gamma-tubulin complex
+0000922	5	0	0	0	1,0000	1,0000	1,0000	spindle pole
+0000910	32	0	0	4	1,0000	1,0000	0,1262	cytokinesis
+0000902	16	0	0	1	1,0000	1,0000	0,6381	cellular morphogenesis
+0005798	1	0	0	0	1,0000	1,0000	1,0000	Golgi vesicle
+0005794	15	0	0	2	1,0000	1,0000	0,2322	Golgi apparatus
+0005792	6	0	0	0	1,0000	1,0000	1,0000	microsome
+0005789	4	0	0	0	1,0000	1,0000	1,0000	endoplasmic reticulum membrane
+0005788	1	0	0	0	1,0000	1,0000	1,0000	endoplasmic reticulum lumen
+0005786	1	0	0	0	1,0000	1,0000	1,0000	signal recognition particle (sensu Eukaryota)
+0005783	23	0	0	2	1,0000	1,0000	0,4159	endoplasmic reticulum
+0005778	1	0	0	0	1,0000	1,0000	1,0000	peroxisomal membrane
+0005777	3	0	0	0	1,0000	1,0000	1,0000	peroxisome
+0005773	13	0	0	2	1,0000	1,0000	0,1862	vacuole
+0005769	2	0	0	0	1,0000	1,0000	1,0000	early endosome
+0005768	11	0	0	0	1,0000	1,0000	1,0000	endosome
+0005766	1	0	0	0	1,0000	1,0000	1,0000	primary lysosome
+0005765	1	0	0	0	1,0000	1,0000	1,0000	lysosomal membrane
+0005764	13	0	0	2	1,0000	1,0000	0,1862	lysosome
+0005753	1	0	0	0	1,0000	1,0000	1,0000	proton-transporting ATP synthase complex (sensu Eukaryota)
+0005743	1	0	0	0	1,0000	1,0000	1,0000	mitochondrial inner membrane
+0005741	2	0	0	0	1,0000	1,0000	1,0000	mitochondrial outer membrane
+0005740	3	0	0	0	1,0000	1,0000	1,0000	mitochondrial membrane
+0005739	16	0	0	1	1,0000	1,0000	0,6381	mitochondrion
+0005737	234	0	0	15	1,0000	1,0000	0,4658	cytoplasm
+0005730	3	0	0	0	1,0000	1,0000	1,0000	nucleolus
+0005724	1	0	0	0	1,0000	1,0000	1,0000	nuclear telomeric heterochromatin
+0005720	1	0	0	0	1,0000	1,0000	1,0000	nuclear heterochromatin
+0040029	1	0	0	0	1,0000	1,0000	1,0000	regulation of gene expression, epigenetic
+0040008	11	0	0	0	1,0000	1,0000	1,0000	regulation of growth
+0040007	13	0	0	0	1,0000	1,0000	1,0000	growth
+0040001	1	0	0	0	1,0000	1,0000	1,0000	mitotic spindle positioning or orientation
+0000819	2	0	0	0	1,0000	1,0000	1,0000	sister chromatid segregation
+0005694	21	0	0	0	1,0000	1,0000	1,0000	chromosome
+0005681	2	0	0	1	1,0000	1,0000	0,1186	spliceosome complex
+0005680	2	0	0	0	1,0000	1,0000	1,0000	anaphase-promoting complex
+0005675	3	0	0	0	1,0000	1,0000	1,0000	transcription factor TFIIH complex
+0005674	2	0	0	0	1,0000	1,0000	1,0000	transcription factor TFIIF complex
+0005673	1	0	0	0	1,0000	1,0000	1,0000	transcription factor TFIIE complex
+0005669	5	0	0	0	1,0000	1,0000	1,0000	transcription factor TFIID complex
+0005667	24	0	0	1	1,0000	1,0000	0,7836	transcription factor complex
+0005665	1	0	0	0	1,0000	1,0000	1,0000	DNA-directed RNA polymerase II, core complex
+0005663	2	0	0	0	1,0000	1,0000	1,0000	DNA replication factor C complex
+0005662	1	0	0	0	1,0000	1,0000	1,0000	DNA replication factor A complex
+0005660	3	0	0	0	1,0000	1,0000	1,0000	delta-DNA polymerase cofactor complex
+0005659	3	0	0	0	1,0000	1,0000	1,0000	delta DNA polymerase complex
+0005658	1	0	0	0	1,0000	1,0000	1,0000	alpha DNA polymerase:primase complex
+0005657	5	0	0	0	1,0000	1,0000	1,0000	replication fork
+0005654	32	0	0	2	1,0000	1,0000	0,5941	nucleoplasm
+0005639	1	0	0	0	1,0000	1,0000	1,0000	integral to nuclear inner membrane
+0005637	1	0	0	0	1,0000	1,0000	1,0000	nuclear inner membrane
+0005635	3	0	0	0	1,0000	1,0000	1,0000	nuclear membrane
+0005634	350	0	0	17	1,0000	1,0000	0,9094	nucleus
+0005626	3	0	0	0	1,0000	1,0000	1,0000	insoluble fraction
+0005625	21	0	0	4	1,0000	1,0000	0,0347	soluble fraction
+0005624	31	0	0	2	1,0000	1,0000	0,5764	membrane fraction
+0005623	805	0	0	47	1,0000	1,0000	0,7828	cell
+0005622	551	0	0	30	1,0000	1,0000	0,8543	intracellular
+0005615	33	0	0	5	1,0000	1,0000	0,0458	extracellular space
+0005605	2	0	0	0	1,0000	1,0000	1,0000	basal lamina
+0005604	5	0	0	0	1,0000	1,0000	1,0000	basement membrane
+0005603	1	0	0	0	1,0000	1,0000	1,0000	complement component C2 complex
+0000794	1	0	0	0	1,0000	1,0000	1,0000	condensed nuclear chromosome
+0000793	2	0	0	0	1,0000	1,0000	1,0000	condensed chromosome
+0000792	1	0	0	0	1,0000	1,0000	1,0000	heterochromatin
+0000790	1	0	0	0	1,0000	1,0000	1,0000	nuclear chromatin
+0000786	2	0	0	0	1,0000	1,0000	1,0000	nucleosome
+0000785	10	0	0	0	1,0000	1,0000	1,0000	chromatin
+0000784	1	0	0	0	1,0000	1,0000	1,0000	nuclear chromosome, telomeric region
+0000781	1	0	0	0	1,0000	1,0000	1,0000	chromosome, telomeric region
+0000776	4	0	0	0	1,0000	1,0000	1,0000	kinetochore
+0000775	4	0	0	0	1,0000	1,0000	1,0000	chromosome, pericentric region
+0000739	1	0	0	0	1,0000	1,0000	1,0000	DNA strand annealing activity
+0000726	1	0	0	0	1,0000	1,0000	1,0000	non-recombinational repair
+0000723	2	0	0	0	1,0000	1,0000	1,0000	telomere maintenance
+0005589	1	0	0	0	1,0000	1,0000	1,0000	collagen type VI
+0005587	1	0	0	0	1,0000	1,0000	1,0000	collagen type IV
+0005586	1	0	0	0	1,0000	1,0000	1,0000	collagen type III
+0005583	1	0	0	0	1,0000	1,0000	1,0000	fibrillar collagen
+0005581	3	0	0	0	1,0000	1,0000	1,0000	collagen
+0005578	31	0	0	6	1,0000	1,0000	0,0091	extracellular matrix (sensu Metazoa)
+0005576	101	0	0	11	1,0000	1,0000	0,0369	extracellular
+0005575	906	0	0	54	1,0000	1,0000	0,7412	cellular_component
+0005554	25	0	0	2	1,0000	1,0000	0,4590	molecular_function unknown
+0005545	2	0	0	0	1,0000	1,0000	1,0000	phosphatidylinositol binding
+0005544	3	0	0	1	1,0000	1,0000	0,1726	calcium-dependent phospholipid binding
+0005543	7	0	0	1	1,0000	1,0000	0,3578	phospholipid binding
+0005540	2	0	0	0	1,0000	1,0000	1,0000	hyaluronic acid binding
+0005539	20	0	0	2	1,0000	1,0000	0,3486	glycosaminoglycan binding
+0005529	7	0	0	0	1,0000	1,0000	1,0000	sugar binding
+0005528	1	0	0	0	1,0000	1,0000	1,0000	FK506 binding
+0005527	1	0	0	0	1,0000	1,0000	1,0000	macrolide binding
+0005525	13	0	0	2	1,0000	1,0000	0,1862	GTP binding
+0005524	262	0	0	8	1,0000	1,0000	0,9964	ATP binding
+0005521	1	0	0	0	1,0000	1,0000	1,0000	lamin binding
+0005520	5	0	0	0	1,0000	1,0000	1,0000	insulin-like growth factor binding
+0005518	5	0	0	0	1,0000	1,0000	1,0000	collagen binding
+0005516	19	0	0	0	1,0000	1,0000	1,0000	calmodulin binding
+0005515	253	0	0	15	1,0000	1,0000	0,6052	protein binding
+0005513	1	0	0	0	1,0000	1,0000	1,0000	calcium ion sensing
+0005509	54	0	0	8	1,0000	1,0000	0,0138	calcium ion binding
+0005507	2	0	0	0	1,0000	1,0000	1,0000	copper ion binding
+0005506	3	0	0	0	1,0000	1,0000	1,0000	iron ion binding
+0050982	10	0	0	0	1,0000	1,0000	1,0000	detection of mechanical stimulus
+0005501	4	0	0	1	1,0000	1,0000	0,2233	retinoid binding
+0050957	6	0	0	1	1,0000	1,0000	0,3157	equilibrioception
+0050954	10	0	0	0	1,0000	1,0000	1,0000	sensory perception of mechanical stimulus
+0050953	6	0	0	1	1,0000	1,0000	0,3157	sensory perception of light
+0050931	1	0	0	0	1,0000	1,0000	1,0000	pigment cell differentiation
+0050930	3	0	0	1	1,0000	1,0000	0,1726	induction of positive chemotaxis
+0050927	3	0	0	1	1,0000	1,0000	0,1726	positive regulation of positive chemotaxis
+0050926	3	0	0	1	1,0000	1,0000	0,1726	regulation of positive chemotaxis
+0050921	3	0	0	1	1,0000	1,0000	0,1726	positive regulation of chemotaxis
+0050920	3	0	0	1	1,0000	1,0000	0,1726	regulation of chemotaxis
+0050918	3	0	0	1	1,0000	1,0000	0,1726	positive chemotaxis
+0050905	18	0	0	2	1,0000	1,0000	0,3023	neuromuscular physiological process
+0050900	4	0	0	2	1,0000	1,0000	0,0204	immune cell migration
+0005496	4	0	0	0	1,0000	1,0000	1,0000	steroid binding
+0005489	4	0	0	0	1,0000	1,0000	1,0000	electron transporter activity
+0005488	755	0	0	45	1,0000	1,0000	0,6780	binding
+0050896	190	0	0	10	1,0000	1,0000	0,7541	response to stimulus
+0050885	6	0	0	1	1,0000	1,0000	0,3157	regulation of balance
+0050881	6	0	0	1	1,0000	1,0000	0,3157	musculoskeletal movement
+0050880	2	0	0	0	1,0000	1,0000	1,0000	regulation of blood vessel size
+0050879	23	0	0	3	1,0000	1,0000	0,1615	organismal movement
+0050878	24	0	0	1	1,0000	1,0000	0,7836	regulation of body fluids
+0050877	36	0	0	3	1,0000	1,0000	0,3798	neurophysiological process
+0050876	6	0	0	0	1,0000	1,0000	1,0000	reproductive physiological process
+0050875	390	0	0	25	1,0000	1,0000	0,4270	cellular physiological process
+0050874	168	0	0	12	1,0000	1,0000	0,3231	organismal physiological process
+0050872	1	0	0	0	1,0000	1,0000	1,0000	white adipocyte differentiation
+0050840	1	0	0	0	1,0000	1,0000	1,0000	extracellular matrix binding
+0050832	1	0	0	0	1,0000	1,0000	1,0000	defense response to fungi
+0050829	1	0	0	0	1,0000	1,0000	1,0000	defense response to Gram-negative bacteria
+0050821	1	0	0	0	1,0000	1,0000	1,0000	protein stabilization
+0050819	3	0	0	0	1,0000	1,0000	1,0000	negative regulation of coagulation
+0050818	3	0	0	0	1,0000	1,0000	1,0000	regulation of coagulation
+0048500	1	0	0	0	1,0000	1,0000	1,0000	signal recognition particle
+0050817	20	0	0	1	1,0000	1,0000	0,7200	coagulation
+0050808	2	0	0	0	1,0000	1,0000	1,0000	synapse organization and biogenesis
+0050801	10	0	0	0	1,0000	1,0000	1,0000	ion homeostasis
+0012505	6	0	0	0	1,0000	1,0000	1,0000	endomembrane system
+0012502	20	0	0	0	1,0000	1,0000	1,0000	induction of programmed cell death
+0012501	70	0	0	4	1,0000	1,0000	0,6339	programmed cell death
+0000502	5	0	0	0	1,0000	1,0000	1,0000	proteasome complex (sensu Eukaryota)
+0005386	3	0	0	0	1,0000	1,0000	1,0000	carrier activity
+0005351	1	0	0	0	1,0000	1,0000	1,0000	sugar porter activity
+0048492	1	0	0	0	1,0000	1,0000	1,0000	ribulose bisphosphate carboxylase complex
+0050794	115	0	0	5	1,0000	1,0000	0,8529	regulation of cellular process
+0050793	13	0	0	0	1,0000	1,0000	1,0000	regulation of development
+0050792	1	0	0	1	1,0000	1,0000	0,0611	regulation of viral life cycle
+0050791	245	0	0	10	1,0000	1,0000	0,9565	regulation of physiological process
+0050790	43	0	0	2	1,0000	1,0000	0,7538	regulation of enzyme activity
+0050789	358	0	0	16	1,0000	1,0000	0,9599	regulation of biological process
+0048469	2	0	0	0	1,0000	1,0000	1,0000	cell maturation
+0048468	2	0	0	0	1,0000	1,0000	1,0000	cell development
+0050776	1	0	0	0	1,0000	1,0000	1,0000	regulation of immune response
+0050769	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of neurogenesis
+0050767	1	0	0	0	1,0000	1,0000	1,0000	regulation of neurogenesis
+0050766	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of phagocytosis
+0050764	1	0	0	0	1,0000	1,0000	1,0000	regulation of phagocytosis
+0050756	1	0	0	0	1,0000	1,0000	1,0000	fractalkine metabolism
+0050755	1	0	0	0	1,0000	1,0000	1,0000	chemokine metabolism
+0050754	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of fractalkine biosynthesis
+0050752	1	0	0	0	1,0000	1,0000	1,0000	regulation of fractalkine biosynthesis
+0050751	1	0	0	0	1,0000	1,0000	1,0000	fractalkine biosynthesis
+0050730	1	0	0	1	1,0000	1,0000	0,0611	regulation of peptidyl-tyrosine phosphorylation
+0050727	1	0	0	0	1,0000	1,0000	1,0000	regulation of inflammatory response
+0050725	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of interleukin-1 beta biosynthesis
+0050722	1	0	0	0	1,0000	1,0000	1,0000	regulation of interleukin-1 beta biosynthesis
+0050720	1	0	0	0	1,0000	1,0000	1,0000	interleukin-1 beta biosynthesis
+0005243	5	0	0	0	1,0000	1,0000	1,0000	gap-junction forming channel activity
+0005230	1	0	0	0	1,0000	1,0000	1,0000	extracellular ligand-gated ion channel activity
+0005216	1	0	0	0	1,0000	1,0000	1,0000	ion channel activity
+0005215	24	0	0	1	1,0000	1,0000	0,7836	transporter activity
+0050681	1	0	0	0	1,0000	1,0000	1,0000	androgen receptor binding
+0005201	7	0	0	0	1,0000	1,0000	1,0000	extracellular matrix structural constituent
+0005200	10	0	0	3	1,0000	1,0000	0,0192	structural constituent of cytoskeleton
+0050671	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of lymphocyte proliferation
+0050670	1	0	0	0	1,0000	1,0000	1,0000	regulation of lymphocyte proliferation
+0050658	1	0	0	0	1,0000	1,0000	1,0000	RNA transport
+0050657	1	0	0	0	1,0000	1,0000	1,0000	nucleic acid transport
+0000398	3	0	0	1	1,0000	1,0000	0,1726	nuclear mRNA splicing, via spliceosome
+0000377	3	0	0	1	1,0000	1,0000	0,1726	RNA splicing, via transesterification reactions with bulged adenosine as nucleophile
+0000375	3	0	0	1	1,0000	1,0000	0,1726	RNA splicing, via transesterification reactions
+0000323	13	0	0	2	1,0000	1,0000	0,1862	lytic vacuole
+0000320	1	0	0	0	1,0000	1,0000	1,0000	re-entry into mitotic cell cycle
+0017176	1	0	0	0	1,0000	1,0000	1,0000	phosphatidylinositol N-acetylglucosaminyltransferase activity
+0005198	65	0	0	7	1,0000	1,0000	0,0948	structural molecule activity
+0005179	2	0	0	0	1,0000	1,0000	1,0000	hormone activity
+0005178	4	0	0	0	1,0000	1,0000	1,0000	integrin binding
+0005172	1	0	0	0	1,0000	1,0000	1,0000	vascular endothelial growth factor receptor binding
+0017148	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of protein biosynthesis
+0005155	1	0	0	0	1,0000	1,0000	1,0000	epidermal growth factor receptor activating ligand activity
+0005154	1	0	0	0	1,0000	1,0000	1,0000	epidermal growth factor receptor binding
+0005153	1	0	0	1	1,0000	1,0000	0,0611	interleukin-8 receptor binding
+0017124	2	0	0	0	1,0000	1,0000	1,0000	SH3 domain binding
+0017114	1	0	0	0	1,0000	1,0000	1,0000	wide-spectrum protease inhibitor activity
+0017111	12	0	0	1	1,0000	1,0000	0,5328	nucleoside-triphosphatase activity
+0005138	1	0	0	0	1,0000	1,0000	1,0000	interleukin-6 receptor binding
+0005126	1	0	0	0	1,0000	1,0000	1,0000	hematopoietin/interferon-class (D200-domain) cytokine receptor binding
+0005125	10	0	0	3	1,0000	1,0000	0,0192	cytokine activity
+0048278	1	0	0	0	1,0000	1,0000	1,0000	vesicle docking
+0048273	1	0	0	0	1,0000	1,0000	1,0000	mitogen-activated protein kinase p38 binding
+0005102	28	0	0	3	1,0000	1,0000	0,2421	receptor binding
+0048246	1	0	0	0	1,0000	1,0000	1,0000	macrophage chemotaxis
+0048232	11	0	0	0	1,0000	1,0000	1,0000	male gamete generation
+0000287	30	0	0	3	1,0000	1,0000	0,2761	magnesium ion binding
+0000280	29	0	0	1	1,0000	1,0000	0,8434	nuclear division
+0000279	31	0	0	1	1,0000	1,0000	0,8624	M phase
+0000278	52	0	0	1	1,0000	1,0000	0,9653	mitotic cell cycle
+0000272	1	0	0	0	1,0000	1,0000	1,0000	polysaccharide catabolism
+0000271	3	0	0	0	1,0000	1,0000	1,0000	polysaccharide biosynthesis
+0000267	54	0	0	6	1,0000	1,0000	0,1054	cell fraction
+0000245	1	0	0	1	1,0000	1,0000	0,0611	spliceosome assembly
+0000242	1	0	0	0	1,0000	1,0000	1,0000	pericentriolar material
+0000228	3	0	0	0	1,0000	1,0000	1,0000	nuclear chromosome
+0000226	6	0	0	0	1,0000	1,0000	1,0000	microtubule cytoskeleton organization and biogenesis
+0017076	277	0	0	10	1,0000	1,0000	0,9881	purine nucleotide binding
+0017074	1	0	0	0	1,0000	1,0000	1,0000	procollagen N-endopeptidase activity
+0005096	3	0	0	0	1,0000	1,0000	1,0000	GTPase activator activity
+0005086	1	0	0	0	1,0000	1,0000	1,0000	ARF guanyl-nucleotide exchange factor activity
+0005085	2	0	0	0	1,0000	1,0000	1,0000	guanyl-nucleotide exchange factor activity
+0005083	7	0	0	0	1,0000	1,0000	1,0000	small GTPase regulatory/interacting protein activity
+0005080	2	0	0	0	1,0000	1,0000	1,0000	protein kinase C binding
+0017050	1	0	0	0	1,0000	1,0000	1,0000	D-erythro-sphingosine kinase activity
+0005076	2	0	0	0	1,0000	1,0000	1,0000	receptor signaling protein serine/threonine kinase signaling protein activity
+0005072	3	0	0	0	1,0000	1,0000	1,0000	transforming growth factor beta receptor, cytoplasmic mediator activity
+0005071	4	0	0	0	1,0000	1,0000	1,0000	transmembrane receptor protein serine/threonine kinase signaling protein activity
+0005070	4	0	0	0	1,0000	1,0000	1,0000	SH3/SH2 adaptor protein activity
+0005069	4	0	0	0	1,0000	1,0000	1,0000	transmembrane receptor protein tyrosine kinase docking protein activity
+0005066	5	0	0	0	1,0000	1,0000	1,0000	transmembrane receptor protein tyrosine kinase signaling protein activity
+0005062	2	0	0	0	1,0000	1,0000	1,0000	hematopoietin/interferon-class (D200-domain) cytokine receptor signal transducer activity
+0005057	48	0	0	1	1,0000	1,0000	0,9548	receptor signaling protein activity
+0017026	1	0	0	0	1,0000	1,0000	1,0000	procollagen C-endopeptidase activity
+0005048	1	0	0	0	1,0000	1,0000	1,0000	signal sequence binding
+0005044	3	0	0	0	1,0000	1,0000	1,0000	scavenger receptor activity
+0017017	8	0	0	0	1,0000	1,0000	1,0000	MAP kinase phosphatase activity
+0005026	1	0	0	0	1,0000	1,0000	1,0000	type II transforming growth factor beta receptor activity
+0005024	8	0	0	0	1,0000	1,0000	1,0000	transforming growth factor beta receptor activity
+0005021	6	0	0	0	1,0000	1,0000	1,0000	vascular endothelial growth factor receptor activity
+0005018	1	0	0	0	1,0000	1,0000	1,0000	platelet-derived growth factor alpha-receptor activity
+0005017	1	0	0	0	1,0000	1,0000	1,0000	platelet-derived growth factor receptor activity
+0005011	1	0	0	0	1,0000	1,0000	1,0000	macrophage colony stimulating factor receptor activity
+0005010	1	0	0	0	1,0000	1,0000	1,0000	insulin-like growth factor receptor activity
+0005008	1	0	0	0	1,0000	1,0000	1,0000	hepatocyte growth factor receptor activity
+0005007	1	0	0	0	1,0000	1,0000	1,0000	fibroblast growth factor receptor activity
+0005006	4	0	0	0	1,0000	1,0000	1,0000	epidermal growth factor receptor activity
+0005005	1	0	0	0	1,0000	1,0000	1,0000	transmembrane-ephrin receptor activity
+0008995	1	0	0	0	1,0000	1,0000	1,0000	ribonuclease E activity
+0005003	9	0	0	0	1,0000	1,0000	1,0000	ephrin receptor activity
+0005001	15	0	0	2	1,0000	1,0000	0,2322	transmembrane receptor protein tyrosine phosphatase activity
+0005000	1	0	0	0	1,0000	1,0000	1,0000	vasopressin receptor activity
+0050435	2	0	0	0	1,0000	1,0000	1,0000	beta-amyloid metabolism
+0008943	1	0	0	0	1,0000	1,0000	1,0000	glyceraldehyde-3-phosphate dehydrogenase activity
+0008934	2	0	0	1	1,0000	1,0000	0,1186	inositol-1(or 4)-monophosphatase activity
+0000188	5	0	0	0	1,0000	1,0000	1,0000	inactivation of MAPK
+0000187	8	0	0	0	1,0000	1,0000	1,0000	activation of MAPK
+0000186	1	0	0	0	1,0000	1,0000	1,0000	activation of MAPKK
+0000166	278	0	0	10	1,0000	1,0000	0,9886	nucleotide binding
+0000165	19	0	0	0	1,0000	1,0000	1,0000	MAPKKK cascade
+0000159	9	0	0	0	1,0000	1,0000	1,0000	protein phosphatase type 2A complex
+0000158	1	0	0	0	1,0000	1,0000	1,0000	protein phosphatase type 2A activity
+0000152	2	0	0	0	1,0000	1,0000	1,0000	nuclear ubiquitin ligase complex
+0000151	13	0	0	0	1,0000	1,0000	1,0000	ubiquitin ligase complex
+0000145	1	0	0	0	1,0000	1,0000	1,0000	exocyst
+0000133	1	0	0	0	1,0000	1,0000	1,0000	polarisome
+0000126	1	0	0	0	1,0000	1,0000	1,0000	transcription factor TFIIIB complex
+0000122	14	0	0	0	1,0000	1,0000	1,0000	negative regulation of transcription from Pol II promoter
+0000119	1	0	0	0	1,0000	1,0000	1,0000	mediator complex
+0000115	1	0	0	0	1,0000	1,0000	1,0000	S-phase-specific transcription in mitotic cell cycle
+0043235	13	0	0	1	1,0000	1,0000	0,5616	receptor complex
+0043234	120	0	0	5	1,0000	1,0000	0,8782	protein complex
+0043233	1	0	0	0	1,0000	1,0000	1,0000	organelle lumen
+0043232	82	0	0	4	1,0000	1,0000	0,7564	intracellular non-membrane-bound organelle
+0043231	399	0	0	22	1,0000	1,0000	0,7742	intracellular membrane-bound organelle
+0043229	444	0	0	25	1,0000	1,0000	0,7499	intracellular organelle
+0043228	82	0	0	4	1,0000	1,0000	0,7564	non-membrane-bound organelle
+0043227	399	0	0	22	1,0000	1,0000	0,7742	membrane-bound organelle
+0043226	444	0	0	25	1,0000	1,0000	0,7499	organelle
+0043207	58	0	0	4	1,0000	1,0000	0,4798	response to external biotic stimulus
+0048066	1	0	0	0	1,0000	1,0000	1,0000	pigmentation
+0048041	1	0	0	0	1,0000	1,0000	1,0000	focal adhesion formation
+0048015	23	0	0	1	1,0000	1,0000	0,7692	phosphoinositide-mediated signaling
+0048010	1	0	0	0	1,0000	1,0000	1,0000	vascular endothelial growth factor receptor signaling pathway
+0000090	2	0	0	0	1,0000	1,0000	1,0000	mitotic anaphase
+0000087	26	0	0	1	1,0000	1,0000	0,8098	M phase of mitotic cell cycle
+0000086	19	0	0	1	1,0000	1,0000	0,7014	G2/M transition of mitotic cell cycle
+0000085	1	0	0	0	1,0000	1,0000	1,0000	G2 phase of mitotic cell cycle
+0000084	1	0	0	0	1,0000	1,0000	1,0000	S phase of mitotic cell cycle
+0000082	23	0	0	1	1,0000	1,0000	0,7692	G1/S transition of mitotic cell cycle
+0000080	8	0	0	0	1,0000	1,0000	1,0000	G1 phase of mitotic cell cycle
+0000079	17	0	0	1	1,0000	1,0000	0,6606	regulation of cyclin dependent protein kinase activity
+0000077	2	0	0	0	1,0000	1,0000	1,0000	DNA damage checkpoint
+0000075	10	0	0	1	1,0000	1,0000	0,4693	cell cycle checkpoint
+0000074	101	0	0	6	1,0000	1,0000	0,5964	regulation of cell cycle
+0000072	5	0	0	0	1,0000	1,0000	1,0000	M phase specific microtubule process
+0000070	2	0	0	0	1,0000	1,0000	1,0000	mitotic sister chromatid segregation
+0000067	19	0	0	0	1,0000	1,0000	1,0000	DNA replication and chromosome cycle
+0000060	1	0	0	0	1,0000	1,0000	1,0000	protein-nucleus import, translocation
+0000049	1	0	0	0	1,0000	1,0000	1,0000	tRNA binding
+0000041	2	0	0	0	1,0000	1,0000	1,0000	transition metal ion transport
+0015992	1	0	0	0	1,0000	1,0000	1,0000	proton transport
+0015986	1	0	0	0	1,0000	1,0000	1,0000	ATP synthesis coupled proton transport
+0015985	1	0	0	0	1,0000	1,0000	1,0000	energy coupled proton transport, down electrochemical gradient
+0015980	18	0	0	1	1,0000	1,0000	0,6817	energy derivation by oxidation of organic compounds
+0000019	1	0	0	0	1,0000	1,0000	1,0000	regulation of mitotic recombination
+0000018	2	0	0	0	1,0000	1,0000	1,0000	regulation of DNA recombination
+0000014	1	0	0	0	1,0000	1,0000	1,0000	single-stranded DNA specific endodeoxyribonuclease activity
+0015977	1	0	0	0	1,0000	1,0000	1,0000	carbon utilization by fixation of carbon dioxide
+0015976	1	0	0	0	1,0000	1,0000	1,0000	carbon utilization
+0043170	492	0	0	22	1,0000	1,0000	0,9860	macromolecule metabolism
+0000004	25	0	0	0	1,0000	1,0000	1,0000	biological_process unknown
+0000003	18	0	0	0	1,0000	1,0000	1,0000	reproduction
+0003993	5	0	0	0	1,0000	1,0000	1,0000	acid phosphatase activity
+0043169	154	0	0	11	1,0000	1,0000	0,3351	cation binding
+0043167	178	0	0	14	1,0000	1,0000	0,1833	ion binding
+0043154	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of caspase activation
+0003977	1	0	0	0	1,0000	1,0000	1,0000	UDP-N-acetylglucosamine diphosphorylase activity
+0015934	1	0	0	0	1,0000	1,0000	1,0000	large ribosomal subunit
+0015931	1	0	0	0	1,0000	1,0000	1,0000	nucleobase, nucleoside, nucleotide and nucleic acid transport
+0043138	1	0	0	0	1,0000	1,0000	1,0000	3' to 5' DNA helicase activity
+0003955	1	0	0	0	1,0000	1,0000	1,0000	NAD(P)H dehydrogenase (quinone) activity
+0015929	1	0	0	0	1,0000	1,0000	1,0000	hexosaminidase activity
+0043125	1	0	0	0	1,0000	1,0000	1,0000	ErbB-3 class receptor binding
+0043123	12	0	0	0	1,0000	1,0000	1,0000	positive regulation of I-kappaB kinase/NF-kappaB cascade
+0043122	12	0	0	0	1,0000	1,0000	1,0000	regulation of I-kappaB kinase/NF-kappaB cascade
+0043121	1	0	0	0	1,0000	1,0000	1,0000	neurotrophin binding
+0043118	3	0	0	0	1,0000	1,0000	1,0000	negative regulation of physiological process
+0043114	2	0	0	0	1,0000	1,0000	1,0000	regulation of vascular permeability
+0003934	1	0	0	0	1,0000	1,0000	1,0000	GTP cyclohydrolase I activity
+0003933	1	0	0	0	1,0000	1,0000	1,0000	GTP cyclohydrolase activity
+0003924	5	0	0	0	1,0000	1,0000	1,0000	GTPase activity
+0003918	1	0	0	0	1,0000	1,0000	1,0000	DNA topoisomerase (ATP-hydrolyzing) activity
+0003916	1	0	0	0	1,0000	1,0000	1,0000	DNA topoisomerase activity
+0043086	7	0	0	0	1,0000	1,0000	1,0000	negative regulation of enzyme activity
+0043085	19	0	0	1	1,0000	1,0000	0,7014	positive regulation of enzyme activity
+0043069	21	0	0	1	1,0000	1,0000	0,7374	negative regulation of programmed cell death
+0043068	23	0	0	1	1,0000	1,0000	0,7692	positive regulation of programmed cell death
+0043067	50	0	0	2	1,0000	1,0000	0,8251	regulation of programmed cell death
+0043066	21	0	0	1	1,0000	1,0000	0,7374	negative regulation of apoptosis
+0043065	23	0	0	1	1,0000	1,0000	0,7692	positive regulation of apoptosis
+0043062	3	0	0	0	1,0000	1,0000	1,0000	extracellular structure organization and biogenesis
+0003887	2	0	0	0	1,0000	1,0000	1,0000	DNA-directed DNA polymerase activity
+0043039	2	0	0	0	1,0000	1,0000	1,0000	tRNA aminoacylation
+0043038	2	0	0	0	1,0000	1,0000	1,0000	amino acid activation
+0043037	11	0	0	2	1,0000	1,0000	0,1418	translation
+0043028	2	0	0	0	1,0000	1,0000	1,0000	caspase regulator activity
+0043026	1	0	0	0	1,0000	1,0000	1,0000	regulation of caspase activation
+0043009	2	0	0	0	1,0000	1,0000	1,0000	embryonic development (sensu Vertebrata)
+0003824	552	0	0	26	1,0000	1,0000	0,9815	catalytic activity
+0003823	2	0	0	0	1,0000	1,0000	1,0000	antigen binding
+0046983	10	0	0	0	1,0000	1,0000	1,0000	protein dimerization activity
+0046982	4	0	0	0	1,0000	1,0000	1,0000	protein heterodimerization activity
+0003816	1	0	0	0	1,0000	1,0000	1,0000	complement component C1s activity
+0003815	1	0	0	0	1,0000	1,0000	1,0000	complement component C1r activity
+0003813	1	0	0	0	1,0000	1,0000	1,0000	classical-complement-pathway C3/C5 convertase activity
+0003810	1	0	0	0	1,0000	1,0000	1,0000	protein-glutamine gamma-glutamyltransferase activity
+0031012	31	0	0	6	1,0000	1,0000	0,0091	extracellular matrix
+0003808	1	0	0	0	1,0000	1,0000	1,0000	protein C (activated) activity
+0003807	1	0	0	0	1,0000	1,0000	1,0000	plasma kallikrein activity
+0046961	1	0	0	0	1,0000	1,0000	1,0000	hydrogen-transporting ATPase activity, rotational mechanism
+0046935	1	0	0	0	1,0000	1,0000	1,0000	phosphatidylinositol 3-kinase regulator activity
+0046934	2	0	0	0	1,0000	1,0000	1,0000	phosphatidylinositol-4,5-bisphosphate 3-kinase activity
+0046933	1	0	0	0	1,0000	1,0000	1,0000	hydrogen-transporting ATP synthase activity, rotational mechanism
+0046920	1	0	0	0	1,0000	1,0000	1,0000	alpha(1,3)-fucosyltransferase activity
+0046916	4	0	0	0	1,0000	1,0000	1,0000	transition metal ion homeostasis
+0046914	107	0	0	4	1,0000	1,0000	0,9098	transition metal ion binding
+0046907	15	0	0	0	1,0000	1,0000	1,0000	intracellular transport
+0046903	4	0	0	0	1,0000	1,0000	1,0000	secretion
+0046902	1	0	0	0	1,0000	1,0000	1,0000	regulation of mitochondrial membrane permeability
+0008656	2	0	0	0	1,0000	1,0000	1,0000	caspase activator activity
+0008654	2	0	0	0	1,0000	1,0000	1,0000	phospholipid biosynthesis
+0008652	2	0	0	0	1,0000	1,0000	1,0000	amino acid biosynthesis
+0008645	2	0	0	1	1,0000	1,0000	0,1186	hexose transport
+0008643	2	0	0	1	1,0000	1,0000	0,1186	carbohydrate transport
+0008639	3	0	0	0	1,0000	1,0000	1,0000	small protein conjugating enzyme activity
+0008635	2	0	0	0	1,0000	1,0000	1,0000	caspase activation via cytochrome c
+0008632	11	0	0	1	1,0000	1,0000	0,5020	apoptotic program
+0008630	2	0	0	0	1,0000	1,0000	1,0000	DNA damage response, signal transduction resulting in induction of apoptosis
+0008629	4	0	0	0	1,0000	1,0000	1,0000	induction of apoptosis by intracellular signals
+0008628	2	0	0	0	1,0000	1,0000	1,0000	induction of apoptosis by hormones
+0008625	1	0	0	0	1,0000	1,0000	1,0000	induction of apoptosis via death domain receptors
+0008624	8	0	0	0	1,0000	1,0000	1,0000	induction of apoptosis by extracellular signals
+0008610	14	0	0	1	1,0000	1,0000	0,5888	lipid biosynthesis
+0008607	1	0	0	0	1,0000	1,0000	1,0000	phosphorylase kinase regulator activity
+0008605	1	0	0	0	1,0000	1,0000	1,0000	protein kinase CK2 regulator activity
+0008603	5	0	0	0	1,0000	1,0000	1,0000	cAMP-dependent protein kinase regulator activity
+0008601	11	0	0	0	1,0000	1,0000	1,0000	protein phosphatase type 2A regulator activity
+0015758	2	0	0	1	1,0000	1,0000	0,1186	glucose transport
+0003779	11	0	0	1	1,0000	1,0000	0,5020	actin binding
+0003777	2	0	0	0	1,0000	1,0000	1,0000	microtubule motor activity
+0003774	7	0	0	1	1,0000	1,0000	0,3578	motor activity
+0015749	2	0	0	1	1,0000	1,0000	0,1186	monosaccharide transport
+0003755	2	0	0	1	1,0000	1,0000	0,1186	peptidyl-prolyl cis-trans isomerase activity
+0003746	1	0	0	1	1,0000	1,0000	0,0611	translation elongation factor activity
+0003743	4	0	0	1	1,0000	1,0000	0,2233	translation initiation factor activity
+0003735	6	0	0	0	1,0000	1,0000	1,0000	structural constituent of ribosome
+0003729	1	0	0	0	1,0000	1,0000	1,0000	mRNA binding
+0046890	1	0	0	0	1,0000	1,0000	1,0000	regulation of lipid biosynthesis
+0003727	2	0	0	0	1,0000	1,0000	1,0000	single-stranded RNA binding
+0003725	1	0	0	0	1,0000	1,0000	1,0000	double-stranded RNA binding
+0003723	19	0	0	2	1,0000	1,0000	0,3255	RNA binding
+0003714	14	0	0	0	1,0000	1,0000	1,0000	transcription corepressor activity
+0003713	23	0	0	1	1,0000	1,0000	0,7692	transcription coactivator activity
+0003712	39	0	0	1	1,0000	1,0000	0,9183	transcription cofactor activity
+0003711	1	0	0	0	1,0000	1,0000	1,0000	transcriptional elongation regulator activity
+0046873	1	0	0	0	1,0000	1,0000	1,0000	metal ion transporter activity
+0046872	178	0	0	14	1,0000	1,0000	0,1833	metal ion binding
+0003709	1	0	0	0	1,0000	1,0000	1,0000	RNA polymerase III transcription factor activity
+0003707	10	0	0	0	1,0000	1,0000	1,0000	steroid hormone receptor activity
+0003705	1	0	0	0	1,0000	1,0000	1,0000	RNA polymerase II transcription factor activity, enhancer binding
+0003704	6	0	0	0	1,0000	1,0000	1,0000	specific RNA polymerase II transcription factor activity
+0003702	50	0	0	1	1,0000	1,0000	0,9604	RNA polymerase II transcription factor activity
+0003701	1	0	0	0	1,0000	1,0000	1,0000	RNA polymerase I transcription factor activity
+0003700	133	0	0	5	1,0000	1,0000	0,9276	transcription factor activity
+0046849	2	0	0	0	1,0000	1,0000	1,0000	bone remodeling
+0046839	1	0	0	0	1,0000	1,0000	1,0000	phospholipid dephosphorylation
+0008584	2	0	0	0	1,0000	1,0000	1,0000	male gonad development
+0008582	1	0	0	0	1,0000	1,0000	1,0000	regulation of synaptic growth at neuromuscular junction
+0008565	2	0	0	0	1,0000	1,0000	1,0000	protein transporter activity
+0008544	9	0	0	0	1,0000	1,0000	1,0000	epidermis development
+0008543	1	0	0	0	1,0000	1,0000	1,0000	fibroblast growth factor receptor signaling pathway
+0008538	1	0	0	0	1,0000	1,0000	1,0000	proteasome activator activity
+0008537	1	0	0	0	1,0000	1,0000	1,0000	proteasome activator complex
+0008533	1	0	0	0	1,0000	1,0000	1,0000	astacin activity
+0008528	27	0	0	3	1,0000	1,0000	0,2254	peptide receptor activity, G-protein coupled
+0015698	3	0	0	0	1,0000	1,0000	1,0000	inorganic anion transport
+0015674	2	0	0	0	1,0000	1,0000	1,0000	di-, tri-valent inorganic cation transport
+0015672	2	0	0	0	1,0000	1,0000	1,0000	monovalent inorganic cation transport
+0003697	3	0	0	1	1,0000	1,0000	0,1726	single-stranded DNA binding
+0003690	4	0	0	1	1,0000	1,0000	0,2233	double-stranded DNA binding
+0003684	5	0	0	0	1,0000	1,0000	1,0000	damaged DNA binding
+0003682	1	0	0	0	1,0000	1,0000	1,0000	chromatin binding
+0003678	1	0	0	0	1,0000	1,0000	1,0000	DNA helicase activity
+0003677	208	0	0	10	1,0000	1,0000	0,8502	DNA binding
+0003676	234	0	0	12	1,0000	1,0000	0,8041	nucleic acid binding
+0003674	1046	0	0	61	1,0000	1,0000	0,9718	molecular_function
+0015643	1	0	0	0	1,0000	1,0000	1,0000	toxin binding
+0015631	1	0	0	0	1,0000	1,0000	1,0000	tubulin binding
+0015630	12	0	0	0	1,0000	1,0000	1,0000	microtubule cytoskeleton
+0015629	14	0	0	3	1,0000	1,0000	0,0489	actin cytoskeleton
+0046777	2	0	0	0	1,0000	1,0000	1,0000	autophosphorylation
+0046718	1	0	0	0	1,0000	1,0000	1,0000	viral entry
+0008475	1	0	0	0	1,0000	1,0000	1,0000	procollagen-lysine 5-dioxygenase activity
+0008452	2	0	0	0	1,0000	1,0000	1,0000	RNA ligase activity
+0008423	1	0	0	0	1,0000	1,0000	1,0000	bleomycin hydrolase activity
+0008417	1	0	0	0	1,0000	1,0000	1,0000	fucosyltransferase activity
+0008415	2	0	0	0	1,0000	1,0000	1,0000	acyltransferase activity
+0008408	1	0	0	0	1,0000	1,0000	1,0000	3'-5' exonuclease activity
+0008406	3	0	0	0	1,0000	1,0000	1,0000	gonad development
+0046661	3	0	0	0	1,0000	1,0000	1,0000	male sex differentiation
+0046658	1	0	0	0	1,0000	1,0000	1,0000	extrinsic to plasma membrane, GPI-anchored
+0046651	1	0	0	0	1,0000	1,0000	1,0000	lymphocyte proliferation
+0046649	3	0	0	1	1,0000	1,0000	0,1726	lymphocyte activation
+0008384	1	0	0	0	1,0000	1,0000	1,0000	IkappaB kinase activity
+0008380	5	0	0	1	1,0000	1,0000	0,2709	RNA splicing
+0008375	1	0	0	0	1,0000	1,0000	1,0000	acetylglucosaminyltransferase activity
+0008372	36	0	0	0	1,0000	1,0000	1,0000	cellular_component unknown
+0046606	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of centrosome cycle
+0046605	1	0	0	0	1,0000	1,0000	1,0000	regulation of centrosome cycle
+0046600	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of centriole replication
+0008366	2	0	0	0	1,0000	1,0000	1,0000	nerve ensheathment
+0008361	12	0	0	0	1,0000	1,0000	1,0000	regulation of cell size
+0008360	1	0	0	1	1,0000	1,0000	0,0611	regulation of cell shape
+0008354	2	0	0	0	1,0000	1,0000	1,0000	germ cell migration
+0008353	1	0	0	0	1,0000	1,0000	1,0000	[RNA-polymerase]-subunit kinase activity
+0008347	1	0	0	0	1,0000	1,0000	1,0000	glia cell migration
+0008339	2	0	0	0	1,0000	1,0000	1,0000	MP kinase activity
+0008333	1	0	0	0	1,0000	1,0000	1,0000	endosome to lysosome transport
+0008330	2	0	0	0	1,0000	1,0000	1,0000	protein tyrosine/threonine phosphatase activity
+0008324	2	0	0	0	1,0000	1,0000	1,0000	cation transporter activity
+0008320	1	0	0	0	1,0000	1,0000	1,0000	protein carrier activity
+0008309	1	0	0	0	1,0000	1,0000	1,0000	double-stranded DNA specific exodeoxyribonuclease activity
+0008307	3	0	0	1	1,0000	1,0000	0,1726	structural constituent of muscle
+0008305	12	0	0	1	1,0000	1,0000	0,5328	integrin complex
+0015464	1	0	0	0	1,0000	1,0000	1,0000	acetylcholine receptor activity
+0015459	1	0	0	0	1,0000	1,0000	1,0000	potassium channel regulator activity
+0015457	1	0	0	0	1,0000	1,0000	1,0000	auxiliary transport protein activity
+0015405	1	0	0	0	1,0000	1,0000	1,0000	P-P-bond-hydrolysis-driven transporter activity
+0046599	1	0	0	0	1,0000	1,0000	1,0000	regulation of centriole replication
+0046546	2	0	0	0	1,0000	1,0000	1,0000	development of primary male sexual characteristics
+0008299	1	0	0	0	1,0000	1,0000	1,0000	isoprenoid biosynthesis
+0008295	1	0	0	0	1,0000	1,0000	1,0000	spermidine biosynthesis
+0046521	1	0	0	0	1,0000	1,0000	1,0000	sphingoid catabolism
+0046520	1	0	0	0	1,0000	1,0000	1,0000	sphingoid biosynthesis
+0008289	26	0	0	3	1,0000	1,0000	0,2089	lipid binding
+0008287	15	0	0	0	1,0000	1,0000	1,0000	protein serine/threonine phosphatase complex
+0008286	4	0	0	0	1,0000	1,0000	1,0000	insulin receptor signaling pathway
+0008285	23	0	0	1	1,0000	1,0000	0,7692	negative regulation of cell proliferation
+0008284	24	0	0	1	1,0000	1,0000	0,7836	positive regulation of cell proliferation
+0008283	182	0	0	13	1,0000	1,0000	0,3117	cell proliferation
+0046519	3	0	0	0	1,0000	1,0000	1,0000	sphingoid metabolism
+0008280	1	0	0	0	1,0000	1,0000	1,0000	cohesin core heterodimer
+0046513	1	0	0	0	1,0000	1,0000	1,0000	ceramide biosynthesis
+0008278	1	0	0	0	1,0000	1,0000	1,0000	cohesin complex
+0008277	3	0	0	0	1,0000	1,0000	1,0000	regulation of G-protein coupled receptor protein signaling pathway
+0008274	1	0	0	0	1,0000	1,0000	1,0000	gamma-tubulin ring complex
+0008270	87	0	0	4	1,0000	1,0000	0,7973	zinc ion binding
+0008253	1	0	0	0	1,0000	1,0000	1,0000	5'-nucleotidase activity
+0008252	1	0	0	0	1,0000	1,0000	1,0000	nucleotidase activity
+0008243	4	0	0	0	1,0000	1,0000	1,0000	plasminogen activator activity
+0008240	1	0	0	0	1,0000	1,0000	1,0000	tripeptidyl-peptidase activity
+0008239	1	0	0	0	1,0000	1,0000	1,0000	dipeptidyl-peptidase activity
+0008238	4	0	0	0	1,0000	1,0000	1,0000	exopeptidase activity
+0008237	22	0	0	3	1,0000	1,0000	0,1466	metallopeptidase activity
+0008236	41	0	0	2	1,0000	1,0000	0,7294	serine-type peptidase activity
+0008235	2	0	0	0	1,0000	1,0000	1,0000	metalloexopeptidase activity
+0008234	38	0	0	2	1,0000	1,0000	0,6891	cysteine-type peptidase activity
+0008233	108	0	0	6	1,0000	1,0000	0,6646	peptidase activity
+0008227	13	0	0	0	1,0000	1,0000	1,0000	amine receptor activity
+0008219	74	0	0	4	1,0000	1,0000	0,6785	cell death
+0008217	5	0	0	0	1,0000	1,0000	1,0000	regulation of blood pressure
+0008216	1	0	0	0	1,0000	1,0000	1,0000	spermidine metabolism
+0008215	1	0	0	0	1,0000	1,0000	1,0000	spermine metabolism
+0008207	1	0	0	0	1,0000	1,0000	1,0000	C21-steroid hormone metabolism
+0008203	8	0	0	0	1,0000	1,0000	1,0000	cholesterol metabolism
+0008202	11	0	0	0	1,0000	1,0000	1,0000	steroid metabolism
+0008201	17	0	0	2	1,0000	1,0000	0,2789	heparin binding
+0015399	1	0	0	0	1,0000	1,0000	1,0000	primary active transporter activity
+0046489	2	0	0	0	1,0000	1,0000	1,0000	phosphoinositide biosynthesis
+0046488	1	0	0	0	1,0000	1,0000	1,0000	phosphatidylinositol metabolism
+0046483	1	0	0	0	1,0000	1,0000	1,0000	heterocycle metabolism
+0046476	1	0	0	0	1,0000	1,0000	1,0000	glycosylceramide biosynthesis
+0046474	2	0	0	0	1,0000	1,0000	1,0000	glycerophospholipid biosynthesis
+0046467	3	0	0	0	1,0000	1,0000	1,0000	membrane lipid biosynthesis
+0046466	1	0	0	0	1,0000	1,0000	1,0000	membrane lipid catabolism
+0046457	1	0	0	0	1,0000	1,0000	1,0000	prostanoid biosynthesis
+0046456	1	0	0	0	1,0000	1,0000	1,0000	icosanoid biosynthesis
+0008199	1	0	0	0	1,0000	1,0000	1,0000	ferric iron binding
+0008195	3	0	0	0	1,0000	1,0000	1,0000	phosphatidate phosphatase activity
+0008194	2	0	0	0	1,0000	1,0000	1,0000	UDP-glycosyltransferase activity
+0008192	1	0	0	0	1,0000	1,0000	1,0000	RNA guanylyltransferase activity
+0008191	2	0	0	2	1,0000	1,0000	0,0037	metalloendopeptidase inhibitor activity
+0046426	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of JAK-STAT cascade
+0046425	1	0	0	0	1,0000	1,0000	1,0000	regulation of JAK-STAT cascade
+0008188	7	0	0	1	1,0000	1,0000	0,3578	neuropeptide receptor activity
+0008160	1	0	0	0	1,0000	1,0000	1,0000	protein tyrosine phosphatase activator activity
+0008159	1	0	0	0	1,0000	1,0000	1,0000	positive transcription elongation factor activity
+0008154	2	0	0	0	1,0000	1,0000	1,0000	actin polymerization and/or depolymerization
+0008152	743	0	0	37	1,0000	1,0000	0,9908	metabolism
+0008151	308	0	0	19	1,0000	1,0000	0,5295	cell growth and/or maintenance
+0008150	1031	0	0	62	1,0000	1,0000	0,7998	biological_process
+0008146	1	0	0	0	1,0000	1,0000	1,0000	sulfotransferase activity
+0008144	1	0	0	0	1,0000	1,0000	1,0000	drug binding
+0008143	1	0	0	0	1,0000	1,0000	1,0000	poly(A) binding
+0008139	1	0	0	0	1,0000	1,0000	1,0000	nuclear localization sequence binding
+0008138	13	0	0	0	1,0000	1,0000	1,0000	protein tyrosine/serine/threonine phosphatase activity
+0008135	6	0	0	2	1,0000	1,0000	0,0471	translation factor activity, nucleic acid binding
+0008134	41	0	0	1	1,0000	1,0000	0,9284	transcription factor binding
+0008133	4	0	0	1	1,0000	1,0000	0,2233	collagenase activity
+0008132	1	0	0	0	1,0000	1,0000	1,0000	pancreatic elastase activity
+0008104	19	0	0	1	1,0000	1,0000	0,7014	protein localization
+0015291	1	0	0	0	1,0000	1,0000	1,0000	porter activity
+0015290	1	0	0	0	1,0000	1,0000	1,0000	electrochemical potential-driven transporter activity
+0015285	5	0	0	0	1,0000	1,0000	1,0000	connexon channel activity
+0015276	1	0	0	0	1,0000	1,0000	1,0000	ligand-gated ion channel activity
+0015268	7	0	0	0	1,0000	1,0000	1,0000	alpha-type channel activity
+0015267	7	0	0	0	1,0000	1,0000	1,0000	channel or pore class transporter activity
+0015266	1	0	0	0	1,0000	1,0000	1,0000	protein channel activity
+0046394	8	0	0	1	1,0000	1,0000	0,3973	carboxylic acid biosynthesis
+0046365	3	0	0	1	1,0000	1,0000	0,1726	monosaccharide catabolism
+0046364	2	0	0	0	1,0000	1,0000	1,0000	monosaccharide biosynthesis
+0046349	1	0	0	0	1,0000	1,0000	1,0000	amino sugar biosynthesis
+0008097	1	0	0	0	1,0000	1,0000	1,0000	5S rRNA binding
+0008094	2	0	0	0	1,0000	1,0000	1,0000	DNA-dependent ATPase activity
+0008093	1	0	0	0	1,0000	1,0000	1,0000	cytoskeletal adaptor activity
+0008092	20	0	0	2	1,0000	1,0000	0,3486	cytoskeletal protein binding
+0046326	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of glucose import
+0046324	1	0	0	0	1,0000	1,0000	1,0000	regulation of glucose import
+0046323	1	0	0	0	1,0000	1,0000	1,0000	glucose import
+0046321	1	0	0	0	1,0000	1,0000	1,0000	positive regulation of fatty acid oxidation
+0046320	1	0	0	0	1,0000	1,0000	1,0000	regulation of fatty acid oxidation
+0008083	10	0	0	0	1,0000	1,0000	1,0000	growth factor activity
+0046318	1	0	0	0	1,0000	1,0000	1,0000	negative regulation of glucosylceramide biosynthesis
+0008081	7	0	0	1	1,0000	1,0000	0,3578	phosphoric diester hydrolase activity
+0046317	1	0	0	0	1,0000	1,0000	1,0000	regulation of glucosylceramide biosynthesis
+0008067	4	0	0	0	1,0000	1,0000	1,0000	metabotropic glutamate, GABA-B-like receptor activity
+0008066	4	0	0	0	1,0000	1,0000	1,0000	glutamate receptor activity
+0008064	2	0	0	0	1,0000	1,0000	1,0000	regulation of actin polymerization and/or depolymerization
+0008047	14	0	0	1	1,0000	1,0000	0,5888	enzyme activator activity
+0008037	1	0	0	0	1,0000	1,0000	1,0000	cell recognition
+0008033	1	0	0	0	1,0000	1,0000	1,0000	tRNA processing

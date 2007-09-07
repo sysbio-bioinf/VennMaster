@@ -1,0 +1,63 @@
+------------------------------------------------------------------------------
+2006/03/17
+
+Links in the category table to
+
+http://www.dkfz-heidelberg.de/GeneCards/
+http://www.godatabase.org
+
+Open browser with
+
+http://www.javaworld.com/javaworld/javatips/jw-javatip66.html
+
+
+Sort rows in category tables:
+
+http://java.sun.com/developer/JDCTechTips/2005/tt1115.html
+
+
+Filter-Functions:
+
+Choose among the three ontologies.
+[ ] cellular component
+[ ] biological process
+[ ] molecular function
+
+
+Compute p-values of intersection categories. Use this as filter criterion.
+
+-------------------------------------------------------------------------------
+2006/03/20
+
+1) Implement GO-category filtering/viewing which supports the ontology DAG.
+
+2) Show different ontologies in different colors
+
+
+-------------------------------------------------------------------------------
+2006/03/21
+
+Interesting java code examples:
+http://www.particle.kth.se/~lindsey/JavaCourse/Book/codeIndex.html
+
+Recursive Porus Agent Simulation Toolkit
+http://repast.sourceforge.net/
+
+http://www.swarm.org/wiki/Main_Page
+
+
+1) Implement histograms for the filter criteria
+
+2) Implement a sortable JTable (click on the headers to sort...)
+
+3) Implement deactivation of categories.
+
+4) Implement a pool of JLabels for a faster JTable
+
+5) Different colors for the three independent ontologies:
+   B - biological process - green
+   C - cellular component - red
+   M - molecular function - blue
+   
+6) Generate ordered color sequences for paths (?)
+
