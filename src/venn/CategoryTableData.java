@@ -6,7 +6,10 @@ import javax.swing.event.ChangeListener;
 import javax.swing.table.AbstractTableModel;
 
 import junit.framework.Assert;
-import venn.db.GOCategoryProperties;
+import sun.java2d.pipe.GeneralCompositePipe;
+import venn.db.AbstractGOCategoryProperties;
+import venn.db.GOCategoryProperties3p;
+import venn.db.GOCategoryProperties3p3fdr;
 import venn.db.IVennDataModel;
 import venn.gui.VennPanel;
 
@@ -26,6 +29,7 @@ class CategoryTableData extends AbstractTableModel
      */
     private static final long serialVersionUID = 1L;
     VennPanel venn;
+    AllParameters params;
 	
 	public CategoryTableData(VennPanel venn)
 	{
@@ -33,6 +37,10 @@ class CategoryTableData extends AbstractTableModel
         venn.addChangeListener( this );
 	}
 
+	public void setParameters(AllParameters params) {
+		this.params = params;
+	}
+	
 	/* (non-Javadoc)
 	 * @see javax.swing.table.TableModel#getColumnCount()
 	 */
@@ -49,12 +57,12 @@ class CategoryTableData extends AbstractTableModel
 		return venn.numOfCategories();
 	}
     
-    public GOCategoryProperties getGoProperties( int row )
+    public AbstractGOCategoryProperties getGoProperties( int row )
     {
         IVennDataModel model = venn.getDataModel();
-        if( model == null || model.getNumGroups() == 0 )
+        if( model == null )
             return null;        
-        return (GOCategoryProperties)model.getGroupProperties(row);
+        return (AbstractGOCategoryProperties) model.getGroupProperties(row);
     }
 
 	/* (non-Javadoc)
@@ -73,7 +81,7 @@ class CategoryTableData extends AbstractTableModel
 		if( rowIndex < 0 || rowIndex>= model.getNumGroups() )
 			return null;
         
-        GOCategoryProperties prop = (GOCategoryProperties)model.getGroupProperties(rowIndex);
+        AbstractGOCategoryProperties prop = (AbstractGOCategoryProperties)model.getGroupProperties(rowIndex);
         
 		switch( columnIndex )
         {
@@ -85,7 +93,7 @@ class CategoryTableData extends AbstractTableModel
 
             case 2: // ID
                 if( prop != null )
-                    return new Long(prop.ID);
+                    return new Long(prop.getID());
                 else
                     return null;
                 
@@ -95,34 +103,40 @@ class CategoryTableData extends AbstractTableModel
 			case 4: // number of elements (genes) = nChanged
                 int n = model.getGroupElements(rowIndex).cardinality();
                 if( prop != null )
-                    Assert.assertEquals(n,prop.nChange);
+                    Assert.assertEquals(n,prop.getNChange());
 				return new Integer( n );
 
             case 5: // nTotal
                 if( prop != null )
-                    return new Integer(prop.nTotal);
+                	if (params.logTotals) {
+                		return new Integer(prop.getNTotalLog());
+                	}
+                	else {
+                		return new Integer(prop.getNTotal());
+                	}
                 else
                     return null;
                 
 			case 6: // p-value
 				if( prop != null )
 					//return new Float(prop.pValue);
-					return format.format(prop.pValue);
+//					return format.format(prop.pValue);
+					return format.format(prop.getPFDRValue());
 				else
 					return null;
                 
-            case 7: // FDR
-                if( prop != null )
-                    //return new Float(prop.FDR);
-                    return format.format(prop.FDR);
-                else
-                    return null;
+//            case 7: // FDR
+//                if( prop != null && prop instanceof GOCategoryProperties3p3fdr)
+//                    //return new Float(prop.FDR);
+//                    return format.format(((GOCategoryProperties3p3fdr) prop).FDR);
+//                else
+//                    return null;
                     
             case 8: // minDist
             	if( prop != null )
             	{
-            		if( prop.meanDist >= 1 )
-            			return new Float( prop.meanDist );
+            		if( prop.getMeanDist() >= 1 )
+            			return new Float( prop.getMeanDist() );
             	}
             	return null;
 		}

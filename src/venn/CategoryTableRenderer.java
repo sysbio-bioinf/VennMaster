@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
 
+import venn.diagram.IVennObject;
 import venn.gui.VennPanel;
 
 /**
@@ -43,9 +44,15 @@ implements TableCellRenderer
         }
         else
         {
-            Color col = venn.getVennObject(row).getFillColor();
-            label.setBackground( col );
-            label.setForeground( Color.BLACK );
+        	if (! venn.existsFilteredVennObject(row)) {
+        		label.setBackground(Color.WHITE);
+        		label.setForeground(Color.BLACK);
+        	} else {
+            	IVennObject vo = venn.getUnfilteredVennObject(row);
+        		Color col = vo.getFillColor();
+        		label.setBackground( col );
+        		label.setForeground( Color.BLACK );
+        	}
         }
         if( hasFocus )
         {

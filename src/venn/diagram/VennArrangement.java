@@ -15,6 +15,7 @@ import javax.swing.event.ChangeListener;
 
 import venn.db.IVennDataModel;
 import venn.db.VennFilteredDataModel;
+import venn.event.IFilterChainSucc;
 
 /**
  * Encapsulates an Venn arrangement.
@@ -23,7 +24,7 @@ import venn.db.VennFilteredDataModel;
  *
  */
 public class VennArrangement
-implements ChangeListener, Cloneable, Serializable
+implements Cloneable, Serializable, IFilterChainSucc
 {
     /**
      * 
@@ -53,7 +54,6 @@ implements ChangeListener, Cloneable, Serializable
         listeners = new LinkedList();
         
         model = source.getDataModel();
-        //model.addChangeListener( this );
         
         vennObjectFactory = null;
         
@@ -135,7 +135,6 @@ implements ChangeListener, Cloneable, Serializable
             {
                 Lgid = ((VennFilteredDataModel)model).localToGlobalGroupID(gid);
             }
-            //vennObjects[gid] = vennObjectFactory.create( Lgid, model.getGroupElements(gid) );            
             vennObjects[gid] = vennObjectFactory.create( Lgid, model.getGroupElements(gid), model.getNumGroups(), params );
         }
         
@@ -173,13 +172,14 @@ implements ChangeListener, Cloneable, Serializable
      */
     public void setDataModel(IVennDataModel model) 
     {
-        if( this.model != null )
-            this.model.removeChangeListener(this);
-        
+        if( this.model != null ) {
+        	this.model.setSucc(null);
+        }
         this.model = model;
         
-        if( model != null )
-            model.addChangeListener(this);
+        if( model != null ) {
+        	model.setSucc(this); // => predChanged
+        }
         
         invalidate();
     }
@@ -219,15 +219,9 @@ implements ChangeListener, Cloneable, Serializable
         }
     }
 
-    public void stateChanged(ChangeEvent e) 
-    {
-        if( e.getSource() == getDataModel() )
-        {
-            invalidate();
-            return;
-        }
-        
-        // fireChangeEvent();
+//    @Override
+    public void predChanged() {
+    	invalidate();
     }
     
     public int getNumOfSets() 

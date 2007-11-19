@@ -89,4 +89,6 @@ public interface IVennDiagramView
 
     public void repaint();
     
+    public boolean hasLabels();
+    
 }

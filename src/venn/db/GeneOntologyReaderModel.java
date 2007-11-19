@@ -17,7 +17,7 @@ import junit.framework.Assert;
  *
  */
 public class GeneOntologyReaderModel 
-extends AbstractVennDataModel 
+extends AbstractVennDataModel implements Serializable
 {
 	private ArrayList	aElements,		// array of aElements (key names)
 						aGroups,		// array of aGroups (group names)	
@@ -52,12 +52,12 @@ extends AbstractVennDataModel
 	 * @param categoryList Path to the category file
 	 * @param geneList Path to the gene file
 	 */
-	public void loadFromFile(String categoryList,String geneList, IGeneFilter filter )
+	public void loadFromFile(String categoryList,String geneList )
 		throws IOException, FileFormatException
 	{
 		clear();
 		
-		readElements(new FileReader(categoryList), filter);
+		readElements(new FileReader(categoryList));
 		readGeneList(new FileReader(geneList));
 		
 		updateBitSets();
@@ -84,7 +84,7 @@ extends AbstractVennDataModel
 	 * @throws IOException
 	 * @throws FileFormatException
 	 */
-	private void readElements(Reader reader,IGeneFilter filter)
+	private void readElements(Reader reader)
 		throws IOException, FileFormatException
 	{
 		aGroups.clear();
@@ -96,7 +96,9 @@ extends AbstractVennDataModel
 		LineNumberReader in = new LineNumberReader(reader);
 		
 		int groupNumber = 0;
-												
+					
+		int numTokens = -1;
+		
 		while( in.ready() )
 		{
 			String line = in.readLine();
@@ -110,8 +112,15 @@ extends AbstractVennDataModel
 					continue;
 				}
 				StringTokenizer tok = new StringTokenizer(line,"\t");			
-				if( tok.countTokens() != 9 )
-					throw new FileFormatException("Gene category summary (.gce) file at line "+in.getLineNumber() +" wrong number of fields");
+				if( tok.countTokens() != 9 && tok.countTokens() != 12 )
+					throw new FileFormatException("Gene summary export (.se) file in line "+in.getLineNumber()+ " wrong number of fields");
+				if (numTokens == -1) {
+					numTokens = tok.countTokens();
+				} else {
+					if (tok.countTokens() != numTokens) {
+						throw new FileFormatException("Gene summary export (.se) file in line "+in.getLineNumber()+ " number of fields has changed");
+					}
+				}
 				
 				int 	groupID = 0, 
 						nTotal = 0, 
@@ -120,7 +129,10 @@ extends AbstractVennDataModel
 						nChange = 0;
 				double 	pUnder = 1.0, 
 						pOver = 1.0, 
-						pChange = 1.0;
+						pChange = 1.0,
+						fdrUnder = -777.0,
+						fdrOver = -888.0,
+						fdrChange = -999.0;
 				String term = null;
 				try 
 				{
@@ -138,30 +150,45 @@ extends AbstractVennDataModel
 					pUnder = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
 					pOver = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
 					pChange = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
+					if (numTokens == 12) {
+						fdrUnder = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
+						fdrOver = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
+						fdrChange = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
+					}
 					term = tok.nextToken().trim();
 				}
 				catch( NumberFormatException e )
 				{
 					System.err.println( e.getStackTrace() );
-					throw new FileFormatException("Gene category summary (.gce) file at line "+in.getLineNumber());
+					throw new FileFormatException("Gene summary export (.se) file in line "+in.getLineNumber());
 				}
-                double pValue = 1.0;
-                if( pUnder < pValue ) 
-                    pValue = pUnder;
-                if( pOver < pValue )
-                    pValue = pOver;
-                if( pChange < pValue )
-                    pValue = pChange;
-                
-				if( (filter == null) ||
-					filter.accepts(nTotal,nChange,pValue,0.0) )
-				{
+//				double pValue = 1.0;
+//				if( pUnder < pValue ) {
+//					pValue = pUnder;
+//				}
+//				if( pOver < pValue ) {
+//					pValue = pOver;
+//				}
+//				if( pChange < pValue ) {
+//					pValue = pChange;
+//				}
+				
+				if (numTokens == 9) {
 					groupMap.put(new Integer(groupID),new Integer(groupNumber));
-                    properties.add(new GOCategoryProperties(groupID,nTotal,nChange,pValue,0.0));
+					properties.add(new GOCategoryProperties3p(groupID,nTotal,nChange,pUnder, pOver, pChange));
 					aGroups.add(term);
 					++groupNumber;
 					//System.out.println(in.getLineNumber()+ " : "+line);
-				}
+				} else {
+					assert numTokens == 12;
+					groupMap.put(new Integer(groupID),new Integer(groupNumber));
+					properties.add(new GOCategoryProperties3p3fdr(groupID,nTotal,nChange,
+							pUnder, pOver, pChange,
+							fdrUnder, fdrOver, fdrChange));
+					aGroups.add(term);
+					++groupNumber;
+					//System.out.println(in.getLineNumber()+ " : "+line);
+                }
 			}
 		}
 	}
@@ -208,7 +235,7 @@ extends AbstractVennDataModel
 			{			
 				StringTokenizer tok = new StringTokenizer(line,"\t");			
 				if( tok.countTokens() < 3 )
-					throw new FileFormatException("Gene summary export (.se) file in line "+in.getLineNumber()+ " wrong number of fields");
+					throw new FileFormatException("Gene category summary (.gce) file at line "+in.getLineNumber() +" wrong number of fields");
 				
 				String 	strID = tok.nextToken().trim();
 				if( strID.length() < 3 || !strID.startsWith("GO:") )
@@ -218,7 +245,7 @@ extends AbstractVennDataModel
 						keyName = tok.nextToken().trim();
 				
 				if( strID.length() < 4 )
-					throw new FileFormatException("Gene summary export (.se) file in line "+in.getLineNumber());
+					throw new FileFormatException("Gene category summary (.gce) file at line "+in.getLineNumber());
 				strID = strID.substring(3);
 				
 				int goID = 0;
@@ -228,7 +255,7 @@ extends AbstractVennDataModel
 				}
 				catch( NumberFormatException e )
 				{
-					throw new FileFormatException("Gene summary export (.se) file in line "+in.getLineNumber()+" illegal field value in first column");
+					throw new FileFormatException("Gene category summary (.gce) file in line "+in.getLineNumber()+" illegal field value in first column");
 				}
 				
 				Integer gval = (Integer)groupMap.get(new Integer(goID));
@@ -358,7 +385,8 @@ extends AbstractVennDataModel
 		
 		valid = true;
 		
-		fireChangeEvent();
+//		fireChangeEvent();
+		notifySucc();
 	}
     /* (non-Javadoc)
      * @see venn.AbstractVennDataModel#getGroupElements(int)

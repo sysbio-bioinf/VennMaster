@@ -5,11 +5,8 @@
 package venn.db;
 
 import java.util.BitSet;
-import java.util.Iterator;
-import java.util.LinkedList;
 
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import venn.event.IFilterChainSucc;
 
 
 /**
@@ -19,54 +16,35 @@ import javax.swing.event.ChangeListener;
 public abstract class AbstractVennDataModel 
 implements IVennDataModel
 {
-    private LinkedList dataModelListeners;
-    private boolean eventsActive = true;
+    private IFilterChainSucc	succ;
+    private boolean 			succIsFinal;
+
     
-    /**
-     * 
-     */
-    public AbstractVennDataModel() {
-
-        dataModelListeners = new LinkedList();
-    }
-
-    /* (non-Javadoc)
-     * @see venn.VennDataModelInterface#addVennDataModelListener(venn.VennDataModelListener)
-     */
-    public synchronized void addChangeListener(ChangeListener listener) 
-    {
-        if( listener != null )
-            dataModelListeners.add( listener );        
-    }
-
-    /* (non-Javadoc)
-     * @see venn.VennDataModelInterface#removeVennDataModelListener(venn.VennDataModelListener)
-     */
-    public void removeChangeListener(ChangeListener listener) 
-    {
-        dataModelListeners.remove( listener );
-
+    public synchronized void setSucc(IFilterChainSucc succ) {
+    	if (succIsFinal) {
+    		throw new IllegalStateException();
+    	}
+    	if (this.succ != null && succ != null) {
+    		throw new IllegalStateException(); // old successor must be removed first
+    	}
+    	this.succ = succ;
     }
     
-    public synchronized void setEventsActive( boolean eventsActive )
-    {
-        this.eventsActive = eventsActive;
+//    @Override
+    public synchronized void setSuccFinal() {
+    	succIsFinal = true;
     }
     
-	protected synchronized void fireChangeEvent()
-	{
-	    if( ! eventsActive )
-	        return;
-	    
-	    ChangeEvent event = new ChangeEvent(this);
-		
-		Iterator iter = dataModelListeners.iterator();
-		while(iter.hasNext())
-		{
-			((ChangeListener)iter.next()).stateChanged(event);
-		}
-	}
+//    @Override
+    public synchronized IFilterChainSucc getSucc() {
+    	return succ;
+    }
     
+    public synchronized void notifySucc() {
+    	if (succ != null) {
+    		succ.predChanged();
+    	}
+    }
 
     /* (non-Javadoc)
      * @see venn.VennDataModelInterface#getNumGroups()

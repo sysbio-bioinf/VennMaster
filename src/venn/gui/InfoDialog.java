@@ -16,7 +16,6 @@ import javax.swing.JDialog;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import venn.VennMaster;
 import venn.utility.SystemUtility;
 /**
  * @author mueller
@@ -60,8 +59,8 @@ implements ActionListener
 		};
         area.setOpaque(false);
 		area.setEditable(false);
-		area.setText("VennMaster "+VennMaster.VERSION_MAJOR+"."+VennMaster.VERSION_MINOR+"."+VennMaster.VERSION_SUB+
-                     "  ("+VennMaster.VERSION_DATE+")\n" +
+		area.setText("VennMaster "+venn.Constants.VERSION_MAJOR+"."+venn.Constants.VERSION_MINOR+"."+venn.Constants.VERSION_SUB+
+                     "  ("+venn.Constants.VERSION_DATE+")\n" +
 					 "Developed by Hans A. Kestler and Andre Mueller\n" +
 					 "\n"+
 					 "This product includes software developed by\n" +

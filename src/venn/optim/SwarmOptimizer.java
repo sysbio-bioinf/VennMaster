@@ -75,7 +75,7 @@ extends AbstractOptimizer
         if( !valid )
         {
             if( func == null )
-                throw new IllegalStateException("function must be set before calling setUp()");
+                throw new IllegalStateException("function must be set before calling validate()");
             
             particles = new Particle[params.numParticles];
             int iBest = 0;
@@ -97,7 +97,7 @@ extends AbstractOptimizer
         valid = false;
     }
        
-    protected void performOptimization()
+    protected synchronized void performOptimization()
     {
         validate();
         
@@ -391,14 +391,31 @@ extends AbstractOptimizer
             reflect         = true;
         }
         
-        public void check()
+        public boolean check()
         {
-            numParticles    = MathUtility.restrict(numParticles,1,1000);
-            cGlobal         = MathUtility.restrict(cGlobal,0.0,2.0);
-            cLocal          = MathUtility.restrict(cGlobal,0.0,2.0);
-            maxV            = MathUtility.restrict(maxV,1E-6,1.0);
-            maxIterations   = MathUtility.restrict(maxIterations,1,10000);
-            maxConstIterations = MathUtility.restrict(maxConstIterations,2,maxIterations);
+        	int oldint;
+        	double olddouble;
+        	boolean changed = false;
+        	
+        	oldint = numParticles;
+            if (oldint != (numParticles = MathUtility.restrict(numParticles,1,1000))) changed = true;
+            
+            olddouble = cGlobal;
+            if (olddouble != (cGlobal = MathUtility.restrict(cGlobal,0.0,2.0))) changed = true;
+            
+            olddouble = cLocal;
+            if (olddouble != (cLocal = MathUtility.restrict(cLocal,0.0,2.0))) changed = true;
+            
+            olddouble = maxV;
+            if (olddouble != (maxV = MathUtility.restrict(maxV,1E-6,1.0))) changed = true;
+            
+            oldint = maxIterations;
+            if (oldint != (maxIterations = MathUtility.restrict(maxIterations,1,10000))) changed = true;
+            
+            oldint = maxConstIterations;
+            if (oldint != (maxConstIterations = MathUtility.restrict(maxConstIterations,2,maxIterations))) changed = true;
+            
+            return ! changed;
         }
     }
 }

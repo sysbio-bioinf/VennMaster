@@ -4,15 +4,16 @@
  */
 package venn.db;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.BitSet;
-
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import java.util.TreeSet;
 
 import junit.framework.Assert;
-
+import venn.Constants;
+import venn.db.GoTree.WhichNode;
 import venn.utility.MathUtility;
 import venn.utility.SystemUtility;
 
@@ -22,7 +23,7 @@ import venn.utility.SystemUtility;
  *
  */
 public class GODistanceFilter 
-extends AbstractDataFilter implements Serializable, ChangeListener
+extends AbstractDataFilter implements Serializable
 {   
     /**
      * 
@@ -31,38 +32,104 @@ extends AbstractDataFilter implements Serializable, ChangeListener
     
     public static class Parameters implements Serializable
     {
+    	public enum FilterBy {P_VALUE, FDR, P_UNDER, P_OVER, P_CHANGE, FDR_UNDER, FDR_OVER, FDR_CHANGE;
+    		public static String string(FilterBy val) {
+    			switch (val) {
+    			case P_VALUE:
+    				if (true) return "max p-Value";
+    				break;
+    			case FDR:
+    				if (true) return "max FDR";
+    				break;
+    			case P_UNDER:
+    				if (true) return "pUnder";
+    				break;
+    			case P_OVER:
+    				if (true) return "pOver";
+    				break;
+    			case P_CHANGE:
+    				if (true) return "pChange";
+    				break;
+    			case FDR_UNDER:
+    				if (true) return "fdrUnder";
+    				break;
+    			case FDR_OVER:
+    				if (true) return "fdrOver";
+    				break;
+    			case FDR_CHANGE:
+    				if (true) return "fdrChange";
+    				break;
+    				default:
+    					if (true) throw new IllegalArgumentException();
+    				break;
+    			}
+    			throw new IllegalArgumentException();
+    		}
+    		
+    		public String string() {
+    			return string(this);
+    		}
+    	}
+    	
         /**
          * 
          */
-        private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 2L;
         
         public int      minTotal,       // min number of changes 
                         maxTotal;
-        public double   maxPValue,      // max p-Value
-                        maxFDR;         // max FDR
-
-		public int maxGroups;
+//        public double   maxPValue,      // max p-Value
+//                        maxFDR;         // max FDR
+        public double maxPFDR; // max p or fdr
+        
+//		public int maxGroups;
 
 		public int minDistance;
-        
+		
+		public FilterBy filterBy = FilterBy.P_CHANGE;
+		
         public Parameters()
         {
             minTotal    = 40;
             maxTotal    = 140;
-            maxPValue   = 0.05;
-            maxFDR      = 0.05;
-            maxGroups   = 10;
+//            maxPValue   = 0.05;
+//            maxFDR      = 0.05;
+            maxPFDR 	= 0.05;
+//            maxGroups   = 10;
             minDistance = 1;
         }
         
+        public boolean compare(Object obj) {
+        	if (obj == null) {
+        		return false;
+        	}
+        	if (! (obj instanceof Parameters)) {
+        		return false;
+        	}
+        	final Parameters other = (Parameters) obj;
+        	if  (minTotal != other.minTotal
+        			|| maxTotal != other.maxTotal
+//					|| maxPValue != other.maxPValue
+        			|| maxPFDR != other.maxPFDR
+        			|| filterBy != other.filterBy
+//        			|| maxGroups != other.maxGroups
+					|| minDistance != other.minDistance) {
+        		return false;
+        	}
+        	return true;
+        }
+        
+        @Override
         public String toString()
         {
             StringBuffer buf = new StringBuffer();
+
             buf.append("minTotal = " + minTotal+"\n");
             buf.append("maxTotal = " + maxTotal+"\n");
-            buf.append("maxPValue = " + maxPValue+"\n");
-            buf.append("maxFDR = " + maxFDR+"\n");
-            buf.append("maxGroups = " + maxGroups +"\n");
+
+            buf.append(filterBy.string() + " = " + maxPFDR+"\n");
+
+//            buf.append("maxGroups = " + maxGroups +"\n");
             buf.append("minDistance = " + minDistance +"\n");            
             return buf.toString();
         }
@@ -75,25 +142,38 @@ extends AbstractDataFilter implements Serializable, ChangeListener
             if( maxTotal < minTotal )
                 maxTotal = minTotal;
             
-            maxPValue = MathUtility.restrict(maxPValue,0.0,1.0);
-            maxFDR = MathUtility.restrict(maxFDR,0.0,1.0);
-            maxGroups = MathUtility.restrict(maxGroups,2,100);
+//            maxPValue = MathUtility.restrict(maxPValue,0.0,1.0);
+//            maxFDR = MathUtility.restrict(maxFDR,0.0,1.0);
+            if (filterBy == FilterBy.P_VALUE
+            		|| filterBy == FilterBy.P_UNDER
+            		|| filterBy == FilterBy.P_OVER
+            		|| filterBy == FilterBy.P_CHANGE) {
+            	maxPFDR = MathUtility.restrict(maxPFDR,0.0,1.0);
+            } else if (filterBy == FilterBy.FDR
+            		|| filterBy == FilterBy.FDR_UNDER
+            		|| filterBy == FilterBy.FDR_OVER
+            		|| filterBy == FilterBy.FDR_CHANGE) {
+            	maxPFDR = MathUtility.restrict(maxPFDR, 0.0, Double.MAX_VALUE);
+            } else {
+            	throw new IllegalStateException();
+            }
+//            maxGroups = MathUtility.restrict(maxGroups,2,100);
             minDistance = MathUtility.restrict(minDistance,1,100);
         }
     }    
     
     private Parameters params;
-    private IVennDataModel dataModel;
-    private BitSet groups;
-    private boolean valid;
-    private GoTree goTree;
+    private transient IVennDataModel dataModel;
+    private transient BitSet groups;
+//    private boolean valid;
+    private transient GoTree goTree;
    
     
-    public GODistanceFilter()
+    private GODistanceFilter()
     {
         params = new Parameters();
         groups = new BitSet();
-        valid = false;
+//        valid = false;
         goTree = null;
     }
     
@@ -101,26 +181,35 @@ extends AbstractDataFilter implements Serializable, ChangeListener
     {
     	this();
         this.goTree = goTree;
+        if (goTree == null) {
+        	throw new IllegalArgumentException("goTree must not be null");
+        }
     }
     
     public void setGoTree( GoTree goTree )
     {
     	this.goTree = goTree;
+        if (goTree == null) {
+        	throw new IllegalArgumentException("goTree must not be null");
+        }
+
+        if (dataModel != null) {
+        	validate();
+        	notifyUser();
+        }
     }
     
-    public boolean accepts( int nTotal, int nChange, double pValue, double FDR )
-    {
-        if( nTotal < params.minTotal || nTotal > params.maxTotal )
-            return false;
-            
-        if( pValue > params.maxPValue )
-            return false;
-        
-        if( FDR > params.maxFDR )
-            return false;
-            
-        return true;
-    }
+//    private boolean accepts( int nTotal, int nChange, double pValue )
+//    {
+//    	params.useFdr = false; // TODO
+//        if( nTotal < params.minTotal || nTotal > params.maxTotal )
+//            return false;
+//            
+//        if( pValue > params.maxPValue )
+//            return false;
+//        
+//        return true;
+//    }
         
     private void update() 
     {
@@ -139,26 +228,27 @@ extends AbstractDataFilter implements Serializable, ChangeListener
     	{
     		return;
     	}
-    	
+
     	// update standard filtering criteria
     	for( int i=0; i<n; ++i )
     	{
-    		GOCategoryProperties props = (GOCategoryProperties)dataModel.getGroupProperties(i);
+    		AbstractGOCategoryProperties props = (AbstractGOCategoryProperties)dataModel.getGroupProperties(i);
     		if( props != null )
     		{
-    			props.meanDist = -1;
-    			if( accepts(props.nTotal,props.nChange,props.pValue,props.FDR) )
-    			{
+    			props.setMeanDist(-1);
+
+    			if (filterCategory(props)) {
     				groups.set(i);
     			}
     		}
     	}
-    	
+
     	// distances
     	if( goTree == null )
     	{
     		System.out.println("no goTree available");
-    		return;
+    		throw new IllegalStateException("goTree must not be null");
+//    		return;
     	}
     	
     	int[][] dist = computeDistances();
@@ -189,19 +279,69 @@ extends AbstractDataFilter implements Serializable, ChangeListener
     	ii = 0;
     	for( int i = groups.nextSetBit(0); i >= 0; i = groups.nextSetBit(i+1) )
     	{
-    		GOCategoryProperties props = (GOCategoryProperties)dataModel.getGroupProperties(i);
+    		AbstractGOCategoryProperties props = (AbstractGOCategoryProperties)dataModel.getGroupProperties(i);
     		if( props != null )
     		{
-    			props.meanDist = 0.0;
-    			
-    			for( int jj=0; jj<dist.length; ++jj )
-    			{
-    				props.meanDist += dist[ii][jj];
+    			props.setMeanDist(0.0);
+
+    			if (groups.cardinality() >= 2) {
+    				for( int jj=0; jj<dist.length; ++jj )
+    				{
+    					props.setMeanDist(props.getMeanDist() + dist[ii][jj]);
+    				}
+    				props.setMeanDist(props.getMeanDist() / (double)(dist.length-1));
+    			} else {
+    				props.setMeanDist(1.0);
     			}
-    			props.meanDist /= (double)(dist.length-1);
     		}
     		++ii;
     	}
+    }
+    
+    private boolean filterCategory(AbstractGOCategoryProperties cat) {
+    	cat.setFilterBy(params.filterBy);
+
+    	if (! cat.checkRangeTotal(params.minTotal, params.maxTotal)) {
+    		return false;
+    	}
+    	
+    	if (cat.getPFDRValue() > params.maxPFDR) {
+    		return false;
+    	}
+    	
+    	return true;
+    }
+    
+    public int[] whichNTotalsOccur(boolean log) {
+    	TreeSet<Integer> nTotals = new TreeSet<Integer>();
+    	final int numGroups = dataModel.getNumGroups();
+    	int totalMax = 0;
+    	for (int i = 0; i < numGroups; i++) {
+    		AbstractGOCategoryProperties property = (AbstractGOCategoryProperties) dataModel.getGroupProperties(i);
+    		
+    		if (property.getNTotal() > totalMax) {
+    			totalMax = property.getNTotal();
+    		}
+
+    		if (log) {
+    			nTotals.add(property.getNTotalLog());
+    		} else {
+    			nTotals.add(property.getNTotal());
+    		}
+    	}
+    	if (log
+				&& Math.log(totalMax) / Math.log(Constants.WHICH_NTOTAL_LOG)
+				> Math.floor(Math.log(totalMax) / Math.log(Constants.WHICH_NTOTAL_LOG))) {
+			nTotals.add(AbstractGOCategoryProperties.log(totalMax) + 1);
+		}
+
+    	Object[] nTotalsArr = nTotals.toArray();
+    	int[] res = new int[nTotalsArr.length];
+    	for (int i = 0; i < nTotalsArr.length; i++) {
+    		res[i] = (Integer) nTotalsArr[i];
+    	}
+
+    	return res;
     }
     
 //    private BitSet findMaxDistSubset( int[][] dist, int m ) 
@@ -232,12 +372,18 @@ extends AbstractDataFilter implements Serializable, ChangeListener
 //    	return set;
 //	}
 
-    private BitSet findMaxDistSubset( int[][] dist, int m ) 
+    private BitSet findMaxDistSubset( int[][] dist, final int minDist ) {
+    	return findMaxDistSubset(dist, minDist, groups);
+    }
+    
+    
+    private BitSet findMaxDistSubset( int[][] dist, final int minDist, BitSet groups0 ) 
     {
     	Assert.assertNotNull( dist );
-    	Assert.assertTrue( m >= 1 );
+    	Assert.assertTrue( minDist >= 1 );
     	BitSet set = new BitSet();
-    	int n = dist.length;
+    	final int n = dist.length;
+    	Assert.assertEquals(n, groups0.cardinality());
     	
     	// compute initial row sum
     	// int[] 	rowSum = rowSum( dist );
@@ -250,14 +396,14 @@ extends AbstractDataFilter implements Serializable, ChangeListener
     		// find optimum index
         	int i = findMinimum( dist[k], set );
         	int idx = findMinimumIndex( dist[k], set );
-        	
+
         	// eliminate one of nodes if distance < minDist
-        	if(i < m)
+        	if(i < minDist)
         	{
             	int ll = 0,
             	a=0,
             	b=0;
-            	for( int l = groups.nextSetBit(0); l >= 0; l = groups.nextSetBit(l+1) )
+            	for( int l = groups0.nextSetBit(0); l >= 0; l = groups0.nextSetBit(l+1) )
             	{
             		if(ll==k)
             		{
@@ -270,11 +416,15 @@ extends AbstractDataFilter implements Serializable, ChangeListener
             		}
             		ll = ll+1;
             	}
-    			int eli = goHigherNode(a,b);
-        		for( int j=0; j<n; ++j )
+            	assert ll > 0;
+            	assert a != b;
+            	
+    			WhichNode eli = goHigherNode(a,b);
+
+    			for( int j=0; j<n; ++j )
         		{
-        			// node to eliminate is located higher in the tree (for distance = 1 this is parent node)
-        			if(eli==1)
+        			// node to eliminate is the one located higher in the tree (for distance = 1 this is parent node)
+        			if(eli==WhichNode.NODE1)
         			{
         				dist[k][j] = Integer.MAX_VALUE;
         				dist[j][k] = Integer.MAX_VALUE;
@@ -285,7 +435,7 @@ extends AbstractDataFilter implements Serializable, ChangeListener
         				dist[idx][j] = Integer.MAX_VALUE;
         			}
         		}
-        		if(eli==1)
+        		if(eli==WhichNode.NODE1)
         			set.clear(k);
         		else
         			set.clear(idx);
@@ -378,42 +528,46 @@ extends AbstractDataFilter implements Serializable, ChangeListener
 
 	public int goDist( int i, int j )
     {
-    	GOCategoryProperties props1 = (GOCategoryProperties)dataModel.getGroupProperties(i),
-    						 props2 = (GOCategoryProperties)dataModel.getGroupProperties(j);
+    	AbstractGOCategoryProperties props1 = (AbstractGOCategoryProperties)dataModel.getGroupProperties(i),
+    						 props2 = (AbstractGOCategoryProperties)dataModel.getGroupProperties(j);
     	if( (props1 == null) || (props2 == null ) )
     	{
     		return -1;
     	}
-    	long goID1 = props1.ID,
-    		 goID2 = props2.ID;
+    	long goID1 = props1.getID(),
+    		 goID2 = props2.getID();
     	
     	// return goTree.findMinDistanceToSharedParent(goID1, goID2);
     	return goTree.findDistanceBetweenNodes(goID1, goID2);
     }
 	
-	public int goHigherNode(int i, int j)
+	public WhichNode goHigherNode(int i, int j)
 	{
-		GOCategoryProperties props1 = (GOCategoryProperties)dataModel.getGroupProperties(i),
-		 					 props2 = (GOCategoryProperties)dataModel.getGroupProperties(j);
+		AbstractGOCategoryProperties props1 = (AbstractGOCategoryProperties)dataModel.getGroupProperties(i),
+		 					 props2 = (AbstractGOCategoryProperties)dataModel.getGroupProperties(j);
 		if( (props1 == null) || (props2 == null ) )
 		{
-			return -1;
+			return WhichNode.NONE;
 		}
-		long goID1 = props1.ID,
-		goID2 = props2.ID;
+		long goID1 = props1.getID(),
+		goID2 = props2.getID();
 
 		return goTree.findLessDistantNodeToSharedParent(goID1, goID2);
 	}
     
-    public int[][] computeDistances()
+	private int[][] computeDistances() {
+		return computeDistances(groups);
+	}
+	
+    private int[][] computeDistances(BitSet groups0)
     {
-    	if( groups.cardinality() < 2 )
+    	if( groups0.cardinality() < 2 )
     	{
-    		System.err.println("updateDistances() not enough groups");
+//    		System.err.println("updateDistances() not enough groups");
     		return null;
     	}
     	
-    	int n = groups.cardinality();
+    	int n = groups0.cardinality();
     	
     	int[][] dist = new int[n][n];
     	for( int i=0; i<n; ++i )
@@ -426,11 +580,11 @@ extends AbstractDataFilter implements Serializable, ChangeListener
     	
     	// Find pairwise minimum Distances 
     	int ii = 0;
-    	for( int i = groups.nextSetBit(0); i >= 0; i = groups.nextSetBit(i+1) ) 
+    	for( int i = groups0.nextSetBit(0); i >= 0; i = groups0.nextSetBit(i+1) ) 
     	{
     		// int jj = 0; BUG! JKraus 15.05.2007
     		int jj = ii;
-    		for( int j = groups.nextSetBit(i); j >= 0; j = groups.nextSetBit(j+1) ) 
+    		for( int j = groups0.nextSetBit(i); j >= 0; j = groups0.nextSetBit(j+1) ) 
 			{
 				if( i < j )
 				{
@@ -444,78 +598,94 @@ extends AbstractDataFilter implements Serializable, ChangeListener
     	return dist;
     }
     
-    private void validate( IVennDataModel model )
-    {
-    	if( dataModel != model )
-    	{
-    		if( dataModel != null )
-    		{
-    			dataModel.removeChangeListener( this );
-    		}
-    		dataModel = model;
-    		dataModel.addChangeListener( this );
-    		valid = false;
-    	}
-    	if( !valid )
-    	{
-    		update();
-    		valid = true;
-    	}
+    private void validate() {
+    	update();
+//    	valid = true;
     }
     
-    private void invalidate()
-    {
-    	if( valid )
-    	{
-    		valid = false;
-    		// fireChangeEvent();
-    	}
-    }
-                
-   
     public void setParameters(Parameters params)
     {
-    	valid = false;
-        this.params = params;
+//    	valid = false;
+    	this.params = params;
         this.params.check();
-        fireChangeEvent();
+
+        if (dataModel != null) {
+        	validate();
+        	notifyUser();
+        }
     }
     
     public Parameters getParameters()
     {
         return params;
     }
-    
-    
-
-    public boolean accept(IVennDataModel model, int groupID)
-    {       
-        validate( model );
-        if( goTree == null )
-        	return true;
         
-        return groups.get(groupID);
+	// assumption: model has changed if this function is called
+	// (either new object or same object and new state)
+	// and if model has changed this function must be called
+    //  @Override
+    public void setDataModel(IVennDataModel model) {
+    	dataModel = model;
+
+    	validate();
+    	notifyUser();
     }
     
+    @Override
+    public boolean accept(int groupID) {
+//    	if( goTree == null )
+//    		return true;
+
+//    	if (! valid) {
+//    		validate();
+//    	}
+    	return groups.get(groupID);
+    }
+    
+//    @Override
+//    public Object clone()
+//    {
+//        // SystemUtility.serialClone(this);
+////    	System.out.println("clone");
+//    	GODistanceFilter filter = new GODistanceFilter();
+//    	filter.setParameters((Parameters) SystemUtility.serialClone(params));
+//    	filter.dataModel = dataModel;
+//    	filter.goTree = goTree;
+//    	return filter;
+//    }
+    
+    @Override
     public Object clone()
     {
         // SystemUtility.serialClone(this);
-    	System.out.println("clone");
-    	GODistanceFilter filter = new GODistanceFilter();
-    	filter.setParameters((Parameters) SystemUtility.serialClone(params));
+//    	System.out.println("clone");
+    	GODistanceFilter filter = (GODistanceFilter) super.clone();
+//    	filter.setParameters((Parameters) SystemUtility.serialClone(params));
+    	filter.params = (GODistanceFilter.Parameters) SystemUtility.serialClone(params);
+    	// ! dataModel not copied
     	filter.dataModel = dataModel;
     	filter.goTree = goTree;
+    	filter.groups = (BitSet) groups.clone();
     	return filter;
     }
     
+    @Override
     public String toString()
     {
         
         return "GODistanceFilter\n"+params.toString();
     }
+    
 
-	public void stateChanged(ChangeEvent arg0) 
-	{
-		invalidate();
+
+//  only for junit tests
+    
+    public int[][] jutComputeDistances(BitSet groups0) {
+		return computeDistances(groups0);
 	}
+	
+    public BitSet jutFindMaxDistSubset( int[][] dist, final int m, BitSet groups0 ) {
+    	return findMaxDistSubset(dist, m, groups0);
+    }
+
 }

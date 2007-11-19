@@ -7,6 +7,7 @@ import java.io.Reader;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -32,6 +33,10 @@ public class GoTree
 	}
 */
 	
+	public enum WhichNode {
+		NONE, NODE1, NODE2
+	}
+	
 	private Map<Long, Set<Long>> parentOf;
 	
 	public void clear()
@@ -55,9 +60,10 @@ public class GoTree
 
 		LineNumberReader in = new LineNumberReader(reader);
 
-		while( in.ready() )
+		String line;
+		while( (line = in.readLine()) != null )
 		{
-			String line = in.readLine().trim();
+			line = line.trim();
 
 			if( line.length() > 0 )
 			{
@@ -155,6 +161,60 @@ public class GoTree
 		
 		return L;
 	}
+
+	public void tt() {
+		Random r1 = new Random();
+		int ind = r1.nextInt(parentOf.size());
+		Set<Long> already = new TreeSet<Long>();
+		for (ind = 0; ind < parentOf.size(); ind++) {
+			Long node = (Long) parentOf.keySet().toArray()[ind];
+			if (already.contains(node)) continue;
+			already.clear();
+			System.err.println("tt: " + ind + " " + node + " " + tt_pach(node, already).size() + " " + already.size());
+		}
+	}
+	
+	private Set<Long> tt_pach(Long node, Set<Long> already) {
+		Set<Long> res = new TreeSet<Long>();
+//		if (already.size() % 100 == 0) System.err.println(already.size());
+		if (already.contains(node)) {
+			return res;
+		}
+		already.add(node);
+		final Set<Long> parents = parentOf.get(node);
+		final Set<Long> childs = tt_ch(node);
+//		System.err.println("tt_pach: " + node + " " + parents + " " + childs);
+		if ((parents == null || parents.size() == 0) && childs.size() == 0) {
+			return res;
+		}
+		if (parents != null) {
+			res.addAll(parents);
+			for (Long p : parents) {
+				res.addAll(tt_pach(p, already));
+			}
+		}
+		res.addAll(childs);
+		for (Long ch : childs) {
+			res.addAll(tt_pach(ch, already));
+		}
+		return res;
+	}
+	
+	private Set<Long> tt_ch(Long node) {
+		Set<Long> res = new TreeSet<Long>();
+		
+		for (Long key : parentOf.keySet()) {
+			Set<Long> vals = parentOf.get(key);
+			for (Long val : vals) {
+				if (val.equals(node)) {
+					res.add(key);
+					break;
+				}
+			}
+		}
+//		System.err.println("tt_ch: node: " + node + ": " + res);
+		return res;
+	}
 	
 	private boolean setIntersects( Set<Long> S1, Set<Long> S2 )
 	{
@@ -230,16 +290,24 @@ public class GoTree
 		return d;
 	}
 	
-	public int findLessDistantNodeToSharedParent( long goID1, long goID2 )
+	/**
+	 * 
+	 * @param goID1 node1
+	 * @param goID2 node2
+	 * @return WhichNode.NODE1 if goID1 is nearer to shared parent
+	 * WhichNode.NODE2 if goID2 is nearer to shared parent
+	 * shared parent can be node1 or node2
+	 */
+	public WhichNode findLessDistantNodeToSharedParent( long goID1, long goID2 )
 	{
 		int d = Integer.MAX_VALUE;
-		int didx = 1;
+		WhichNode didx = WhichNode.NODE1;
 		List<Set<Long>> path1 = getPathTo( goID1 );
 		List<Set<Long>> path2 = getPathTo( goID2 );
 		
 		if( (path1==null) || (path2==null) )
 		{
-			return -1;
+			return WhichNode.NONE;
 		}
 		
 		// find shared parent with minimum distance
@@ -254,14 +322,13 @@ public class GoTree
 					{
 						d = dd;
 						if(i<=j)
-							didx=1;
+							didx=WhichNode.NODE1;
 						else
-							didx=2;
+							didx=WhichNode.NODE2;
 					}
 				}
 			}
 		}
-		
 		return didx;
 	}		
 	

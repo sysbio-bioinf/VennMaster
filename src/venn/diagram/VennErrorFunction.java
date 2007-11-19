@@ -581,17 +581,40 @@ implements IFunction, ChangeListener
         /**
          * 
          */
-        public void check()
+        public boolean check()
         {
-            errorFunc = MathUtility.restrict(errorFunc,0,1);
-            maxIntersections = MathUtility.restrict(maxIntersections,2,20);
-            eta = MathUtility.restrict(eta,0.0,10000.0);
-            alpha = MathUtility.restrict(alpha,0.0,10000.0);
-            beta = MathUtility.restrict(beta,0.0,10000.0);
-            gamma = MathUtility.restrict(gamma,0.0,10000.0);
-            delta = MathUtility.restrict(delta,0,10000.0);
-            minScale = MathUtility.restrict(minScale,0.5,1.0);
-            maxScale = MathUtility.restrict(maxScale,1.0,1.5);
+        	int oldint;
+        	double olddouble;
+        	boolean changed = false;
+        	
+            oldint = errorFunc;
+        	if (oldint != (errorFunc = MathUtility.restrict(errorFunc,0,1))) changed = true;
+        	
+        	oldint = maxIntersections;
+            if (oldint != (maxIntersections = MathUtility.restrict(maxIntersections,2,20))) changed = true;
+            
+            olddouble = eta;
+            if (olddouble != (eta = MathUtility.restrict(eta,0.0,10000.0))) changed = true;
+            
+            olddouble = alpha;
+            if (olddouble != (alpha = MathUtility.restrict(alpha,0.0,10000.0))) changed = true;
+            
+            olddouble = beta;
+            if (olddouble != (beta = MathUtility.restrict(beta,0.0,10000.0))) changed = true;
+            
+            olddouble = gamma;
+            if (olddouble != (gamma = MathUtility.restrict(gamma,0.0,10000.0))) changed = true;
+            
+            olddouble = delta;
+            if (olddouble != (delta = MathUtility.restrict(delta,0,10000.0))) changed = true;
+            
+            olddouble = minScale;
+            if (olddouble != (minScale = MathUtility.restrict(minScale,0.5,1.0))) changed = true;
+            
+            olddouble = maxScale;
+            if (olddouble != (maxScale = MathUtility.restrict(maxScale,1.0,1.5))) changed = true;
+            
+            return ! changed;
         }
     }    
 }

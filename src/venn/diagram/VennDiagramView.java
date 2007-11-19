@@ -25,6 +25,7 @@ import java.util.BitSet;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JComponent;
@@ -43,6 +44,7 @@ import venn.geometry.FPoint;
 import venn.geometry.FRectangle;
 import venn.geometry.FSegment;
 import venn.geometry.ITransformer;
+import venn.gui.HasLabelsListener;
 
 
 /**
@@ -78,6 +80,7 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
     private Point               popupPosition;
     private BufferedImage       paintBuffer;
     private boolean viewChanged;
+    private List<HasLabelsListener> hasLabelsListeners;
     
     public VennDiagramView( VennArrangement arrangement, int maxLevel )
     {
@@ -85,6 +88,7 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         viewChanged = true;
         
         changeListeners = new LinkedList();
+        hasLabelsListeners = new LinkedList<HasLabelsListener>();
         this.arrangement = null;
         transformer = new AffineTransformer();
         tree = new IntersectionTree(maxLevel);
@@ -153,11 +157,35 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         
     }
     
-    protected ITransformer getTransformer()
+    public ITransformer getTransformer()
     {
         return transformer;
     }
     
+    public void labelsSetTransformerAndListeners() {
+    	Component[] comps = getComponents();
+    	for (Component comp : comps) {
+    		if (comp instanceof DragLabel) {
+    			DragLabel label = (DragLabel) comp;
+    			label.setTransformer(getTransformer());
+    			assert label.getMouseListeners().length == 0;
+    			label.addMouseListener(this);
+    			assert label.getMouseMotionListeners().length == 0;
+    			label.addMouseMotionListener(this);
+    		}
+    	}
+    }
+    
+    public void removeLabelListeners() {
+    	Component[] comps = getComponents();
+    	for (Component comp : comps) {
+    		if (comp instanceof DragLabel) {
+    			DragLabel label = (DragLabel) comp;
+                label.removeMouseListener(this);
+                label.removeMouseMotionListener(this);
+    		}
+    	}
+    }
     
     /**
      * Fast paint for drag operations.
@@ -364,9 +392,8 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
             }
         }
     }
-    
-    
-    public void paintComponent( Graphics graphics )
+        
+    public void paintComponent( Graphics graphics, ITransformer itrans )
     {
         if( !hasViewChanged() && isDoubleBuffered() )
         {
@@ -387,11 +414,11 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         
         if( dragging )
         {
-            draftPaint(g,getTransformer());
+            draftPaint(g,itrans);
         }
         else
         {   // full paint
-            directPaint(g,getTransformer());  // show venn objects
+            directPaint(g,itrans);  // show venn objects
             drawLineConnectors(g);
             paintChildren(g);               // show labels
         }
@@ -409,7 +436,10 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         viewChanged = false;
     }
 
-
+    public void paintComponent(Graphics graphics) {
+    	paintComponent(graphics, getTransformer());
+    }
+    
     public boolean hasViewChanged() 
     {
         if( paintBuffer == null || viewChanged )
@@ -856,6 +886,7 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         {
             VennDiagramView v = (VennDiagramView)event.getSource();
             v.selectObject(event.getPoint(),event.isControlDown(),event.isShiftDown(),event.isAltDown());
+assert v == this;
             return;
         }
         
@@ -1153,6 +1184,7 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
                 label.addMouseListener(this);
                 label.addMouseMotionListener(this);
                 add(label);
+                notifyHasLabelsChanged();
                 invalidateView();
                 repaint();
             }           
@@ -1165,6 +1197,7 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
             {
                 remove(lastLabel);
                 lastLabel = null;
+                notifyHasLabelsChanged();
                 invalidateView();
                 repaint();
             }
@@ -1193,6 +1226,7 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
     public void removeLabels() 
     {
         removeAll();
+        notifyHasLabelsChanged();
         invalidateView();
         repaint();
     }
@@ -1212,4 +1246,34 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         }
         */
     }
+    
+    public boolean hasLabels() {
+    	for (Component comp : getComponents()) {
+    		if (comp instanceof DragLabel) {
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+    
+    public synchronized void addHasLabelsListener(HasLabelsListener listener) {
+    	if (hasLabelsListeners.contains(listener)) {
+    		throw new IllegalStateException();
+    	}
+    	hasLabelsListeners.add(listener);
+    }
+    
+    public synchronized void removeHasLabelsListener(HasLabelsListener listener) {
+    	if (! hasLabelsListeners.contains(listener)) {
+    		throw new IllegalStateException();
+    	}
+    	hasLabelsListeners.remove(listener);
+    }
+    
+    private synchronized void notifyHasLabelsChanged() {
+    	for (HasLabelsListener listener : hasLabelsListeners) {
+    		listener.hasLabelsChanged();
+    	}
+    }
+    
 }

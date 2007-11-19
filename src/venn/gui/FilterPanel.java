@@ -6,6 +6,7 @@ package venn.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,19 +15,37 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.DecimalFormat;
 import java.text.ParseException;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Set;
 
 import javax.swing.JButton;
-import javax.swing.JComponent;
+import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import venn.AllParameters;
+import venn.Constants;
+import venn.db.AbstractGOCategoryProperties;
+import venn.db.GOCategoryProperties1p;
+import venn.db.GOCategoryProperties1p1fdr;
+import venn.db.GOCategoryProperties3p;
+import venn.db.GOCategoryProperties3p3fdr;
 import venn.db.GODistanceFilter;
+import venn.db.GoTree;
+import venn.db.IVennDataModel;
 import venn.db.VennFilteredDataModel;
+import venn.db.GODistanceFilter.Parameters.FilterBy;
+import venn.event.IFilterChainSucc;
+import venn.utility.SystemUtility;
 
 
 /**
@@ -38,8 +57,9 @@ import venn.db.VennFilteredDataModel;
  *
  */
 public class FilterPanel extends JPanel
-implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyChangeListener, ChangeListener
-{
+//implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyChangeListener, ChangeListener
+		implements java.awt.event.ActionListener, java.awt.event.KeyListener,
+		PropertyChangeListener, IFilterChainSucc, ChangeListener {
     /**
      * 
      */
@@ -47,109 +67,125 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
 
     private LinkedList<ActionListener> actionListeners;
     
-    private JFormattedTextField maxPValue,
-                                maxFDR,
-                                maxTotal,
-                                minTotal,
-                                numCategories,
-                                numElements,
-                                numFilteredCategories,
-                                numFilteredElements,
-                                minDistance,
-                                maxGroups;
+    private JComboBox maxPFDRComboBox;
     
-    private LinkedList<JComponent>          fields;
+    private JSpinner  	maxPFDR,
+    					minTotal,
+    					maxTotal,
+    					minDistance;
+    
+    private SpinnerModel 	maxPFDRSpinnerModel,
+    						minTotalSpinnerModel,
+    						maxTotalSpinnerModel,
+    						minDistanceSpinnerModel;
+    
+    private JFormattedTextField numCategories,
+    							numElements,
+    							numFilteredCategories,
+    							numFilteredElements;
+
+    private JButton resetButton;
+    
+    private JLabel 	minTotalLabel,
+    				maxTotalLabel;
+
+//    private LinkedList<JComponent>          fields;
     
     private VennFilteredDataModel   dataModel;
+    private IVennDataModel   		origDataModel;
 
-
-    private boolean checking;
-
-    private int updating;
-
-	private boolean pValueMode;
-
-	private JLabel maxFDRlabel;
+    private GODistanceFilter 	  filterToUse;
+    private VennFilteredDataModel modelToUse;
     
+    private GoTree goTree;
     
+    private boolean listeningOff;
     
-    public FilterPanel()
+    private AllParameters params;
+    
+    private String floatFormatString;
+
+    
+    public FilterPanel(GoTree goTree)
     {
         //super(new GridLayout(2,1));
         super( new BorderLayout() );
         
+        this.goTree = goTree;
+        
         JPanel panel = new JPanel();
         
-        panel.setLayout(new GridLayout(11,2));
+        GridLayout gridLayout = new GridLayout(8,2);
+        panel.setLayout(gridLayout);
         
-        updating = 0;
-        checking = false;
-        fields = new LinkedList<JComponent>();
         actionListeners = new LinkedList<ActionListener>();
         
-        DecimalFormat floatFormat = new DecimalFormat("0.0000"),
-                        intFormat = new DecimalFormat("0");        
+        floatFormatString = "0.0000";
+        String intFormatString   = "0";
         
         //setMinimumSize(new Dimension(getWidth(),200));
         
-        panel.add(new JLabel("max p-Value"));
-        maxPValue = new JFormattedTextField(floatFormat);
-        fields.add(maxPValue);
-        panel.add(maxPValue);
         
-        panel.add(maxFDRlabel = new JLabel("max FDR"));
-        maxFDR = new JFormattedTextField(floatFormat);
-        fields.add(maxFDR);
-        panel.add(maxFDR);
 
-        panel.add(new JLabel("min total"));
-        minTotal = new JFormattedTextField(intFormat);
-        fields.add(minTotal);
+        
+        maxPFDRComboBox = new JComboBox();
+        maxPFDRComboBox.setEditable(false);
+        panel.add(maxPFDRComboBox);
+        
+        maxPFDRSpinnerModel = new DoubleArraySpinnerModel();
+        maxPFDR = new JSpinner(maxPFDRSpinnerModel);
+        maxPFDR.setEditor(new JSpinner.NumberEditor(maxPFDR, floatFormatString));
+        maxPFDRSpinnerModel.addChangeListener(this);
+        panel.add(maxPFDR);
+
+        minTotalLabel = new JLabel();
+//        panel.add(new JLabel("min total"));
+        panel.add(minTotalLabel);
+        minTotalSpinnerModel = new DoubleArraySpinnerModel();
+        minTotal = new JSpinner(minTotalSpinnerModel);
+        minTotal.setEditor(new JSpinner.NumberEditor(minTotal, intFormatString));
+        minTotalSpinnerModel.addChangeListener(this);
         panel.add(minTotal);
 
-        panel.add(new JLabel("max total"));
-        maxTotal = new JFormattedTextField(intFormat);
-        fields.add(maxTotal);
+        maxTotalLabel = new JLabel();
+//        panel.add(new JLabel("max total"));
+        panel.add(maxTotalLabel);
+        maxTotalSpinnerModel = new DoubleArraySpinnerModel();
+        maxTotal = new JSpinner(maxTotalSpinnerModel);
+        maxTotal.setEditor(new JSpinner.NumberEditor(maxTotal, intFormatString));
+        maxTotalSpinnerModel.addChangeListener(this);
         panel.add(maxTotal);
         
         
         panel.add(new JLabel("min distance"));
-        minDistance = new JFormattedTextField(intFormat);
-        fields.add(minDistance);
+        minDistanceSpinnerModel = new SpinnerNumberModel(1, 1, Integer.MAX_VALUE, 1);
+        minDistance = new JSpinner(minDistanceSpinnerModel);
+        minDistance.setEditor(new JSpinner.NumberEditor(minDistance, intFormatString));
+        minDistance.addChangeListener(this);
         panel.add(minDistance);
-        // minDistance.setVisible( false ); // TODO
-        
-        panel.add(new JLabel("max groups"));
-        maxGroups = new JFormattedTextField(intFormat);
-        fields.add(maxGroups);
-        panel.add(maxGroups);        
-        
-    
+                
+
         panel.add(new JLabel("#categories"));
-        numCategories = new JFormattedTextField(intFormat);
+        numCategories = new JFormattedTextField(new DecimalFormat(intFormatString));
         numCategories.setEditable(false);
-        fields.add(numCategories);
         panel.add(numCategories);
         
-        
         panel.add(new JLabel("#elements"));
-        numElements = new JFormattedTextField(intFormat);
+        numElements = new JFormattedTextField(new DecimalFormat(intFormatString));
         numElements.setEditable(false);
-        fields.add(numElements);
         panel.add(numElements);
         
 
         panel.add(new JLabel("#filtered categories"));
-        numFilteredCategories = new JFormattedTextField(intFormat);
+        numFilteredCategories = new JFormattedTextField(new DecimalFormat(intFormatString));
         numFilteredCategories.setEditable(false);
-        fields.add(numFilteredCategories);
+        numFilteredCategories.setFont(numFilteredCategories.getFont().deriveFont(Font.BOLD));
         panel.add(numFilteredCategories);
         
-        
         panel.add(new JLabel("#filtered elements"));
-        numFilteredElements = new JFormattedTextField(intFormat);
+        numFilteredElements = new JFormattedTextField(new DecimalFormat(intFormatString));
         numFilteredElements.setEditable(false);
-        fields.add(numFilteredElements);
+        numFilteredElements.setFont(numFilteredElements.getFont().deriveFont(Font.BOLD));
         panel.add(numFilteredElements);
         
         add(panel,BorderLayout.NORTH);
@@ -175,40 +211,110 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         panel.add(button);
 
         
-        button = new JButton("reset");
-        button.setActionCommand("reset");
-        button.addActionListener(this);
-        panel.add(button);
+        resetButton = new JButton("reset");
+        resetButton.setActionCommand("reset");
+        resetButton.addActionListener(this);
+        panel.add(resetButton);
         
         add( panel, BorderLayout.SOUTH );
-        
-        pValueMode = false;
-        updateControls();
-
-        //
-        addListeners();
     }
    
-    
-    public void setPValueMode( boolean active )
-    {
-    	if( pValueMode != active )
-    	{
-    		pValueMode = active;
-    		updateControls();
+    public void setParameters(AllParameters params) {
+    	if (dataModel != null && params.logTotals != this.params.logTotals) {
+    		GODistanceFilter.Parameters filterParameters = getParameters();
+    		this.params = params;
+            setParameters(filterParameters);
+    		update();
     	}
-    }
+    	this.params = params;
 
-    private void addListeners()
-    {
-        Iterator iter = fields.iterator();
-        
-        while(iter.hasNext())
-        {
-            JComponent comp = (JComponent)iter.next();
-            comp.addKeyListener(this);
-            comp.addPropertyChangeListener(this);   
-        }
+    	if (params.logTotals) {
+    		minTotalLabel.setText("min total (log" + Constants.WHICH_NTOTAL_LOG + ")");
+    		maxTotalLabel.setText("max total (log" + Constants.WHICH_NTOTAL_LOG + ")");
+    	} else {
+    		minTotalLabel.setText("min total");
+    		maxTotalLabel.setText("max total");
+    	}
+    	if (dataModel != null) {
+    		updateMinMaxTotalSpinnerData();
+    	}
+
+    	updateControls(); // perhaps maxCategories changed
+    }
+    
+    private void makeComboBox(boolean pValue, boolean fdr,
+    		boolean pUnder, boolean pOver, boolean pChange,
+    		boolean fdrUnder, boolean fdrOver, boolean fdrChange) {
+    	
+    	maxPFDRComboBox.removeActionListener(this);
+    	maxPFDRComboBox.removeAllItems();
+    	
+    	if (pValue) {
+    		if (pUnder || pOver || pChange || fdrUnder || fdrOver || fdrChange) {
+    			throw new IllegalArgumentException();
+    		}
+
+    		maxPFDRComboBox.addItem(new FilterByEnumWrapper(FilterBy.P_VALUE));
+    	}
+
+    	if (fdr) {
+    		if (pUnder || pOver || pChange || fdrUnder || fdrOver || fdrChange) {
+    			throw new IllegalArgumentException();
+    		}
+    		
+    		maxPFDRComboBox.addItem(new FilterByEnumWrapper(FilterBy.FDR));
+    	}
+    	
+    	if (pUnder) {
+    		if (pValue || fdr) {
+    			throw new IllegalArgumentException();
+    		}
+    		
+    		maxPFDRComboBox.addItem(new FilterByEnumWrapper(FilterBy.P_UNDER));
+    	}
+    	
+    	if (pOver) {
+    		if (pValue || fdr) {
+    			throw new IllegalArgumentException();
+    		}
+    		
+    		maxPFDRComboBox.addItem(new FilterByEnumWrapper(FilterBy.P_OVER));
+    	}
+    	
+    	if (pChange) {
+    		if (pValue || fdr) {
+    			throw new IllegalArgumentException();
+    		}
+    		
+    		maxPFDRComboBox.addItem(new FilterByEnumWrapper(FilterBy.P_CHANGE));
+    	}
+    	
+    	if (fdrUnder) {
+    		if (pValue || fdr) {
+    			throw new IllegalArgumentException();
+    		}
+    		
+    		maxPFDRComboBox.addItem(new FilterByEnumWrapper(FilterBy.FDR_UNDER));
+    	}
+    	
+    	if (fdrOver) {
+    		if (pValue || fdr) {
+    			throw new IllegalArgumentException();
+    		}
+    		
+    		maxPFDRComboBox.addItem(new FilterByEnumWrapper(FilterBy.FDR_OVER));
+    	}
+    	
+    	if (fdrChange) {
+    		if (pValue || fdr) {
+    			throw new IllegalArgumentException();
+    		}
+    		
+    		maxPFDRComboBox.addItem(new FilterByEnumWrapper(FilterBy.FDR_CHANGE));
+    	}
+    	
+    	maxPFDRComboBox.addActionListener(this);
+    	
     }
     
     public void addActionListener( ActionListener listener )
@@ -227,97 +333,68 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         }
     }
     
-    public void check()
+    private void setParameters(GODistanceFilter.Parameters param)
     {
-        if( checking )
-            return;
-        
-        checking = true;
-        GODistanceFilter.Parameters params = getParameters();
-        params.check();
-        setParameters(params);
-        checking = false;
-    }
-    
-    
-    
-    public void setValues( int nCategories, int nElements, int nFilteredCategories, int nFilteredElements )
-    {
-        numCategories.setValue(new Integer(nCategories));
-        numElements.setValue(new Integer(nElements));
-        numFilteredCategories.setValue(new Integer(nFilteredCategories));
-        numFilteredElements.setValue(new Integer(nFilteredElements));
-    }
-    
-    public void setParameters(GODistanceFilter.Parameters param)
-    {
-        maxPValue.setValue(new Double(param.maxPValue));
-        maxFDR.setValue(new Double(param.maxFDR));
-        maxTotal.setValue(new Integer(param.maxTotal));
-        minTotal.setValue(new Integer(param.minTotal));
+    	listeningOff = true;
+    	maxPFDR.setValue(param.maxPFDR);
+    	
+    	// select correct combo box item for p/fdr
+    	boolean found = false;
+    	for (int i = 0; i < maxPFDRComboBox.getItemCount(); i++) {
+			FilterByEnumWrapper item = (FilterByEnumWrapper) maxPFDRComboBox.getItemAt(i);
+			if (item.getFilterBy() == param.filterBy) {
+				assert ! found;
+				maxPFDRComboBox.setSelectedIndex(i);
+				found = true;
+			}
+		}
+    	if (! found) {
+    		throw new IllegalStateException();
+    	}
+    	
+    	if (params.logTotals) {
+    		maxTotal.setValue(Double.valueOf(AbstractGOCategoryProperties.log(param.maxTotal)));
+    		minTotal.setValue(Double.valueOf(AbstractGOCategoryProperties.log(param.minTotal)));
+    	} else {
+            maxTotal.setValue(Double.valueOf(param.maxTotal));
+            minTotal.setValue(Double.valueOf(param.minTotal));
+    	}
+
         minDistance.setValue( new Integer(param.minDistance) );
-        maxGroups.setValue( new Integer(param.maxGroups) );
+        listeningOff = false;
     }    
     
-    public GODistanceFilter.Parameters getParameters()
+    private GODistanceFilter.Parameters getParameters()
     {
         GODistanceFilter.Parameters param = new GODistanceFilter.Parameters();
         
-        if( maxPValue.getValue() != null )
-            param.maxPValue = ((Number)maxPValue.getValue()).doubleValue();
-      
-        if( maxFDR.getValue() != null )
-            param.maxFDR = ((Number)maxFDR.getValue()).doubleValue();
+        if( maxPFDR.getValue() != null )
+        	param.maxPFDR = ((Number)maxPFDR.getValue()).doubleValue();
 
-        if( maxTotal.getValue() != null )
-            param.maxTotal = ((Number)maxTotal.getValue()).intValue();
+        param.filterBy = ((FilterByEnumWrapper) maxPFDRComboBox.getSelectedItem()).getFilterBy();
+        
+        if( maxTotal.getValue() != null ) {
+        	param.maxTotal = ((Number)maxTotal.getValue()).intValue();
+        	if (params.logTotals) {
+        		param.maxTotal = AbstractGOCategoryProperties.pow(param.maxTotal);
+        	}
+        }
              
-        if( minTotal.getValue() != null )
+        if( minTotal.getValue() != null ) {
             param.minTotal = ((Number)minTotal.getValue()).intValue();
+        	if (params.logTotals) {
+        		param.minTotal = AbstractGOCategoryProperties.pow(param.minTotal);
+        	}
+        }
         
         if( minDistance.getValue() != null )
         	param.minDistance = ((Number)minDistance.getValue()).intValue();
         
-        if( maxGroups.getValue() != null )
-        	param.maxGroups = ((Number)maxGroups.getValue()).intValue();
-        
         return param;
-    }
-    
-    protected void commitFields()
-    {
-        // commit all text fields
-        Iterator iter = fields.iterator();      
-        while(iter.hasNext())
-        {
-            Object obj = iter.next();
-            if(obj instanceof JFormattedTextField)
-            {
-                JFormattedTextField text = (JFormattedTextField)obj;
-                if(text.isEditValid()) 
-                {
-                    try
-                    {
-                        text.commitEdit();
-                    }
-                    catch(ParseException e)
-                    {
-                    }
-                }
-            }
-        }    
     }
     
     private void update()
     {
-        if( updating > 0 )
-            return;
-        
-        ++updating;
-        
-        commitFields();
-        check();
-        
         if( dataModel != null )
         {
             GODistanceFilter filter = (GODistanceFilter)dataModel.getFilter();
@@ -326,8 +403,6 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
                 filter.setParameters( getParameters() );
             }
         }
-        
-        --updating;
     }
     
     /**
@@ -336,25 +411,84 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
     public void actionPerformed(ActionEvent e)
     {
         String cmd = e.getActionCommand();
-        System.out.println(cmd);
         
         if( cmd.equalsIgnoreCase("filter") )
         {
             update();
-            // fireActionPerformed(new ActionEvent(this,0,"filter"));
             return;
         }
         
         if( cmd.equalsIgnoreCase("update") )
         {
-            fireActionPerformed( new ActionEvent(this,0,"update") );
-            return;
+        	if (origDataModel == null) {
+        		return;
+        	}
+        	assert dataModel != null;
+        	
+
+		    // check number of categories and give out a warning
+        	if( dataModel.getNumGroups() > params.maxCategories )
+    		{
+    			int res = JOptionPane.showConfirmDialog(this,
+				"Warning: a high number of categories may lead to increased running time.\n" +
+				"Are you sure to continue?\n" +
+				"(The warning threshold can be set in Options -> max Categories)",
+				"Warning",JOptionPane.YES_NO_OPTION);
+    			if( res != JOptionPane.OK_OPTION )
+    				return;        
+    		}
+
+    		if( dataModel.getNumGroups() < 1 )
+    		{
+    			JOptionPane.showMessageDialog(this,
+    					"There are "+dataModel.getNumGroups()+" categories.\r\n"+
+    					"It is not possible to display less than 1 category!\r\n",
+    					"Error",0);
+    			return;   
+    		}
+        	
+
+    		filterToUse = (GODistanceFilter)dataModel.getFilter().clone();
+        	filterToUse.setUser(null);
+        	origDataModel.setSucc(null);
+        	modelToUse = new VennFilteredDataModel((IVennDataModel) SystemUtility.serialClone(origDataModel), filterToUse);
+        	resetButton.setEnabled(false);
+        	fireActionPerformed( new ActionEvent(this,0,"update") );
+        	return;
         }
         
-        fireActionPerformed(new ActionEvent(this,0,cmd));
+        if (cmd.equalsIgnoreCase("reset")) {
+        	if (filterToUse != null && dataModel != null) {
+        		final GODistanceFilter f = (GODistanceFilter) filterToUse.clone();
+        		f.setUser(null);
+        		dataModel.setFilter(f);
+        	}
+        	return;
+        }
         
+        if (e.getSource() == maxPFDRComboBox) {
+        	if (listeningOff) {
+        		return;
+        	}
+        	update();
+        	updatePFDRSpinnerData();
+        	return;
+        }
+        
+        assert false;
     }
 
+    public VennFilteredDataModel getFilteredDataModel() {
+    	if (modelToUse == null) {
+    		throw new IllegalStateException(); // action "update" is necessary first
+    	}
+    	return modelToUse;
+    }
+
+    public GODistanceFilter getFilterToUse() {
+    	return filterToUse;
+    }
+    
     public void keyPressed(KeyEvent e) {
         // TODO Auto-generated method stub
         
@@ -372,39 +506,188 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
 
     public void propertyChange(PropertyChangeEvent evt) 
     {
+    	Object src = evt.getSource();
+    	assert src instanceof JFormattedTextField;
+
+    	if (listeningOff) {
+    		return;
+    	}
         update();
     }
+    
+    /* (non-Javadoc)
+     * @see javax.swing.event.ChangeListener#stateChanged(javax.swing.event.ChangeEvent)
+     */
+    public void stateChanged(ChangeEvent e) {
+    	assert e.getSource() instanceof SpinnerModel || e.getSource() instanceof JSpinner;
+    	
+    	if (listeningOff) {
+    		return;
+    	}
 
-    public void setDataModel( VennFilteredDataModel sourceDataModel )
-    {
-        if( dataModel != null )
-        {
-            dataModel.removeChangeListener( this );
-            dataModel = null;
-        }
-        if( sourceDataModel == null )
-            return;
-        
-        dataModel = sourceDataModel;
-        dataModel.addChangeListener( this );
-        
-        updateControls();
+    	update();
     }
 
+    public void setDataModel( IVennDataModel sourceDataModel, GODistanceFilter filter )
+    {
+//    	filterToUse = null;
+
+    	if( dataModel != null )
+        {
+//            dataModel.removeChangeListener( this );
+        	dataModel.setSucc(null);
+            dataModel = null;
+        }
+
+    	if (sourceDataModel == null) {
+    		throw new IllegalArgumentException();
+    	}
+    	if (sourceDataModel.getNumGroups() <= 0) {
+    		throw new IllegalStateException();
+    	}
+    	if (sourceDataModel.getSucc() != null) {
+    		throw new IllegalStateException();
+    	}
+    	
+    	origDataModel = sourceDataModel;
+    	modelToUse = null;
+    	
+    	final GODistanceFilter filter0 = (filter == null ? new GODistanceFilter(goTree) : filter); 
+
+    	// set default filterBy
+    	if (sourceDataModel != null) {
+    		if (sourceDataModel.getNumGroups() > 0) {
+    			filter0.getParameters().filterBy =
+    				((AbstractGOCategoryProperties) sourceDataModel.getGroupProperties(0)).getFilterBy();
+    		}
+    	}
+    	
+        // make combo box for p/fdr selection
+    	GODistanceFilter.Parameters filterParameters = filter0.getParameters();
+        final AbstractGOCategoryProperties prop = (AbstractGOCategoryProperties) sourceDataModel.getGroupProperties(0);
+        if (prop.getClass().equals(GOCategoryProperties1p.class)) {
+            makeComboBox(true, false, false, false, false, false, false, false);
+        } else if (prop.getClass().equals(GOCategoryProperties1p1fdr.class)) {
+            makeComboBox(true, true, false, false, false, false, false, false);
+        } else if (prop.getClass().equals(GOCategoryProperties3p.class)) {
+            makeComboBox(false, false, true, true, true, false, false, false);
+        } else if (prop.getClass().equals(GOCategoryProperties3p3fdr.class)) {
+        	makeComboBox(false, false, true, true, true, true, true, true);
+        } else {
+        	throw new IllegalArgumentException();
+        }
+
+        dataModel = new VennFilteredDataModel(sourceDataModel, filter0);
+//        dataModel.addChangeListener( this );
+        dataModel.setSucc(this);
+        dataModel.notifySucc();
+        
+    	// set maxPFDR spinner data
+        updatePFDRSpinnerData();
+    	
+    	//set minTotal and maxTotal spinner data
+    	updateMinMaxTotalSpinnerData();
+    }
+
+	/**
+	 * 
+	 */
+	private void updateMinMaxTotalSpinnerData() {
+		final GODistanceFilter filt = (GODistanceFilter)dataModel.getFilter();
+		int[] arr = filt.whichNTotalsOccur(params.logTotals);
+		double[] darr = new double[arr.length];
+		for (int i = 0; i < arr.length; i++) {
+			darr[i] = arr[i];
+		}
+		arr = null;
+
+		((DoubleArraySpinnerModel) minTotal.getModel()).setArray(darr);
+
+		((DoubleArraySpinnerModel) maxTotal.getModel()).setArray(darr);
+		darr = null;
+	}
+
+    private void updatePFDRSpinnerData() {
+    	// remove duplicate values
+    	Set<Double> set = new HashSet<Double>();
+    	final int numGroups = origDataModel.getNumGroups();
+    	DecimalFormat format = new DecimalFormat(floatFormatString);
+		for (int i = 0; i < numGroups; i++) {
+			double val = ((AbstractGOCategoryProperties) origDataModel.getGroupProperties(i)).getPFDRValue();
+			// set values with the same precision used in the JSpinner
+			// because e.g. if the JSpinner gets a value with getNextValue(), limits its precision, and
+			// sets it again, the new set value may be lower than the value got by getNextValue().
+			// then the next call to getNextValue() returns the same value again.  
+    		try {
+				set.add(format.parse((format.format(val))).doubleValue());
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+    	}
+    	Object[] objArr = set.toArray();
+    	set = null;
+
+    	double[] doubleArr = new double[objArr.length];
+    	for (int i = 0; i < objArr.length; i++) {
+    		doubleArr[i] = (Double) objArr[i];
+    	}
+    	objArr = null;
+
+    	DoubleArraySpinnerModel spinnerModel = ((DoubleArraySpinnerModel) maxPFDR.getModel());
+    	spinnerModel.setArray(doubleArr);
+
+
+    	// check if all values can be reached by getNextValue() and getPreviousValue()
+    	ChangeListener[] changeListeners = spinnerModel.getChangeListeners();
+    	for (int i = 0; i < changeListeners.length; i++) {
+    		spinnerModel.removeChangeListener(changeListeners[i]);
+    	}
+    	double oldValue = (Double) spinnerModel.getValue();
+
+    	{
+    		spinnerModel.setValue(-9999.0);
+    		double val = -9999.0;
+    		double old;
+    		int count = 0;
+    		do {
+    			old = val;
+    			val = (Double) spinnerModel.getNextValue();
+    			count++;
+    		} while (old != val);
+    		if (count != doubleArr.length + 1) {
+    			System.err.println("updatePFDRSpinnerData: check failed: " + count + " " + doubleArr.length);
+    		}
+    	}
+
+    	{
+    		spinnerModel.setValue(Double.MAX_VALUE);
+    		double val = Double.MAX_VALUE;
+    		double old;
+    		int count = 0;
+    		do {
+    			old = val;
+    			val = (Double) spinnerModel.getPreviousValue();
+    			count++;
+    		} while (old != val);
+    		if (count != doubleArr.length + 1) {
+    			System.err.println("updatePFDRSpinnerData: check2 failed: " + count + " " + doubleArr.length);
+    		}
+    	}
+		doubleArr = null;
+
+
+    	spinnerModel.setValue(oldValue);
+    	for (int i = 0; i < changeListeners.length; i++) {
+    		spinnerModel.addChangeListener(changeListeners[i]);
+    	}
+    }
+    
     /**
-     * Update display with number of categories/elements ...
-     *
+     * Update display with the computed values from GODistanceFilter and the filter parameters
+     * it has used
      */
     private void updateControls()
     {
-        if( updating > 1 )
-            return;
-        
-        ++updating;
-        
-    		maxFDR.setVisible(!pValueMode);
-    		maxFDRlabel.setVisible(!pValueMode);
-        
         numCategories.setText("--");
         numElements.setText("--");
         numFilteredCategories.setText("--");
@@ -420,13 +703,14 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
             numFilteredCategories.setValue( new Integer(dataModel.getNumGroups()) );
             numFilteredElements.setValue( new Integer(dataModel.getNumElements()) );
             
-            if( dataModel.getNumGroups() > venn.VennMaster.MAX_NUM_GROUPS )
+            if( dataModel.getNumGroups() > params.maxCategories )
             {
                 numFilteredCategories.setBackground( Color.ORANGE );
-                numFilteredCategories.setToolTipText("Warning: more than "+venn.VennMaster.MAX_NUM_GROUPS +
-                            " are not recommended!");
-            }
-            else
+                numFilteredCategories.setToolTipText("Warning: a high number of categories may lead to increased running time");
+            } else if (dataModel.getNumGroups() < 1) {
+                numFilteredCategories.setBackground( Color.RED );
+                numFilteredCategories.setToolTipText("It is not possible to display less than 1 category!");
+            } else
             {
                 numFilteredCategories.setBackground( getBackground() );
                 numFilteredCategories.setToolTipText(null);
@@ -440,15 +724,50 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
             }
         } 
 
-        --updating;
+    	resetButton.setEnabled(dataModel != null && dataModel.getNumGroups() > 0
+				&& filterToUse != null
+				&& ! filterToUse.getParameters().compare(getParameters())
+				&& ((AbstractGOCategoryProperties) dataModel
+						.getGroupProperties(0)).canFilterBy(filterToUse
+						.getParameters().filterBy));
     }
     
-    public void stateChanged(ChangeEvent e) 
-    {
-        if( e.getSource() == dataModel )
-        {
-            updateControls();
-            return;
-        }
+//    public void stateChanged(ChangeEvent e) 
+//    {
+//        if( e.getSource() == dataModel )
+//        {
+//            updateControls();
+//            return;
+//        }
+//    }
+    
+//    @Override
+    public void predChanged() {
+    	updateControls();
     }
+ 
+    /**
+     * for combo box (maps toString() to string()) 
+     */
+    private static class FilterByEnumWrapper {
+    	private final FilterBy filterBy;
+    	
+    	public FilterByEnumWrapper(FilterBy filterBy) {
+    		this.filterBy = filterBy;
+    	}
+    	
+    	/* (non-Javadoc)
+    	 * @see java.lang.Object#toString()
+    	 */
+    	@Override
+    	public String toString() {
+    		return filterBy.string();
+    	}
+
+		public FilterBy getFilterBy() {
+			return filterBy;
+		}
+    	
+    }
+    
 }

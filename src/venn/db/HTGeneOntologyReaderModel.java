@@ -24,7 +24,7 @@ import java.util.*;
  *
  */
 public class HTGeneOntologyReaderModel 
-extends AbstractVennDataModel 
+extends AbstractVennDataModel implements Serializable
 {
     private ArrayList   aElements,      // array of aElements (key names)
                         aGroups,        // array of aGroups (group names)   
@@ -57,12 +57,12 @@ extends AbstractVennDataModel
      *   
      * @param categoryList Path to the category file
      */
-    public void loadFromFile(String categoryList, IGeneFilter filter )
+    public void loadFromFile(String categoryList )
         throws IOException, FileFormatException
     {
         clear();
         
-        readElements(new FileReader(categoryList), filter);
+        readElements(new FileReader(categoryList));
         
         updateBitSets();
     }
@@ -88,7 +88,7 @@ extends AbstractVennDataModel
      * @throws IOException
      * @throws FileFormatException
      */
-    private void readElements(Reader reader,IGeneFilter filter)
+    private void readElements(Reader reader)
         throws IOException, FileFormatException
     {
         aGroups.clear();
@@ -165,32 +165,28 @@ extends AbstractVennDataModel
                 {
                     throw new FileFormatException("Error in element file at line "+in.getLineNumber());
                 }
-                if( (filter == null) ||
-                    filter.accepts(nTotal,nChange,pValue,FDR) )
-                {
-                    Integer gval = (Integer)groupMap.get(new Integer(groupID));
-                    if( gval == null )
-                    { // entry not found in category list -> create new entry
-                        gval = new Integer(groupNumber);
-                        groupMap.put(new Integer(groupID),gval);
-                        aGroups.add(term);
-                        groupKeys.add( new HashSet() );
-                        properties.add(new GOCategoryProperties(groupID,nTotal,nChange,pValue,FDR));
-                        
-                        ++groupNumber;       
-                    }
-                    
-                    Integer kval = (Integer)keyMap.get(keyName);
-                    if( kval == null )
-                    { // append new key
-                        kval = new Integer(keyNumber);
-                        keyMap.put(keyName,kval);
-                        aElements.add(keyNumber,keyName);
-                        ++keyNumber;
-                    }
-                    Set myGroup = (Set)groupKeys.get(gval.intValue());
-                    myGroup.add(kval);
+                Integer gval = (Integer)groupMap.get(new Integer(groupID));
+                if( gval == null )
+                { // entry not found in category list -> create new entry
+                	gval = new Integer(groupNumber);
+                	groupMap.put(new Integer(groupID),gval);
+                	aGroups.add(term);
+                	groupKeys.add( new HashSet() );
+                	properties.add(new GOCategoryProperties1p1fdr(groupID,nTotal,nChange,pValue,FDR));
+
+                	++groupNumber;       
                 }
+
+                Integer kval = (Integer)keyMap.get(keyName);
+                if( kval == null )
+                { // append new key
+                	kval = new Integer(keyNumber);
+                	keyMap.put(keyName,kval);
+                	aElements.add(keyNumber,keyName);
+                	++keyNumber;
+                }
+                Set myGroup = (Set)groupKeys.get(gval.intValue());
+                myGroup.add(kval);
             }
         }
     }
@@ -301,7 +297,8 @@ extends AbstractVennDataModel
         
         valid = true;
         
-        fireChangeEvent();
+//        fireChangeEvent();
+        notifySucc();
     }    
     /* (non-Javadoc)
      * @see venn.AbstractVennDataModel#getGroupElements(int)

@@ -5,15 +5,10 @@
 package venn.db;
 
 import java.util.BitSet;
-import java.util.Iterator;
 import java.util.LinkedList;
 
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-
 import junit.framework.Assert;
-
-import venn.event.IChangeNotifier;
+import venn.event.IFilterChainSucc;
 import venn.utility.SetUtility;
 
 /**
@@ -24,11 +19,13 @@ import venn.utility.SetUtility;
  * @author muellera
  *
  */
-public class VennDataSplitter implements IChangeNotifier, ChangeListener
+public class VennDataSplitter implements IFilterChainSucc
 {
     private IVennDataModel sourceDataModel;
     private VennFilteredDataModel[] models;
     private LinkedList changeListeners;
+    private IFilterChainSucc succ;
+    private boolean succIsFinal;
     
     public VennDataSplitter()
     {
@@ -42,45 +39,36 @@ public class VennDataSplitter implements IChangeNotifier, ChangeListener
         setDataModel( model );
     }
 
-    /* (non-Javadoc)
-     * @see venn.VennDataModelInterface#addVennDataModelListener(venn.VennDataModelListener)
-     */
-    public synchronized void addChangeListener(ChangeListener listener)
-    {
-        if( listener != null )
-            changeListeners.add( listener );        
-    }
-
-    /* (non-Javadoc)
-     * @see venn.VennDataModelInterface#removeVennDataModelListener(venn.VennDataModelListener)
-     */
-    public synchronized void removeChangeListener(ChangeListener listener)
-    {
-        if( listener != null )
-            changeListeners.remove( listener );
-    }
-    
-	protected synchronized void fireChangeEvent()
-	{
-		ChangeEvent event = new ChangeEvent(this);
-		
-		Iterator iter = changeListeners.iterator();
-		while(iter.hasNext())
-		{
-			((ChangeListener)iter.next()).stateChanged(event);
+	public synchronized void setSucc(IFilterChainSucc succ) {
+		if (succIsFinal) {
+			throw new IllegalStateException();
+		}
+		if (this.succ != null && succ != null) {
+			throw new IllegalStateException();
+		}
+		this.succ = succ;
+	}
+	
+	public synchronized void setSuccFinal() {
+		succIsFinal = true;
+	}
+	
+	private void notifySucc() {
+		if (succ != null) {
+			succ.predChanged();
 		}
 	}
 	
-	public synchronized void setDataModel( IVennDataModel dataModel )
+	public void setDataModel( IVennDataModel dataModel )
 	{
 	    if( sourceDataModel != null )
 	    {
-	        sourceDataModel.removeChangeListener( this );
+	    	sourceDataModel.setSucc(null);
 	    }
 	    sourceDataModel = dataModel;
         if( sourceDataModel != null )
         {
-            sourceDataModel.addChangeListener( this );
+        	sourceDataModel.setSucc(this); // => predChanged
         }
 	    
 	    update();
@@ -113,11 +101,14 @@ public class VennDataSplitter implements IChangeNotifier, ChangeListener
 		{
 		    // number of groups of this meta set
 			Assert.assertTrue( partition[i].cardinality() > 0 );
+			sourceDataModel.setSucc(null);
 			models[i] = new VennFilteredDataModel(sourceDataModel,new StaticDataFilter(partition[i]));
 		}
-	    
-	    // notify subscribers
-	    fireChangeEvent();
+		sourceDataModel.setSucc(null);
+		sourceDataModel.setSucc(this);
+		
+	    // notify subscriber
+		notifySucc();
 	}
 	
 	/**
@@ -162,12 +153,9 @@ public class VennDataSplitter implements IChangeNotifier, ChangeListener
         }
         throw new IndexOutOfBoundsException("invalid element ID "+elementID);
     }
-    
-    /* (non-Javadoc)
-     * @see javax.swing.event.ChangeListener#stateChanged(javax.swing.event.ChangeEvent)
-     */
-    public void stateChanged(ChangeEvent e) 
-    {
-        update();
+        
+//    @Override
+    public void predChanged() {
+    	update();
     }
 }

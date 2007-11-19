@@ -4,7 +4,7 @@
  */
 package venn.db;
 
-import javax.swing.event.ChangeListener;
+import venn.event.IFilterUser;
 
 /**
  * Abstract data filter for FilteredVennDataModel.
@@ -25,11 +25,11 @@ public interface IDataFilter extends Cloneable
      * @return true if this data filter accepts the given group with
      *   <code>groupID</code>. <code>groupID</code> has to be relative to <code>model</code>.
      */    
-    public boolean accept( IVennDataModel model, int groupID );
+    public boolean accept( int groupID );
     
-    public void addChangeListener(ChangeListener listener);
-    public void removeChangeListener(ChangeListener listener);
-    public void setEventsActive( boolean eventsActive );
-
     public Object clone();
+    
+    public void setUser(IFilterUser user);
+    public abstract void setDataModel(IVennDataModel model);
+
 }

@@ -16,8 +16,18 @@ extends AbstractDataFilter
         filter = new BitSet();
     }
     
-    public boolean accept(IVennDataModel model, int groupID) 
-    {
+//    public boolean accept(IVennDataModel model, int groupID) 
+//    {
+//        return !filter.get(groupID);
+//    }
+    
+//    @Override
+    public void setDataModel(IVennDataModel model) {
+    	notifyUser();
+    }
+    
+    @Override
+    public boolean accept(int groupID) {
         return !filter.get(groupID);
     }
     
@@ -28,7 +38,8 @@ extends AbstractDataFilter
             filter.set( groupID, val );
             
             // notify listeners
-            fireChangeEvent();
+//            fireChangeEvent();
+            notifyUser();
         }
     }
     

@@ -50,6 +50,13 @@ public class DragLabel extends JLabel
 		withConnector = true;
 	}
 	
+	public void setTransformer(ITransformer transformer) {
+		this.transformer = transformer;
+		if (transformer != null) {
+			setRelativePosition(getRelativePosition());
+		}
+	}
+	
 	public void setRelativePosition(FPoint p)
 	{
 		if( p == null )
@@ -109,6 +116,10 @@ public class DragLabel extends JLabel
         return path;
     }
 	
+    public void setPath(BitSet path) {
+    	this.path = path;
+    }
+    
 	public boolean getWithConnector()
 	{
 		return withConnector;

@@ -12,6 +12,8 @@ import java.util.LinkedList;
 import javax.swing.BoundedRangeModel;
 import javax.swing.DefaultBoundedRangeModel;
 
+import venn.diagram.IntersectionTree.MemoryLowException;
+
 import junit.framework.Assert;
 
 
@@ -25,36 +27,68 @@ import junit.framework.Assert;
  */
 public class OptimizerWorker extends SwingWorker
 {
-    private BoundedRangeModel	model;			// progress indicator
+    private volatile BoundedRangeModel	model;			// progress indicator
 	private LinkedList 			listeners, 		// listeners for ActionEvents
 								optimizers;		// optimizers to be set
-	private Exception 			lastError;
+	private volatile boolean constructEnded;
+	private volatile boolean finishedComplete;
+	private volatile boolean constructStarted;
+	private volatile boolean finishedStarted;
+	private volatile boolean workerAborted;
+	private volatile boolean off;
 	
 	public OptimizerWorker()
 	{
 		listeners 	= new LinkedList();
 		optimizers 	= new LinkedList();
-		lastError 	= null;
 		model 		= new DefaultBoundedRangeModel();
 	}
 	
-    public boolean isRunning()
-    {
-        if( getThread() == null )
-            return false;
-        return( getThread().isAlive() );
+    public boolean off() {
+    	if (off) {
+    		return true;
+    	}
+    	// abortWorker may be called after construct and the event dispatch thread is waiting
+    	// so finished cannot set off = true
+    	if (workerAborted && constructEnded && ! finishedStarted) {
+    		return true;
+    	}
+    	return false;
+    }
+    
+    // if called by event dispatch thread abortWorker() must be called first
+    // (deadlock because if the event dispatch thread waits here it cannot call finished())
+    public synchronized void waitForOff() {
+    	while (! off()) {
+    		try {
+    			wait();
+    		} catch (InterruptedException e) {
+    			Thread.currentThread().interrupt();
+			}
+    	}
+    }
+    
+    public boolean finishedComplete() {
+    	return finishedComplete;
+    }
+    
+    /**
+     * abort worker, finished() won't be called
+     */
+    public void abortWorker() {
+    	assert ! workerAborted;
+    	
+    	if (finishedComplete) {
+    		return;
+    	}
+    	workerAborted = true;
+    	interrupt();
     }
     
 	public synchronized void addOptimizer( IOptimizer opt )
 	{
-        Assert.assertFalse( isRunning() );
+        Assert.assertFalse( constructStarted ); // race condition
 	    optimizers.add(opt);
-	}
-	
-	public synchronized void clearOptimizers()
-	{
-        Assert.assertFalse( isRunning() );
-	    optimizers.clear();
 	}
 	
 	/**
@@ -68,17 +102,6 @@ public class OptimizerWorker extends SwingWorker
 	    return model;
 	}
 		
-	/**
-	 * 
-	 * @return The last exception (if an "error" message was sent)
-	 */
-	public Exception getLastError()
-	{
-		Exception error = lastError;
-		lastError = null;
-		return error;
-	}
-	
 	/**
 	 * Adds a listener for the following events:
 	 * <ol>
@@ -119,6 +142,39 @@ public class OptimizerWorker extends SwingWorker
 	    }
 	    return true;
 	}
+		
+	public synchronized Object construct() {
+		assert ! constructStarted;
+		assert ! constructEnded;
+		assert ! finishedComplete;
+		assert ! off;
+		
+		Thread.currentThread()
+		.setPriority((Thread.currentThread().getPriority() + Thread.MIN_PRIORITY) / 2);
+
+		final String strAborted = "aborted";
+
+		if (workerAborted) {
+			optimizers = null;
+			off = true;
+			notifyAll();
+			return strAborted;
+		}
+		
+		constructStarted = true;
+		Object res = _construct();
+		constructEnded = true;
+		notifyAll();
+
+		if (workerAborted) {
+			optimizers = null;
+			off = true;
+			notifyAll();
+			return strAborted;
+		}
+
+		return res;
+	}
 	
 	/**
 	 * Triggers the optimization.
@@ -128,61 +184,63 @@ public class OptimizerWorker extends SwingWorker
 	 * If "error"
 	 * @see SwingWorker#construct()
 	 */
-	public Object construct()
+	private synchronized Object _construct()
 	{
 		Assert.assertNotNull( model );
-		
-		lastError = null;
+		assert ! off;
 		
 		// compute total progress range and setup optimizers
 		int nrange = 0;
 		for( int i=0; i<optimizers.size(); ++i )
 		{
-		    IOptimizer opt = (IOptimizer)optimizers.get(i); 
-		    nrange += opt.getMaxProgress();
+			IOptimizer opt = (IOptimizer)optimizers.get(i); 
+			nrange += opt.getMaxProgress();
 		}
-		    
+
 		model.setRangeProperties(0,1,0,nrange,false);
-		
+
 		// optimize each generation (independently solvable subset) separately
 		int iround = 0;
 		while( ! allFinished() )
 		{	
-            if( Thread.interrupted() )
-                return "interrupted";
-            
-            // find a non-terminated optimizer
-		    while( ((IOptimizer)optimizers.get(iround)).endCondition() )
-		    {
-		        iround = (iround + 1) % optimizers.size();
-		    }
-		    ((IOptimizer)optimizers.get(iround)).optimize();
-		    
-            // update progress
-            if( model != null )
-            {
-    		    int progress = 0;
-    		    for( int i=0; i<optimizers.size(); ++i )
-    		    {
-    		        progress += ((IOptimizer)optimizers.get(i)).getProgress();
-    		    }
-    		    model.setValue(progress);
-            }
-            
-		    // choose next optimizer
-		    iround = (iround + 1) % optimizers.size();
+			if (Thread.interrupted()) {
+				optFinished();
+				return "interrupted";
+			}
+
+			// find a non-terminated optimizer
+			while( ((IOptimizer)optimizers.get(iround)).endCondition() )
+			{
+				iround = (iround + 1) % optimizers.size();
+			}
+			try {
+				((IOptimizer)optimizers.get(iround)).optimize();
+			} catch (MemoryLowException e) {
+				e.printStackTrace();
+				optFinished();
+				return "error";
+			}
+			
+			// update progress
+			if( model != null )
+			{
+				int progress = 0;
+				for( int i=0; i<optimizers.size(); ++i )
+				{
+					progress += ((IOptimizer)optimizers.get(i)).getProgress();
+				}
+				model.setValue(progress);
+			}
+
+			// choose next optimizer
+			iround = (iround + 1) % optimizers.size();
 		}
+		
+		optFinished();
 		return "finished";
 	}
 	
-	public void finished()
-	{		       
-		String state = "";
-		if( get() != null )
-			state = (String)get();
-        
-        //System.out.println("OptimizerWorker "+state);
-		
+	private synchronized void optFinished() {
 		for( int i=0; i<optimizers.size(); ++i )
 		{
 		    ((IOptimizer)optimizers.get(i)).finished(); 
@@ -190,6 +248,35 @@ public class OptimizerWorker extends SwingWorker
 		
 		// reset progress indicator to the end
 	    model.setValue( model.getMaximum() );	
+	}
+	
+	public synchronized void finished() {
+		assert ! finishedComplete;
+		assert constructEnded || ! constructStarted;
+		
+		if (workerAborted) {
+			optimizers = null;
+			off = true;
+			notifyAll();
+			return;
+		}
+
+		finishedStarted = true;
+		_finished();
+		finishedComplete = true;
+
+		optimizers = null;
+
+		off = true;
+		notifyAll();
+	}
+	
+	private synchronized void _finished()
+	{		       
+		assert ! off;
+		String state = "";
+		if( get() != null )
+			state = (String)get();
         
         // notify listeners
 		fireActionEvent(state);
@@ -210,5 +297,11 @@ public class OptimizerWorker extends SwingWorker
     			((ActionListener)iter.next()).actionPerformed(event);
     		}
         }
+	}
+
+	@Override
+	protected void finalize() throws Throwable {
+		super.finalize();
+		assert listeners.size() == 0;
 	}
 }

@@ -57,7 +57,8 @@ public class VennMemDataModel extends AbstractVennDataModel
         groupProperties = new Object[numOfGroups];
         elementNames = new String[numOfElements];
         
-        fireChangeEvent();
+//        fireChangeEvent();
+        notifySucc();
     }
     
     public void setGroupElements( int gid, BitSet elements )
@@ -69,7 +70,8 @@ public class VennMemDataModel extends AbstractVennDataModel
             throw new IndexOutOfBoundsException("element id out of bounds");
         
         groupElements[gid] = (BitSet)elements.clone();        
-        fireChangeEvent();
+//        fireChangeEvent();
+        notifySucc();
     }
     
     public void setGroupName( int gid, String name )
@@ -78,7 +80,8 @@ public class VennMemDataModel extends AbstractVennDataModel
             throw new IndexOutOfBoundsException("group id out of bounds");
         
         groupNames[gid] = name;
-        fireChangeEvent();
+//        fireChangeEvent();
+        notifySucc();
     }
     
     
@@ -88,7 +91,8 @@ public class VennMemDataModel extends AbstractVennDataModel
             throw new IndexOutOfBoundsException("element id out of bounds");
         
         elementNames[eid] = name;
-        fireChangeEvent();
+//        fireChangeEvent();
+        notifySucc();
     }
 
 

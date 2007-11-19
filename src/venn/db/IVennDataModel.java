@@ -6,6 +6,7 @@ package venn.db;
 
 import java.util.BitSet;
 import venn.event.IChangeNotifier;
+import venn.event.IFilterChainSucc;
 
 
 /**
@@ -13,7 +14,7 @@ import venn.event.IChangeNotifier;
  *
  * Encapsulates group/element data.
  */
-public interface IVennDataModel extends IChangeNotifier
+public interface IVennDataModel
 {
 	/**
 	 * 
@@ -55,6 +56,7 @@ public interface IVennDataModel extends IChangeNotifier
      */
 	String getElementName( int elementID );
     
-    
-
+    void setSucc(IFilterChainSucc succ);
+    IFilterChainSucc getSucc();
+    void setSuccFinal();
 }

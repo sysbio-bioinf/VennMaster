@@ -57,8 +57,15 @@ implements ChangeListener
 			return;
 		
 		Runtime rt = Runtime.getRuntime();
+
 		if( rt.freeMemory() < MEMORY_LOWER_BOUND )
 		{
+			System.gc(); 
+		}
+		
+		if( rt.freeMemory() < MEMORY_LOWER_BOUND )
+		{
+			System.err.println("Memory: free: " + rt.freeMemory() + " of: " + rt.maxMemory());
 			throw new MemoryLowException(); 
 		}
 	}
@@ -297,7 +304,7 @@ implements ChangeListener
 	}
 
 	/**
-	 * @return number of setes
+	 * @return number of sets
 	 */
 	public int getNumOfSets()
 	{

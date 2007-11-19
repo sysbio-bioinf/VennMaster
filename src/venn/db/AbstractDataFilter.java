@@ -4,71 +4,42 @@
  */
 package venn.db;
 
-import java.util.LinkedList;
-
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-
+import venn.event.IFilterUser;
 import venn.utility.SystemUtility;
 
 public abstract class AbstractDataFilter
 implements IDataFilter
 {
-    private LinkedList<ChangeListener> changeListeners;
-    private boolean eventsActive;
+    private IFilterUser user;
 
-    AbstractDataFilter()
-    {
-        changeListeners = new LinkedList<ChangeListener>();
-        eventsActive = true;
-    }
-
+    public abstract boolean accept(int groupID);
     
-    /* (non-Javadoc)
-     * @see venn.VennDataModelInterface#addVennDataModelListener(venn.VennDataModelListener)
-     */
-    public synchronized void addChangeListener(ChangeListener listener) 
-    {
-        if( listener != null )
-            changeListeners.add( listener );        
-    }
-
-    /* (non-Javadoc)
-     * @see venn.VennDataModelInterface#removeVennDataModelListener(venn.VennDataModelListener)
-     */
-    public synchronized void removeChangeListener(ChangeListener listener) 
-    {
-        changeListeners.remove( listener );
+    
+//    public Object clone()
+//    {
+//        return SystemUtility.serialClone(this);
+//    }
+    
+    @Override
+	public Object clone() {
+    	try {
+			return super.clone();
+		} catch (CloneNotSupportedException e) {
+			throw new InternalError(e.toString());
+		}
     }
     
-    public void setEventsActive( boolean eventsActive )
-    {
-        this.eventsActive = eventsActive;
+//    @Override
+    public void setUser(IFilterUser user) {
+    	if (this.user != null && user != null) {
+    		throw new IllegalStateException(); // user must first be set to null before a new user can be set
+    	}
+    	this.user = user;
     }
     
-    
-    protected synchronized void fireChangeEvent()
-    {
-        if( ! eventsActive )
-            return;
-        
-        ChangeEvent event = new ChangeEvent(this);
-        
-        for( ChangeListener listener : changeListeners )
-        {
-        	if( listener != null )
-        	{
-        		listener.stateChanged(event);
-        	}
-        }
-    }
- 
-    
-    public abstract boolean accept(IVennDataModel model, int groupID);
-    
-    
-    public Object clone()
-    {
-        return SystemUtility.serialClone(this);
+    protected void notifyUser() {
+    	if (user != null) {
+    		user.filterChanged();
+    	}
     }
 }

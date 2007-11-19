@@ -57,7 +57,8 @@ public class StaticDataFilter extends AbstractDataFilter implements Serializable
             this.groups.equals(groups) )
         {
             this.groups = (BitSet)groups.clone();
-            fireChangeEvent();
+//            fireChangeEvent();
+            notifyUser();
         }
     }
     
@@ -66,16 +67,31 @@ public class StaticDataFilter extends AbstractDataFilter implements Serializable
         if( groups.get(groupID) != value )
         {
             groups.set(groupID,value);
-            fireChangeEvent();
+//            fireChangeEvent();
+            notifyUser();
         }
     }
     
     
-    public boolean accept(IVennDataModel model, int groupID)
+//    public boolean accept(IVennDataModel model, int groupID)
+//    {
+//        if( groups == null )
+//            return true;
+//        
+//        return groups.get(groupID);
+//    }
+//    
+//    @Override
+    public void setDataModel(IVennDataModel model) {
+    	notifyUser();
+    }
+
+    public boolean accept(int groupID)
     {
         if( groups == null )
             return true;
         
         return groups.get(groupID);
     }
+    
 }

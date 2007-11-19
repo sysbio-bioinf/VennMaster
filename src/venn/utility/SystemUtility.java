@@ -74,7 +74,7 @@ public class SystemUtility
             if( fs == null )
             {
                 System.err.println("Error: Cannot open file\n"+file.getPath());
-                return object;
+                return null;
             }
             XStream xstream = new XStream();
             ObjectInputStream os = xstream.createObjectInputStream(fs);

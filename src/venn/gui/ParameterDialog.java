@@ -3,6 +3,7 @@ package venn.gui;
 import java.awt.BorderLayout;
 import java.awt.Frame;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -23,8 +24,11 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import venn.AllParameters;
+import venn.Constants;
 import venn.optim.EvolutionaryOptimizer;
 import venn.optim.EvolutionaryOptimizerV1;
 import venn.optim.SwarmOptimizer;
@@ -40,7 +44,7 @@ import venn.optim.SwarmOptimizer;
  * @author muellera
  */
 public class ParameterDialog extends JDialog
-implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyChangeListener, ItemListener
+implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyChangeListener, ItemListener, ChangeListener
 {
     private static final long serialVersionUID = 1L;
     
@@ -58,9 +62,11 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
     private JFormattedTextField glob_sizeFactor,
                                 glob_numEdges,
                                 glob_randomSeed,
-                                glob_updateInterval;
+                                glob_updateInterval,
+                                glob_maxGroupsBeforeWarning;
     
-    private JCheckBox			glob_colorMode;
+    private JCheckBox			glob_colorMode,
+    							glob_logTotals;
     
     
     //////////////////////////////////////////////////////////////////////////								
@@ -122,6 +128,10 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
 	private boolean	checking;
 	private boolean	initialized;
 	
+	private int tabbed_paneLastSelectedIndex;
+	private int opt_optimizerLastSelection;
+	private boolean userSeen = true;
+	
 	public ParameterDialog(Frame owner)
 	{
 		super(owner,"VennMaster Parameters",true);
@@ -148,7 +158,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         // GLOBAL PANEL
         glob_panel = new JPanel();
         panel = glob_panel;
-        panel.setLayout(new GridLayout(5,2));
+        panel.setLayout(new GridLayout(7,2));
         
 
         panel.add(new JLabel("Size factor"));
@@ -174,9 +184,23 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         fields.add(glob_updateInterval);
         panel.add(glob_updateInterval);
         
+        panel.add(new JLabel("Max categories"));
+        glob_maxGroupsBeforeWarning = new JFormattedTextField(intFormat);
+        glob_maxGroupsBeforeWarning.setToolTipText("show warning if '#filtered categories' is greater than max categories");
+        fields.add(glob_maxGroupsBeforeWarning);
+        panel.add(glob_maxGroupsBeforeWarning);
+        
+        panel.add(new JLabel("Log" + Constants.WHICH_NTOTAL_LOG + " #totals"));
+        glob_logTotals = new JCheckBox();
+        glob_logTotals.setToolTipText("show min/max totals in logarithmic scale");
+        fields.add(glob_logTotals);
+        glob_logTotals.addItemListener(this);
+        panel.add(glob_logTotals);
+     
         panel.add(new JLabel("Color mode on"));
         glob_colorMode = new JCheckBox();
         fields.add(glob_colorMode);
+        glob_colorMode.addItemListener(this);
         panel.add(glob_colorMode);
      
         
@@ -257,10 +281,9 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         
         panel.add(new JLabel("Optimizer"));
         opt_optimizer = new JComboBox(AllParameters.Optimizers);
-        opt_optimizer.addItemListener(this);
         opt_optimizer.setEditable(false);
-        opt_optimizer.setSelectedIndex(1);
         fields.add(opt_optimizer);
+        opt_optimizer.addActionListener(this);
         panel.add(opt_optimizer);
         
         opt_panel.add(panel,BorderLayout.NORTH);
@@ -400,6 +423,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         swarm_reflect = new JCheckBox();
         swarm_reflect.setToolTipText("Keeps particles inside the bounding box.");
         fields.add(swarm_reflect);
+        swarm_reflect.addItemListener(this);
         panel.add(swarm_reflect);
         
         //opt_panel.add(opt_swarm_panel,BorderLayout.CENTER);
@@ -409,6 +433,9 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
 		
 		addListeners();
 		getContentPane().add(tabbed_pane,BorderLayout.CENTER);
+		tabbed_pane.addChangeListener(this);
+		tabbed_pane.setSelectedIndex(0);
+		tabbed_paneLastSelectedIndex = 0;
 		
 		// add buttons
 		panel = new JPanel();
@@ -449,10 +476,22 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
 	 */
 	public void actionPerformed(ActionEvent e)
 	{
+		assert e.getSource() instanceof JButton || e.getSource() == opt_optimizer;
+		
 		String cmd = e.getActionCommand();
 		if( cmd.equalsIgnoreCase("ok"))
 		{
-			processOkAction();
+			boolean res = check();
+			assert res;
+
+			if (userSeen) {
+				state = OK_OPTION;
+				dispose();
+				return;
+			}
+			Toolkit.getDefaultToolkit().beep();
+			userSeen = true;
+
 			return;
 		}
 		
@@ -461,11 +500,34 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
 			processCancelAction();
 			return;
 		}
+		
+
+		if( e.getSource() == opt_optimizer )
+        {
+        	if (opt_optimizer.getSelectedIndex() == opt_optimizerLastSelection) {
+        		return;
+        	}
+
+        	int lastSelection = opt_optimizerLastSelection;
+        	check();
+			if (! userSeen) {
+				Toolkit.getDefaultToolkit().beep();
+				AllParameters params = getParameters();
+				params.optimizer = lastSelection;
+				setParameters(params);
+				userSeen = true;
+			}
+
+			return;
+        }
+
+		assert false;
 	}
-	
-	protected void processOkAction()
-	{
-		// commit all text fields
+
+	/**
+	 * 
+	 */
+	private void commitFields() {
 		Iterator iter = fields.iterator();		
 		while(iter.hasNext())
 		{
@@ -484,9 +546,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
 					}
 				}
 			}
-		}		
-		state = OK_OPTION;
-		dispose();		
+		}
 	}
 	
 	protected void processCancelAction()
@@ -507,7 +567,9 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         glob_numEdges.setValue(new Integer(parameters.numEdges));
         glob_randomSeed.setValue(new Long(parameters.randomSeed));
         glob_updateInterval.setValue(new Integer(parameters.updateInterval));
+        glob_maxGroupsBeforeWarning.setValue(Integer.valueOf(parameters.maxCategories));
         glob_colorMode.setSelected(parameters.colormode);
+        glob_logTotals.setSelected(parameters.logTotals);
 
         // ErrorFunction.Parameters
         errf_minScale.setValue(new Double(parameters.errorFunction.minScale));
@@ -522,6 +584,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         
         // OPTIMIZER
         opt_optimizer.setSelectedIndex( parameters.optimizer );
+        opt_optimizerLastSelection = parameters.optimizer;
         
         // EvolutionaryOptimizerV1
         evo_maxOptimizationSteps.setValue(new Integer(parameters.optEvo.maxIterations));
@@ -596,7 +659,12 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         
         if( glob_updateInterval.getValue() != null )
             param.updateInterval = ((Number)glob_updateInterval.getValue()).intValue();
-        
+
+        if( glob_maxGroupsBeforeWarning.getValue() != null )
+            param.maxCategories = ((Number)glob_maxGroupsBeforeWarning.getValue()).intValue();
+
+        param.logTotals = glob_logTotals.isSelected();
+
         param.colormode = glob_colorMode.isSelected();
         
         // ErrorFunction		
@@ -712,16 +780,23 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
 	{
 		switch( e.getKeyCode() )
 		{
-			case KeyEvent.VK_ENTER:
-				processOkAction();
-				break;
-				
-			case KeyEvent.VK_ESCAPE:
-				processCancelAction();
-				break;
-				
-			default:
-				// nothing
+		case KeyEvent.VK_ENTER:
+			if (! check()) {
+				userSeen = true;
+				Toolkit.getDefaultToolkit().beep();
+				return;
+			}
+
+			state = OK_OPTION;
+			dispose();
+			break;
+
+		case KeyEvent.VK_ESCAPE:
+			processCancelAction();
+			break;
+
+		default:
+			// nothing
 		}
 	}
 
@@ -742,21 +817,26 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
 		
 	}
 
-	public synchronized void check()
+	private synchronized boolean check()
 	{
 		if( ! initialized || checking )       // changed from && ! checking
-			return;
+			return true;
         
         if( !isVisible() )
-            return;
+            return true;
 
 		checking = true;
-        
+
+		commitFields();
+
 		AllParameters params = getParameters();
-		params.check();
+		boolean checkres = params.check();
+		if (! checkres) userSeen = false;
 		setParameters(params);
-        
+
 		checking = false;
+		
+		return checkres;
 	}
 
 
@@ -765,15 +845,53 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
 	 */
 	public void propertyChange(PropertyChangeEvent event)
 	{
+		Object src = event.getSource();
+		
+		assert src instanceof JFormattedTextField || src instanceof JCheckBox || src instanceof JComboBox
+		|| src instanceof JTabbedPane;
+		
+		if (src instanceof JFormattedTextField) {
+			JFormattedTextField textField = (JFormattedTextField) src;
+			
+			if (textField.getText().equals("")) {
+				return;
+			}
+		}
+		
 		check();
 	}
 
 
     public void itemStateChanged(ItemEvent e) 
     {
-        if( e.getSource() == opt_optimizer )
-        {
-            check(); 
-        }       
+        if (e.getSource() == glob_colorMode || e.getSource() == swarm_reflect || e.getSource() == glob_logTotals) {
+        	// selection state changed
+        	if (! userSeen) {
+        		Toolkit.getDefaultToolkit().beep();
+        	}
+        	userSeen = true;
+        	return;
+        }
+        
+        assert false;
     }
+    
+    /* (non-Javadoc)
+     * @see javax.swing.event.ChangeListener#stateChanged(javax.swing.event.ChangeEvent)
+     */
+    public void stateChanged(ChangeEvent e) {
+    	assert e.getSource() == tabbed_pane;
+    	
+		check();
+
+		if (! userSeen) {
+			tabbed_pane.setSelectedIndex(tabbed_paneLastSelectedIndex);
+			Toolkit.getDefaultToolkit().beep();
+			userSeen = true;
+			return;
+		}
+		
+		tabbed_paneLastSelectedIndex = tabbed_pane.getSelectedIndex();
+    }
+    
 }

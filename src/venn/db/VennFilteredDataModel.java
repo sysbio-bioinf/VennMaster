@@ -6,8 +6,9 @@ package venn.db;
 
 import java.util.Arrays;
 import java.util.BitSet;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+
+import venn.event.IFilterChainSucc;
+import venn.event.IFilterUser;
 
 
 /**
@@ -16,7 +17,7 @@ import javax.swing.event.ChangeListener;
  * @author muellera
  *
  */
-public class VennFilteredDataModel extends AbstractVennDataModel implements ChangeListener 
+public class VennFilteredDataModel extends AbstractVennDataModel implements IFilterChainSucc, IFilterUser
 {
     private IVennDataModel	parent;
     private BitSet			groups,             // contains a 1 for every present group (cached)
@@ -28,6 +29,7 @@ public class VennFilteredDataModel extends AbstractVennDataModel implements Chan
                             elementGlobToLoc;   // maps a global to a local element ID
     IDataFilter             filter;
     
+
     public VennFilteredDataModel()
     {
         parent = null;
@@ -40,7 +42,6 @@ public class VennFilteredDataModel extends AbstractVennDataModel implements Chan
         this();
         setDataModel( model, filter );
     }
-    
     
     /**
      * Creates an independent copy of the filtered data model.
@@ -105,6 +106,18 @@ public class VennFilteredDataModel extends AbstractVennDataModel implements Chan
      */
     protected synchronized void update()
     {
+    	if (parent == null) {
+    		elements.clear();
+    		groups.clear();
+    		groupLocToGlob = null;
+    		groupGlobToLoc = null;
+    		groupElements = null;
+    		elementGlobToLoc = null;
+    		elementLocToGlob = null;
+    		notifySucc();
+    		return;
+    	}
+    	
         groupLocToGlob = new int[groups.cardinality()];
         if( groupGlobToLoc == null || groupGlobToLoc.length != parent.getNumGroups() )
         {
@@ -154,7 +167,7 @@ public class VennFilteredDataModel extends AbstractVennDataModel implements Chan
             groupElements[gid] = t;
         }
 
-        fireChangeEvent();
+        notifySucc();
     }
     
     protected void updateFilteredGroups()
@@ -168,7 +181,7 @@ public class VennFilteredDataModel extends AbstractVennDataModel implements Chan
         {
         	for(int groupID=0; groupID<parent.getNumGroups(); ++groupID)
         	{
-        		groups.set(groupID, filter.accept(parent,groupID));
+        		groups.set(groupID, filter.accept(groupID));
         	}
         }
     }
@@ -180,24 +193,29 @@ public class VennFilteredDataModel extends AbstractVennDataModel implements Chan
         
         if( parent != model )
         {
-            if( parent != null )
-                parent.removeChangeListener(this);
-           
+            if( parent != null ) {
+            	parent.setSucc(null);
+            }
+            
             parent = model;
-            if( model != null )
-                model.addChangeListener(this);
+            if( model != null ) {
+            	model.setSucc(this); // => predChanged
+            }
             changed = true;
         }
         
         if( filter != this.filter )
         {
-            if( this.filter != null )
-                this.filter.removeChangeListener( this );
+            if( this.filter != null ) {
+            	this.filter.setUser(null);
+            }
             
             this.filter = filter;
             
-            if( filter != null )
-                filter.addChangeListener(this);
+            if( filter != null ) {
+            	filter.setUser(this); // => filterChanged
+            	filter.setDataModel(model);
+            }
             changed = true;
         }
         
@@ -346,17 +364,18 @@ public class VennFilteredDataModel extends AbstractVennDataModel implements Chan
         return parent.getElementName( localToGlobalElementID(elementID) );
     }
 
-    /* (non-Javadoc)
-     * @see javax.swing.event.ChangeListener#stateChanged(javax.swing.event.ChangeEvent)
-     */
-    public void stateChanged(ChangeEvent ev) 
-    {
-        // notify 
-        updateFilteredGroups();
-        update();
+//    @Override
+    public void predChanged() {
+    	updateFilteredGroups();
+    	update();
+    } 
+    
+//    @Override
+    public void filterChanged() {
+    	updateFilteredGroups();
+    	update();
     }
     
-
     public Object getGroupProperties(int groupID)
     {
         return parent.getGroupProperties( localToGlobalGroupID(groupID) );

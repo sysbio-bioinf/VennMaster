@@ -438,7 +438,7 @@ extends AbstractOptimizer
             
             int         n = value.length;
             
-            // Formula (2.18), page 72, Bäck
+            // Formula (2.18), page 72, Bï¿½ck
             double      tau   = parent.params.tau / Math.sqrt(2.0*Math.sqrt((double)n)),
                         tau1  = parent.params.tau1 / Math.sqrt(2.0*(double)n);
 
@@ -561,20 +561,40 @@ extends AbstractOptimizer
         /**
          * Validates and adapts all parameters.
          */
-        public void check()
+        public boolean check()
         {           
-            minMutation = MathUtility.restrict(minMutation,0.0,0.2);
-            maxMutation = MathUtility.restrict(maxMutation,minMutation,0.5);
+        	int oldint;
+        	double olddouble;
+        	boolean changed = false;
+        	
+        	olddouble = minMutation;
+            if (olddouble != (minMutation = MathUtility.restrict(minMutation,0.0,0.2))) changed = true;
+            
+            olddouble = maxMutation;
+            if (olddouble != (maxMutation = MathUtility.restrict(maxMutation,minMutation,0.5))) changed = true;
                                    
-            numIndividuals = MathUtility.restrict(numIndividuals,1,1000);
-            cloneFraction = MathUtility.restrict(cloneFraction,0.0,1.0);
+            oldint = numIndividuals;
+            if (oldint != (numIndividuals = MathUtility.restrict(numIndividuals,1,1000))) changed = true;
             
-            tau = MathUtility.restrict(tau,0.001,5.0);
-            tau1 = MathUtility.restrict(tau1,0.001,5.0);
-            beta = MathUtility.restrict(beta,0.001,5.0);
+            olddouble = cloneFraction;
+            if (olddouble != (cloneFraction = MathUtility.restrict(cloneFraction,0.0,1.0))) changed = true;
             
-            maxIterations   = MathUtility.restrict(maxIterations,1,100000);
-            maxConstIterations = MathUtility.restrict(maxConstIterations,1,maxIterations);            
+            olddouble = tau;
+            if (olddouble != (tau = MathUtility.restrict(tau,0.001,5.0))) changed = true;
+            
+            olddouble = tau1;
+            if (olddouble != (tau1 = MathUtility.restrict(tau1,0.001,5.0))) changed = true;
+            
+            olddouble = beta;
+            if (olddouble != (beta = MathUtility.restrict(beta,0.001,5.0))) changed = true;
+            
+            oldint = maxIterations;
+            if (oldint != (maxIterations   = MathUtility.restrict(maxIterations,1,100000))) changed = true;
+            
+            oldint = maxConstIterations;
+            if (oldint != (maxConstIterations = MathUtility.restrict(maxConstIterations,1,maxIterations))) changed = true;            
+            
+            return ! changed;
         }
     }
 }

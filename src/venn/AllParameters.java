@@ -7,8 +7,8 @@ package venn;
 import java.io.Serializable;
 
 import venn.diagram.VennErrorFunction;
-import venn.optim.EvolutionaryOptimizerV1;
 import venn.optim.EvolutionaryOptimizer;
+import venn.optim.EvolutionaryOptimizerV1;
 import venn.optim.SwarmOptimizer;
 import venn.utility.MathUtility;
 import venn.utility.SystemUtility;
@@ -28,12 +28,14 @@ public class AllParameters implements Serializable
     
     // global parameters
     public boolean 								colormode; // for categories on panel: coloured or grayscale
+    public boolean								logTotals; // logarithmize nTotal
     
     public int                                  optimizer;      // see xxxOptimizerID constants
     public double                               sizeFactor;     // scaling factor for the venn objects
     public int                                  numEdges;
     public long                                 randomSeed;
     public int                                  updateInterval;
+    public int                                  maxCategories; // max #filtered categories before a warning is shown
     
     public VennErrorFunction.Parameters         errorFunction;
     public EvolutionaryOptimizerV1.Parameters   optEvo;
@@ -46,12 +48,14 @@ public class AllParameters implements Serializable
     public AllParameters()
     {
     	colormode = true;
+    	logTotals = false;
     	
         optimizer = SwarmOptimizer.Parameters.ID;
         sizeFactor = 1.0;
         numEdges = 16;
         randomSeed = -1;
         updateInterval = 10;
+        maxCategories = Constants.MAX_NUM_GROUPS;
         
         errorFunction = new VennErrorFunction.Parameters();
         optSwarm = new SwarmOptimizer.Parameters();
@@ -59,21 +63,42 @@ public class AllParameters implements Serializable
         optEvo2 = new EvolutionaryOptimizer.Parameters();
     }
     
-    public void check()
+    /**
+     * 
+     * @return true if nothing changed
+     */
+    public boolean check()
     {
-        optimizer = MathUtility.restrict(optimizer,0,2);
-        sizeFactor = MathUtility.restrict(sizeFactor,0.0001,10.0);
-        numEdges = MathUtility.restrict(numEdges,3,128);
-        updateInterval = MathUtility.restrict(updateInterval,0,9999999);
+    	boolean changed = false;
+    	int oldint;
+    	double olddouble;
+
+    	oldint = optimizer;
+    	if (oldint != (optimizer = MathUtility.restrict(optimizer,0,2))) changed = true;
+        
+        olddouble = sizeFactor;
+        if (olddouble != (sizeFactor = MathUtility.restrict(sizeFactor,0.0001,10.0))) changed = true;
+        
+        oldint = numEdges;
+        if (oldint != (numEdges = MathUtility.restrict(numEdges,3,128))) changed = true;
+        
+        oldint = updateInterval;
+        if (oldint != (updateInterval = MathUtility.restrict(updateInterval,0,9999999))) changed = true;
+        
+        oldint = maxCategories;
+        if (oldint != (maxCategories = MathUtility.restrict(maxCategories,1,9999999))) changed = true;
         
         // check childs
-        errorFunction.check();
-        optSwarm.check();
-        optEvo.check();
-        optEvo2.check();
+        if (! errorFunction.check()) changed = true;
+        if (! optSwarm.check()) changed = true;
+        if (! optEvo.check()) changed = true;
+        if (! optEvo2.check()) changed = true;
+        
+        return ! changed;
     }
     
-    public Object clone()
+    @Override
+	public Object clone()
     {
         return SystemUtility.serialClone(this);
     }
