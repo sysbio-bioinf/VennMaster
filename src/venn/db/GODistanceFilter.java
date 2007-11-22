@@ -4,8 +4,6 @@
  */
 package venn.db;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.BitSet;
@@ -36,10 +34,12 @@ extends AbstractDataFilter implements Serializable
     		public static String string(FilterBy val) {
     			switch (val) {
     			case P_VALUE:
-    				if (true) return "max p-Value";
+//    				if (true) return "max p-Value";
+    				if (true) return "pChange";
     				break;
     			case FDR:
-    				if (true) return "max FDR";
+//    				if (true) return "max FDR";
+    				if (true) return "fdrChange";
     				break;
     			case P_UNDER:
     				if (true) return "pUnder";
@@ -330,8 +330,8 @@ extends AbstractDataFilter implements Serializable
     		}
     	}
     	if (log
-				&& Math.log(totalMax) / Math.log(Constants.WHICH_NTOTAL_LOG)
-				> Math.floor(Math.log(totalMax) / Math.log(Constants.WHICH_NTOTAL_LOG))) {
+				&& Math.log(totalMax) / Math.log(Constants.WHICH_NELEMENTS_LOG)
+				> Math.floor(Math.log(totalMax) / Math.log(Constants.WHICH_NELEMENTS_LOG))) {
 			nTotals.add(AbstractGOCategoryProperties.log(totalMax) + 1);
 		}
 

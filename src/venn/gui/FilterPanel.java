@@ -87,7 +87,9 @@ public class FilterPanel extends JPanel
     private JButton resetButton;
     
     private JLabel 	minTotalLabel,
-    				maxTotalLabel;
+    				maxTotalLabel,
+    				numElementsLabel,
+    				numFilteredElementsLabel;
 
 //    private LinkedList<JComponent>          fields;
     
@@ -170,7 +172,9 @@ public class FilterPanel extends JPanel
         numCategories.setEditable(false);
         panel.add(numCategories);
         
-        panel.add(new JLabel("#elements"));
+        numElementsLabel = new JLabel();
+//        panel.add(new JLabel("#elements"));
+        panel.add(numElementsLabel);
         numElements = new JFormattedTextField(new DecimalFormat(intFormatString));
         numElements.setEditable(false);
         panel.add(numElements);
@@ -182,7 +186,9 @@ public class FilterPanel extends JPanel
         numFilteredCategories.setFont(numFilteredCategories.getFont().deriveFont(Font.BOLD));
         panel.add(numFilteredCategories);
         
-        panel.add(new JLabel("#filtered elements"));
+        numFilteredElementsLabel = new JLabel();
+//        panel.add(new JLabel("#filtered elements"));
+        panel.add(numFilteredElementsLabel);
         numFilteredElements = new JFormattedTextField(new DecimalFormat(intFormatString));
         numFilteredElements.setEditable(false);
         numFilteredElements.setFont(numFilteredElements.getFont().deriveFont(Font.BOLD));
@@ -220,7 +226,7 @@ public class FilterPanel extends JPanel
     }
    
     public void setParameters(AllParameters params) {
-    	if (dataModel != null && params.logTotals != this.params.logTotals) {
+    	if (dataModel != null && params.logNumElements != this.params.logNumElements) {
     		GODistanceFilter.Parameters filterParameters = getParameters();
     		this.params = params;
             setParameters(filterParameters);
@@ -228,12 +234,16 @@ public class FilterPanel extends JPanel
     	}
     	this.params = params;
 
-    	if (params.logTotals) {
-    		minTotalLabel.setText("min total (log" + Constants.WHICH_NTOTAL_LOG + ")");
-    		maxTotalLabel.setText("max total (log" + Constants.WHICH_NTOTAL_LOG + ")");
+    	if (params.logNumElements) {
+    		minTotalLabel.setText("min total (log" + Constants.WHICH_NELEMENTS_LOG + ")");
+    		maxTotalLabel.setText("max total (log" + Constants.WHICH_NELEMENTS_LOG + ")");
+    		numElementsLabel.setText("#elements (log" + Constants.WHICH_NELEMENTS_LOG + ")");
+    		numFilteredElementsLabel.setText("#filtered elements (log" + Constants.WHICH_NELEMENTS_LOG + ")");
     	} else {
     		minTotalLabel.setText("min total");
     		maxTotalLabel.setText("max total");
+    		numElementsLabel.setText("#elements");
+    		numFilteredElementsLabel.setText("#filtered elements");
     	}
     	if (dataModel != null) {
     		updateMinMaxTotalSpinnerData();
@@ -352,7 +362,7 @@ public class FilterPanel extends JPanel
     		throw new IllegalStateException();
     	}
     	
-    	if (params.logTotals) {
+    	if (params.logNumElements) {
     		maxTotal.setValue(Double.valueOf(AbstractGOCategoryProperties.log(param.maxTotal)));
     		minTotal.setValue(Double.valueOf(AbstractGOCategoryProperties.log(param.minTotal)));
     	} else {
@@ -375,14 +385,14 @@ public class FilterPanel extends JPanel
         
         if( maxTotal.getValue() != null ) {
         	param.maxTotal = ((Number)maxTotal.getValue()).intValue();
-        	if (params.logTotals) {
+        	if (params.logNumElements) {
         		param.maxTotal = AbstractGOCategoryProperties.pow(param.maxTotal);
         	}
         }
              
         if( minTotal.getValue() != null ) {
             param.minTotal = ((Number)minTotal.getValue()).intValue();
-        	if (params.logTotals) {
+        	if (params.logNumElements) {
         		param.minTotal = AbstractGOCategoryProperties.pow(param.minTotal);
         	}
         }
@@ -594,7 +604,7 @@ public class FilterPanel extends JPanel
 	 */
 	private void updateMinMaxTotalSpinnerData() {
 		final GODistanceFilter filt = (GODistanceFilter)dataModel.getFilter();
-		int[] arr = filt.whichNTotalsOccur(params.logTotals);
+		int[] arr = filt.whichNTotalsOccur(params.logNumElements);
 		double[] darr = new double[arr.length];
 		for (int i = 0; i < arr.length; i++) {
 			darr[i] = arr[i];
@@ -701,7 +711,11 @@ public class FilterPanel extends JPanel
             }
             
             numFilteredCategories.setValue( new Integer(dataModel.getNumGroups()) );
-            numFilteredElements.setValue( new Integer(dataModel.getNumElements()) );
+            if (params.logNumElements) {
+            	numFilteredElements.setValue( new Integer(AbstractGOCategoryProperties.log(dataModel.getNumElements())) );
+            } else {
+            	numFilteredElements.setValue( new Integer(dataModel.getNumElements()) );
+            }
             
             if( dataModel.getNumGroups() > params.maxCategories )
             {
@@ -720,7 +734,11 @@ public class FilterPanel extends JPanel
             if( dataModel.getParentDataModel() != null )
             {
                 numCategories.setValue( new Integer(dataModel.getParentDataModel().getNumGroups()));
-                numElements.setValue( new Integer(dataModel.getParentDataModel().getNumElements()));                
+                if (params.logNumElements) {
+                	numElements.setValue( new Integer(AbstractGOCategoryProperties.log(dataModel.getParentDataModel().getNumElements())));                
+                } else {
+                	numElements.setValue( new Integer(dataModel.getParentDataModel().getNumElements()));                
+                }
             }
         } 
 

@@ -104,11 +104,14 @@ class CategoryTableData extends AbstractTableModel
                 int n = model.getGroupElements(rowIndex).cardinality();
                 if( prop != null )
                     Assert.assertEquals(n,prop.getNChange());
+                if (params.logNumElements) {
+                	n = AbstractGOCategoryProperties.log(n);
+                }
 				return new Integer( n );
 
             case 5: // nTotal
                 if( prop != null )
-                	if (params.logTotals) {
+                	if (params.logNumElements) {
                 		return new Integer(prop.getNTotalLog());
                 	}
                 	else {

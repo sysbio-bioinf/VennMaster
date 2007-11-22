@@ -66,7 +66,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
                                 glob_maxGroupsBeforeWarning;
     
     private JCheckBox			glob_colorMode,
-    							glob_logTotals;
+    							glob_logNElements;
     
     
     //////////////////////////////////////////////////////////////////////////								
@@ -190,12 +190,12 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         fields.add(glob_maxGroupsBeforeWarning);
         panel.add(glob_maxGroupsBeforeWarning);
         
-        panel.add(new JLabel("Log" + Constants.WHICH_NTOTAL_LOG + " #totals"));
-        glob_logTotals = new JCheckBox();
-        glob_logTotals.setToolTipText("show min/max totals in logarithmic scale");
-        fields.add(glob_logTotals);
-        glob_logTotals.addItemListener(this);
-        panel.add(glob_logTotals);
+        panel.add(new JLabel("Log" + Constants.WHICH_NELEMENTS_LOG + " #elements"));
+        glob_logNElements = new JCheckBox();
+        glob_logNElements.setToolTipText("number of elements in logarithmic scale");
+        fields.add(glob_logNElements);
+        glob_logNElements.addItemListener(this);
+        panel.add(glob_logNElements);
      
         panel.add(new JLabel("Color mode on"));
         glob_colorMode = new JCheckBox();
@@ -569,7 +569,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         glob_updateInterval.setValue(new Integer(parameters.updateInterval));
         glob_maxGroupsBeforeWarning.setValue(Integer.valueOf(parameters.maxCategories));
         glob_colorMode.setSelected(parameters.colormode);
-        glob_logTotals.setSelected(parameters.logTotals);
+        glob_logNElements.setSelected(parameters.logNumElements);
 
         // ErrorFunction.Parameters
         errf_minScale.setValue(new Double(parameters.errorFunction.minScale));
@@ -663,7 +663,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         if( glob_maxGroupsBeforeWarning.getValue() != null )
             param.maxCategories = ((Number)glob_maxGroupsBeforeWarning.getValue()).intValue();
 
-        param.logTotals = glob_logTotals.isSelected();
+        param.logNumElements = glob_logNElements.isSelected();
 
         param.colormode = glob_colorMode.isSelected();
         
@@ -696,6 +696,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         if( errf_maxScale.getValue() != null )
             param.errorFunction.maxScale = ((Number)errf_maxScale.getValue()).doubleValue();        
         
+        param.errorFunction.logCardinalities = param.logNumElements;
         
         // OPTIMIZER
         param.optimizer = opt_optimizer.getSelectedIndex();
@@ -864,7 +865,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
 
     public void itemStateChanged(ItemEvent e) 
     {
-        if (e.getSource() == glob_colorMode || e.getSource() == swarm_reflect || e.getSource() == glob_logTotals) {
+        if (e.getSource() == glob_colorMode || e.getSource() == swarm_reflect || e.getSource() == glob_logNElements) {
         	// selection state changed
         	if (! userSeen) {
         		Toolkit.getDefaultToolkit().beep();

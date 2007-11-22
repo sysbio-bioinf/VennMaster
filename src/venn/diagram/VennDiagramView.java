@@ -37,6 +37,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import junit.framework.Assert;
+import venn.Constants;
+import venn.db.AbstractGOCategoryProperties;
 import venn.geometry.AffineTransformer;
 import venn.geometry.ConsistencyChecker;
 import venn.geometry.DragLabel;
@@ -81,9 +83,12 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
     private BufferedImage       paintBuffer;
     private boolean viewChanged;
     private List<HasLabelsListener> hasLabelsListeners;
+    private boolean logCardinalities;
     
-    public VennDiagramView( VennArrangement arrangement, int maxLevel )
+    public VennDiagramView( VennArrangement arrangement, int maxLevel, boolean logCardinalities )
     {
+    	this.logCardinalities = logCardinalities;
+    	
         paintBuffer = null;
         viewChanged = true;
         
@@ -91,7 +96,7 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         hasLabelsListeners = new LinkedList<HasLabelsListener>();
         this.arrangement = null;
         transformer = new AffineTransformer();
-        tree = new IntersectionTree(maxLevel);
+        tree = new IntersectionTree(maxLevel, logCardinalities);
         
         selectedNodes = new ArrayList();
         currentNode = null;
@@ -982,25 +987,41 @@ assert v == this;
             {
                 IntersectionTreeNode node = (IntersectionTreeNode)iter.next();
                 
-                buf.append( mapGroupSet(node.path) + " : "+node.card+"\n");
+                buf.append( mapGroupSet(node.path) + " : "+getCardString(node)+"\n");
             }
         }
         
         return buf.toString();
     }
     
+    private int getCard(IntersectionTreeNode node) {
+    	if (logCardinalities) {
+    		return AbstractGOCategoryProperties.log(node.card);
+    	}
+    	return node.card;
+    }
+    
+    private String getCardString(IntersectionTreeNode node) {
+    	if (logCardinalities) {
+    		return "" + getCard(node) + "(log" + Constants.WHICH_NELEMENTS_LOG + ")";
+    	} else {
+    		return String.valueOf(getCard(node));
+    	}
+    }
+    
     public String getSelectedNodeInfo()
     {
         if( currentNode == null )
             return "{}";
-        return mapGroupSet(currentNode.path) + " : " + currentNode.card;
+        return mapGroupSet(currentNode.path) + " : " + getCardString(currentNode);
     }
     
     
     /**
      * Custom tooltip texts
      */
-    public String getToolTipText(MouseEvent e) 
+    @Override
+	public String getToolTipText(MouseEvent e) 
     {   
         if( tree == null )
             return null;
@@ -1035,7 +1056,10 @@ assert v == this;
         if( node == null )
             return null;
         
-        return mapGroupSet(node.path) + " : "+node.card+" : " + nf.format(node.area);
+//      return mapGroupSet(node.path) + " : "+getCardString(node)+" : " + nf.format(node.area);
+      String str = mapGroupSet(node.path) + " : "+getCardString(node)+" : " + nf.format(node.area);
+//        System.err.println(str);
+        return str;
     }
 
     public String getSelectionInfo()
@@ -1051,7 +1075,8 @@ assert v == this;
             buf.append("  ");
             
             buf.append( "#elements=" );
-            buf.append( el.cardinality() );
+//            buf.append( el.cardinality() );
+            buf.append(getCardString(currentNode));
             buf.append("\n");
 
             buf.append( mapGroupSet(currentNode.path) );

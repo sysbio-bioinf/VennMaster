@@ -297,7 +297,6 @@ extends AbstractOptimizer
             double[] L = swarm.func.getLowerBounds(),
                      U = swarm.func.getUpperBounds();
 
-            
             for( int i=0; i<velocity.length; ++i )
             {   
                 // update velocity

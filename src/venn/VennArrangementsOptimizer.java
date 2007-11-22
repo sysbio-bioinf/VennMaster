@@ -37,6 +37,7 @@ public class VennArrangementsOptimizer implements IOptimizerObserver, ActionList
 	private final List<IsSimulatingListener> isSimulatingListeners;
 	private final List<ResultAvailableListener> resultAvailableListeners;
 	private JProgressBar progressBar;
+	private long seed;
 	
     public VennArrangementsOptimizer() {
         observers = new LinkedList();
@@ -118,6 +119,10 @@ public class VennArrangementsOptimizer implements IOptimizerObserver, ActionList
     	this.params = params;
     }
     
+    public String getInfo() {
+    	return String.valueOf("seed: " + seed + "\n");
+    }
+    
     /**
 	 * Starts the optimization process.
 	 *
@@ -132,12 +137,13 @@ public class VennArrangementsOptimizer implements IOptimizerObserver, ActionList
 		// set random seed
 		if( params.randomSeed>0 )
 		{
-		    random.setSeed( params.randomSeed );
+			seed = params.randomSeed;
 		}
 		else
 		{
-		    random.setSeed( System.currentTimeMillis() );
+			seed = System.currentTimeMillis();
 		}
+		random.setSeed(seed);
 		
 		Assert.assertNotNull(vennArrangement);
 		

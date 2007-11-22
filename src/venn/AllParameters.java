@@ -28,7 +28,7 @@ public class AllParameters implements Serializable
     
     // global parameters
     public boolean 								colormode; // for categories on panel: coloured or grayscale
-    public boolean								logTotals; // logarithmize nTotal
+    public boolean								logNumElements; // logarithmize number of elements
     
     public int                                  optimizer;      // see xxxOptimizerID constants
     public double                               sizeFactor;     // scaling factor for the venn objects
@@ -48,7 +48,7 @@ public class AllParameters implements Serializable
     public AllParameters()
     {
     	colormode = true;
-    	logTotals = false;
+    	logNumElements = false;
     	
         optimizer = SwarmOptimizer.Parameters.ID;
         sizeFactor = 1.0;
@@ -93,6 +93,8 @@ public class AllParameters implements Serializable
         if (! optSwarm.check()) changed = true;
         if (! optEvo.check()) changed = true;
         if (! optEvo2.check()) changed = true;
+        
+        assert errorFunction.logCardinalities == logNumElements;
         
         return ! changed;
     }

@@ -11,6 +11,7 @@ import java.util.BitSet;
 
 import junit.framework.Assert;
 
+import venn.db.AbstractGOCategoryProperties;
 import venn.geometry.FPoint;
 import venn.geometry.FPolygon;
 import venn.geometry.FRectangle;
@@ -51,13 +52,16 @@ extends AbstractVennObject
     
     
     
-    public VennPolygonObject( int numEdges, double areaFactor, BitSet elements )
+    public VennPolygonObject( int numEdges, double areaFactor, BitSet elements, boolean logCardinalities )
     {
         super( elements );
         
         this.areaFactor = areaFactor;
         
-        double radius = FPolygon.radiusNgon(numEdges,(double)elements.cardinality()/areaFactor);
+//      double radius = FPolygon.radiusNgon(numEdges,(double)elements.cardinality()/areaFactor);
+        int card = elements.cardinality();
+        if (logCardinalities) card = AbstractGOCategoryProperties.log(card);
+        double radius = FPolygon.radiusNgon(numEdges,(double)card/areaFactor);
         origPolygon = FPolygon.createNgon(numEdges,radius);   
 
         invalidate();

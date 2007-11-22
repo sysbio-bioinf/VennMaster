@@ -13,6 +13,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import junit.framework.Assert;
+import venn.db.AbstractGOCategoryProperties;
 import venn.geometry.FPoint;
 
 /**
@@ -33,6 +34,8 @@ implements ChangeListener
 	private boolean memoryCheck;
 
     private VennArrangement arrangement;
+    
+    private boolean logCardinalities;
 	
 	public static class MemoryLowException extends RuntimeException 
 	{
@@ -88,7 +91,7 @@ implements ChangeListener
 	 * @param maxLevel maximum number of intersections (>=2)
      * 
 	 */
-	public IntersectionTree( int maxLevel )
+	public IntersectionTree( int maxLevel, boolean logCardinalities )
 	{        
         if( maxLevel < 2 )
             throw new IllegalArgumentException("maxLevel must be >= 2!");
@@ -98,6 +101,7 @@ implements ChangeListener
 		this.maxIntersections = maxLevel;
 		this.memoryCheck = true;
         this.arrangement = null;
+        this.logCardinalities = logCardinalities;
 	}
     	
 	/**
@@ -165,7 +169,7 @@ implements ChangeListener
                 IVennObject is = vennObjects[level].intersect( node.vennObject );
                 int card = is.cardinality();
 	
-				if( (p!=null) || (card>0) )
+				if( (p!=null) || (getCard(card)>0) )
 				{
 					node.rightChild  = new IntersectionTreeNode();
 					node.rightChild.setIndex = -1;
@@ -182,7 +186,7 @@ implements ChangeListener
 		}
 		else
 		{	
-			if( (node.nRight>=maxIntersections) || (node.rightChild.card == 0 && p.isEmpty()) )
+			if( (node.nRight>=maxIntersections) || (getCard(node.rightChild.card) == 0 && p.isEmpty()) )
 			{ // cutoff 
 				node.rightChild = null;
 			}
@@ -417,4 +421,12 @@ implements ChangeListener
     {
         return arrangement;
     }
+    
+    private int getCard(int card) {
+    	if (logCardinalities) {
+    		return AbstractGOCategoryProperties.log(card);
+    	}
+    	return card;
+    }
+    
 }

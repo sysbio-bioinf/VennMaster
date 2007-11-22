@@ -16,6 +16,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import junit.framework.Assert;
+import venn.Constants;
+import venn.db.AbstractGOCategoryProperties;
 import venn.geometry.FPoint;
 import venn.geometry.FRectangle;
 import venn.optim.IFunction;
@@ -59,7 +61,7 @@ implements IFunction, ChangeListener
 	public VennErrorFunction( VennArrangement arrangement, Parameters params )
 	{
 		this.params = params;
-		tree = new IntersectionTree( params.maxIntersections );
+		tree = new IntersectionTree( params.maxIntersections, params.logCardinalities );
 		tree.setArrangement( arrangement );
         
         initializeTransient();
@@ -115,7 +117,11 @@ implements IFunction, ChangeListener
      */
     public void writeProfile(Writer os) throws IOException
     {
-        os.write("Groups\tnGroups\tArea\tCardinality\tErrorTerm\n");
+    	if (params.logCardinalities) {
+    		os.write("Groups\tnGroups\tArea\tCardinality(log" + Constants.WHICH_NELEMENTS_LOG + ")\tErrorTerm\n");
+    	} else {
+    		os.write("Groups\tnGroups\tArea\tCardinality\tErrorTerm\n");
+    	}
         visitor.setWriter(os);
         tree.accept(visitor);
     }
@@ -200,9 +206,14 @@ implements IFunction, ChangeListener
             double  diff,           // area deviation 
                     part = 0.0;     // partial error
             
-            //diff = (node.area-(double)node.card)/((double)node.nRight-1);
+            int card = node.card;
+            if (params.logCardinalities) {
+            	card = AbstractGOCategoryProperties.log(card);
+            }
             
-            diff = (node.area -(double)node.card );
+            //diff = (node.area-(double)card)/((double)node.nRight-1);
+            
+            diff = (node.area -(double)card );
             
             // different cases
             if( node.nRight == 1 )
@@ -212,14 +223,14 @@ implements IFunction, ChangeListener
             }
             else
             {
-                if( node.card == 0 )
+                if( card == 0 )
                 { // weight unwanted overlaps overproportional stronger
                     part = params.alpha*diff*diff /((double)(node.nRight-1));
                 }
                 else
                 {   // there is a true intersection
                     
-                    // diff /= (double)node.card;
+                    // diff /= (double)card;
                     if( node.area == 0.0 )
                     { // no graphical intersection at all! set strong weight
                         part = params.beta*diff*diff /((double)(node.nRight-1));
@@ -266,6 +277,7 @@ implements IFunction, ChangeListener
                 if( node.path.get(i) )
                 {
                     int card = objs[i].cardinality();
+                    if (params.logCardinalities) card = AbstractGOCategoryProperties.log(card);
                     if( min_card < 0 ||  card < min_card )
                     {
                         min_card = card;
@@ -273,7 +285,9 @@ implements IFunction, ChangeListener
                 }
             }
             
-            diff = (node.area-(double)node.card);
+            int card = node.card;
+            if (params.logCardinalities) card = AbstractGOCategoryProperties.log(card);
+            diff = (node.area-(double)card);
                         
             // different cases
             if( node.nRight == 1 )
@@ -283,7 +297,7 @@ implements IFunction, ChangeListener
             }
             else
             {
-                if( node.card == 0 )
+                if( card == 0 )
                 { // weight unwanted overlaps overproportional stronger
                     part = params.alpha*diff*diff;
                 }
@@ -301,7 +315,10 @@ implements IFunction, ChangeListener
         
         public void visit(int depth, IntersectionTreeNode node)
 		{
-			if( !node.copy && node.nRight >= 1 && (node.area > 0.0 || node.card > 0))
+        	int card = node.card;
+            if (params.logCardinalities) card = AbstractGOCategoryProperties.log(card);
+
+            if( !node.copy && node.nRight >= 1 && (node.area > 0.0 || card > 0))
 			{
                 double err = 0;
                 switch( params.errorFunc )
@@ -325,7 +342,7 @@ implements IFunction, ChangeListener
                     buf.append("\t");
                     buf.append(node.area);
                     buf.append("\t");
-                    buf.append(node.card);
+                    buf.append(card);
                     buf.append("\t");
                     buf.append(err);
                     buf.append("\n");
@@ -375,7 +392,9 @@ implements IFunction, ChangeListener
                 IntersectionTreeNode node = tree.getByPath(path);
                 if( node != null )
                 {
-                    d[i][j] = (double)node.card - node.area;
+                	int card = node.card;
+                    if (params.logCardinalities) card = AbstractGOCategoryProperties.log(card);
+                    d[i][j] = (double)card - node.area;
                     d[j][i] = d[i][j];
                 }
                 else
@@ -558,6 +577,7 @@ implements IFunction, ChangeListener
                         delta;              // gradient pressure
         public double   minScale,
                         maxScale;
+        public boolean logCardinalities;
         
         public Parameters()
         {

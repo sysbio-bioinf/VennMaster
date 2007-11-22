@@ -37,7 +37,8 @@ public class CategoryTable implements ListSelectionListener, ChangeListener {
     private boolean 	isTableChanging;
     private JSplitPane 	catSplit;
     private TableColumn pValueCol,
-    					nTotalCol;
+    					nTotalCol,
+    					nChangeCol;
     
 	public CategoryTable(VennPanel venn) {
 		this.venn = venn;
@@ -68,9 +69,9 @@ public class CategoryTable implements ListSelectionListener, ChangeListener {
         cm.addColumn(col);
         
         
-		col = new TableColumn(4,50);
-		col.setHeaderValue("nChanged");
-		cm.addColumn(col);
+		nChangeCol = new TableColumn(4,50);
+//		nChangeCol.setHeaderValue("nChanged");
+		cm.addColumn(nChangeCol);
 		
         nTotalCol = new TableColumn(5,50);
 //        nTotalCol.setHeaderValue("nTotal");
@@ -155,7 +156,7 @@ public class CategoryTable implements ListSelectionListener, ChangeListener {
 	}
 
 	public void setParameters(AllParameters params) {
-		setNTotalHeader(params);
+		setHeaders(params);
 		categoryTableModel.setParameters(params);
 		repaint();
 	}
@@ -198,11 +199,13 @@ public class CategoryTable implements ListSelectionListener, ChangeListener {
 		}
 	}
 	
-	private void setNTotalHeader(AllParameters params) {
-		if (params.logTotals) {
-	        nTotalCol.setHeaderValue("nTotal log" + Constants.WHICH_NTOTAL_LOG);
+	private void setHeaders(AllParameters params) {
+		if (params.logNumElements) {
+	        nTotalCol.setHeaderValue("nTotal log" + Constants.WHICH_NELEMENTS_LOG);
+	        nChangeCol.setHeaderValue("nChanged log" + Constants.WHICH_NELEMENTS_LOG);
 		} else {
 	        nTotalCol.setHeaderValue("nTotal");
+	        nChangeCol.setHeaderValue("nChanged");
 		}
 	}
 	

@@ -775,6 +775,9 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 			}
 		}
 		
+		buffer.append("\n");
+		buffer.append(vennArrsOptim.getInfo());
+
 		globalInfo.setText(buffer.toString());
 		globalInfo.moveCaretPosition(0);
 	}

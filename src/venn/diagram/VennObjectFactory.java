@@ -9,6 +9,7 @@ import java.util.BitSet;
 
 import junit.framework.Assert;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import venn.AllParameters;
 /**
  * 
@@ -51,43 +52,51 @@ public class VennObjectFactory implements IVennObjectFactory
         this.areaFactor = areaFactor;
     }
 
-    /**
-     *  
-     *  @return a new Venn object corresponding to the given element set. 
-     */
-    public IVennObject create(int gid, BitSet elements) 
-    {
-        IVennObject obj = null;
-        
-        switch( view )
-        {
-        	case VIEW_POLYGON:
-        	    obj = new VennPolygonObject(numEdges,areaFactor,elements); 
-                break;
-        	    
-        	default:
-        	    throw new IllegalStateException("wrong view type");
-        }
-        Assert.assertNotNull( obj ); 
-
-        Color color;
-        float r=((float)gid % 4.0f)/4.0f;
-        float g=(((float)gid+ 1.0f) %4.0f)/4.0f;
-        float b=(((float)gid /3.0f) %4.0f) /4.0f;        
-//        if(venn.getColorMode)
+//    /**
+//     *  
+//     *  @return a new Venn object corresponding to the given element set. 
+//     */
+//    public IVennObject create(int gid, BitSet elements) 
+//    {
+//        IVennObject obj = null;
+//        
+//        switch( view )
 //        {
-        	 color = new Color(r,g,b,0.6f );
-             obj.setFillColor(color);
+//        	case VIEW_POLYGON:
+//        	    obj = new VennPolygonObject(numEdges,areaFactor,elements); 
+//                break;
+//        	    
+//        	default:
+//        	    throw new IllegalStateException("wrong view type");
 //        }
-//        else
-//        {        
-//          float grayvalue = ( r+ b  +g)  / 3.0f;
-//        	color = new Color(grayvalue,grayvalue,grayvalue,0.6f );
-//          obj.setFillColor(color);
-//        }
+//        Assert.assertNotNull( obj ); 
+//
+//        Color color;
+//        float r=((float)gid % 4.0f)/4.0f;
+//        float g=(((float)gid+ 1.0f) %4.0f)/4.0f;
+//        float b=(((float)gid /3.0f) %4.0f) /4.0f;        
+////        if(venn.getColorMode)
+////        {
+//        	 color = new Color(r,g,b,0.6f );
+//             obj.setFillColor(color);
+////        }
+////        else
+////        {        
+////          float grayvalue = ( r+ b  +g)  / 3.0f;
+////        	color = new Color(grayvalue,grayvalue,grayvalue,0.6f );
+////          obj.setFillColor(color);
+////        }
+//
+//        return obj;
+//    }
 
-        return obj;
+    /* (non-Javadoc)
+     * @see venn.diagram.IVennObjectFactory#create(int, java.util.BitSet)
+     */
+    public IVennObject create(int gid, BitSet elements) {
+    	throw new NotImplementedException();
     }
+    
     public IVennObject create(int gid, BitSet elements, int numGroups, AllParameters params) 
     {
         IVennObject obj = null;
@@ -95,7 +104,7 @@ public class VennObjectFactory implements IVennObjectFactory
         switch( view )
         {
         	case VIEW_POLYGON:
-        	    obj = new VennPolygonObject(numEdges,areaFactor,elements); 
+        	    obj = new VennPolygonObject(numEdges,areaFactor,elements, params.logNumElements); 
                 break;
         	    
         	default:

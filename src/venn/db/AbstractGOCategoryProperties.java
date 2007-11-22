@@ -16,8 +16,8 @@ import venn.db.GODistanceFilter.Parameters.FilterBy;
  */
 public abstract class AbstractGOCategoryProperties implements Serializable {
 	private final long     ID;
-    private final int      nTotal,
-                           nChange;
+	private int 		   nTotal;
+    private final int	   nChange;
     
     // modifyable attributes
     private double         meanDist; // minimum distance to the next group member
@@ -61,6 +61,10 @@ public abstract class AbstractGOCategoryProperties implements Serializable {
 		return log(nTotal);
 	}
 	
+	public void log() {
+		nTotal = getNTotalLog();
+	}
+	
 	/**
 	 * integer log<p>
 	 * returns 0 for log(0)<p>
@@ -70,7 +74,10 @@ public abstract class AbstractGOCategoryProperties implements Serializable {
 		if (val == 0) {
 			return 0;
 		}
-		return (int) (Math.log(val) / Math.log(Constants.WHICH_NTOTAL_LOG)); // (int) 2.8 => 2
+		if (val == 1) {
+			return 1;
+		}
+		return (int) (Math.log(val) / Math.log(Constants.WHICH_NELEMENTS_LOG)); // (int) 2.8 => 2
 	}
 	
 	/**
@@ -81,7 +88,10 @@ public abstract class AbstractGOCategoryProperties implements Serializable {
 		if (logVal == 0) {
 			return 0;
 		}
-		return (int) Math.pow(Constants.WHICH_NTOTAL_LOG, logVal);
+		if (logVal == 1) {
+			return 1;
+		}
+		return (int) Math.pow(Constants.WHICH_NELEMENTS_LOG, logVal);
 	}
 	
 	public long getID() {

@@ -312,7 +312,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
             arrangements[i] = new VennArrangement( models[i], factory );
     		arrangements[i].setParameters(params);
             VennDiagramView v = new VennDiagramView( arrangements[i], 
-                                                     params.errorFunction.maxIntersections );
+                                                     params.errorFunction.maxIntersections, params.logNumElements );
             views[i] = v;
             add( v );
             v.addChangeListener( this ); // => stateChanged
@@ -377,7 +377,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
             unfilteredArrangements[i] = new VennArrangement( models[i], factory );
     		unfilteredArrangements[i].setParameters(params);
             VennDiagramView v = new VennDiagramView( unfilteredArrangements[i], 
-                                                     params.errorFunction.maxIntersections );
+                                                     params.errorFunction.maxIntersections, params.logNumElements );
             unfilteredViews[i] = v;
 //            add( v );
 //            v.addChangeListener( this );
@@ -566,6 +566,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 		assert e.getSource() instanceof VennDiagramView;
 
         updateUnfilteredFromFilteredSelection();
+        updateCostValues();
         updateInconsistencyInfo();
         
         fireChangeEvent();
