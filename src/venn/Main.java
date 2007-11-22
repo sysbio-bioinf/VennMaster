@@ -42,15 +42,6 @@ public class Main {
 	 */
 	public Main(String[] args)
     {
-		// for tptp profiling (last arg is "")
-		if (args[args.length - 1].equals("")) {
-			String[] argsnew = new String[args.length - 1];
-			for (int i = 0; i < args.length - 1; i++) {
-				argsnew[i] = args[i];
-			}
-			args = argsnew;
-		}
-		
         final ArgParser parser = new ArgParser("java -jar venn.jar <arguments>");
         
         BooleanHolder   versionOpt = new BooleanHolder();
