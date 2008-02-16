@@ -1280,16 +1280,17 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 			for (int i = 0; i < models.length; i++) {
 				VennFilteredDataModel model = models[i];
 
-				BitSet groups = model.getGroups();
-				BitSet ggroups = filteredModel.localToGlobalGroupID(groups);
+				final BitSet groups = model.getGroups();
+				final BitSet ggroups = filteredModel.localToGlobalGroupID(groups);
 
 				//search label
 				for (int k = 0; k < labels.size(); k++) {
 					DragLabel label = labels.get(k);
 					if (label == null) continue;
 
-					ggroups.and(label.getPath());
-					if (label.getPath().cardinality() == ggroups.cardinality()) {
+					BitSet ggroupsAndLabelPath = (BitSet) ggroups.clone();
+					ggroupsAndLabelPath.and(label.getPath());
+					if (label.getPath().cardinality() == ggroupsAndLabelPath.cardinality()) {
 						//label found for this model (label path has no groups which don't exist in model)
 						
 						BitSet glabelPath = filteredModel.globalToLocalGroupID(label.getPath());
