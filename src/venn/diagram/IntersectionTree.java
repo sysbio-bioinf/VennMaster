@@ -99,7 +99,8 @@ implements ChangeListener
 		this.root = null;
 		this.valid = false;
 		this.maxIntersections = maxLevel;
-		this.memoryCheck = true;
+//		this.memoryCheck = true;
+		this.memoryCheck = false;
         this.arrangement = null;
         this.logCardinalities = logCardinalities;
 	}
