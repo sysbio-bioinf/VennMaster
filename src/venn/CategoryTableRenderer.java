@@ -8,7 +8,6 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
 
-import venn.diagram.IVennObject;
 import venn.gui.VennPanel;
 
 /**
@@ -48,8 +47,9 @@ implements TableCellRenderer
         		label.setBackground(Color.WHITE);
         		label.setForeground(Color.BLACK);
         	} else {
-            	IVennObject vo = venn.getUnfilteredVennObject(row);
-        		Color col = vo.getFillColor();
+//            	IVennObject vo = venn.getUnfilteredVennObject(row);
+//        		Color col = vo.getFillColor();
+        		Color col = venn.getVennObjectColor(row);
         		label.setBackground( col );
         		label.setForeground( Color.BLACK );
         	}
