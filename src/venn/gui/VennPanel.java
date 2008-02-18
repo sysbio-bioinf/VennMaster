@@ -28,10 +28,13 @@ import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.lang.reflect.InvocationTargetException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.BitSet;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -41,13 +44,14 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import junit.framework.Assert;
+
 import org.apache.batik.dom.GenericDOMImplementation;
 import org.apache.batik.svggen.SVGGraphics2D;
 import org.apache.batik.svggen.SVGGraphics2DIOException;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
 
-import junit.framework.Assert;
 import venn.AllParameters;
 import venn.VennArrangementsOptimizer;
 import venn.db.IVennDataModel;
@@ -108,6 +112,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
     private final LinkedList<IVennPanelHasDataListener> vennPanelHasDataListener;
     private final LinkedList<HasLabelsListener> 		hasLabelsListeners;
     private final List<DragLabel> 						labels;
+    private Map<BitSet, Color>							pathColors;
     private int 										zoomLevel = -1;
 	private JTextArea		inconsistencyInfo;      // show inconsistencies (not fulfilled intersections)
 
@@ -154,6 +159,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 		vennPanelHasDataListener = new LinkedList<IVennPanelHasDataListener>();
 		hasLabelsListeners = new LinkedList<HasLabelsListener>();
     	labels = new LinkedList<DragLabel>();
+    	pathColors = new HashMap<BitSet, Color>();
 		
 		setToolTipText("");
 		setOpaque(true);
@@ -216,6 +222,21 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 			}
 		}
 
+ 	}
+ 	
+ 	private List<double[]> getActViewValues() {
+		final IVennDiagramView[] views = getViews();
+		if( views != null )
+		{
+			List<double[]> res = new ArrayList<double[]>();
+			for( int i=0; i<views.length; ++i )
+			{
+				VennErrorFunction errf = new VennErrorFunction( views[i].getTree(), params.errorFunction );
+				res.add(errf.getInput());
+			}
+			return res;
+		}
+		return null;
  	}
  	
  	public synchronized void addVennPanelHasDataListener(IVennPanelHasDataListener listener) {
@@ -320,6 +341,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         }
         copyColorsFromUnfiltered();
 		restoreLabels();
+		restoreManuallySetColors();
 
         vennArrsOptim.setArrangements(arrangements);
         notifyHasLabelsChanged();
@@ -397,6 +419,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 		{
 			Assert.assertNotNull( sourceDataModel );
 			saveLabels();
+			saveManuallySetColors();
 			updateUnfiltered(); // perhaps color mode changed
 			update();
             fireChangeEvent();
@@ -522,6 +545,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 		clear();
 		clearUnfiltered();
 		labels.clear();
+		pathColors.clear();
 		
 	    if( sourceDataModel != null)
 	    {
@@ -568,8 +592,9 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         updateUnfilteredFromFilteredSelection();
         updateCostValues();
         updateInconsistencyInfo();
-        
-        fireChangeEvent();
+		vennArrsOptim.vennObjectPositionsChanged(getActViewValues());
+
+		fireChangeEvent();
     }
 
     private void updateUnfilteredFromFilteredSelection() {
@@ -652,6 +677,22 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
       int Lgid = unfilteredDataSplitter.getModels()[idx].globalToLocalGroupID( unfilteredGid );
       
       return unfilteredArrangements[idx].getVennObjects()[Lgid];
+    }
+    
+    public Color getVennObjectColor(int unfilteredGid) {
+        int idx = unfilteredDataSplitter.findModelByGroupID( unfilteredGid );
+        int Lgid = unfilteredDataSplitter.getModels()[idx].globalToLocalGroupID( unfilteredGid );
+
+        saveManuallySetColors();
+    	for (Map.Entry<BitSet, Color> entr : pathColors.entrySet()) {
+    		BitSet path = entr.getKey();
+    		if (path.cardinality() != 1) continue;
+    		if (path.get(Lgid)) {
+    			return entr.getValue();
+    		}
+    	}
+    	// no manual set color found, return standard color
+        return unfilteredArrangements[idx].getVennObjects()[Lgid].getFillColor();
     }
     
     private IVennObject getFilteredVennObject( int unfilteredGid )
@@ -831,6 +872,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
     	vennArrsOptim.stopForRestart();
 
     	saveLabels();
+    	saveManuallySetColors();
     	manualFilter.setFiltered( rowIndex, !b );
 
     	vennArrsOptim.restart();
@@ -861,6 +903,23 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
     			}
     		}
     	}
+	}
+
+	private void saveManuallySetColors() {
+		if (views == null) {
+			return;
+		}
+		for (int i = 0; i < views.length; i++) {
+
+			Map<BitSet, Color> viewPathColors = ((VennDiagramView) views[i]).getManuallySetColors();
+			for (Map.Entry<BitSet, Color> entr : viewPathColors.entrySet()) {
+				final BitSet path = entr.getKey();
+				final Color color = entr.getValue();
+				final BitSet filteredModelPath = dataSplitter.getModels()[i].localToGlobalGroupID(path);
+				final BitSet sourceModelPath = filteredModel.localToGlobalGroupID(filteredModelPath);
+				this.pathColors.put(sourceModelPath, color);
+			}
+		}
 	}
 
     public void directPaint(Graphics g, Dimension dim)
@@ -1308,6 +1367,44 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 		notifyHasLabelsChanged();
 	}
 
+	private void restoreManuallySetColors() {
+		if (pathColors != null) {
+			VennFilteredDataModel[] models = dataSplitter.getModels();
+			for (int i = 0; i < models.length; i++) {
+				VennFilteredDataModel model = models[i];
+
+				final BitSet groups = model.getGroups();
+				final BitSet ggroups = filteredModel.localToGlobalGroupID(groups);
+
+				Map<BitSet, Color> pathColorsForModel = new HashMap<BitSet, Color>();
+				//search color
+				for (Map.Entry<BitSet, Color> entr : pathColors.entrySet()) {
+					BitSet path = entr.getKey();
+					Color color = entr.getValue();
+
+					BitSet ggroupsAndColorPath = (BitSet) ggroups.clone();
+					ggroupsAndColorPath.and(path);
+					if (path.cardinality() == ggroupsAndColorPath.cardinality()) {
+						//color found for this model (color path has no groups which don't exist in model)
+						
+						assert color != null;
+						BitSet gcolorPath = filteredModel.globalToLocalGroupID(path);
+						pathColorsForModel.put(model.globalToLocalGroupID(gcolorPath), color);
+						entr.setValue(null);
+					}
+				}
+				((VennDiagramView) views[i]).setColors(pathColorsForModel);
+			}
+			Map<BitSet, Color> newPathColors = new HashMap<BitSet, Color>();
+			for (Map.Entry<BitSet, Color> entr : pathColors.entrySet()) {
+				if (entr.getValue() != null) {
+					newPathColors.put(entr.getKey(), entr.getValue());
+				}
+			}
+			pathColors = newPathColors;
+		}
+	}
+
 	/**
 	 * set colors from unfiltered VennObjects
 	 */
@@ -1323,5 +1420,5 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 			}
 		}
 	}
-
+	
 }
