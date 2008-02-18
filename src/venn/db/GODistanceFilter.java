@@ -7,6 +7,8 @@ package venn.db;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.BitSet;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.TreeSet;
 
 import junit.framework.Assert;
@@ -167,7 +169,8 @@ extends AbstractDataFilter implements Serializable
     private transient BitSet groups;
 //    private boolean valid;
     private transient GoTree goTree;
-   
+    private transient GoDAG goDAG;
+    
     
     private GODistanceFilter()
     {
@@ -223,22 +226,25 @@ extends AbstractDataFilter implements Serializable
     	{
     		return;
     	}
-    	int n = dataModel.getNumGroups();
-    	if( n <= 0 )
+    	int numGroups = dataModel.getNumGroups();
+    	if( numGroups <= 0 )
     	{
     		return;
     	}
 
     	// update standard filtering criteria
-    	for( int i=0; i<n; ++i )
+    	Set<Long> standardFiltered = new TreeSet<Long>(); // for distance filter
+    	for( int i=0; i<numGroups; ++i )
     	{
     		AbstractGOCategoryProperties props = (AbstractGOCategoryProperties)dataModel.getGroupProperties(i);
     		if( props != null )
     		{
     			props.setMeanDist(-1);
 
-    			if (filterCategory(props)) {
+    			if (categoryPassFilter(props)) {
     				groups.set(i);
+    			} else {
+    				standardFiltered.add(props.getID());
     			}
     		}
     	}
@@ -251,54 +257,43 @@ extends AbstractDataFilter implements Serializable
 //    		return;
     	}
     	
-    	int[][] dist = computeDistances();
-    	
-    	if( dist == null )
-    	{
-    		return;
-    	}
-    	BitSet set = findMaxDistSubset( dist, params.minDistance );
-    	
-    	// eliminate marked sets
-    	int ii = 0;
-    	BitSet groupsUpdated = (BitSet)groups.clone();
-    	for( int i = groups.nextSetBit(0); i >= 0; i = groups.nextSetBit(i+1) )
-    	{
-    		if( ! set.get(ii) )
-    		{
-    			groupsUpdated.clear(i);
-    		}
-    			
-    		++ii;
-    	}
-    	
-    	groups = groupsUpdated;
-    	
-    	// update minDist
-    	dist = computeDistances();
-    	ii = 0;
-    	for( int i = groups.nextSetBit(0); i >= 0; i = groups.nextSetBit(i+1) )
-    	{
+    	goDAG.filter(standardFiltered, params.minDistance);
+    	Set<Long> filtered = goDAG.getDistanceFiltered();
+    	for( int i=0; i<numGroups; ++i ) {
     		AbstractGOCategoryProperties props = (AbstractGOCategoryProperties)dataModel.getGroupProperties(i);
-    		if( props != null )
-    		{
-    			props.setMeanDist(0.0);
-
-    			if (groups.cardinality() >= 2) {
-    				for( int jj=0; jj<dist.length; ++jj )
-    				{
-    					props.setMeanDist(props.getMeanDist() + dist[ii][jj]);
-    				}
-    				props.setMeanDist(props.getMeanDist() / (double)(dist.length-1));
-    			} else {
-    				props.setMeanDist(1.0);
+    		if (props != null) {
+    			if (filtered.contains(props.getID())) {
+    				groups.clear(i);
     			}
     		}
-    		++ii;
     	}
+
+
+    	// update minDist
+//    	dist = computeDistances();
+//    	ii = 0;
+//    	for( int i = groups.nextSetBit(0); i >= 0; i = groups.nextSetBit(i+1) )
+//    	{
+//    		AbstractGOCategoryProperties props = (AbstractGOCategoryProperties)dataModel.getGroupProperties(i);
+//    		if( props != null )
+//    		{
+//    			props.setMeanDist(0.0);
+//
+//    			if (groups.cardinality() >= 2) {
+//    				for( int jj=0; jj<dist.length; ++jj )
+//    				{
+//    					props.setMeanDist(props.getMeanDist() + dist[ii][jj]);
+//    				}
+//    				props.setMeanDist(props.getMeanDist() / (double)(dist.length-1));
+//    			} else {
+//    				props.setMeanDist(1.0);
+//    			}
+//    		}
+//    		++ii;
+//    	}
     }
     
-    private boolean filterCategory(AbstractGOCategoryProperties cat) {
+    private boolean categoryPassFilter(AbstractGOCategoryProperties cat) {
     	cat.setFilterBy(params.filterBy);
 
     	if (! cat.checkRangeTotal(params.minTotal, params.maxTotal)) {
@@ -599,6 +594,8 @@ extends AbstractDataFilter implements Serializable
     }
     
     private void validate() {
+
+
     	update();
 //    	valid = true;
     }
@@ -626,6 +623,15 @@ extends AbstractDataFilter implements Serializable
     //  @Override
     public void setDataModel(IVennDataModel model) {
     	dataModel = model;
+
+    	final int numGroups = dataModel.getNumGroups();
+    	Set<Long> goIDs = new HashSet<Long>();
+    	for (int i = 0; i < numGroups; i++) {
+    		final long id = ((AbstractGOCategoryProperties)dataModel.getGroupProperties(i)).getID();
+    		assert ! goIDs.contains(id);
+			goIDs.add(id);
+    	}
+    	goDAG = new GoDAG(goTree, goIDs);
 
     	validate();
     	notifyUser();
