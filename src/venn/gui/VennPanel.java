@@ -224,21 +224,6 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 
  	}
  	
- 	private List<double[]> getActViewValues() {
-		final IVennDiagramView[] views = getViews();
-		if( views != null )
-		{
-			List<double[]> res = new ArrayList<double[]>();
-			for( int i=0; i<views.length; ++i )
-			{
-				VennErrorFunction errf = new VennErrorFunction( views[i].getTree(), params.errorFunction );
-				res.add(errf.getInput());
-			}
-			return res;
-		}
-		return null;
- 	}
- 	
  	public synchronized void addVennPanelHasDataListener(IVennPanelHasDataListener listener) {
  		vennPanelHasDataListener.add(listener);
  	}
@@ -592,7 +577,6 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         updateUnfilteredFromFilteredSelection();
         updateCostValues();
         updateInconsistencyInfo();
-		vennArrsOptim.vennObjectPositionsChanged(getActViewValues());
 
 		fireChangeEvent();
     }
