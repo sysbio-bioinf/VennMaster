@@ -22,12 +22,16 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.BitSet;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JColorChooser;
 import javax.swing.JComponent;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
@@ -84,6 +88,7 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
     private boolean viewChanged;
     private List<HasLabelsListener> hasLabelsListeners;
     private boolean logCardinalities;
+    private Map<BitSet, Color> pathColors = new HashMap<BitSet, Color>();
     
     public VennDiagramView( VennArrangement arrangement, int maxLevel, boolean logCardinalities )
     {
@@ -133,6 +138,32 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         addFocusListener( this );
 
         invalidate();
+    }
+    
+    /**
+     * for manually set colors (sets and intersections)
+     * @param pathColors
+     */
+    public void setColors(Map<BitSet, Color> pathColors) {
+    	this.pathColors = pathColors;
+    	updateManuallySetColors();
+    }
+    
+    public Map<BitSet, Color> getManuallySetColors() {
+    	for (Color color : pathColors.values()) {
+    		if (color == null) {
+    			throw new IllegalStateException();
+    		}
+    	}
+    	return pathColors;
+    }
+    
+    private void updateManuallySetColors() {
+    	for (Map.Entry<BitSet, Color> entr : pathColors.entrySet()) {
+    		BitSet path = entr.getKey();
+    		Color color = entr.getValue();
+    		tree.getByPath(path).vennObject.setFillColor(color);
+    	}
     }
     
     public void addChangeListener( ChangeListener obj )
@@ -248,8 +279,40 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
 
         for( int i=0; i<objs.length; ++i )
         {
+        	
             objs[i].directPaint(g,itrans);
-        }        
+        }
+        
+        if (pathColors.isEmpty()) return;
+
+
+        // draw intersections which have manually set colors
+        List<IVennObject> vennobjs = new ArrayList<IVennObject>();
+        for (Map.Entry<BitSet, Color> entr : pathColors.entrySet()) {
+        	BitSet path = entr.getKey();
+        	if (path.cardinality() < 2) continue;
+        	IVennObject vo = tree.getByPath(path).vennObject;
+        	vo.setFillColor(entr.getValue());
+        	vennobjs.add(vo);
+        }
+        Collections.sort(vennobjs, new Comparator<IVennObject>()
+        {
+        	public int compare(IVennObject o1, IVennObject o2) {
+        		int t1 = o1.cardinality(),
+        		t2 = o2.cardinality();
+
+        		if( t1 < t2 )
+        			return +1;
+        		else
+        			if( t1 > t2 )
+        				return -1;
+        		return 0;
+        	}
+        });
+
+        for (IVennObject vo : vennobjs) {
+        	vo.directPaint(g, itrans);
+        }
     }
 
     /**
@@ -1058,7 +1121,6 @@ assert v == this;
         
 //      return mapGroupSet(node.path) + " : "+getCardString(node)+" : " + nf.format(node.area);
       String str = mapGroupSet(node.path) + " : "+getCardString(node)+" : " + nf.format(node.area);
-//        System.err.println(str);
         return str;
     }
 
@@ -1106,9 +1168,18 @@ assert v == this;
                 
                 JPopupMenu popup = new JPopupMenu();
                 JMenuItem item;
-                item = new JMenuItem("Place Label");
+                item = new JMenuItem("Place Categories Label");
                 item.addActionListener(this);
+                JMenuItem item2 = new JMenuItem("Place Elements Label");
+                item2.addActionListener(this);
+                JMenuItem item3 = new JMenuItem("Place Categories + Elements Label");
+                item3.addActionListener(this);
+                JMenuItem item4 = new JMenuItem("Change Colour");
+                item4.addActionListener(this);
                 popup.add(item);
+                popup.add(item2);
+                popup.add(item3);
+                popup.add(item4);
 
                 /*
                 boolean locked = false; 
@@ -1178,43 +1249,62 @@ assert v == this;
             return;
         }
         
-        if( cmd.equalsIgnoreCase("place label") )
+        if( cmd.equalsIgnoreCase("place categories label") )
         {
             if( currentNode == null )
                 return;
 
             String text = getSelectedNodeInfo();
-            if( text != null )
-            {                    
-                DragLabel label = new DragLabel(transformer,text,currentNode.path );                 
-                if( popupPosition != null )
-                {
-                    label.setLocation(popupPosition.x,popupPosition.y);
-                }
-                else
-                {
-                    FPoint p = null;
-                    if( currentNode.vennObject != null )
-                    {
-                        p = currentNode.vennObject.getOffset();
-                    }
-                    else
-                    {
-                        p = new FPoint(0.5,0.5);
-                    }
-                    label.setRelativePosition(p);
-                }
-                
-                label.setVisible(true);
-                label.addMouseListener(this);
-                label.addMouseMotionListener(this);
-                add(label);
-                notifyHasLabelsChanged();
-                invalidateView();
-                repaint();
-            }           
+            makeLabel(text);           
             return;
         }
+        
+        if( cmd.equalsIgnoreCase("place elements label") )
+        {
+            if( currentNode == null )
+                return;
+
+
+            String text = getSelectedNodeElementsString();
+            makeLabel(text);
+            
+            return;
+        }
+        
+        if( cmd.equalsIgnoreCase("place categories + elements label") )
+        {
+            if( currentNode == null )
+                return;
+
+
+            String text = mapGroupSet(currentNode.path) + " : " + getSelectedNodeElementsString();
+            makeLabel(text);
+            
+            return;
+        }
+        
+        if( cmd.equalsIgnoreCase("change colour") )
+        {
+            if( currentNode == null )
+                return;
+            Color newColor = JColorChooser.showDialog(this, "Choose Color", currentNode.vennObject.getFillColor());
+            if (newColor != null) {
+            	float alpha;
+            	if (currentNode.path.cardinality() == 1) {
+            		alpha = 0.6f;
+            	} else {
+            		alpha = 0.8f;
+            	}
+            	float[] colComps = newColor.getColorComponents(null);
+            	pathColors.put(currentNode.path,
+            			new Color(colComps[0], colComps[1], colComps[2],
+            					alpha));
+            }
+            updateManuallySetColors();
+            return;
+        }
+        
+        
         
         if( cmd.equalsIgnoreCase("remove label") )
         {
@@ -1242,6 +1332,61 @@ assert v == this;
         
         System.out.println("VennPanel.actionPerformed : unhandled command : "+cmd);
     }
+
+	/**
+	 * @param text
+	 */
+	private void makeLabel(String text) {
+		if( text != null )
+		{                    
+		    DragLabel label = new DragLabel(transformer,text,currentNode.path );                 
+		    if( popupPosition != null )
+		    {
+		        label.setLocation(popupPosition.x,popupPosition.y);
+		    }
+		    else
+		    {
+		        FPoint p = null;
+		        if( currentNode.vennObject != null )
+		        {
+		            p = currentNode.vennObject.getOffset();
+		        }
+		        else
+		        {
+		            p = new FPoint(0.5,0.5);
+		        }
+		        label.setRelativePosition(p);
+		    }
+		    
+		    label.setVisible(true);
+		    label.addMouseListener(this);
+		    label.addMouseMotionListener(this);
+		    add(label);
+		    notifyHasLabelsChanged();
+		    invalidateView();
+		    repaint();
+		}
+	}
+
+	/**
+	 * @return
+	 */
+	private String getSelectedNodeElementsString() {
+		BitSet el = currentNode.vennObject.getElements();
+
+		StringBuffer buf = new StringBuffer();
+		buf.append("{");
+		for( int i=el.nextSetBit(0); i>=0; i = el.nextSetBit(i+1) )
+		{
+			buf.append( arrangement.getDataModel().getElementName(i) );
+			if( i+1 < el.length() )
+				buf.append(" , ");
+		}
+		buf.append("}");
+
+		String text = buf.toString();
+		return text;
+	}
 
     public IntersectionTree getTree() 
     {
