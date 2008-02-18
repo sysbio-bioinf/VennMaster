@@ -7,7 +7,6 @@ import javax.swing.JCheckBox;
 import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
 
-import venn.diagram.IVennObject;
 import venn.gui.VennPanel;
 
 /**
@@ -51,8 +50,9 @@ class CheckboxRenderer
         		box.setBackground(Color.WHITE);
         		box.setForeground(Color.BLACK);
         	} else {
-        		IVennObject vo = venn.getUnfilteredVennObject(row);
-        		Color col = vo.getFillColor();
+//        		IVennObject vo = venn.getUnfilteredVennObject(row);
+//        		Color col = vo.getFillColor();
+        		Color col = venn.getVennObjectColor(row);
         		box.setBackground( col );
         		box.setForeground( Color.BLACK );
         	}
