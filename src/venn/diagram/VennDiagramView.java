@@ -1168,13 +1168,13 @@ assert v == this;
                 
                 JPopupMenu popup = new JPopupMenu();
                 JMenuItem item;
-                item = new JMenuItem("Place Categories Label");
+                item = new JMenuItem("Place Category Label(s)");
                 item.addActionListener(this);
-                JMenuItem item2 = new JMenuItem("Place Elements Label");
+                JMenuItem item2 = new JMenuItem("Place Element Label(s)");
                 item2.addActionListener(this);
-                JMenuItem item3 = new JMenuItem("Place Categories + Elements Label");
+                JMenuItem item3 = new JMenuItem("Place Category and Element Labels");
                 item3.addActionListener(this);
-                JMenuItem item4 = new JMenuItem("Change Colour");
+                JMenuItem item4 = new JMenuItem("Change Color");
                 item4.addActionListener(this);
                 popup.add(item);
                 popup.add(item2);
@@ -1249,7 +1249,7 @@ assert v == this;
             return;
         }
         
-        if( cmd.equalsIgnoreCase("place categories label") )
+        if( cmd.equalsIgnoreCase("place category label(s)") )
         {
             if( currentNode == null )
                 return;
@@ -1259,7 +1259,7 @@ assert v == this;
             return;
         }
         
-        if( cmd.equalsIgnoreCase("place elements label") )
+        if( cmd.equalsIgnoreCase("place element label(s)") )
         {
             if( currentNode == null )
                 return;
@@ -1271,7 +1271,7 @@ assert v == this;
             return;
         }
         
-        if( cmd.equalsIgnoreCase("place categories + elements label") )
+        if( cmd.equalsIgnoreCase("place category and element labels") )
         {
             if( currentNode == null )
                 return;
@@ -1283,7 +1283,7 @@ assert v == this;
             return;
         }
         
-        if( cmd.equalsIgnoreCase("change colour") )
+        if( cmd.equalsIgnoreCase("change color") )
         {
             if( currentNode == null )
                 return;
@@ -1328,6 +1328,7 @@ assert v == this;
                 invalidateView();
                 repaint();
             }
+            return;
         }
         
         System.out.println("VennPanel.actionPerformed : unhandled command : "+cmd);
