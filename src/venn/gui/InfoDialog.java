@@ -35,7 +35,7 @@ implements ActionListener
 	{
 		super(owner, "VennMaster Info",true);
         
-        image = SystemUtility.getImageResource(this,"/venn/images/icon_high2.png");
+        image = SystemUtility.getImageResource(this,"images/icon_high2.png");
         
 		Container cp = getContentPane();
 		cp.setLayout(new BorderLayout());

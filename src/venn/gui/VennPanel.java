@@ -51,6 +51,8 @@ import org.apache.batik.svggen.SVGGraphics2D;
 import org.apache.batik.svggen.SVGGraphics2DIOException;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 import venn.AllParameters;
 import venn.VennArrangementsOptimizer;
@@ -934,7 +936,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
     }
 
     //TODO
-    public synchronized void directPaintsvg(Graphics g, Dimension dim)
+    public synchronized void directPaintsvg(Graphics g, Dimension dim, List<String> paintLog)
     {
         if( views == null || views.length == 0 )
             return;
@@ -951,7 +953,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
             {
             		VennDiagramView vv = (VennDiagramView)views[i];
             		vv.setDoubleBuffered( false );
-                 vv.paintComponent( g, trans );
+                 vv.paintComponent( g, trans, paintLog );
                  vv.setDoubleBuffered( true ); 
             }
             else
@@ -1013,15 +1015,17 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         
         svgGenerator.setSVGCanvasSize( dim );   
 
+        final List<String> paintLog = new ArrayList<String>();
+        
         // Ask the test to render into the SVG Graphics2D implementation
         if (SwingUtilities.isEventDispatchThread()) {
-        	directPaintsvg(svgGenerator, dim);
+        	directPaintsvg(svgGenerator, dim, paintLog);
         } else {
         	try {
         		SwingUtilities.invokeAndWait(new Runnable() { // TODO necessary?
 //        			@Override
         			public void run() {
-        				directPaintsvg( svgGenerator, dim );
+        				directPaintsvg( svgGenerator, dim, paintLog );
         			}
         		});
         	} catch (InterruptedException e) {
@@ -1033,12 +1037,24 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         	}
         }
 
+        Element root = document.getDocumentElement();
+        svgGenerator.getRoot(root);
+        NodeList polygons = root.getElementsByTagNameNS("*", "polygon");
+        assert polygons.getLength() >= paintLog.size();
+        for (int i = 0; i < paintLog.size(); i++) {
+        	if (i % 2 == 0) {
+        		((Element) polygons.item(i)).setAttributeNS(null, "id", "fill:" + paintLog.get(i));
+        	} else {
+        		((Element) polygons.item(i)).setAttributeNS(null, "id", "outline:" + paintLog.get(i));
+        	}
+        }
+        
         // Finally, stream out SVG to the standard output using UTF-8
         // character to byte encoding
         boolean useCSS = true; // we want to use CSS style attribute
         Writer out;
         out = new OutputStreamWriter(os, "UTF-8");
-        svgGenerator.stream(out, useCSS);
+        svgGenerator.stream(root, out, useCSS);
     }
     
 	public void fileSave()

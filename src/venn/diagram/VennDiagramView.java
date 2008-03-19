@@ -230,11 +230,12 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
      * @param itrans
      * 
      */
-    public void draftPaint( Graphics g, ITransformer itrans )
+    public void draftPaint( Graphics g, ITransformer itrans, List<String> paintLog )
     {
         if( arrangement == null  )
             return;
 
+        IVennObject[] objsUnsorted = arrangement.getVennObjects();
         IVennObject[] objs = (IVennObject[])arrangement.getVennObjects().clone();
         if( objs == null )
             return;
@@ -281,6 +282,40 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         {
         	
             objs[i].directPaint(g,itrans);
+            
+            if (paintLog != null) {
+                BitSet path = new BitSet();
+            	for (int j = 0; j < objsUnsorted.length; j++) {
+            		if (objsUnsorted[j] == objs[i]) {
+            			path.clear();
+            			path.set(j);
+
+            			StringBuffer buf = new StringBuffer();
+            	        for(int k=path.nextSetBit(0); k>=0; k=path.nextSetBit(k+1)) 
+            	        {
+            	            buf.append( getArrangement().getDataModel().getGroupName(k) );
+            	            if( k+1 < path.length() )
+            	                buf.append(",");
+            	            
+            	        }
+
+            			BitSet el = objs[i].getElements();
+            			buf.append(":");
+            			for( int k=el.nextSetBit(0); k>=0; k = el.nextSetBit(k+1) )
+            			{
+            				buf.append( arrangement.getDataModel().getElementName(k) );
+            				if( k+1 < el.length() )
+            					buf.append(",");
+            			}
+            			String str = buf.toString();
+
+            			// for polygon (fill):
+            			paintLog.add(str);
+            			// for polygon outline:
+            			paintLog.add(str);
+            		}
+            	}
+            }
         }
         
         if (pathColors.isEmpty()) return;
@@ -319,11 +354,12 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
      * 
      * @param g
      * @param itrans
+     * @param paintLog 
      */
-    public void directPaint( Graphics g, ITransformer itrans )
+    public void directPaint( Graphics g, ITransformer itrans, List<String> paintLog )
     {
         // draw polygons
-        draftPaint( g, itrans );
+        draftPaint( g, itrans, paintLog );
         
         if( tree == null )
             return;
@@ -419,6 +455,15 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
     }
     
     /**
+     * 
+     * @param g
+     * @param itrans
+     */
+    public void directPaint( Graphics g, ITransformer itrans ) {
+    	directPaint(g, itrans, null);
+    }
+    
+    /**
      * Draws line connectors between polygons and Labels.
      * 
      * @param g
@@ -461,7 +506,7 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         }
     }
         
-    public void paintComponent( Graphics graphics, ITransformer itrans )
+    public void paintComponent( Graphics graphics, ITransformer itrans, List<String> paintLog )
     {
         if( !hasViewChanged() && isDoubleBuffered() )
         {
@@ -482,11 +527,11 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         
         if( dragging )
         {
-            draftPaint(g,itrans);
+            draftPaint(g,itrans, null);
         }
         else
         {   // full paint
-            directPaint(g,itrans);  // show venn objects
+            directPaint(g,itrans, paintLog);  // show venn objects
             drawLineConnectors(g);
             paintChildren(g);               // show labels
         }
@@ -504,8 +549,9 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         viewChanged = false;
     }
 
-    public void paintComponent(Graphics graphics) {
-    	paintComponent(graphics, getTransformer());
+    @Override
+	public void paintComponent(Graphics graphics) {
+    	paintComponent(graphics, getTransformer(), null);
     }
     
     public boolean hasViewChanged() 
