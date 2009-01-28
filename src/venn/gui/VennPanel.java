@@ -1175,10 +1175,10 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 			}
 			else
 			{ // write SVG file
-
+			
                 try {
                     //writeSVGFile(os,venn.getWidth(),venn.getHeight());
-                    writeSVGFile(os,400,400);
+                    writeSVGFile(os,getWidth(),getHeight());
                     os.close();
                 }
                 catch (UnsupportedEncodingException e) 
