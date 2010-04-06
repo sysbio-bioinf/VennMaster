@@ -4,10 +4,21 @@
  */
 package venn.db;
 
-import venn.geometry.FileFormatException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.LineNumberReader;
+import java.io.Reader;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.BitSet;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import java.io.*;
-import java.util.*;
+import venn.geometry.FileFormatException;
 
 //import junit.framework.Assert;
 
@@ -26,59 +37,42 @@ import java.util.*;
 public class HTGeneOntologyReaderModel 
 extends AbstractVennDataModel implements Serializable
 {
-    private ArrayList   aElements,      // array of aElements (key names)
-                        aGroups,        // array of aGroups (group names)   
-                        groupKeys,      // maps group numbers (integer) to a BitSet of key numbers (integer)
-                        properties;     // group properties
-    
-    private HashMap     groupMap;   // maps groupID's to group numbers (need this only for import ...)
+    private List<String> elements;  // array of aElements (key names)
+    private List<String> groups;  // array of aGroups (group names)   
+    private List<Set<Integer>> groupKeys;  // maps group numbers (integer) to a BitSet of key numbers (integer)
+    private List<AbstractGOCategoryProperties> properties;  // group properties
     
     private BitSet[]    sets;
     
-    private boolean     valid;          // valid state? 
-
+    private Set<Integer> removedLines;  // lines with missing values
+    
     /**
+     * @throws IOException 
+     * @throws FileFormatException 
      * 
      */
-    public HTGeneOntologyReaderModel() 
+    public HTGeneOntologyReaderModel(String categoryListFileName) throws FileFormatException, IOException 
     {
         super();
-        
-        aElements = new ArrayList();
-        aGroups = new ArrayList();
-        groupMap = new HashMap();
-        groupKeys = new ArrayList();
-        properties = new ArrayList();
-        valid = false;
+        loadFromFile(new FileReader(categoryListFileName));
+    }
+    
+    public HTGeneOntologyReaderModel(Reader reader) throws FileFormatException, IOException {
+        super();
+        loadFromFile(reader);
     }
     
     /**
      * Read "Gene Ontology Miner" format.
      *   
-     * @param categoryList Path to the category file
+     * @param categoryListFileName Path to the category file
      */
-    public void loadFromFile(String categoryList )
+    private void loadFromFile(Reader reader)
         throws IOException, FileFormatException
     {
-        clear();
-        
-        readElements(new FileReader(categoryList));
+        readElements(reader);
         
         updateBitSets();
-    }
-    
-    public void clear()
-    {    
-        aElements.clear();
-        aGroups.clear();
-        groupKeys.clear();
-        properties.clear();
-        valid = false;
-    }
-    
-    public boolean isValid()
-    {
-        return valid;
     }
     
     /**
@@ -91,48 +85,57 @@ extends AbstractVennDataModel implements Serializable
     private void readElements(Reader reader)
         throws IOException, FileFormatException
     {
-        aGroups.clear();
-        groupMap.clear();
-        groupKeys.clear();
-        properties.clear();
+        elements = new ArrayList<String>();
+        groups = new ArrayList<String>();
+        groupKeys = new ArrayList<Set<Integer>>();
+        properties = new ArrayList<AbstractGOCategoryProperties>();
         
-        // groupKeys.ensureCapacity(aGroups.size());
+        removedLines = new HashSet<Integer>();
         
-        Map keyMap = new HashMap();
+        Map<Integer, Integer> groupMap = new HashMap<Integer, Integer>();
+
+//         groupKeys.ensureCapacity(aGroups.size());
         
-        for(int i=0; i<aGroups.size(); ++i)
+        Map<String, Integer> keyMap = new HashMap<String, Integer>();
+        
+        for(int i=0; i<groups.size(); ++i)
         {
-            groupKeys.add(new HashSet());
+            groupKeys.add(new HashSet<Integer>());
         }        
 
-        boolean header = false;
-                        
         LineNumberReader in = new LineNumberReader(reader);
         
         int groupNumber = 0,
             keyNumber = 0;
                                                 
-        while( in.ready() )
+        String line;
+        while( (line = in.readLine()) != null )
         {
-            String line = in.readLine();
-            line.trim();
+//            line.trim();
                     
             if( line.length() > 0 )
             {           
-                if( header )
-                {
-                    header = false;
-                    continue;
+                String[] tokens = line.split("\t", -1);
+                  if( tokens.length == 11 ) {
+                	  if (! tokens[0].equals("") && ! tokens[1].equals("") && ! tokens[2].equals("")
+                			  && ! tokens[3].equals("")
+                			  && tokens[4].equals("") && tokens[5].equals("") && tokens[6].equals("")
+                			  && tokens[7].equals("") && tokens[8].equals("") && tokens[9].equals("")
+                			  && tokens[10].equals("")) {
+                      	removedLines.add(in.getLineNumber());
+                    	continue;
+                	  } else {
+                		throw new FileFormatException("CategoryList: Error in line "+in.getLineNumber());
+                	  }
+                	// note: missing values in the file seems to be completely empty (no white spaces) (not true for non-HT-files)
                 }
-                StringTokenizer tok = new StringTokenizer(line,"\t");           
-                if( tok.countTokens() != 9 )
-                    throw new FileFormatException("CategoryList: Error in line "+in.getLineNumber());
                 
                 int     groupID = 0, 
                         nTotal = 0, 
                         nChange = 0;
-                double  Enrichment = 0.0,
-                        pValue = 1.0,
+                @SuppressWarnings("unused")
+				double  Enrichment = 0.0;
+                double  pValue = 1.0,
                         FDR = 1.0;
                 String term = null;
                 String  groupName, keyName;
@@ -140,19 +143,17 @@ extends AbstractVennDataModel implements Serializable
                 try 
                 {
                     // category gene nTotal nChange enrichment pValue nCat CRMean FDR
-                    groupName   = tok.nextToken().trim();
+                    groupName   = tokens[0].trim();
                     
                     if( groupName.length() < 3 || !groupName.startsWith("GO:") )
                         continue; // ignore unwanted records
                     
-                    keyName     = tok.nextToken().trim();
-                    nTotal      =  Integer.parseInt(tok.nextToken().trim());
-                    nChange     =  Integer.parseInt(tok.nextToken().trim());
-                    Enrichment =  Double.parseDouble(tok.nextToken().trim());                  
-                    pValue     = Math.pow(10.0,Double.parseDouble(tok.nextToken().trim().replace(',','.')));
-                    tok.nextToken();
-                    tok.nextToken();
-                    FDR         = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
+                    keyName     = tokens[1].trim();
+                    nTotal      =  Integer.parseInt(tokens[2].trim());
+                    nChange     =  Integer.parseInt(tokens[3].trim());
+                    Enrichment =  Double.parseDouble(tokens[4].trim());
+                    pValue     = Math.pow(10.0,Double.parseDouble(tokens[5].trim().replace(',','.')));
+                    FDR         = Double.parseDouble(tokens[8].trim().replace(',','.'));
                     
                     int idx = groupName.indexOf('_');
                     if( idx < 0 )
@@ -165,51 +166,48 @@ extends AbstractVennDataModel implements Serializable
                 {
                     throw new FileFormatException("Error in element file at line "+in.getLineNumber());
                 }
-                Integer gval = (Integer)groupMap.get(new Integer(groupID));
+                Integer gval = groupMap.get(Integer.valueOf(groupID));
                 if( gval == null )
                 { // entry not found in category list -> create new entry
-                	gval = new Integer(groupNumber);
-                	groupMap.put(new Integer(groupID),gval);
-                	aGroups.add(term);
-                	groupKeys.add( new HashSet() );
+                	gval = Integer.valueOf(groupNumber);
+                	groupMap.put(Integer.valueOf(groupID),gval);
+                	groups.add(term);
+                	groupKeys.add( new HashSet<Integer>() );
                 	properties.add(new GOCategoryProperties1p1fdr(groupID,nTotal,nChange,pValue,FDR));
 
                 	++groupNumber;       
                 }
 
-                Integer kval = (Integer)keyMap.get(keyName);
+                Integer kval = keyMap.get(keyName);
                 if( kval == null )
                 { // append new key
-                	kval = new Integer(keyNumber);
+                	kval = Integer.valueOf(keyNumber);
                 	keyMap.put(keyName,kval);
-                	aElements.add(keyNumber,keyName);
+                	elements.add(keyNumber,keyName);
                 	++keyNumber;
                 }
-                Set myGroup = (Set)groupKeys.get(gval.intValue());
+                Set<Integer> myGroup = groupKeys.get(gval.intValue());
                 myGroup.add(kval);
             }
         }
+        
+        reader.close();
     }
             
 
-    public String getKeyName(int idx)
-    {
-        return (String)aElements.get(idx);
-    }
-
     public String getGroupName(int idx)
     {
-        return (String)aGroups.get(idx);
+        return groups.get(idx);
     }
         
     public void show()
     {
         // print aGroups
-        for(int i=0; i<aGroups.size(); ++i )
+        for(int i=0; i<groups.size(); ++i )
         {
-            System.out.print(aGroups.get(i) + "["+ i+"] : { ");
-            Set list = (Set)groupKeys.get(i);
-            Iterator iter = list.iterator();
+            System.out.print(groups.get(i) + "["+ i+"] : { ");
+            Set<Integer> list = groupKeys.get(i);
+            Iterator<Integer> iter = list.iterator();
             while( iter.hasNext() )
             {
                 System.out.print(iter.next()+" ");
@@ -218,28 +216,12 @@ extends AbstractVennDataModel implements Serializable
         }
         
         // print aElements
-        for(int i=0; i<aElements.size(); ++i )
+        for(int i=0; i<elements.size(); ++i )
         {
-            System.out.println(i+" : " + aElements.get(i));
+            System.out.println(i+" : " + elements.get(i));
         }
     }
 
-    /* (non-Javadoc)
-     * @see geometry.CategoryMapper#getKeySize()
-     */
-    public int getKeySize()
-    {
-        return aElements.size();
-    }
-
-    /* (non-Javadoc)
-     * @see geometry.CategoryMapper#getGroupSize()
-     */
-    public int getGroupSize()
-    {
-        return aGroups.size();
-    }
-    
     /* (non-Javadoc)
      * @see geometry.CategoryMapper#reduceTo(java.util.BitSet)
      */
@@ -267,7 +249,7 @@ extends AbstractVennDataModel implements Serializable
      */
     public int getNumGroups() 
     {
-        return aGroups.size();
+        return groups.size();
     }
 
     /* (non-Javadoc)
@@ -275,31 +257,26 @@ extends AbstractVennDataModel implements Serializable
      */
     public int getNumElements() 
     {
-        return aElements.size();
+        return elements.size();
     }
 
     private void updateBitSets()
     {
-        int n = aElements.size();
+        int n = elements.size();
         
-        sets = new BitSet[aGroups.size()];
+        sets = new BitSet[groups.size()];
         for(int i=0; i<sets.length; ++i)
         {
             sets[i] = new BitSet(n);
-            Set list = (Set)groupKeys.get(i);
-            Iterator iter = list.iterator();
-            while( iter.hasNext() )
-            {
-                int bt = ((Integer)iter.next()).intValue();
-                sets[i].set(bt);
-            }
+            for (Integer bt : groupKeys.get(i)) {
+				sets[i].set(bt);
+			}
         }
-        
-        valid = true;
         
 //        fireChangeEvent();
         notifySucc();
-    }    
+    }
+    
     /* (non-Javadoc)
      * @see venn.AbstractVennDataModel#getGroupElements(int)
      */
@@ -311,7 +288,7 @@ extends AbstractVennDataModel implements Serializable
         return sets[groupID];
     }
     
-    public Object getGroupProperties(int groupID)
+    public AbstractGOCategoryProperties getGroupProperties(int groupID)
     {
         if( groupID < 0 || groupID >= getNumGroups() )
             throw new IndexOutOfBoundsException("group ID out of bounds");
@@ -326,8 +303,12 @@ extends AbstractVennDataModel implements Serializable
     public String getElementName(int elementID) 
     {
 
-        return (String)aElements.get(elementID);
+        return elements.get(elementID);
     }
 
+    public Set<Integer> getRemovedLines() {
+    	return removedLines;
+    }
+    
 }
 

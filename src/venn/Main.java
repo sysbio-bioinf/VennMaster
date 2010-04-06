@@ -7,6 +7,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.SwingUtilities;
 
@@ -40,8 +42,22 @@ public class Main {
 	 * @param args
 	 *            The command line arguments.
 	 */
-	public Main(String[] args)
+	public Main(String[] args0)
     {
+		// --svgids is experimental and my be removed in future versions
+		// hidden option (ArgParser would include --svgids in help text)
+		boolean svgids = false;
+		List<String> argsarr = new ArrayList<String>();
+		for (String opt : args0) {
+			if ("--svgids".equals(opt)) {
+				svgids = true;
+			} else {
+				argsarr.add(opt);
+			}
+		}
+		String[] args = new String[argsarr.size()];
+		argsarr.toArray(args);
+		
         final ArgParser parser = new ArgParser("java -jar venn.jar <arguments>");
         
         BooleanHolder   versionOpt = new BooleanHolder();
@@ -99,6 +115,8 @@ public class Main {
         {   // default parameter set
             params = new AllParameters();
         }
+
+        params.svgIds = svgids;
         
         if( outConfigFile.value != null )
         {
@@ -186,7 +204,6 @@ public class Main {
             if( !flag && (gceFile.value != null) && (seFile.value != null) )
             {   
                 loadFiles.loadGOMiner(seFile.value,gceFile.value);
-
                 flag = true;
             }
             
@@ -318,7 +335,8 @@ public class Main {
         {
             try {
                 FileOutputStream fs = new FileOutputStream(svgFile.value);
-                venn.writeSVGFile(fs,400,400);
+//                venn.writeSVGFile(fs,400,400);
+                venn.writeSVGFile(fs);
                 fs.close();
             } 
             catch (FileNotFoundException e) 

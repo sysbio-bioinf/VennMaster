@@ -4,12 +4,22 @@
  */
 package venn.db;
 
-import venn.geometry.FileFormatException;
-
-import java.io.*;
-import java.util.*;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.LineNumberReader;
+import java.io.Reader;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.BitSet;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import junit.framework.Assert;
+import venn.geometry.FileFormatException;
 
 
 /**
@@ -19,32 +29,34 @@ import junit.framework.Assert;
 public class GeneOntologyReaderModel 
 extends AbstractVennDataModel implements Serializable
 {
-	private ArrayList	aElements,		// array of aElements (key names)
-						aGroups,		// array of aGroups (group names)	
-						groupKeys,		// maps group numbers (integer) to a BitSet of key numbers (integer)
-                        properties;     // group properties
+	private List<String> aElements;		// array of aElements (key names)
+	private	List<String> aGroups;		// array of aGroups (group names)	
+	private List<Set<Integer>> groupKeys;		// maps group numbers (integer) to a BitSet of key numbers (integer)
+    private List<AbstractGOCategoryProperties> properties;     // group properties
 	
-	private HashMap		groupMap;	// maps groupID's to group numbers (need this only for import ...)
+	private Map<Integer, Integer>		groupMap;	// maps groupID's to group numbers (need this only for import ...)
 	
 	private BitSet[]	sets;
 	
-	private boolean 	valid;			// valid state? 
+	private Set<Integer> removedLines;
 
     /**
+     * @throws IOException 
+     * @throws FileFormatException 
      * 
      */
-    public GeneOntologyReaderModel() 
+    public GeneOntologyReaderModel(String categoryListName,String geneListName) throws FileFormatException, IOException 
     {
         super();
         
-		aElements = new ArrayList();
-		aGroups = new ArrayList();
-		groupMap = new HashMap();
-		groupKeys = new ArrayList();
-        properties = new ArrayList();
-        
-		valid = false;
+        loadFromFile(new FileReader(categoryListName), new FileReader(geneListName));
     }
+    
+    public GeneOntologyReaderModel(Reader categoryList, Reader geneList) throws FileFormatException, IOException {
+        super();
+        
+        loadFromFile(categoryList, geneList);
+	}
 	
 	/**
 	 * Read "Gene Ontology Miner" format.
@@ -52,30 +64,14 @@ extends AbstractVennDataModel implements Serializable
 	 * @param categoryList Path to the category file
 	 * @param geneList Path to the gene file
 	 */
-	public void loadFromFile(String categoryList,String geneList )
+	private void loadFromFile(Reader categoryList, Reader geneList )
 		throws IOException, FileFormatException
 	{
-		clear();
-		
-		readElements(new FileReader(categoryList));
-		readGeneList(new FileReader(geneList));
+        readElements(categoryList);
+		readGeneList(geneList);
 		
 		updateBitSets();
 	}
-	
-	public void clear()
-	{    
-		aElements.clear();
-		aGroups.clear();
-		groupKeys.clear();
-        properties.clear();
-		valid = false;
-	}
-    
-    public boolean isValid()
-    {
-        return valid;
-    }
 	
 	/**
 	 * Reads a gene list from a file.
@@ -87,9 +83,9 @@ extends AbstractVennDataModel implements Serializable
 	private void readElements(Reader reader)
 		throws IOException, FileFormatException
 	{
-		aGroups.clear();
-		groupMap.clear();
-        properties.clear();
+		aGroups = new ArrayList<String>();
+		groupMap = new HashMap<Integer, Integer>();
+        properties = new ArrayList<AbstractGOCategoryProperties>();
 
 		boolean header = true;
 						
@@ -99,11 +95,16 @@ extends AbstractVennDataModel implements Serializable
 					
 		int numTokens = -1;
 		
-		while( in.ready() )
+		removedLines = new HashSet<Integer>();
+		
+		String line;
+//		while( in.ready() )
+		while((line = in.readLine()) != null)
 		{
-			String line = in.readLine();
-			line.trim();
-					
+//			String line = in.readLine();
+//			line.trim();
+			
+			boolean missingValue = false;
 			if( line.length() > 0 )
 			{			
 				if( header )
@@ -111,13 +112,17 @@ extends AbstractVennDataModel implements Serializable
 					header = false;
 					continue;
 				}
-				StringTokenizer tok = new StringTokenizer(line,"\t");			
-				if( tok.countTokens() != 9 && tok.countTokens() != 12 )
+//				StringTokenizer tok = new StringTokenizer(line,"\t");
+				String[] tokens = line.split("\t");
+//				if( tok.countTokens() != 9 && tok.countTokens() != 12 )
+				if( tokens.length != 9 && tokens.length != 12 )
 					throw new FileFormatException("Gene summary export (.se) file in line "+in.getLineNumber()+ " wrong number of fields");
 				if (numTokens == -1) {
-					numTokens = tok.countTokens();
+//					numTokens = tok.countTokens();
+					numTokens = tokens.length;
 				} else {
-					if (tok.countTokens() != numTokens) {
+//					if (tok.countTokens() != numTokens) {
+					if (tokens.length != numTokens) {
 						throw new FileFormatException("Gene summary export (.se) file in line "+in.getLineNumber()+ " number of fields has changed");
 					}
 				}
@@ -134,28 +139,83 @@ extends AbstractVennDataModel implements Serializable
 						fdrOver = -888.0,
 						fdrChange = -999.0;
 				String term = null;
+				
+				String pUnderStr, pOverStr, pChangeStr;
+				String fdrUnderStr = null, fdrOverStr = null, fdrChangeStr = null;
+				
 				try 
 				{
-					String tmp = tok.nextToken().trim();
+//					String tmp = tok.nextToken().trim();
+					String tmp = tokens[0].trim();
 					if( tmp.equalsIgnoreCase("null") )
 						continue;
 					if( tmp.equalsIgnoreCase("all") )
 						groupID = 0;
 					else
 						groupID = Integer.parseInt(tmp);
-					nTotal =  Integer.parseInt(tok.nextToken().trim());
-					nUnder =  Integer.parseInt(tok.nextToken().trim());
-					nOver =  Integer.parseInt(tok.nextToken().trim());
-					nChange =  Integer.parseInt(tok.nextToken().trim());
-					pUnder = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
-					pOver = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
-					pChange = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
-					if (numTokens == 12) {
-						fdrUnder = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
-						fdrOver = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
-						fdrChange = Double.parseDouble(tok.nextToken().trim().replace(',','.'));
+//					nTotal =  Integer.parseInt(tok.nextToken().trim());
+					nTotal =  Integer.parseInt(tokens[1].trim());
+//					nUnder =  Integer.parseInt(tok.nextToken().trim());
+					nUnder =  Integer.parseInt(tokens[2].trim());
+//					nOver =  Integer.parseInt(tok.nextToken().trim());
+					nOver =  Integer.parseInt(tokens[3].trim());
+//					nChange =  Integer.parseInt(tok.nextToken().trim());
+					nChange =  Integer.parseInt(tokens[4].trim());
+//					pUnderStr = tok.nextToken().trim();
+					pUnderStr = tokens[5].trim();
+					if (pUnderStr.length() > 0) {
+						pUnder = Double.parseDouble(pUnderStr.replace(',','.'));
+					} else {
+						missingValue = true;
+//						pUnder = 1.0;
 					}
-					term = tok.nextToken().trim();
+//					pOverStr = tok.nextToken().trim();
+					pOverStr = tokens[6].trim();
+					if (pOverStr.length() > 0) {
+						pOver = Double.parseDouble(pOverStr.replace(',','.'));
+					} else {
+						missingValue = true;
+//						pOver = 1.0;
+					}
+//					pChangeStr = tok.nextToken().trim();
+					pChangeStr = tokens[7].trim();
+					if (pChangeStr.length() > 0) {
+						pChange = Double.parseDouble(pChangeStr.replace(',','.'));
+					} else {
+						missingValue = true;
+//						pChange = 1.0;
+					}
+					if (numTokens == 9) {
+						term = tokens[8];
+					}
+					if (numTokens == 12) {
+//						fdrUnderStr = tok.nextToken().trim();
+						fdrUnderStr = tokens[8].trim();
+						if (fdrUnderStr.length() > 0) {
+							fdrUnder = Double.parseDouble(fdrUnderStr.replace(',','.'));
+						} else {
+							missingValue = true;
+//							fdrUnder = 1.0;
+						}
+//						fdrOverStr = tok.nextToken().trim();
+						fdrOverStr = tokens[9].trim();
+						if (fdrOverStr.length() > 0) {
+							fdrOver = Double.parseDouble(fdrOverStr.replace(',','.'));
+						} else {
+							missingValue = true;
+//							fdrOver = 1.0;
+						}
+//						fdrChangeStr = tok.nextToken().trim();
+						fdrChangeStr = tokens[10].trim();
+						if (fdrChangeStr.length() > 0) {
+							fdrChange = Double.parseDouble(fdrChangeStr.replace(',','.'));
+						} else {
+							missingValue = true;
+//							fdrChange = 1.0;
+						}
+						term = tokens[11].trim();
+					}
+//					term = tok.nextToken().trim();
 				}
 				catch( NumberFormatException e )
 				{
@@ -173,24 +233,30 @@ extends AbstractVennDataModel implements Serializable
 //					pValue = pChange;
 //				}
 				
+				if (missingValue) {
+					// note: missing p/fdr values in the file seems to contain single white spaces instead (here, not in HT files)
+					removedLines.add(in.getLineNumber());
+					continue;
+				}
+				
 				if (numTokens == 9) {
-					groupMap.put(new Integer(groupID),new Integer(groupNumber));
+					groupMap.put(Integer.valueOf(groupID),Integer.valueOf(groupNumber));
 					properties.add(new GOCategoryProperties3p(groupID,nTotal,nChange,pUnder, pOver, pChange));
 					aGroups.add(term);
 					++groupNumber;
-					//System.out.println(in.getLineNumber()+ " : "+line);
 				} else {
 					assert numTokens == 12;
-					groupMap.put(new Integer(groupID),new Integer(groupNumber));
+					groupMap.put(Integer.valueOf(groupID),Integer.valueOf(groupNumber));
 					properties.add(new GOCategoryProperties3p3fdr(groupID,nTotal,nChange,
 							pUnder, pOver, pChange,
 							fdrUnder, fdrOver, fdrChange));
 					aGroups.add(term);
 					++groupNumber;
-					//System.out.println(in.getLineNumber()+ " : "+line);
                 }
 			}
 		}
+		
+		reader.close();
 	}
 			
 	/**
@@ -211,38 +277,47 @@ extends AbstractVennDataModel implements Serializable
 			throw new IllegalStateException("YOU HAVE TO CALL readElements BEFORE readGeneList");
 			*/
 		
-		Map 	keyMap;		// maps key names to logical numbers in the range 0..n-1
+		Map<String, Integer> 	keyMap;		// maps key names to logical numbers in the range 0..n-1
 		
-		groupKeys.clear();
-		groupKeys.ensureCapacity(aGroups.size());
+		aElements = new ArrayList<String>();
+		groupKeys = new ArrayList<Set<Integer>>();
+//		groupKeys.ensureCapacity(aGroups.size());
 		for(int i=0; i<aGroups.size(); ++i)
 		{
-			groupKeys.add(new HashSet());
+			groupKeys.add(new HashSet<Integer>());
 		}
 		 
-		keyMap = new HashMap();
+		keyMap = new HashMap<String, Integer>();
 		
 		LineNumberReader in = new LineNumberReader(reader);
 		
 		int keyNumber = 0;
 												
-		while( in.ready() )
+		String line;
+//		while( in.ready() )
+		while((line = in.readLine()) != null)
 		{
-			String line = in.readLine();
-			line.trim();
+//			String line = in.readLine();
+//			line.trim();
 					
 			if( line.length() > 0 )
 			{			
-				StringTokenizer tok = new StringTokenizer(line,"\t");			
-				if( tok.countTokens() < 3 )
-					throw new FileFormatException("Gene category summary (.gce) file at line "+in.getLineNumber() +" wrong number of fields");
+//				StringTokenizer tok = new StringTokenizer(line,"\t");
+				String[] tokens = line.split("\t");
+//				if( tok.countTokens() < 3 )
+				if( tokens.length < 3 )
+				throw new FileFormatException("Gene category summary (.gce) file at line "+in.getLineNumber() +" wrong number of fields");
 				
-				String 	strID = tok.nextToken().trim();
+//				String 	strID = tok.nextToken().trim();
+				String 	strID = tokens[0].trim();
 				if( strID.length() < 3 || !strID.startsWith("GO:") )
 					continue; // ignore unwanted records
 				
-				String 	groupName = tok.nextToken().trim(),
-						keyName = tok.nextToken().trim();
+//				String 	groupName = tok.nextToken().trim(),
+//						keyName = tok.nextToken().trim();
+				@SuppressWarnings("unused")
+				String 	groupName = tokens[1].trim();
+				String keyName = tokens[2].trim();
 				
 				if( strID.length() < 4 )
 					throw new FileFormatException("Gene category summary (.gce) file at line "+in.getLineNumber());
@@ -258,37 +333,41 @@ extends AbstractVennDataModel implements Serializable
 					throw new FileFormatException("Gene category summary (.gce) file in line "+in.getLineNumber()+" illegal field value in first column");
 				}
 				
-				Integer gval = (Integer)groupMap.get(new Integer(goID));
+				Integer gval = groupMap.get(Integer.valueOf(goID));
 				if( gval == null )
 				{ // entry not found in category list -> continue
 					continue;
 				}
 				// System.out.println(in.getLineNumber()+" "+strID+" : "+keyName +" "+goID+" : " + aGroups.get(gval.intValue()));
 				
-				Integer kval = (Integer)keyMap.get(keyName);
+				Integer kval = keyMap.get(keyName);
 				if( kval == null )
 				{ // append new key
-					kval = new Integer(keyNumber);
+//					kval = new Integer(keyNumber);
+					kval = Integer.valueOf(keyNumber);
 					keyMap.put(keyName,kval);
 					aElements.add(keyNumber,keyName);
 					++keyNumber;
 				}
-				Set myGroup = (Set)groupKeys.get(gval.intValue());
+				Set<Integer> myGroup = groupKeys.get(gval.intValue());
 				myGroup.add(kval);
 			}
 		}
-		Assert.assertEquals(groupKeys.size(), aGroups.size() );		
+
+		reader.close();
+
+		Assert.assertEquals(groupKeys.size(), aGroups.size() );
 	}
 
 
-	public String getKeyName(int idx)
-	{
-		return (String)aElements.get(idx);
-	}
+//	public String getKeyName(int idx)
+//	{
+//		return aElements.get(idx);
+//	}
 
 	public String getGroupName(int idx)
 	{
-		return (String)aGroups.get(idx);
+		return aGroups.get(idx);
 	}
 		
 	public void show()
@@ -297,8 +376,8 @@ extends AbstractVennDataModel implements Serializable
 		for(int i=0; i<aGroups.size(); ++i )
 		{
 			System.out.print(aGroups.get(i) + "["+ i+"] : { ");
-			Set list = (Set)groupKeys.get(i);
-			Iterator iter = list.iterator();
+			Set<Integer> list = groupKeys.get(i);
+			Iterator<Integer> iter = list.iterator();
 			while( iter.hasNext() )
 			{
 				System.out.print(iter.next()+" ");
@@ -313,21 +392,21 @@ extends AbstractVennDataModel implements Serializable
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see geometry.CategoryMapper#getKeySize()
-	 */
-	public int getKeySize()
-	{
-		return aElements.size();
-	}
+//	/* (non-Javadoc)
+//	 * @see geometry.CategoryMapper#getKeySize()
+//	 */
+//	public int getKeySize()
+//	{
+//		return aElements.size();
+//	}
 
-	/* (non-Javadoc)
-	 * @see geometry.CategoryMapper#getGroupSize()
-	 */
-	public int getGroupSize()
-	{
-		return aGroups.size();
-	}
+//	/* (non-Javadoc)
+//	 * @see geometry.CategoryMapper#getGroupSize()
+//	 */
+//	public int getGroupSize()
+//	{
+//		return aGroups.size();
+//	}
 	
 	/* (non-Javadoc)
 	 * @see geometry.CategoryMapper#reduceTo(java.util.BitSet)
@@ -375,19 +454,18 @@ extends AbstractVennDataModel implements Serializable
 		for(int i=0; i<sets.length; ++i)
 		{
 			sets[i] = new BitSet(n);
-			Set list = (Set)groupKeys.get(i);
-			Iterator iter = list.iterator();
+			Set<Integer> list = groupKeys.get(i);
+			Iterator<Integer> iter = list.iterator();
 			while( iter.hasNext() )
 			{
-				sets[i].set(((Integer)iter.next()).intValue());
+				sets[i].set(iter.next().intValue());
 			}
 		}
-		
-		valid = true;
 		
 //		fireChangeEvent();
 		notifySucc();
 	}
+	
     /* (non-Javadoc)
      * @see venn.AbstractVennDataModel#getGroupElements(int)
      */
@@ -414,8 +492,12 @@ extends AbstractVennDataModel implements Serializable
     public String getElementName(int elementID) 
     {
 
-        return (String)aElements.get(elementID);
+        return aElements.get(elementID);
     }
-
+    
+    public Set<Integer> getRemovedLines() {
+    	return removedLines;
+    }
+    
 }
 

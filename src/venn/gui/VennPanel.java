@@ -28,7 +28,6 @@ import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.lang.reflect.InvocationTargetException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -40,6 +39,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.RepaintManager;
 import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -47,7 +47,6 @@ import javax.swing.event.ChangeListener;
 import junit.framework.Assert;
 
 import org.apache.batik.dom.GenericDOMImplementation;
-import org.apache.batik.svggen.SVGGraphics2D;
 import org.apache.batik.svggen.SVGGraphics2DIOException;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
@@ -70,9 +69,7 @@ import venn.event.DuplFilterChainSucc;
 import venn.event.IFilterChainSucc;
 import venn.event.IVennPanelHasDataListener;
 import venn.event.ResultAvailableListener;
-import venn.geometry.AffineTransformer;
 import venn.geometry.DragLabel;
-import venn.geometry.FPoint;
 import venn.optim.IOptimizer;
 
 import com.sun.image.codec.jpeg.JPEGCodec;
@@ -166,11 +163,11 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 		setToolTipText("");
 		setOpaque(true);
 		setAutoscrolls(true); 
-		setPreferredSize(new Dimension(400,400));
+		//setPreferredSize(new Dimension(400,400));
         setBackground( Color.WHITE );
 		//setFocusable(true);
 	}
-	 	
+
  	public void setInconsistencyJTextArea(JTextArea inconsistencyInfo) {
  		this.inconsistencyInfo = inconsistencyInfo;
  	}
@@ -335,6 +332,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         validate();
         setVisible(true);
         repaint();
+        setZoomLevel(zoomLevel == -1 ? 100 : zoomLevel);
 	}
     
 	private synchronized void updateUnfiltered()
@@ -474,40 +472,40 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
     }
     */
     
-	public void saveSnapshotToFile(String file)
-	{ // save as JPEG
-		BufferedImage image = new BufferedImage(getWidth(),getHeight(),
-												BufferedImage.TYPE_3BYTE_BGR);
-									
-		Graphics g = image.getGraphics();
-		g.setColor(Color.WHITE); 
-		g.fillRect(0,0,image.getWidth(),image.getHeight());
-
-
-        int minw = Math.min(image.getWidth(),image.getHeight());         
-		getViews()[0].directPaint(  g,
-                                    new AffineTransformer(new FPoint(0,0), new FPoint(minw,minw) ));
-                
-									
-		try
-		{
-			FileOutputStream os = new FileOutputStream(file);
-			JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(os);
-			
-			JPEGEncodeParam jpegParam = JPEGCodec.getDefaultJPEGEncodeParam(image);
-			jpegParam.setQuality(1.0f,false);
-			encoder.encode(image,jpegParam);
-			os.close();
-		}
-		catch(IOException e)
-		{
-			JOptionPane.showMessageDialog(	this, 
-											"Error while writing file\r\n" + file,
-											"Error",
-											JOptionPane.ERROR_MESSAGE	);
-			return;					
-		}
-	}
+//	public void saveSnapshotToFile(String file)
+//	{ // save as JPEG
+//		BufferedImage image = new BufferedImage(getWidth(),getHeight(),
+//												BufferedImage.TYPE_3BYTE_BGR);
+//									
+//		Graphics g = image.getGraphics();
+//		g.setColor(Color.WHITE); 
+//		g.fillRect(0,0,image.getWidth(),image.getHeight());
+//
+//
+//        int minw = Math.min(image.getWidth(),image.getHeight());         
+//		getViews()[0].directPaint(  g,
+//                                    new AffineTransformer(new FPoint(0,0), new FPoint(minw,minw) ));
+//                
+//									
+//		try
+//		{
+//			FileOutputStream os = new FileOutputStream(file);
+//			JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(os);
+//			
+//			JPEGEncodeParam jpegParam = JPEGCodec.getDefaultJPEGEncodeParam(image);
+//			jpegParam.setQuality(1.0f,false);
+//			encoder.encode(image,jpegParam);
+//			os.close();
+//		}
+//		catch(IOException e)
+//		{
+//			JOptionPane.showMessageDialog(	this, 
+//											"Error while writing file\r\n" + file,
+//											"Error",
+//											JOptionPane.ERROR_MESSAGE	);
+//			return;					
+//		}
+//	}
     
 
 	/**
@@ -562,8 +560,6 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         
         notifyVennPanelHasDataListeners();
         notifyHasLabelsChanged();
-        
-        setZoomLevel(zoomLevel);
 	}
 
 	public IVennDataModel getDataModel()
@@ -908,6 +904,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 		}
 	}
 
+/**
     public void directPaint(Graphics g, Dimension dim)
     {
         if( views == null || views.length == 0 )
@@ -934,7 +931,9 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
             } 
         }
     }
-
+**/
+	
+/**    
     //TODO
     public synchronized void directPaintsvg(Graphics g, Dimension dim, List<String> paintLog)
     {
@@ -962,7 +961,32 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
             } 
         }
     }
+**/
 
+    public synchronized void directPaintsvg(Graphics g) {
+    	assert SwingUtilities.isEventDispatchThread();
+    	
+    	RepaintManager repaintManager = RepaintManager.currentManager(this);
+    	boolean doubleBuffered = repaintManager.isDoubleBufferingEnabled();
+    	repaintManager.setDoubleBufferingEnabled(false);
+    	for (int i = 0; i < views.length; i++) {
+			if (views[i] instanceof VennDiagramView) {
+				VennDiagramView view = (VennDiagramView)views[i];
+				view.setDoubleBuffered(false);
+			}
+		}
+
+    	paint(g);
+    	
+    	for (int i = 0; i < views.length; i++) {
+			if (views[i] instanceof VennDiagramView) {
+				VennDiagramView view = (VennDiagramView)views[i];
+				view.setDoubleBuffered(true);
+			}
+		}
+    	repaintManager.setDoubleBufferingEnabled(doubleBuffered);
+    }
+    
     private void invalidateView() 
     {
         if( views == null )
@@ -990,42 +1014,33 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 
         setPreferredSize(dim);
         setSize(dim);
-		invalidate();
+        if (!isDisplayable()) { // for command line
+        	synchronized (getTreeLock()) { // necessary?
+        		validateTree();
+        	}
+        } else {
+        	invalidate();
+        }
 	}
 
     /**
      * Writes the current Venn diagram to an SVG file.
-     * 
-     * @param os
-     * @throws UnsupportedEncodingException 
-     * @throws SVGGraphics2DIOException 
      */
-	public void writeSVGFile(OutputStream os,int width, int height) throws UnsupportedEncodingException, SVGGraphics2DIOException
-    {
-           // Get a DOMImplementation
-        DOMImplementation domImpl = GenericDOMImplementation.getDOMImplementation();
-
-        // Create an instance of org.w3c.dom.Document
-        Document document = domImpl.createDocument(null, "svg", null);
-
-        // Create an instance of the SVG Generator
-        final SVGGraphics2D svgGenerator = new SVGGraphics2D(document);
-        int mx = Math.min(height,width);
-        final Dimension dim = new Dimension(mx*getNumViews(),mx);
-        
-        svgGenerator.setSVGCanvasSize( dim );   
-
-        final List<String> paintLog = new ArrayList<String>();
-        
-        // Ask the test to render into the SVG Graphics2D implementation
+	public void writeSVGFile(final OutputStream os) throws UnsupportedEncodingException, SVGGraphics2DIOException {
         if (SwingUtilities.isEventDispatchThread()) {
-        	directPaintsvg(svgGenerator, dim, paintLog);
+        	writeSVGFile_h(os);
         } else {
         	try {
-        		SwingUtilities.invokeAndWait(new Runnable() { // TODO necessary?
+        		SwingUtilities.invokeAndWait(new Runnable() {
 //        			@Override
         			public void run() {
-        				directPaintsvg( svgGenerator, dim, paintLog );
+        				try {
+							writeSVGFile_h(os);
+						} catch (UnsupportedEncodingException e) {
+							e.printStackTrace();
+						} catch (SVGGraphics2DIOException e) {
+							e.printStackTrace();
+						}
         			}
         		});
         	} catch (InterruptedException e) {
@@ -1036,16 +1051,42 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         		System.exit(1);
         	}
         }
+		
+	}
+	
+	private void writeSVGFile_h(OutputStream os) throws UnsupportedEncodingException, SVGGraphics2DIOException
+    {
+		assert SwingUtilities.isEventDispatchThread();
+		
+		// Get a DOMImplementation
+        DOMImplementation domImpl = GenericDOMImplementation.getDOMImplementation();
+
+        // Create an instance of org.w3c.dom.Document
+        Document document = domImpl.createDocument(null, "svg", null);
+
+        // Create an instance of the SVG Generator
+//        final SVGGraphics2D svgGenerator = new SVGGraphics2D(document);
+        final SVGGraphics2DWithPaintLog svgGenerator = new SVGGraphics2DWithPaintLog(document);
+        
+//        int mx = Math.min(getHeight(), getWidth());
+//        final Dimension dim = new Dimension(mx*getNumViews(),mx);
+        final Dimension dim = new Dimension(getWidth(), getHeight());
+        svgGenerator.setSVGCanvasSize( dim );
+
+        // Ask the test to render into the SVG Graphics2D implementation
+        directPaintsvg(svgGenerator);
 
         Element root = document.getDocumentElement();
-        svgGenerator.getRoot(root);
-        NodeList polygons = root.getElementsByTagNameNS("*", "polygon");
-        assert polygons.getLength() >= paintLog.size();
-        for (int i = 0; i < paintLog.size(); i++) {
-        	if (i % 2 == 0) {
-        		((Element) polygons.item(i)).setAttributeNS(null, "id", "fill:" + paintLog.get(i));
-        	} else {
-        		((Element) polygons.item(i)).setAttributeNS(null, "id", "outline:" + paintLog.get(i));
+    	svgGenerator.getRoot(root);
+        if (params.svgIds) {
+        	NodeList polygons = root.getElementsByTagNameNS("*", "polygon");
+        	assert polygons.getLength() >= svgGenerator.paintLog.size();
+        	for (int i = 0; i < svgGenerator.paintLog.size(); i++) {
+        		if (i % 2 == 0) {
+        			((Element) polygons.item(i)).setAttributeNS(null, "id", "fill:" + svgGenerator.paintLog.get(i));
+        		} else {
+        			((Element) polygons.item(i)).setAttributeNS(null, "id", "outline:" + svgGenerator.paintLog.get(i));
+        		}
         	}
         }
         
@@ -1153,7 +1194,8 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 				g.setColor(Color.WHITE); 
 				g.fillRect(0,0,image.getWidth(),image.getHeight());
 		
-				directPaint( g, new Dimension(image.getWidth(),image.getHeight()) );
+//				directPaint( g, new Dimension(image.getWidth(),image.getHeight()) );
+				paint(g);
 											
 				JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(os);
 				
@@ -1178,7 +1220,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 			
                 try {
                     //writeSVGFile(os,venn.getWidth(),venn.getHeight());
-                    writeSVGFile(os,getWidth(),getHeight());
+                    writeSVGFile(os);
                     os.close();
                 }
                 catch (UnsupportedEncodingException e) 

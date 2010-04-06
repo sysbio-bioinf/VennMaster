@@ -51,6 +51,7 @@ import venn.geometry.FRectangle;
 import venn.geometry.FSegment;
 import venn.geometry.ITransformer;
 import venn.gui.HasLabelsListener;
+import venn.gui.SVGGraphics2DWithPaintLog;
 
 
 /**
@@ -230,7 +231,7 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
      * @param itrans
      * 
      */
-    public void draftPaint( Graphics g, ITransformer itrans, List<String> paintLog )
+    public void draftPaint( Graphics g, ITransformer itrans )
     {
         if( arrangement == null  )
             return;
@@ -239,6 +240,8 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         IVennObject[] objs = (IVennObject[])arrangement.getVennObjects().clone();
         if( objs == null )
             return;
+
+        final List<String> paintLog = g instanceof SVGGraphics2DWithPaintLog ? ((SVGGraphics2DWithPaintLog)g).paintLog : null;
         
         // compute z-Order (larger categories are painted first so that
         // small categories are visible)
@@ -354,12 +357,11 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
      * 
      * @param g
      * @param itrans
-     * @param paintLog 
      */
-    public void directPaint( Graphics g, ITransformer itrans, List<String> paintLog )
+    public void directPaint( Graphics g, ITransformer itrans )
     {
         // draw polygons
-        draftPaint( g, itrans, paintLog );
+        draftPaint( g, itrans );
         
         if( tree == null )
             return;
@@ -455,15 +457,6 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
     }
     
     /**
-     * 
-     * @param g
-     * @param itrans
-     */
-    public void directPaint( Graphics g, ITransformer itrans ) {
-    	directPaint(g, itrans, null);
-    }
-    
-    /**
      * Draws line connectors between polygons and Labels.
      * 
      * @param g
@@ -506,7 +499,7 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         }
     }
         
-    public void paintComponent( Graphics graphics, ITransformer itrans, List<String> paintLog )
+    public void paintComponent( Graphics graphics, ITransformer itrans )
     {
         if( !hasViewChanged() && isDoubleBuffered() )
         {
@@ -527,11 +520,11 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
         
         if( dragging )
         {
-            draftPaint(g,itrans, null);
+            draftPaint(g,itrans);
         }
         else
         {   // full paint
-            directPaint(g,itrans, paintLog);  // show venn objects
+            directPaint(g,itrans);  // show venn objects
             drawLineConnectors(g);
             paintChildren(g);               // show labels
         }
@@ -551,7 +544,7 @@ implements IVennDiagramView, ChangeListener, MouseListener, MouseMotionListener,
 
     @Override
 	public void paintComponent(Graphics graphics) {
-    	paintComponent(graphics, getTransformer(), null);
+    	paintComponent(graphics, getTransformer());
     }
     
     public boolean hasViewChanged() 
@@ -1096,7 +1089,7 @@ assert v == this;
             {
                 IntersectionTreeNode node = (IntersectionTreeNode)iter.next();
                 
-                buf.append( mapGroupSet(node.path) + " : "+getCardString(node)+"\n");
+                buf.append(getNodeInfo(node) + "\n");
             }
         }
         
@@ -1122,9 +1115,13 @@ assert v == this;
     {
         if( currentNode == null )
             return "{}";
-        return mapGroupSet(currentNode.path) + " : " + getCardString(currentNode);
+        return getNodeInfo(currentNode);
     }
     
+    private String getNodeInfo(IntersectionTreeNode node) {
+        return mapGroupSet(node.path) + " : " + getCardString(node);
+    	
+    }
     
     /**
      * Custom tooltip texts
@@ -1166,7 +1163,7 @@ assert v == this;
             return null;
         
 //      return mapGroupSet(node.path) + " : "+getCardString(node)+" : " + nf.format(node.area);
-      String str = mapGroupSet(node.path) + " : "+getCardString(node)+" : " + nf.format(node.area);
+        String str = getNodeInfo(node) + " : " + nf.format(node.area);
         return str;
     }
 

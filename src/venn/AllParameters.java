@@ -42,7 +42,7 @@ public class AllParameters implements Serializable
     public EvolutionaryOptimizer.Parameters     optEvo2;
     public SwarmOptimizer.Parameters            optSwarm;
 
-    
+    public transient boolean svgIds;  // command line option
     
     
     public AllParameters()

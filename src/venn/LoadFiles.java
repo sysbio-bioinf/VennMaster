@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Collections;
+import java.util.Set;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -12,7 +14,6 @@ import javax.swing.JOptionPane;
 import venn.db.GeneOntologyReaderModel;
 import venn.db.GoTree;
 import venn.db.HTGeneOntologyReaderModel;
-import venn.db.IGeneFilter;
 import venn.db.IVennDataModel;
 import venn.db.ListReaderModel;
 import venn.geometry.FileFormatException;
@@ -174,6 +175,11 @@ public class LoadFiles {
 			try
 			{
                 loadGOMiner(groupFile,geneFile);
+                Set<Integer> removedLines = ((GeneOntologyReaderModel) sourceDataModel).getRemovedLines();
+                if (removedLines.size() > 0) {
+                	JOptionPane.showMessageDialog(parentComponent, removedLines.size() + " lines with missing values have been removed\n" +
+                			"first line with missing values: " + Collections.min(removedLines));
+                }
 //				setTitle("VennMaster "+fileName);
 //                setDataMode(MODE_GOMINER);                                
 //                filteredDataModel = new VennFilteredDataModel(sourceDataModel, new GODistanceFilter(goTree) );
@@ -278,6 +284,12 @@ public class LoadFiles {
             try
             {
                 loadHTGOMiner(geneFile);
+
+                Set<Integer> removedLines = ((HTGeneOntologyReaderModel) sourceDataModel).getRemovedLines();
+                if (removedLines.size() > 0) {
+                	JOptionPane.showMessageDialog(parentComponent, removedLines.size() + " lines with missing values have been removed\n" +
+                			"first line with missing values: " + Collections.min(removedLines));
+                }
 //                setTitle("VennMaster "+fileName);
 //                setDataMode(MODE_GOMINER);
 //                filteredDataModel = new VennFilteredDataModel(sourceDataModel, new GODistanceFilter(goTree) );                                
@@ -400,8 +412,7 @@ public class LoadFiles {
     throws IOException, FileFormatException
     {
         lastWorkingPath = geneList;
-        GeneOntologyReaderModel gor = new GeneOntologyReaderModel();
-        gor.loadFromFile(groupFile,geneList);
+        GeneOntologyReaderModel gor = new GeneOntologyReaderModel(groupFile,geneList);
 		fileName = new File(groupFile).getName() + " : " + new File(geneList).getName();
 		sourceType = SourceType.GO;
 		sourceDataModel = gor;
@@ -419,8 +430,7 @@ public class LoadFiles {
     throws IOException, FileFormatException
     {
         lastWorkingPath = groupFile;
-        HTGeneOntologyReaderModel gor = new HTGeneOntologyReaderModel();
-        gor.loadFromFile(groupFile);
+        HTGeneOntologyReaderModel gor = new HTGeneOntologyReaderModel(groupFile);
         fileName = new File(groupFile).getName();
         sourceType = SourceType.HTGO;
         sourceDataModel = gor;
