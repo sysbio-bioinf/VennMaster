@@ -29,12 +29,12 @@ import venn.geometry.FileFormatException;
 public class GeneOntologyReaderModel 
 extends AbstractVennDataModel implements Serializable
 {
-	private List<String> aElements;		// array of aElements (key names)
-	private	List<String> aGroups;		// array of aGroups (group names)	
-	private List<Set<Integer>> groupKeys;		// maps group numbers (integer) to a BitSet of key numbers (integer)
-    private List<AbstractGOCategoryProperties> properties;     // group properties
+	private List<String> elements;  // array of aElements (key names)
+	private	List<String> groups;  // array of aGroups (group names)	
+	private List<Set<Integer>> groupKeys;  // maps group numbers (integer) to a BitSet of key numbers (integer)
+    private List<AbstractGOCategoryProperties> properties;  // group properties
 	
-	private Map<Integer, Integer>		groupMap;	// maps groupID's to group numbers (need this only for import ...)
+	private Map<Integer, Integer>		groupMap;  // maps groupID's to group numbers (need this only for import ...)
 	
 	private BitSet[]	sets;
 	
@@ -83,7 +83,7 @@ extends AbstractVennDataModel implements Serializable
 	private void readElements(Reader reader)
 		throws IOException, FileFormatException
 	{
-		aGroups = new ArrayList<String>();
+		groups = new ArrayList<String>();
 		groupMap = new HashMap<Integer, Integer>();
         properties = new ArrayList<AbstractGOCategoryProperties>();
 
@@ -98,10 +98,8 @@ extends AbstractVennDataModel implements Serializable
 		removedLines = new HashSet<Integer>();
 		
 		String line;
-//		while( in.ready() )
 		while((line = in.readLine()) != null)
 		{
-//			String line = in.readLine();
 //			line.trim();
 			
 			boolean missingValue = false;
@@ -112,26 +110,24 @@ extends AbstractVennDataModel implements Serializable
 					header = false;
 					continue;
 				}
-//				StringTokenizer tok = new StringTokenizer(line,"\t");
-				String[] tokens = line.split("\t");
-//				if( tok.countTokens() != 9 && tok.countTokens() != 12 )
+				String[] tokens = line.split("\t", -1);
 				if( tokens.length != 9 && tokens.length != 12 )
 					throw new FileFormatException("Gene summary export (.se) file in line "+in.getLineNumber()+ " wrong number of fields");
 				if (numTokens == -1) {
-//					numTokens = tok.countTokens();
 					numTokens = tokens.length;
 				} else {
-//					if (tok.countTokens() != numTokens) {
 					if (tokens.length != numTokens) {
 						throw new FileFormatException("Gene summary export (.se) file in line "+in.getLineNumber()+ " number of fields has changed");
 					}
 				}
 				
 				int 	groupID = 0, 
-						nTotal = 0, 
-						nUnder = 0, 
-						nOver = 0, 
-						nChange = 0;
+						nTotal = 0;
+				@SuppressWarnings("unused")
+				int		nUnder = 0;
+				@SuppressWarnings("unused")
+				int		nOver = 0;
+				int		nChange = 0;
 				double 	pUnder = 1.0, 
 						pOver = 1.0, 
 						pChange = 1.0,
@@ -145,7 +141,6 @@ extends AbstractVennDataModel implements Serializable
 				
 				try 
 				{
-//					String tmp = tok.nextToken().trim();
 					String tmp = tokens[0].trim();
 					if( tmp.equalsIgnoreCase("null") )
 						continue;
@@ -153,15 +148,10 @@ extends AbstractVennDataModel implements Serializable
 						groupID = 0;
 					else
 						groupID = Integer.parseInt(tmp);
-//					nTotal =  Integer.parseInt(tok.nextToken().trim());
 					nTotal =  Integer.parseInt(tokens[1].trim());
-//					nUnder =  Integer.parseInt(tok.nextToken().trim());
 					nUnder =  Integer.parseInt(tokens[2].trim());
-//					nOver =  Integer.parseInt(tok.nextToken().trim());
 					nOver =  Integer.parseInt(tokens[3].trim());
-//					nChange =  Integer.parseInt(tok.nextToken().trim());
 					nChange =  Integer.parseInt(tokens[4].trim());
-//					pUnderStr = tok.nextToken().trim();
 					pUnderStr = tokens[5].trim();
 					if (pUnderStr.length() > 0) {
 						pUnder = Double.parseDouble(pUnderStr.replace(',','.'));
@@ -169,7 +159,6 @@ extends AbstractVennDataModel implements Serializable
 						missingValue = true;
 //						pUnder = 1.0;
 					}
-//					pOverStr = tok.nextToken().trim();
 					pOverStr = tokens[6].trim();
 					if (pOverStr.length() > 0) {
 						pOver = Double.parseDouble(pOverStr.replace(',','.'));
@@ -177,7 +166,6 @@ extends AbstractVennDataModel implements Serializable
 						missingValue = true;
 //						pOver = 1.0;
 					}
-//					pChangeStr = tok.nextToken().trim();
 					pChangeStr = tokens[7].trim();
 					if (pChangeStr.length() > 0) {
 						pChange = Double.parseDouble(pChangeStr.replace(',','.'));
@@ -189,7 +177,6 @@ extends AbstractVennDataModel implements Serializable
 						term = tokens[8];
 					}
 					if (numTokens == 12) {
-//						fdrUnderStr = tok.nextToken().trim();
 						fdrUnderStr = tokens[8].trim();
 						if (fdrUnderStr.length() > 0) {
 							fdrUnder = Double.parseDouble(fdrUnderStr.replace(',','.'));
@@ -197,7 +184,6 @@ extends AbstractVennDataModel implements Serializable
 							missingValue = true;
 //							fdrUnder = 1.0;
 						}
-//						fdrOverStr = tok.nextToken().trim();
 						fdrOverStr = tokens[9].trim();
 						if (fdrOverStr.length() > 0) {
 							fdrOver = Double.parseDouble(fdrOverStr.replace(',','.'));
@@ -205,7 +191,6 @@ extends AbstractVennDataModel implements Serializable
 							missingValue = true;
 //							fdrOver = 1.0;
 						}
-//						fdrChangeStr = tok.nextToken().trim();
 						fdrChangeStr = tokens[10].trim();
 						if (fdrChangeStr.length() > 0) {
 							fdrChange = Double.parseDouble(fdrChangeStr.replace(',','.'));
@@ -215,7 +200,6 @@ extends AbstractVennDataModel implements Serializable
 						}
 						term = tokens[11].trim();
 					}
-//					term = tok.nextToken().trim();
 				}
 				catch( NumberFormatException e )
 				{
@@ -242,7 +226,7 @@ extends AbstractVennDataModel implements Serializable
 				if (numTokens == 9) {
 					groupMap.put(Integer.valueOf(groupID),Integer.valueOf(groupNumber));
 					properties.add(new GOCategoryProperties3p(groupID,nTotal,nChange,pUnder, pOver, pChange));
-					aGroups.add(term);
+					groups.add(term);
 					++groupNumber;
 				} else {
 					assert numTokens == 12;
@@ -250,7 +234,7 @@ extends AbstractVennDataModel implements Serializable
 					properties.add(new GOCategoryProperties3p3fdr(groupID,nTotal,nChange,
 							pUnder, pOver, pChange,
 							fdrUnder, fdrOver, fdrChange));
-					aGroups.add(term);
+					groups.add(term);
 					++groupNumber;
                 }
 			}
@@ -279,10 +263,10 @@ extends AbstractVennDataModel implements Serializable
 		
 		Map<String, Integer> 	keyMap;		// maps key names to logical numbers in the range 0..n-1
 		
-		aElements = new ArrayList<String>();
+		elements = new ArrayList<String>();
 		groupKeys = new ArrayList<Set<Integer>>();
 //		groupKeys.ensureCapacity(aGroups.size());
-		for(int i=0; i<aGroups.size(); ++i)
+		for(int i=0; i<groups.size(); ++i)
 		{
 			groupKeys.add(new HashSet<Integer>());
 		}
@@ -294,27 +278,21 @@ extends AbstractVennDataModel implements Serializable
 		int keyNumber = 0;
 												
 		String line;
-//		while( in.ready() )
 		while((line = in.readLine()) != null)
 		{
-//			String line = in.readLine();
 //			line.trim();
 					
 			if( line.length() > 0 )
 			{			
 //				StringTokenizer tok = new StringTokenizer(line,"\t");
-				String[] tokens = line.split("\t");
-//				if( tok.countTokens() < 3 )
+				String[] tokens = line.split("\t", -1);
 				if( tokens.length < 3 )
 				throw new FileFormatException("Gene category summary (.gce) file at line "+in.getLineNumber() +" wrong number of fields");
 				
-//				String 	strID = tok.nextToken().trim();
 				String 	strID = tokens[0].trim();
 				if( strID.length() < 3 || !strID.startsWith("GO:") )
 					continue; // ignore unwanted records
 				
-//				String 	groupName = tok.nextToken().trim(),
-//						keyName = tok.nextToken().trim();
 				@SuppressWarnings("unused")
 				String 	groupName = tokens[1].trim();
 				String keyName = tokens[2].trim();
@@ -338,15 +316,13 @@ extends AbstractVennDataModel implements Serializable
 				{ // entry not found in category list -> continue
 					continue;
 				}
-				// System.out.println(in.getLineNumber()+" "+strID+" : "+keyName +" "+goID+" : " + aGroups.get(gval.intValue()));
 				
 				Integer kval = keyMap.get(keyName);
 				if( kval == null )
 				{ // append new key
-//					kval = new Integer(keyNumber);
 					kval = Integer.valueOf(keyNumber);
 					keyMap.put(keyName,kval);
-					aElements.add(keyNumber,keyName);
+					elements.add(keyNumber,keyName);
 					++keyNumber;
 				}
 				Set<Integer> myGroup = groupKeys.get(gval.intValue());
@@ -356,26 +332,21 @@ extends AbstractVennDataModel implements Serializable
 
 		reader.close();
 
-		Assert.assertEquals(groupKeys.size(), aGroups.size() );
+		Assert.assertEquals(groupKeys.size(), groups.size() );
 	}
 
 
-//	public String getKeyName(int idx)
-//	{
-//		return aElements.get(idx);
-//	}
-
 	public String getGroupName(int idx)
 	{
-		return aGroups.get(idx);
+		return groups.get(idx);
 	}
 		
 	public void show()
 	{
 		// print aGroups
-		for(int i=0; i<aGroups.size(); ++i )
+		for(int i=0; i<groups.size(); ++i )
 		{
-			System.out.print(aGroups.get(i) + "["+ i+"] : { ");
+			System.out.print(groups.get(i) + "["+ i+"] : { ");
 			Set<Integer> list = groupKeys.get(i);
 			Iterator<Integer> iter = list.iterator();
 			while( iter.hasNext() )
@@ -386,28 +357,12 @@ extends AbstractVennDataModel implements Serializable
 		}
 		
 		// print aElements
-		for(int i=0; i<aElements.size(); ++i )
+		for(int i=0; i<elements.size(); ++i )
 		{
-			System.out.println(i+" : " + aElements.get(i));
+			System.out.println(i+" : " + elements.get(i));
 		}
 	}
 
-//	/* (non-Javadoc)
-//	 * @see geometry.CategoryMapper#getKeySize()
-//	 */
-//	public int getKeySize()
-//	{
-//		return aElements.size();
-//	}
-
-//	/* (non-Javadoc)
-//	 * @see geometry.CategoryMapper#getGroupSize()
-//	 */
-//	public int getGroupSize()
-//	{
-//		return aGroups.size();
-//	}
-	
 	/* (non-Javadoc)
 	 * @see geometry.CategoryMapper#reduceTo(java.util.BitSet)
 	 */
@@ -435,7 +390,7 @@ extends AbstractVennDataModel implements Serializable
      */
     public int getNumGroups() 
     {
-        return aGroups.size();
+        return groups.size();
     }
 
     /* (non-Javadoc)
@@ -443,14 +398,14 @@ extends AbstractVennDataModel implements Serializable
      */
     public int getNumElements() 
     {
-        return aElements.size();
+        return elements.size();
     }
 
 	private void updateBitSets()
 	{
-		int n = aElements.size();
+		int n = elements.size();
 		
-		sets = new BitSet[aGroups.size()];
+		sets = new BitSet[groups.size()];
 		for(int i=0; i<sets.length; ++i)
 		{
 			sets[i] = new BitSet(n);
@@ -492,7 +447,7 @@ extends AbstractVennDataModel implements Serializable
     public String getElementName(int elementID) 
     {
 
-        return aElements.get(elementID);
+        return elements.get(elementID);
     }
     
     public Set<Integer> getRemovedLines() {
