@@ -5,7 +5,7 @@ public class Constants {
     public static final int WHICH_NELEMENTS_LOG = 2;		// which logarithm to use
     public static final int VERSION_MAJOR = 0;          // version number
     public static final int VERSION_MINOR = 37;
-    public static final int VERSION_SUB   = 4;
-    public static final String VERSION_DATE = "2010-04-06";
+    public static final int VERSION_SUB   = 5;
+    public static final String VERSION_DATE = "2010-11-17";
     
 }

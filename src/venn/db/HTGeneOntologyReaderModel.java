@@ -145,7 +145,7 @@ extends AbstractVennDataModel implements Serializable
                     // category gene nTotal nChange enrichment pValue nCat CRMean FDR
                     groupName   = tokens[0].trim();
                     
-                    if( groupName.length() < 3 || !groupName.startsWith("GO:") )
+                    if( groupName.length() < 3 || !groupName.startsWith("GO:") || groupName.equals("GO:all_all")) // 17.11.2010 GO:all_all appeared in gce file -> we decided to ignore them JK + BR
                         continue; // ignore unwanted records
                     
                     keyName     = tokens[1].trim();
