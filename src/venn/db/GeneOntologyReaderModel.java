@@ -32,9 +32,9 @@ extends AbstractVennDataModel implements Serializable
 	private List<String> elements;  // array of aElements (key names)
 	private	List<String> groups;  // array of aGroups (group names)	
 	private List<Set<Integer>> groupKeys;  // maps group numbers (integer) to a BitSet of key numbers (integer)
-    private List<AbstractGOCategoryProperties> properties;  // group properties
-	
-	private Map<Integer, Integer>		groupMap;  // maps groupID's to group numbers (need this only for import ...)
+    private List<AbstractGOCategoryProperties> groupProperties;  // group properties
+    private List<ElementProperties> elementProperties; // element properties like name and diff-expression
+    private Map<Integer, Integer>		groupMap;  // maps groupID's to group numbers (need this only for import ...)
 	
 	private BitSet[]	sets;
 	
@@ -85,7 +85,7 @@ extends AbstractVennDataModel implements Serializable
 	{
 		groups = new ArrayList<String>();
 		groupMap = new HashMap<Integer, Integer>();
-        properties = new ArrayList<AbstractGOCategoryProperties>();
+        groupProperties = new ArrayList<AbstractGOCategoryProperties>();
 
 		boolean header = true;
 						
@@ -225,13 +225,13 @@ extends AbstractVennDataModel implements Serializable
 				
 				if (numTokens == 9) {
 					groupMap.put(Integer.valueOf(groupID),Integer.valueOf(groupNumber));
-					properties.add(new GOCategoryProperties3p(groupID,nTotal,nChange,pUnder, pOver, pChange));
+					groupProperties.add(new GOCategoryProperties3p(groupID,nTotal,nChange,pUnder, pOver, pChange));
 					groups.add(term);
 					++groupNumber;
 				} else {
 					assert numTokens == 12;
 					groupMap.put(Integer.valueOf(groupID),Integer.valueOf(groupNumber));
-					properties.add(new GOCategoryProperties3p3fdr(groupID,nTotal,nChange,
+					groupProperties.add(new GOCategoryProperties3p3fdr(groupID,nTotal,nChange,
 							pUnder, pOver, pChange,
 							fdrUnder, fdrOver, fdrChange));
 					groups.add(term);
@@ -262,8 +262,9 @@ extends AbstractVennDataModel implements Serializable
 			*/
 		
 		Map<String, Integer> 	keyMap;		// maps key names to logical numbers in the range 0..n-1
-		
+
 		elements = new ArrayList<String>();
+		elementProperties= new ArrayList<ElementProperties>();
 		groupKeys = new ArrayList<Set<Integer>>();
 //		groupKeys.ensureCapacity(aGroups.size());
 		for(int i=0; i<groups.size(); ++i)
@@ -296,6 +297,9 @@ extends AbstractVennDataModel implements Serializable
 				@SuppressWarnings("unused")
 				String 	groupName = tokens[1].trim();
 				String keyName = tokens[2].trim();
+				String diffExpression = tokens[3].trim();
+				@SuppressWarnings("unused")
+				String shortGeneID= tokens[4].trim();
 				
 				if( strID.length() < 4 )
 					throw new FileFormatException("Gene category summary (.gce) file at line "+in.getLineNumber());
@@ -323,10 +327,13 @@ extends AbstractVennDataModel implements Serializable
 					kval = Integer.valueOf(keyNumber);
 					keyMap.put(keyName,kval);
 					elements.add(keyNumber,keyName);
+					elementProperties.add(keyNumber,new ElementProperties(keyName, diffExpression, shortGeneID));
 					++keyNumber;
 				}
 				Set<Integer> myGroup = groupKeys.get(gval.intValue());
 				myGroup.add(kval);
+				
+				
 			}
 		}
 
@@ -335,7 +342,7 @@ extends AbstractVennDataModel implements Serializable
 		Assert.assertEquals(groupKeys.size(), groups.size() );
 	}
 
-
+	@Override
 	public String getGroupName(int idx)
 	{
 		return groups.get(idx);
@@ -349,7 +356,7 @@ extends AbstractVennDataModel implements Serializable
 			System.out.print(groups.get(i) + "["+ i+"] : { ");
 			Set<Integer> list = groupKeys.get(i);
 			Iterator<Integer> iter = list.iterator();
-			while( iter.hasNext() )
+			while(iter.hasNext())
 			{
 				System.out.print(iter.next()+" ");
 			}
@@ -437,7 +444,7 @@ extends AbstractVennDataModel implements Serializable
         if( groupID < 0 || groupID >= getNumGroups() )
             throw new IndexOutOfBoundsException("group ID out of bounds");
         
-        return properties.get(groupID);
+        return groupProperties.get(groupID);
     }
     
 
@@ -453,6 +460,13 @@ extends AbstractVennDataModel implements Serializable
     public Set<Integer> getRemovedLines() {
     	return removedLines;
     }
+
+	@Override
+	public ElementProperties getElementProperties(int elementID) {
+		return elementProperties.get(elementID);
+	}
+
+
     
 }
 

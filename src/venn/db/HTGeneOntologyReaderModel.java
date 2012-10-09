@@ -40,7 +40,8 @@ extends AbstractVennDataModel implements Serializable
     private List<String> elements;  // array of aElements (key names)
     private List<String> groups;  // array of aGroups (group names)   
     private List<Set<Integer>> groupKeys;  // maps group numbers (integer) to a BitSet of key numbers (integer)
-    private List<AbstractGOCategoryProperties> properties;  // group properties
+    private List<AbstractGOCategoryProperties> groupProperties;  // group properties
+    private List<ElementProperties> elementProperties;
     
     private BitSet[]    sets;
     
@@ -88,7 +89,8 @@ extends AbstractVennDataModel implements Serializable
         elements = new ArrayList<String>();
         groups = new ArrayList<String>();
         groupKeys = new ArrayList<Set<Integer>>();
-        properties = new ArrayList<AbstractGOCategoryProperties>();
+        groupProperties = new ArrayList<AbstractGOCategoryProperties>();
+        elementProperties = new ArrayList<ElementProperties>();
         
         removedLines = new HashSet<Integer>();
         
@@ -173,7 +175,7 @@ extends AbstractVennDataModel implements Serializable
                 	groupMap.put(Integer.valueOf(groupID),gval);
                 	groups.add(term);
                 	groupKeys.add( new HashSet<Integer>() );
-                	properties.add(new GOCategoryProperties1p1fdr(groupID,nTotal,nChange,pValue,FDR));
+                	groupProperties.add(new GOCategoryProperties1p1fdr(groupID,nTotal,nChange,pValue,FDR));
 
                 	++groupNumber;       
                 }
@@ -293,7 +295,7 @@ extends AbstractVennDataModel implements Serializable
         if( groupID < 0 || groupID >= getNumGroups() )
             throw new IndexOutOfBoundsException("group ID out of bounds");
         
-        return properties.get(groupID);
+        return groupProperties.get(groupID);
     }
     
 
@@ -309,6 +311,13 @@ extends AbstractVennDataModel implements Serializable
     public Set<Integer> getRemovedLines() {
     	return removedLines;
     }
+
+	@Override
+	public ElementProperties getElementProperties(int elementID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+    
     
 }
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/argparser.jar"/>
+	<classpathentry kind="lib" path="lib/batik/batik-rasterizer.jar"/>
+	<classpathentry kind="lib" path="lib/batik/batik-slideshow.jar"/>
+	<classpathentry kind="lib" path="lib/batik/batik-squiggle.jar"/>
+	<classpathentry kind="lib" path="lib/batik/batik-svgpp.jar"/>
+	<classpathentry kind="lib" path="lib/batik/batik-ttf2svg.jar"/>
+	<classpathentry kind="lib" path="lib/batik/batik.jar"/>
+	<classpathentry kind="lib" path="lib/batik/extensions/batik-rasterizer-ext.jar"/>
+	<classpathentry kind="lib" path="lib/batik/extensions/batik-squiggle-ext.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-awt-util.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-bridge.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-css.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-dom.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-ext.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-extension.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-gui-util.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-gvt.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-parser.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-script.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-svg-dom.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-svggen.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-swing.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-transcoder.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-util.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/batik-xml.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/js.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/pdf-transcoder.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/xerces_2_5_0.jar"/>
+	<classpathentry kind="lib" path="lib/batik/lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="lib/itext.jar"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	<classpathentry kind="lib" path="lib/xpp3.jar"/>
+	<classpathentry kind="lib" path="lib/xstream.jar"/>
+	<classpathentry kind="lib" path="venn.jar"/>
+	<classpathentry kind="lib" path="www/vennm/files/setup.jar"/>
+	<classpathentry kind="lib" path="www/vennm/files/vennm-0.17a/setup.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.1.jar" sourcepath="lib/commons-lang3-3.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/VennMaster/lib/commons-lang3-3.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
