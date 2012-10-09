@@ -1219,10 +1219,13 @@ assert v == this;
                 item3.addActionListener(this);
                 JMenuItem item4 = new JMenuItem("Change Color");
                 item4.addActionListener(this);
+                JMenuItem exportItem = new JMenuItem("Export Node Info");
+                exportItem.addActionListener(this);
                 popup.add(item);
                 popup.add(item2);
                 popup.add(item3);
                 popup.add(item4);
+                popup.add(exportItem);
 
                 /*
                 boolean locked = false; 
@@ -1301,7 +1304,7 @@ assert v == this;
             makeLabel(text);           
             return;
         }
-        
+
         if( cmd.equalsIgnoreCase("place element label(s)") )
         {
             if( currentNode == null )
@@ -1311,6 +1314,15 @@ assert v == this;
             String text = getSelectedNodeElementsString();
             makeLabel(text);
             
+            return;
+        }
+        
+
+        if( cmd.equalsIgnoreCase("export node info") )
+        {
+            if( currentNode == null )
+                return;
+            exportSelectedNodeInfo();
             return;
         }
         
@@ -1376,6 +1388,12 @@ assert v == this;
         
         System.out.println("VennPanel.actionPerformed : unhandled command : "+cmd);
     }
+
+	private void exportSelectedNodeInfo() {
+		
+		return;
+		
+	}
 
 	/**
 	 * @param text
