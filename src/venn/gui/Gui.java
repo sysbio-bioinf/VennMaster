@@ -59,7 +59,8 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 								menuItemResume,
 								menuItemStop,
 								menuItemOptions,
-								menuItemRemove;
+								menuItemRemove,
+								menuItemExportGraphInfo;
 
 	private final JSplitPane	splitter;
     
@@ -267,12 +268,17 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		menuItemSave = new JMenuItem("Save",'S');
 		menuItemSave.addActionListener(this);
 		menuFile.add(menuItemSave);
-        
+
         // export profile
         menuItemExportProfile = new JMenuItem("Export Profile",'E');
         menuItemExportProfile.addActionListener(this);
         menuFile.add(menuItemExportProfile);
         
+
+        // export graph info
+        menuItemExportGraphInfo = new JMenuItem("Export Graph Info",'E');
+        menuItemExportGraphInfo.addActionListener(this);
+        menuFile.add(menuItemExportGraphInfo);
 
 		// exit
 		item = new JMenuItem("Exit",'X');
@@ -376,7 +382,13 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 			venn.fileSave();
 			return;
 		}
-        
+
+        if( cmd.equalsIgnoreCase("export profile"))
+        {
+            venn.actionExportProfile();
+            return;
+        }
+
         if( cmd.equalsIgnoreCase("export profile"))
         {
             venn.actionExportProfile();
@@ -878,6 +890,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		menuItemSave.setEnabled(hasData);
 		if (! hasData) {
 			menuItemExportProfile.setEnabled(false);
+			menuItemExportGraphInfo.setEnabled(false);
 			menuItemRemove.setEnabled(false);
 		}
 		if (hasData) {
@@ -893,6 +906,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 //	@Override
 	public void resultAvailable(boolean isFinalResult) {
 		menuItemExportProfile.setEnabled(true);
+		menuItemExportGraphInfo.setEnabled(true);
 	}
 
 //	@Override
