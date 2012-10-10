@@ -59,6 +59,7 @@ import venn.db.IVennDataModel;
 import venn.db.ManualFilter;
 import venn.db.VennDataSplitter;
 import venn.db.VennFilteredDataModel;
+import venn.diagram.GraphInfoExporter;
 import venn.diagram.IVennDiagramView;
 import venn.diagram.IVennObject;
 import venn.diagram.VennArrangement;
@@ -1460,6 +1461,18 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 				assert unfiltered != null;
 				getFilteredVennObject(i).setFillColor(unfiltered.getFillColor());
 			}
+		}
+	}
+
+	public void actionExportGraphInfo() {
+		IVennDiagramView[] view = getViews();
+		
+		for (IVennDiagramView iVennDiagramView : view) {
+			
+			GraphInfoExporter exporter = new GraphInfoExporter(Gui.getExportFileWriter(this),iVennDiagramView.getArrangement().getDataModel());
+			iVennDiagramView.getTree().accept(exporter);
+			exporter.writeAndClose();
+			
 		}
 	}
 	

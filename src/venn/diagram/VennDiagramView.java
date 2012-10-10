@@ -18,9 +18,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.text.NumberFormat;
@@ -38,7 +35,6 @@ import java.util.Map;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JColorChooser;
 import javax.swing.JComponent;
-import javax.swing.JFileChooser;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -57,7 +53,7 @@ import venn.geometry.FPoint;
 import venn.geometry.FRectangle;
 import venn.geometry.FSegment;
 import venn.geometry.ITransformer;
-import venn.gui.CommonFileFilter;
+import venn.gui.Gui;
 import venn.gui.HasLabelsListener;
 import venn.gui.SVGGraphics2DWithPaintLog;
 
@@ -1262,11 +1258,10 @@ public class VennDiagramView extends JPanel implements IVennDiagramView,
 		if (currentNode == null) {
 			return;
 		}
-
 		String text = mapGroupSet(currentNode.path) + " : "
 				+ getSelectedNodeElementsString();
 
-		FileWriter os = getExportFileWriter();
+		Writer os = Gui.getExportFileWriter(this);
 		if (os == null) {
 			return;
 		}
@@ -1282,62 +1277,6 @@ public class VennDiagramView extends JPanel implements IVennDiagramView,
 
 	}
 
-	private FileWriter getExportFileWriter() {
-
-		JFileChooser dialog = new JFileChooser();
-		CommonFileFilter filter;
-
-		dialog.setAcceptAllFileFilterUsed(false);
-
-		filter = new CommonFileFilter("Text File (.txt)");
-		filter.addExtension("txt");
-
-		dialog.addChoosableFileFilter(filter);
-
-		if (dialog.showSaveDialog(this) != JFileChooser.APPROVE_OPTION) {
-			return null;
-		}
-
-		File file = dialog.getSelectedFile();
-		if (file.exists()) {
-			// overwrite file??
-			int res = JOptionPane
-					.showConfirmDialog(
-							this,
-							"File '"
-									+ file.getName().toString()
-									+ "'already exists! Do you want to replace the existing file?",
-							"", JOptionPane.YES_NO_OPTION);
-			if (res != JOptionPane.YES_OPTION)
-				return null;
-		}
-
-		// open output stream
-		FileWriter os = null;
-
-		try {
-			os = new FileWriter(file);
-		} catch (FileNotFoundException e) {
-			JOptionPane.showMessageDialog(this,
-					"Cannot open file\r\n" + file.getAbsolutePath(), "Error",
-					JOptionPane.ERROR_MESSAGE);
-			return null;
-		} catch (IOException e) {
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(this,
-					"Cannot open file\r\n" + file.getAbsolutePath(), "Error",
-					JOptionPane.ERROR_MESSAGE);
-
-		}
-		if (os == null) {
-			JOptionPane.showMessageDialog(this,
-					"Cannot open file\r\n" + file.getAbsolutePath(), "Error",
-					JOptionPane.ERROR_MESSAGE);
-			return null;
-		}
-
-		return os;
-	}
 
 	/**
 	 * @param text

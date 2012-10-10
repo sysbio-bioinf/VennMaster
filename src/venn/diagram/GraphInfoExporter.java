@@ -2,7 +2,13 @@ package venn.diagram;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.BitSet;
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+
+import venn.db.IVennDataModel;
 
 /**
  * Visitor used to export the complete list of elements for each possible
@@ -12,42 +18,34 @@ import java.util.BitSet;
  */
 public class GraphInfoExporter implements IIntersectionTreeVisitor {
 
-	private VennArrangement arrangement;
-
-	GraphInfoExporter(Writer writer, VennArrangement arrangement) {
+	public GraphInfoExporter(Writer writer, IVennDataModel dataModel) {
 		this.writer = writer;
-		this.arrangement = arrangement;
+		this.dataModel = dataModel;
+		intersections = new ArrayList<String>();
+		elements = new ArrayList<List<String>>();
 	}
 
 	Writer writer;
+	List<String> intersections;
+	List<List<String>> elements;
+	private IVennDataModel dataModel;
 
 	@Override
 	public void visit(int depth, IntersectionTreeNode node) {
-		if (node.card > 0) {
-			try {
-				writer.append(getNodeInfo(node));
-				writer.append("\n");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		if (node.card > 0 && !node.copy) {
+
+			intersections.add(getIntersectionName(node.path));
+			elements.add(getNodeElementsList(node));
 		}
 	}
 
-	private String getNodeInfo(IntersectionTreeNode node) {
-
-		return mapGroupSet(node.path) + " : "
-				+ getSelectedNodeElementsString(node);
-
-	}
-
-	protected String mapGroupSet(BitSet set) {
+	protected String getIntersectionName(BitSet set) {
 		if (set == null)
 			return "";
 		StringBuffer buf = new StringBuffer();
 		buf.append("{");
 		for (int i = set.nextSetBit(0); i >= 0; i = set.nextSetBit(i + 1)) {
-			buf.append(arrangement.getDataModel().getGroupName(i));
+			buf.append(dataModel.getGroupName(i));
 			if (i + 1 < set.length())
 				buf.append(" , ");
 
@@ -56,20 +54,59 @@ public class GraphInfoExporter implements IIntersectionTreeVisitor {
 		return buf.toString();
 	}
 
-	private String getSelectedNodeElementsString(IntersectionTreeNode node) {
+	private List<String> getNodeElementsList(IntersectionTreeNode node) {
 		BitSet el = node.vennObject.getElements();
 
-		StringBuffer buf = new StringBuffer();
-		buf.append("{");
+		ArrayList<String> elementsList = new ArrayList<String>();
 		for (int i = el.nextSetBit(0); i >= 0; i = el.nextSetBit(i + 1)) {
-			buf.append(arrangement.getDataModel().getElementName(i));
-			if (i + 1 < el.length())
-				buf.append(" , ");
+			elementsList.add(dataModel.getElementName(i));
 		}
-		buf.append("}");
+		return elementsList;
+	}
 
-		String text = buf.toString();
-		return text;
+	public void writeAndClose() {
+		try {
+			writeHeader();
+			writeElements();
+			writer.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private void writeElements() throws IOException {
+		int maxListSize = getMaxListSize();
+		for (int i = 0; i < maxListSize; i++) {
+			for (int j = 0; j < elements.size(); j++) {
+				List<String> elementList = elements.get(j);
+				try {
+					writer.append(elementList.get(i));
+				} catch (IndexOutOfBoundsException e) {
+					// ignore
+				}
+				if (j < elements.size() - 1) {
+					writer.append("\t");
+				}
+			}
+			writer.append("\n");
+		}
+	}
+
+	private int getMaxListSize() {
+
+		int max = 0;
+		for (List<String> list : elements) {
+			max = max < list.size() ? list.size() : max;
+		}
+		return max;
+	}
+
+	private void writeHeader() throws IOException {
+		String intersectionString = StringUtils.join(intersections, "\t");
+		writer.append(intersectionString);
+		writer.append("\n");
+
 	}
 
 }

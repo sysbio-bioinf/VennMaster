@@ -2,6 +2,7 @@ package venn.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.MediaTracker;
@@ -11,12 +12,19 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
@@ -240,6 +248,69 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		this(null, null, null, null);
 	}
 		
+	
+	public static BufferedWriter getExportFileWriter(Component component) {
+
+		JFileChooser dialog = new JFileChooser();
+		CommonFileFilter filter;
+
+		dialog.setAcceptAllFileFilterUsed(false);
+
+		filter = new CommonFileFilter("Text File (.txt)");
+		filter.addExtension("txt");
+
+		dialog.addChoosableFileFilter(filter);
+
+		if (dialog.showSaveDialog(component) != JFileChooser.APPROVE_OPTION) {
+			return null;
+		}
+
+		File file = dialog.getSelectedFile();
+		if (file.exists()) {
+			// overwrite file??
+			int res = JOptionPane
+					.showConfirmDialog(
+							component,
+							"File '"
+									+ file.getName().toString()
+									+ "'already exists! Do you want to replace the existing file?",
+							"", JOptionPane.YES_NO_OPTION);
+			if (res != JOptionPane.YES_OPTION)
+				return null;
+		}
+
+		// open output stream
+		FileWriter os = null;
+
+		try {
+			os = new FileWriter(file);
+		} catch (FileNotFoundException e) {
+			JOptionPane.showMessageDialog(component,
+					"Cannot open file\r\n" + file.getAbsolutePath(), "Error",
+					JOptionPane.ERROR_MESSAGE);
+			return null;
+		} catch (IOException e) {
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(component,
+					"Cannot open file\r\n" + file.getAbsolutePath(), "Error",
+					JOptionPane.ERROR_MESSAGE);
+
+		}
+		if (os == null) {
+			JOptionPane.showMessageDialog(component,
+					"Cannot open file\r\n" + file.getAbsolutePath(), "Error",
+					JOptionPane.ERROR_MESSAGE);
+			return null;
+		}
+
+		//buffer this writer;
+		
+		BufferedWriter bufferedWriter = new BufferedWriter(os);
+		
+		return bufferedWriter;
+	}
+	
+	
     private JMenu createFileMenu()
 	{
 		JMenuItem item;
@@ -276,7 +347,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
         
 
         // export graph info
-        menuItemExportGraphInfo = new JMenuItem("Export Graph Info",'E');
+        menuItemExportGraphInfo = new JMenuItem("Export Graph Info",'G');
         menuItemExportGraphInfo.addActionListener(this);
         menuFile.add(menuItemExportGraphInfo);
 
@@ -389,9 +460,9 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
             return;
         }
 
-        if( cmd.equalsIgnoreCase("export profile"))
+        if( cmd.equalsIgnoreCase("export graph info"))
         {
-            venn.actionExportProfile();
+            venn.actionExportGraphInfo();
             return;
         }
 		
