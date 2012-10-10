@@ -2,7 +2,15 @@ package venn.db;
 
 import java.io.Serializable;
 
-public class ElementProperties implements Serializable{
+/**
+ * Class holding properties additional properties of an element. The property
+ * the field {@code name} is redundant with most implementations of the
+ * {@link venn.db.IVennDataModel} which hold a seperate field for this property.
+ * 
+ * @author behrens
+ * 
+ */
+public class ElementProperties implements Serializable {
 
 	public ElementProperties(String name, DiffExprValue diffExprValue,
 			String shortName) {

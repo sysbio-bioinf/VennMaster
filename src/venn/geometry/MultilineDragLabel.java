@@ -9,6 +9,9 @@ import java.util.BitSet;
 import org.apache.commons.lang3.StringUtils;
 
 /**
+ * Extending the Drag label to support multiple lines. Makes use of basic html
+ * capabilities of {@link javax.swing.JLabel}
+ * 
  * @author behrens
  * 
  */
@@ -26,7 +29,7 @@ public class MultilineDragLabel extends DragLabel {
 		super(transformer, generateHtmlString(text), path);
 		this.origText = text;
 		this.lines = text.split("\\r?\\n");
-		setBackground(new Color(0xff,0x55,0x55,0xa0));
+		setBackground(new Color(0xff, 0x55, 0x55, 0xa0));
 		updateBounds(getGraphics());
 
 	}
@@ -47,8 +50,8 @@ public class MultilineDragLabel extends DragLabel {
 	protected void updateBounds(Graphics g) {
 		java.awt.Rectangle bounds = getBounds();
 		String text = getText();
-			
-		if (text == null || origText==null) {
+
+		if (text == null || origText == null) {
 			bounds.width = 50;
 			bounds.height = 10;
 		} else {
@@ -68,28 +71,27 @@ public class MultilineDragLabel extends DragLabel {
 	private int getMultilineHeight(Graphics g) {
 
 		FontMetrics metrics = getFontMetrics(getFont());
-		int myHeigth=0;
+		int myHeigth = 0;
 		for (String line : lines) {
 			Rectangle2D textBounds = metrics.getStringBounds(line, g);
 			myHeigth += (int) Math.round(textBounds.getHeight());
 		}
-		return myHeigth+6;
+		return myHeigth + 6;
 	}
 
 	private int getMultilineWidth(Graphics g) {
 
 		FontMetrics metrics = getFontMetrics(getFont());
-		int maxWidth=0;
-//		System.out.println(getText());
-//		System.out.println(origText);
-//		System.out.println(lines);
+		int maxWidth = 0;
+		// System.out.println(getText());
+		// System.out.println(origText);
+		// System.out.println(lines);
 		for (String line : lines) {
 			Rectangle2D textBounds = metrics.getStringBounds(line, g);
 			int w = (int) Math.round(textBounds.getWidth());
-			maxWidth = (w>maxWidth)?w:maxWidth;
+			maxWidth = (w > maxWidth) ? w : maxWidth;
 		}
-		return maxWidth+ 20;
-
+		return maxWidth + 20;
 
 	}
 }
