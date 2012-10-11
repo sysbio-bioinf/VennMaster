@@ -1,0 +1,69 @@
+<project name="VennMaster" default="jar">
+	<description>VennMaster will illustrate GO-Term trees as Venn or Euler diagramms.</description>
+
+	<property name="author" value="Sebastian Behrens, Johann Kraus, Andre Mueller" />
+	<property name="jar.name" value="venn.jar" />
+	<property name="main.class" value="venn.Main" />
+
+	<property name="build.dir" value="build" />
+	<property name="class.dir" value="${build.dir}/classes" />
+	<property name="dist.dir" value="${build.dir}/dist" />
+	<property name="src.dir" value="src" />
+	<property name="lib.dir" value="lib" />
+	<property name="unjar.dir" value="${build.dir}/unjar" />
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${class.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${unjar.dir}" />
+		<path id="runtime_cp">
+			<fileset dir="lib">
+				<include name="**/*.jar" />
+				<include name="*.jar" />
+			</fileset>
+			<pathelement path="${class.dir}" />
+		</path>
+	</target>
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+		<delete dir="${unjar.dir}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${src.dir}" destdir="${class.dir}" debug="on">
+			<classpath refid="runtime_cp" />
+		</javac>
+	</target>
+
+	<target name="unjar" depends="init">
+		<mkdir dir="${unjar.dir}" />
+		<unjar dest="${unjar.dir}">
+			<fileset dir="${lib.dir}" includes="**/*.jar" />
+		</unjar>
+	</target>
+
+	<target name="resources">
+
+		<copy todir="${class.dir}/venn/data">
+			<fileset dir="${src.dir}/venn/data" />
+		</copy>
+
+
+	</target>
+
+	<target name="jar" depends="unjar,compile,resources">
+		<mkdir dir="${dist.dir}" />
+		<jar destfile="${dist.dir}/${jar.name}" basedir="${class.dir}">
+			<fileset dir="${class.dir}" includes="**/*.class" />
+			<fileset dir="${class.dir}" includes="**/*.out" />
+			<fileset dir="${src.dir}" includes="**/*.png" />
+			<fileset dir="${unjar.dir}" includes="**/*.class" />
+			<manifest>
+				<attribute name="Main-Class" value="${main.class}" />
+			</manifest>
+		</jar>
+	</target>
+</project>
