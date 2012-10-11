@@ -21,8 +21,9 @@ extends AbstractVennDataModel
 {
     private ArrayList   aElements,      // array of aElements (key names)
                         aGroups,        // array of aGroups (group names)
-                        sets;           // contains one BitSet for each group
+                        sets,           // contains one BitSet for each group
                                         // the index of a set bit corresponds to the index in aElements
+    					elementProperties;
 
     /**
      * 
@@ -34,6 +35,7 @@ extends AbstractVennDataModel
         aElements = new ArrayList();
         aGroups = new ArrayList();
         sets = new ArrayList();
+        elementProperties = new ArrayList<ElementProperties>();
     }
     
     /**
@@ -102,6 +104,7 @@ extends AbstractVennDataModel
                     kval = new Integer(keyNumber);
                     elMap.put(keyName,kval);
                     aElements.add(keyNumber,keyName);
+                    elementProperties.add(keyNumber, new ElementProperties(keyName,DiffExprValue.UNKNOWN,null));
                     ++keyNumber;
                 }
                 
@@ -223,5 +226,12 @@ extends AbstractVennDataModel
     {
         return null;
     }
+
+	@Override
+	public ElementProperties getElementProperties(int elementID) {
+		return (ElementProperties) elementProperties.get(elementID);
+	}
+
+    
 }
 

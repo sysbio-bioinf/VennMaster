@@ -55,8 +55,18 @@ public interface IVennDataModel
      * @return A textual desciption of the given element with id elementID.
      */
 	String getElementName( int elementID );
-    
+
+    /**
+     * 
+     * @param elementID
+     * @return An object containing properties of element with the given elementID
+     */
+	ElementProperties getElementProperties(int elementID);
+	
     void setSucc(IFilterChainSucc succ);
+    
     IFilterChainSucc getSucc();
+    
     void setSuccFinal();
+
 }

@@ -1,0 +1,15 @@
+E2	A
+E3	B
+E4	B
+E5	A
+E5	B
+E6	A
+E6	B
+E7	C
+E8	A
+E8	C
+E9	A
+E9	B
+E9	C
+E10	B
+E10	C

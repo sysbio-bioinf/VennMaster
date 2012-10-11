@@ -46,6 +46,7 @@ import javax.swing.event.ChangeListener;
 import junit.framework.Assert;
 import venn.Constants;
 import venn.db.AbstractGOCategoryProperties;
+import venn.db.DiffExprValue;
 import venn.geometry.AffineTransformer;
 import venn.geometry.ConsistencyChecker;
 import venn.geometry.DragLabel;
@@ -53,6 +54,7 @@ import venn.geometry.FPoint;
 import venn.geometry.FRectangle;
 import venn.geometry.FSegment;
 import venn.geometry.ITransformer;
+import venn.geometry.MultilineDragLabel;
 import venn.gui.Gui;
 import venn.gui.HasLabelsListener;
 import venn.gui.SVGGraphics2DWithPaintLog;
@@ -951,6 +953,7 @@ public class VennDiagramView extends JPanel implements IVennDiagramView,
 			return "";
 		StringBuffer buf = new StringBuffer();
 		buf.append("{");
+
 		for (int i = set.nextSetBit(0); i >= 0; i = set.nextSetBit(i + 1)) {
 			buf.append(getArrangement().getDataModel().getGroupName(i));
 			if (i + 1 < set.length())
@@ -1007,6 +1010,38 @@ public class VennDiagramView extends JPanel implements IVennDiagramView,
 		if (currentNode == null)
 			return "{}";
 		return getNodeInfo(currentNode);
+	}
+
+	private String getRegulationInfo() {
+
+		if (currentNode == null) {
+			return "";
+		}
+		BitSet el = currentNode.vennObject.getElements();
+
+		int under = 0;
+		int over = 0;
+		int unknown = 0;
+		for (int i = el.nextSetBit(0); i >= 0; i = el.nextSetBit(i + 1)) {
+			DiffExprValue diffExprVal = arrangement.getDataModel()
+					.getElementProperties(i).getDiffExprValue();
+			if (diffExprVal==null){
+				return "no differential expres-\nsion info available";
+			}
+			if (diffExprVal == DiffExprValue.UNDER) {
+				under++;
+			} else if (diffExprVal == DiffExprValue.OVER) {
+				over++;
+			} else {
+				unknown++;
+			}
+
+		}
+
+		return over + "\n" + under + "\n" + unknown;
+
+		// return "1\n2\n3";
+
 	}
 
 	private String getNodeInfo(IntersectionTreeNode node) {
@@ -1099,14 +1134,16 @@ public class VennDiagramView extends JPanel implements IVennDiagramView,
 				item3.addActionListener(this);
 				JMenuItem item4 = new JMenuItem("Change Color");
 				item4.addActionListener(this);
+				JMenuItem item5 = new JMenuItem("Show Transcription Regulation");
+				item5.addActionListener(this);
 				JMenuItem exportItem = new JMenuItem("Export Node Info");
 				exportItem.addActionListener(this);
 				popup.add(item);
 				popup.add(item2);
 				popup.add(item3);
 				popup.add(item4);
+				popup.add(item5);
 				popup.add(exportItem);
-				//blubb
 
 				/*
 				 * boolean locked = false;
@@ -1157,6 +1194,18 @@ public class VennDiagramView extends JPanel implements IVennDiagramView,
 
 	public void actionPerformed(ActionEvent event) {
 		String cmd = event.getActionCommand();
+
+		if (cmd.equalsIgnoreCase("show transcription regulation")) {
+			// show up and down regulated categories.
+
+			if (currentNode == null)
+				return;
+
+			String text = getRegulationInfo();
+			makeMultilineLabel(text);
+			return;
+
+		}
 
 		if (cmd.equalsIgnoreCase("lock")) {
 			// generation[selectedGeneration].getLock().set(selectedOffset);
@@ -1285,6 +1334,36 @@ public class VennDiagramView extends JPanel implements IVennDiagramView,
 	private void makeLabel(String text) {
 		if (text != null) {
 			DragLabel label = new DragLabel(transformer, text, currentNode.path);
+			if (popupPosition != null) {
+				label.setLocation(popupPosition.x, popupPosition.y);
+			} else {
+				FPoint p = null;
+				if (currentNode.vennObject != null) {
+					p = currentNode.vennObject.getOffset();
+				} else {
+					p = new FPoint(0.5, 0.5);
+				}
+				label.setRelativePosition(p);
+			}
+
+			label.setVisible(true);
+			label.addMouseListener(this);
+			label.addMouseMotionListener(this);
+			add(label);
+			notifyHasLabelsChanged();
+			invalidateView();
+			repaint();
+		}
+	}
+	
+	
+	/**
+	 * @param text
+	 */
+	private void makeMultilineLabel(String text) {
+		if (text != null) {
+			DragLabel label = new MultilineDragLabel(transformer, text,
+					currentNode.path);
 			if (popupPosition != null) {
 				label.setLocation(popupPosition.x, popupPosition.y);
 			} else {

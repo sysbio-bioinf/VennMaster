@@ -25,8 +25,8 @@ public class DragLabel extends JLabel
      * 
      */
     private static final long serialVersionUID = 1L;
-    private ITransformer transformer;
-	private FPoint     position;
+    protected ITransformer transformer;
+	protected FPoint     position;
 	private boolean withConnector;		// activated connection line
     private BitSet path;
 	
@@ -86,7 +86,7 @@ public class DragLabel extends JLabel
 		super.paintComponent(g);
 	}
 	
-	private void updateBounds(Graphics g)
+	protected void updateBounds(Graphics g)
 	{
 		java.awt.Rectangle bounds = getBounds();
 		String text = getText();

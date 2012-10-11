@@ -54,6 +54,7 @@ public class VennFilteredDataModel extends AbstractVennDataModel implements IFil
        for( int eid=0; eid<getNumElements(); ++eid )
        {
            m.setElementName(eid,getElementName(eid));
+           m.setElementProperties(eid, getElementProperties(eid));
        }
        
        for( int gid=0; gid<getNumGroups(); ++gid )
@@ -170,6 +171,8 @@ public class VennFilteredDataModel extends AbstractVennDataModel implements IFil
         notifySucc();
     }
     
+    
+    //filter groups according to the given filter. 
     protected void updateFilteredGroups()
     {
     	if( groups == null )
@@ -375,10 +378,16 @@ public class VennFilteredDataModel extends AbstractVennDataModel implements IFil
     	updateFilteredGroups();
     	update();
     }
-    
+
     public Object getGroupProperties(int groupID)
     {
         return parent.getGroupProperties( localToGlobalGroupID(groupID) );
     }
+
+    public ElementProperties getElementProperties(int eid)
+    {
+        return parent.getElementProperties( localToGlobalElementID(eid) );
+    }
+    
 
 }
