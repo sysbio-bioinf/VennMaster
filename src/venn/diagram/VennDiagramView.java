@@ -1106,6 +1106,7 @@ public class VennDiagramView extends JPanel implements IVennDiagramView,
 				popup.add(item3);
 				popup.add(item4);
 				popup.add(exportItem);
+				//blubb
 
 				/*
 				 * boolean locked = false;
