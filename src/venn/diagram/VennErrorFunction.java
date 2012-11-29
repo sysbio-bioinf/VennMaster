@@ -68,7 +68,13 @@ implements IFunction, ChangeListener
 	}
     
     
-    private void initializeTransient()
+    @Override
+	public IFunction copy() {
+    	
+    	return new VennErrorFunction(new VennArrangement(this.getArrangement()),params);
+	}
+
+	private void initializeTransient()
     {
         valid = false;  
         visitor = new ErrorFunctionVisitor();
@@ -517,7 +523,7 @@ implements IFunction, ChangeListener
             {
                 // TODO: which one is better????
                 cachePressureCost = getPressureCost(); // A.M. function
-                //cachePressureCost = getPressureCost1(); // H.K. function
+//                cachePressureCost = getPressureCost1(); // H.K. function
                 
                 cost += params.delta * cachePressureCost;
             } else

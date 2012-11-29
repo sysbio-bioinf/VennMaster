@@ -43,5 +43,10 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/VennMaster/lib/commons-lang3-3.1-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/commons-math3-3.0.jar" sourcepath="lib/commons-math3-3.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/VennMaster/lib/commons-math3-3.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

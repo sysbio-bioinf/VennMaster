@@ -53,6 +53,12 @@
 
 
 	</target>
+	
+	<target name="dist" depends="jar">
+		
+		<copy tofile="./${jar.name}" file="${dist.dir}/${jar.name}"/>
+	
+	</target>
 
 	<target name="jar" depends="unjar,compile,resources">
 		<mkdir dir="${dist.dir}" />

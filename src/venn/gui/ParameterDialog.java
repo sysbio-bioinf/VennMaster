@@ -31,6 +31,7 @@ import venn.AllParameters;
 import venn.Constants;
 import venn.optim.EvolutionaryOptimizer;
 import venn.optim.EvolutionaryOptimizerV1;
+import venn.optim.ParallelSwarmOptimizer;
 import venn.optim.SwarmOptimizer;
 
 /*
@@ -109,7 +110,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
                                 evo2_numIndividuals,
                                 evo2_cloneFraction;
     
-    
+
     // SwarmOptimizer.Parameters
     private JPanel              opt_swarm_panel;
     private JFormattedTextField swarm_numParticles,
@@ -118,8 +119,19 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
                                 swarm_maxV,
                                 swarm_maxIterations,
                                 swarm_maxConstIterations;
-    
+
     private JCheckBox           swarm_reflect;
+
+    // ParallelSwarmOptimizer.Parameters
+    private JPanel              opt_p_swarm_panel;
+    private JFormattedTextField p_swarm_numParticles,
+                                p_swarm_cGlobal,
+                                p_swarm_cLocal,
+                                p_swarm_maxV,
+                                p_swarm_maxIterations,
+                                p_swarm_maxConstIterations;
+    
+    private JCheckBox           p_swarm_reflect;
 
     
 
@@ -382,7 +394,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         fields.add(evo2_maxConstantSteps);
         panel.add(evo2_maxConstantSteps);
 
-                
+
         // SwarmOptimizer
         opt_swarm_panel = new JPanel();
         panel = opt_swarm_panel;
@@ -425,6 +437,50 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         fields.add(swarm_reflect);
         swarm_reflect.addItemListener(this);
         panel.add(swarm_reflect);
+        
+
+        // ParllelSwarmOptimizer
+        opt_p_swarm_panel = new JPanel();
+        panel = opt_p_swarm_panel;
+        panel.setLayout(new GridLayout(7,2));
+        
+        panel.add(new JLabel("numParticles"));
+        p_swarm_numParticles = new JFormattedTextField(intFormat);
+        fields.add(p_swarm_numParticles);
+        panel.add(p_swarm_numParticles);
+
+        panel.add(new JLabel("cGlobal"));
+        p_swarm_cGlobal = new JFormattedTextField(floatFormat);
+        fields.add(p_swarm_cGlobal);
+        panel.add(p_swarm_cGlobal);
+        
+        panel.add(new JLabel("cLocal"));
+        p_swarm_cLocal = new JFormattedTextField(floatFormat);
+        fields.add(p_swarm_cLocal);
+        panel.add(p_swarm_cLocal);
+        
+        panel.add(new JLabel("maxV"));
+        p_swarm_maxV = new JFormattedTextField(floatFormat);
+        fields.add(p_swarm_maxV);
+        panel.add(p_swarm_maxV);
+        
+        panel.add(new JLabel("maxIterations"));
+        p_swarm_maxIterations = new JFormattedTextField(intFormat);
+        fields.add(p_swarm_maxIterations);
+        panel.add(p_swarm_maxIterations);
+        
+        panel.add(new JLabel("maxConstIterations"));
+        p_swarm_maxConstIterations = new JFormattedTextField(intFormat);
+        fields.add(p_swarm_maxConstIterations);
+        panel.add(p_swarm_maxConstIterations);
+        
+        
+        panel.add(new JLabel("reflect"));
+        p_swarm_reflect = new JCheckBox();
+        p_swarm_reflect.setToolTipText("Keeps particles inside the bounding box.");
+        fields.add(p_swarm_reflect);
+        p_swarm_reflect.addItemListener(this);
+        panel.add(p_swarm_reflect);
         
         //opt_panel.add(opt_swarm_panel,BorderLayout.CENTER);
         
@@ -605,7 +661,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         evo2_maxMutation.setValue(new Double(parameters.optEvo2.maxMutation));
         evo2_numIndividuals.setValue(new Integer(parameters.optEvo2.numIndividuals));
         evo2_cloneFraction.setValue(new Double(parameters.optEvo2.cloneFraction));
-        
+
         // SwarmOptimizer
         swarm_numParticles.setValue(new Integer(parameters.optSwarm.numParticles));
         swarm_cGlobal.setValue(new Double(parameters.optSwarm.cGlobal));
@@ -614,10 +670,20 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         swarm_maxIterations.setValue(new Integer(parameters.optSwarm.maxIterations));
         swarm_maxConstIterations.setValue(new Integer(parameters.optSwarm.maxConstIterations));
         swarm_reflect.setSelected(parameters.optSwarm.reflect);
+
+        // SwarmOptimizer
+        p_swarm_numParticles.setValue(new Integer(parameters.optPSwarm.numParticles));
+        p_swarm_cGlobal.setValue(new Double(parameters.optPSwarm.cGlobal));
+        p_swarm_cLocal.setValue(new Double(parameters.optPSwarm.cLocal));
+        p_swarm_maxV.setValue(new Double(parameters.optPSwarm.maxV));
+        p_swarm_maxIterations.setValue(new Integer(parameters.optPSwarm.maxIterations));
+        p_swarm_maxConstIterations.setValue(new Integer(parameters.optPSwarm.maxConstIterations));
+        p_swarm_reflect.setSelected(parameters.optPSwarm.reflect);
         
         opt_panel.remove(opt_evo_panel);
         opt_panel.remove(opt_evo2_panel);
         opt_panel.remove(opt_swarm_panel);
+        opt_panel.remove(opt_p_swarm_panel);
         
         switch( parameters.optimizer )
         {
@@ -630,10 +696,15 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
                 opt_evo2_panel.setVisible( true );
                 opt_panel.add(opt_evo2_panel,BorderLayout.CENTER);
                 break;
-                
+
             case SwarmOptimizer.Parameters.ID:
                 opt_swarm_panel.setVisible( true );
                 opt_panel.add(opt_swarm_panel,BorderLayout.CENTER);
+                break;
+
+            case ParallelSwarmOptimizer.Parameters.ID:
+                opt_p_swarm_panel.setVisible( true );
+                opt_panel.add(opt_p_swarm_panel,BorderLayout.CENTER);
                 break;
                 
             default:
@@ -750,7 +821,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         
         if( evo2_maxConstantSteps.getValue() != null )
             param.optEvo2.maxConstIterations = ((Number)evo2_maxConstantSteps.getValue()).intValue();
-        
+
         
         // SwarmOptimizer
         if( swarm_numParticles.getValue() != null )
@@ -772,6 +843,29 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
             param.optSwarm.maxConstIterations = ((Number)swarm_maxConstIterations.getValue()).intValue();
         
         param.optSwarm.reflect = swarm_reflect.isSelected();
+        
+
+        
+        // ParallelSwarmOptimizer
+        if( p_swarm_numParticles.getValue() != null )
+            param.optPSwarm.numParticles = ((Number)p_swarm_numParticles.getValue()).intValue();
+                
+        if( p_swarm_cGlobal.getValue() != null )
+            param.optPSwarm.cGlobal = ((Number)p_swarm_cGlobal.getValue()).doubleValue();
+        
+        if( p_swarm_cLocal.getValue() != null )
+            param.optPSwarm.cLocal = ((Number)p_swarm_cLocal.getValue()).doubleValue();
+        
+        if( p_swarm_maxV.getValue() != null )
+            param.optPSwarm.maxV = ((Number)p_swarm_maxV.getValue()).doubleValue();
+        
+        if( p_swarm_maxIterations.getValue() != null )
+            param.optPSwarm.maxIterations = ((Number)p_swarm_maxIterations.getValue()).intValue();
+        
+        if( p_swarm_maxConstIterations.getValue() != null )
+            param.optPSwarm.maxConstIterations = ((Number)p_swarm_maxConstIterations.getValue()).intValue();
+        
+        param.optPSwarm.reflect = p_swarm_reflect.isSelected();
         
         
 		return param;

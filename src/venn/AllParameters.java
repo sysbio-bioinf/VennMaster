@@ -9,6 +9,7 @@ import java.io.Serializable;
 import venn.diagram.VennErrorFunction;
 import venn.optim.EvolutionaryOptimizer;
 import venn.optim.EvolutionaryOptimizerV1;
+import venn.optim.ParallelSwarmOptimizer;
 import venn.optim.SwarmOptimizer;
 import venn.utility.MathUtility;
 import venn.utility.SystemUtility;
@@ -24,7 +25,7 @@ public class AllParameters implements Serializable
     private static final long serialVersionUID = 1L;
 
     // append descriptions of new optimizers here:
-    public static final String[] Optimizers = { "Evolutionary (old)", "Evolutionary (new)", "Particle Swarm"};
+    public static final String[] Optimizers = { "Evolutionary (old)", "Evolutionary (new)", "Particle Swarm", "Parallel Particle Swarm"};
     
     // global parameters
     public boolean 								colormode; // for categories on panel: coloured or grayscale
@@ -41,6 +42,7 @@ public class AllParameters implements Serializable
     public EvolutionaryOptimizerV1.Parameters   optEvo;
     public EvolutionaryOptimizer.Parameters     optEvo2;
     public SwarmOptimizer.Parameters            optSwarm;
+    public ParallelSwarmOptimizer.Parameters	optPSwarm;
 
     public transient boolean svgIds;  // command line option
     
@@ -50,7 +52,7 @@ public class AllParameters implements Serializable
     	colormode = true;
     	logNumElements = false;
     	
-        optimizer = SwarmOptimizer.Parameters.ID;
+        optimizer = ParallelSwarmOptimizer.Parameters.ID;
         sizeFactor = 1.0;
         numEdges = 16;
         randomSeed = -1;
@@ -59,6 +61,7 @@ public class AllParameters implements Serializable
         
         errorFunction = new VennErrorFunction.Parameters();
         optSwarm = new SwarmOptimizer.Parameters();
+        optPSwarm = new ParallelSwarmOptimizer.Parameters();
         optEvo = new EvolutionaryOptimizerV1.Parameters();
         optEvo2 = new EvolutionaryOptimizer.Parameters();
     }
@@ -74,7 +77,7 @@ public class AllParameters implements Serializable
     	double olddouble;
 
     	oldint = optimizer;
-    	if (oldint != (optimizer = MathUtility.restrict(optimizer,0,2))) changed = true;
+    	if (oldint != (optimizer = MathUtility.restrict(optimizer,0,3))) changed = true;
         
         olddouble = sizeFactor;
         if (olddouble != (sizeFactor = MathUtility.restrict(sizeFactor,0.0001,10.0))) changed = true;
@@ -91,6 +94,7 @@ public class AllParameters implements Serializable
         // check childs
         if (! errorFunction.check()) changed = true;
         if (! optSwarm.check()) changed = true;
+        if (! optPSwarm.check()) changed = true;
         if (! optEvo.check()) changed = true;
         if (! optEvo2.check()) changed = true;
         

@@ -249,7 +249,7 @@ implements ChangeListener
 	 * Rebuilds/updates the whole tree.
 	 *
 	 */
-	public void buildTree()
+	public synchronized void  buildTree()
 	{
 		root = null;  // TODO: remove this??
         if( arrangement == null || arrangement.getNumOfSets() == 0 )
@@ -397,7 +397,7 @@ implements ChangeListener
         valid = false;
     }
     
-    public void validate()
+    public synchronized void validate()
     {
         if( ! valid )
         {

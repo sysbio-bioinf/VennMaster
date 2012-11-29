@@ -23,6 +23,7 @@ import venn.optim.EvolutionaryOptimizerV1;
 import venn.optim.IOptimizer;
 import venn.optim.IOptimizerObserver;
 import venn.optim.OptimizerWorker;
+import venn.optim.ParallelSwarmOptimizer;
 import venn.optim.SwarmOptimizer;
 
 public class VennArrangementsOptimizer implements IOptimizerObserver, ActionListener {
@@ -163,9 +164,13 @@ public class VennArrangementsOptimizer implements IOptimizerObserver, ActionList
 		        case EvolutionaryOptimizer.Parameters.ID:
 		            optim[i] = new EvolutionaryOptimizer(random,errFunc[i], params.optEvo2 );                    
 		            break;
-		        
+
 		        case SwarmOptimizer.Parameters.ID:
 		            optim[i] = new SwarmOptimizer(random,errFunc[i], params.optSwarm );
+		            break;
+
+		        case ParallelSwarmOptimizer.Parameters.ID:
+		            optim[i] = new ParallelSwarmOptimizer(random,errFunc[i], params.optPSwarm);
 		            break;
 		            
 		        default:

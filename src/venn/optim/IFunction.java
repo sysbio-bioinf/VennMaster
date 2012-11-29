@@ -13,6 +13,16 @@ package venn.optim;
  */
 public interface IFunction
 {
+	
+	
+	/**
+	 * will return a copy of itself:
+	 * particularly it will contain a copy of the arrangement instance.
+	 */
+	
+	public IFunction copy();
+	
+	
     /**
      * 
      * @param input Sets the input of the function. <code>input.length</code> has to be
