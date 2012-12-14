@@ -4,3 +4,12 @@
 *.jar
 *.war
 *.ear
+
+
+# vi tmp files
+*.swp
+
+# build directories
+bin/
+build/
+

@@ -1038,7 +1038,7 @@ public class VennDiagramView extends JPanel implements IVennDiagramView,
 
 		}
 
-		return over + "\n" + under + "\n" + unknown;
+		return over + " Overexpressed" +"\n" +under+ " Underexpressed"  + "\n" +unknown+ " Unknown" ;
 
 		// return "1\n2\n3";
 
