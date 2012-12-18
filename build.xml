@@ -1,4 +1,4 @@
-<project name="VennMaster" default="jar">
+<project name="VennMaster" default="dist">
 	<description>VennMaster will illustrate GO-Term trees as Venn or Euler diagramms.</description>
 
 	<property name="author" value="Sebastian Behrens, Johann Kraus, Andre Mueller" />
