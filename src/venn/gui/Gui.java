@@ -329,6 +329,11 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
         item.addActionListener(this);
         menuFile.add(item);
         
+
+		// open list
+		item = new JMenuItem("Open Column Files",'c');
+		item.addActionListener(this);
+		menuFile.add(item);
 		
 		// open list
 		item = new JMenuItem("Open List",'l');
@@ -426,6 +431,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 	}
 	
 	public void actionPerformed(ActionEvent event)
+	//TODO add action for column files.
 	{
 	    Object src = event.getSource();
 		String cmd = event.getActionCommand();
@@ -445,6 +451,13 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		if( cmd.equalsIgnoreCase("open list"))
 		{
 			actionFileOpenList();
+			return;
+		}
+
+
+		if( cmd.equalsIgnoreCase("Open Column Files"))
+		{
+			actionFileOpenColumnFiles();
 			return;
 		}
 		
@@ -632,6 +645,23 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
     	
     	infoPane.setSelectedIndex(0);
     }
+    
+
+
+    /**
+	 * Opens two list files containing an addional collumn with count information.
+	 *
+	 */
+	protected void actionFileOpenColumnFiles()
+	{
+		if (! loadFiles.actionFileOpenColumnFiles()) {
+			return;
+		}
+		assert loadFiles.getSourceType() == LoadFiles.SourceType.COLUMN;
+		
+		//TODO change this to column specific method
+		setListSourceDataModel(loadFiles.getSourceDataModel(), loadFiles.getFileName());
+	}
 
 
     /**

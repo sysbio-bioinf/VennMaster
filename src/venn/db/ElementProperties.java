@@ -1,6 +1,7 @@
 package venn.db;
 
 import java.io.Serializable;
+import java.util.HashMap;
 
 /**
  * Class holding properties additional properties of an element. The property
@@ -10,7 +11,14 @@ import java.io.Serializable;
  * @author behrens
  * 
  */
+
 public class ElementProperties implements Serializable {
+
+	String name;
+	DiffExprValue diffExprValue;
+	String shortName;
+
+	HashMap<String, HashMap<String, Number>> columns;
 
 	public ElementProperties(String name, DiffExprValue diffExprValue,
 			String shortName) {
@@ -18,6 +26,8 @@ public class ElementProperties implements Serializable {
 		this.name = name;
 		this.diffExprValue = diffExprValue;
 		this.shortName = shortName;
+		this.columns = new HashMap<String, HashMap<String, Number>>();
+
 	}
 
 	public ElementProperties(String name, String diffExprValue, String shortName) {
@@ -36,11 +46,42 @@ public class ElementProperties implements Serializable {
 		this.name = name;
 		this.diffExprValue = diffVal;
 		this.shortName = shortName;
+		this.columns = new HashMap<String, HashMap<String, Number>>();
 	}
 
-	String name;
-	DiffExprValue diffExprValue;
-	String shortName;
+	
+	/**
+	 * set the Number corresponding to column name and group name for this Element
+	 * 
+	 * @param colName
+	 * @param groupName
+	 * @param value
+	 */
+	public void setColumn(String colName, String groupName, Number value) {
+		HashMap<String, Number> colMap = columns.get(colName);
+		if (colMap == null) {
+			colMap = new HashMap<String, Number>();
+			columns.put(colName, colMap);
+		}
+		colMap.put(groupName, value);
+	}
+
+	/**
+	 * returns the number for this element given for the corresponding column
+	 * name and group, or null if there is no Number stored for this column-group combination
+	 * 
+	 * @param colName
+	 * @param groupName
+	 * @return
+	 */
+	public Number getColNumber(String colName, String groupName) {
+		HashMap<String, Number> colMap = columns.get(colName);
+		if (colMap == null) {
+			return null;
+		}
+
+		return colMap.get(groupName);
+	}
 
 	public void setName(String name) {
 		this.name = name;
