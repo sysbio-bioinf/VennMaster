@@ -1,4 +1,4 @@
 MAMMEL	absolute_expr	diff_expr	p-value
-Cat	80	2.4	0.2
-Dog	80	2.4	0.2
-Whale	80	2.4	0.2
+Cat	18	6.14	0.0052
+Dog	580	8.424	0.0142
+Whale	680	0.3	0.52

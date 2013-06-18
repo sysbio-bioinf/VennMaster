@@ -1,3 +1,3 @@
 PLANT	absolute_expr	diff_expr	p-value
-Rose	80	2.4	0.2
-Seaweed	80	2.4	0.2
+Rose	580	6.4	0.1562
+Seaweed	820	0.4	0.1052

@@ -1,5 +1,5 @@
-SPINY
-Cat
-Dog
-Whale
-Shark
+SPINY	absolute_expr	diff_expr	p-value
+Cat	80	2.4	0.2
+Dog	80	2.4	0.2
+Whale	80	2.4	0.2
+Shark	80	2.4	0.2

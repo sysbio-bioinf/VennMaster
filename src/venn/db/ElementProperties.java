@@ -1,6 +1,7 @@
 package venn.db;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -18,7 +19,12 @@ public class ElementProperties implements Serializable {
 	DiffExprValue diffExprValue;
 	String shortName;
 
-	HashMap<String, HashMap<String, Number>> columns;
+	// HashMap<String, HashMap<String, Number>> columns;
+
+	HashMap<Integer, HashMap<Integer, Number>> expressionPropertyValues = new HashMap<Integer, HashMap<Integer, Number>>();
+
+	// ArrayList<ArrayList<Number>> expressionPropertyValues = new
+	// ArrayList<ArrayList<Number>>(); // Number[GroupIndex][ColumnIndex]
 
 	public ElementProperties(String name, DiffExprValue diffExprValue,
 			String shortName) {
@@ -26,7 +32,7 @@ public class ElementProperties implements Serializable {
 		this.name = name;
 		this.diffExprValue = diffExprValue;
 		this.shortName = shortName;
-		this.columns = new HashMap<String, HashMap<String, Number>>();
+		// this.columns = new HashMap<String, HashMap<String, Number>>();
 
 	}
 
@@ -46,42 +52,78 @@ public class ElementProperties implements Serializable {
 		this.name = name;
 		this.diffExprValue = diffVal;
 		this.shortName = shortName;
-		this.columns = new HashMap<String, HashMap<String, Number>>();
+		// this.columns = new HashMap<String, HashMap<String, Number>>();
 	}
 
-	
-	/**
-	 * set the Number corresponding to column name and group name for this Element
-	 * 
-	 * @param colName
-	 * @param groupName
-	 * @param value
-	 */
-	public void setColumn(String colName, String groupName, Number value) {
-		HashMap<String, Number> colMap = columns.get(colName);
-		if (colMap == null) {
-			colMap = new HashMap<String, Number>();
-			columns.put(colName, colMap);
+	//
+	// public void setColumnValuesDimensions(int columnCount,int groupCount){
+	// coulumnValues = new Number[columnCount][groupCount];
+	// }
+
+	public void setExpressionPropertyValue(int expressionPropertyIndex,
+			int groupIndex, Number value) {
+		HashMap<Integer, Number> ep = expressionPropertyValues
+				.get(expressionPropertyIndex);
+		if (ep == null) {
+			ep = new HashMap<Integer, Number>();
+			if (expressionPropertyValues.size() != expressionPropertyIndex) {
+				throw new IndexOutOfBoundsException();
+			}
+			expressionPropertyValues.put(expressionPropertyIndex, ep);
 		}
-		colMap.put(groupName, value);
+		ep.put(groupIndex, value);
 	}
+
+	// /**
+	// * set the Number corresponding to column index and group index for this
+	// * Element
+	// *
+	// * @param colName
+	// * @param groupName
+	// * @param value
+	// */
+	// public void setColumn(String colName, String groupName, Number value) {
+	// HashMap<String, Number> colMap = columns.get(colName);
+	// if (colMap == null) {
+	// colMap = new HashMap<String, Number>();
+	// columns.put(colName, colMap);
+	// }
+	// colMap.put(groupName, value);
+	// }
 
 	/**
-	 * returns the number for this element given for the corresponding column
-	 * name and group, or null if there is no Number stored for this column-group combination
+	 * returns the Number stored for the Properties element given the group and
+	 * column indices
 	 * 
-	 * @param colName
-	 * @param groupName
-	 * @return
-	 */
-	public Number getColNumber(String colName, String groupName) {
-		HashMap<String, Number> colMap = columns.get(colName);
-		if (colMap == null) {
-			return null;
-		}
+	 * @param expressionPropertyIndex
+	 * @param groupIndex
+	 * @return the Number stored for this indices or null if there was no number
+	 *         given at the input.
+	 **/
 
-		return colMap.get(groupName);
+	public Number getExpressionPropertyValue(int expressionPropertyIndex,
+			int groupIndex) {
+		return expressionPropertyValues.get(expressionPropertyIndex).get(
+				groupIndex);
 	}
+
+	// /**
+	// * returns the number for this element given for the corresponding column
+	// * name and group, or null if there is no Number stored for this
+	// * column-group combination
+	// *
+	// * @param colName
+	// * @param groupName
+	// * @return
+	// */
+	// public Number getColNumber(String colName, String groupName) {
+	// HashMap<String, Number> colMap = columns.get(colName);
+	// if (colMap == null) {
+	// return null;
+	// }
+	//
+	// return colMap.get(groupName);
+	// }
 
 	public void setName(String name) {
 		this.name = name;

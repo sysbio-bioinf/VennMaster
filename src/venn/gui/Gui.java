@@ -77,6 +77,8 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
     private final FilterPanel   filterPanel;            // filter settings
 	private final JTextArea		inconsistencyInfo,      // show inconsistencies (not fulfilled intersections)
 								globalInfo;
+	
+	private final ThesholdPanel thresholdPanel;
 
 	private final JComboBox 	zoomChooser;
 	
@@ -193,6 +195,9 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
         
 
         infoPane.addTab("Categories", catTable.getJSplitPane());
+        
+        thresholdPanel= new ThesholdPanel(venn.getDataModel(),venn); // very bad form. i apologize! but there is no time to figure this out!
+        infoPane.addTab("Thresholds", thresholdPanel);
 		
 		// topPanel.setMinimumSize(new Dimension(100,100));
 		topPanel.setPreferredSize(new Dimension(400,400));
@@ -223,6 +228,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 
 	
         // check if loadFiles already has a model loaded
+        //TODO this maybe has to be done for COLUMN too.
 		switch (this.loadFiles.getSourceType()) {
 		case GO:
 			setGoHTGoSourceDataModel(this.loadFiles.getSourceDataModel(), this.loadFiles.getFileName(), filter);
@@ -660,7 +666,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		assert loadFiles.getSourceType() == LoadFiles.SourceType.COLUMN;
 		
 		//TODO change this to column specific method
-		setListSourceDataModel(loadFiles.getSourceDataModel(), loadFiles.getFileName());
+		setColumnDataModel(loadFiles.getSourceDataModel(), loadFiles.getFileName());
 	}
 
 
@@ -685,6 +691,17 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		venn.setDataModel( sourceDataModel );
 		infoPane.setSelectedIndex( infoPane.getTabCount() - 1);
 		
+		vennArrsOptim.stopAndRestartOptimization();
+	}
+	
+
+	public void setColumnDataModel(IVennDataModel sourceDataModel, String filename)
+	{
+		setTitle("Venn Master - "+filename);
+		filterPanelOff();
+		venn.setDataModel( sourceDataModel );
+		infoPane.setSelectedIndex( infoPane.getTabCount() - 1);
+		thresholdPanel.setDataModel(sourceDataModel);
 		vennArrsOptim.stopAndRestartOptimization();
 	}
 
