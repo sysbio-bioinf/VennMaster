@@ -53,16 +53,31 @@
 
 
 	</target>
-	
-	<target name="dist" depends="jar">
-		
-		<copy tofile="./${jar.name}" file="${dist.dir}/${jar.name}"/>
-	
+
+	<target name="dist" depends="jar,getversion">
+		<mkdir dir="${dist.dir}/files" />
+		<copy todir="${dist.dir}/files" file="./venn.bat" />
+		<copy todir="${dist.dir}/files" file="./venn.sh" />
+		<copy todir="${dist.dir}/files" file="./VERSION" />
+
+		<zip destfile="VennMaster_${VERSION}.zip" basedir="${dist.dir}/files"/>
+
 	</target>
 
+	<target name="getversion">
+		<loadresource property="VERSION">
+			<file file="./VERSION" />
+			<filterchain>
+	        <striplinebreaks/>
+	      </filterchain>
+		</loadresource>
+		<echo message="${VERSION}"/>
+
+	</target>
 	<target name="jar" depends="unjar,compile,resources">
 		<mkdir dir="${dist.dir}" />
-		<jar destfile="${dist.dir}/${jar.name}" basedir="${class.dir}">
+		<mkdir dir="${dist.dir}/files" />
+		<jar destfile="${dist.dir}/files/${jar.name}" basedir="${class.dir}">
 			<fileset dir="${class.dir}" includes="**/*.class" />
 			<fileset dir="${class.dir}" includes="**/*.out" />
 			<fileset dir="${src.dir}" includes="**/*.png" />
@@ -71,5 +86,6 @@
 				<attribute name="Main-Class" value="${main.class}" />
 			</manifest>
 		</jar>
-	</target>
+	</target>	
+	
 </project>
