@@ -81,7 +81,8 @@ public class ParallelSwarmOptimizer extends AbstractOptimizer {
 			particles = new Particle[params.numParticles];
 			int iBest = 0;
 			for (int i = 0; i < particles.length; ++i) {
-				particles[i] = new Particle(random, this);
+				particles[i] = new Particle(new Random(random.nextLong()) , this);
+	            //a new random generator for each particle is necessary to maintain deterministic behavior.
 				if (particles[i].getFitness() > particles[iBest].getFitness())
 					iBest = i;
 			}

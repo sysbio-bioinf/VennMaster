@@ -60,7 +60,7 @@
 		<copy todir="${dist.dir}/files" file="./venn.sh" />
 		<copy todir="${dist.dir}/files" file="./VERSION" />
 
-		<zip destfile="VennMaster_${VERSION}.zip" basedir="${dist.dir}/files"/>
+		<zip destfile="VennMaster_${VERSION}.zip" basedir="${dist.dir}/files" />
 
 	</target>
 
@@ -68,10 +68,10 @@
 		<loadresource property="VERSION">
 			<file file="./VERSION" />
 			<filterchain>
-	        <striplinebreaks/>
-	      </filterchain>
+				<striplinebreaks />
+			</filterchain>
 		</loadresource>
-		<echo message="${VERSION}"/>
+		<echo message="${VERSION}" />
 
 	</target>
 	<target name="jar" depends="unjar,compile,resources">
@@ -86,6 +86,6 @@
 				<attribute name="Main-Class" value="${main.class}" />
 			</manifest>
 		</jar>
-	</target>	
-	
+	</target>
+
 </project>
