@@ -272,7 +272,7 @@ implements ChangeListener
             {
                 set.or( vennObjects[i].getElements() );
             }
-            root.vennObject = new VennPolygonObject(null,set,0.0); 
+            root.vennObject = new VennPolygonObject(null,set,0.0,false); 
 			root.card = root.vennObject.cardinality();
 		}
 		else

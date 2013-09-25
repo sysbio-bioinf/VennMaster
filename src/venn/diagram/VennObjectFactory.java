@@ -104,7 +104,7 @@ public class VennObjectFactory implements IVennObjectFactory
         switch( view )
         {
         	case VIEW_POLYGON:
-        	    obj = new VennPolygonObject(numEdges,areaFactor,elements, params.logNumElements); 
+        	    obj = new VennPolygonObject(numEdges,areaFactor,elements, params.logNumElements,false); 
                 break;
         	    
         	default:
