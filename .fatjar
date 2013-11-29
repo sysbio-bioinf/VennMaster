@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Fri Nov 29 18:14:38 CET 2013
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=venn.jar
+manifest.mergeall=true
+manifest.mainclass=venn.Main
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=
