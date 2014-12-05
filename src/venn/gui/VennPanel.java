@@ -149,7 +149,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 
         filteredModel = new VennFilteredDataModel();
         
-		params = new AllParameters();
+		params = null;	// [ME] will be set by the Gui
 		
 		setLayout(null);
 				
@@ -219,6 +219,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 
 				DecimalFormat format = new DecimalFormat("0.000");
 				views[i].setInfoText("cost = "+format.format(-errf.getOutput()));
+//				System.out.println(venn.Main.loadedFile.getFileName() + ": " + vennArrsOptim.getErrFunc()[0].getOutput() + " vs. " + errf.getOutput());	//	[ME] TODO creating new error function unnecessary				
 			}
 		}
 
@@ -303,8 +304,9 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
                         ((double)params.numEdges*
                         Math.sin(2.0*Math.PI/(double)params.numEdges))/(radius*radius);
 
-        VennObjectFactory factory = new VennObjectFactory();
-        factory.setPolygonParameters( params.numEdges, factor );
+//        VennObjectFactory factory = new VennObjectFactory();
+//        factory.setPolygonParameters( params.numEdges, factor );
+        VennObjectFactory factory = new VennObjectFactory(params.numEdges, factor);
         
         
         setLayout(new GridLayout(1,models.length));
@@ -315,8 +317,8 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         for( int i=0; i<models.length; ++i )
         {
         	models[i].setSucc(null); // because we make new VennArrangements
-            arrangements[i] = new VennArrangement( models[i], factory );
-    		arrangements[i].setParameters(params);
+            arrangements[i] = new VennArrangement(models[i], factory, params);
+//    		arrangements[i].setParameters(params);
             VennDiagramView v = new VennDiagramView( arrangements[i], 
                                                      params.errorFunction.maxIntersections, params.logNumElements );
             views[i] = v;
@@ -368,12 +370,11 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 
         double radius = params.sizeFactor*0.5/Math.max(2.0,Math.sqrt((double)maxNum));
         
-        double factor = 2.0*(double)maxCard /
-                        ((double)params.numEdges*
-                        Math.sin(2.0*Math.PI/(double)params.numEdges))/(radius*radius);
+        double factor = 2.0 * (double)maxCard / 
+        		((double)params.numEdges * Math.sin (2.0 * Math.PI / (double)params.numEdges)) / (radius*radius);
 
-        VennObjectFactory factory = new VennObjectFactory();
-        factory.setPolygonParameters( params.numEdges, factor );
+        VennObjectFactory factory = new VennObjectFactory(params.numEdges, factor);
+//        factory.setPolygonParameters( params.numEdges, factor );
         
         
         unfilteredArrangements = new VennArrangement[models.length];
@@ -382,8 +383,8 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         for( int i=0; i<models.length; ++i )
         {
         	models[i].setSucc(null); // because we make new VennArrangements
-            unfilteredArrangements[i] = new VennArrangement( models[i], factory );
-    		unfilteredArrangements[i].setParameters(params);
+            unfilteredArrangements[i] = new VennArrangement( models[i], factory, params );
+//    		unfilteredArrangements[i].setParameters(params);
             VennDiagramView v = new VennDiagramView( unfilteredArrangements[i], 
                                                      params.errorFunction.maxIntersections, params.logNumElements );
             unfilteredViews[i] = v;
@@ -1097,6 +1098,9 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         Writer out;
         out = new OutputStreamWriter(os, "UTF-8");
         svgGenerator.stream(root, out, useCSS);
+        
+        // [MS] test routine - write costs to file
+        
     }
     
 	public void fileSave()
@@ -1476,4 +1480,8 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 		}
 	}
 	
+	public double getCost()
+	{
+		return vennArrsOptim.getErrFunc()[0].getOutput();
+	}
 }

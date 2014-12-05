@@ -235,8 +235,8 @@ public class ParallelSwarmOptimizer extends AbstractOptimizer {
 
 		public void reset() {
 			int N = localFunc.getNumInput();
-			double[] L = localFunc.getLowerBounds(), U = localFunc
-					.getUpperBounds();
+			double[]	L = localFunc.getLowerBounds(), 
+							U = localFunc.getUpperBounds();
 
 			value = new double[N];
 			velocity = new double[N];
@@ -302,46 +302,60 @@ public class ParallelSwarmOptimizer extends AbstractOptimizer {
 		 * 
 		 */
 		public void move() {
-			double[] L = localFunc.getLowerBounds(), U = localFunc
-					.getUpperBounds();
+			double[] L = localFunc.getLowerBounds(), U = localFunc.getUpperBounds();
 
-			for (int i = 0; i < velocity.length; ++i) {
+			for (int i = 0; i < velocity.length; ++i) 
+			{
 				// update velocity
 				double d = U[i] - L[i];
-				if (d <= 0.0) {
+//				System.out.print("i: " + i + ", old velocity = " + velocity[i] + ", d = " + d);
+				if (d <= 0.0) 
+				{
 					d = 1.0;
 					velocity[i] = 0.0;
-				} else {
+				} 
+				else 
+				{
 					velocity[i] += (swarm.params.cGlobal * random.nextDouble()
 							* (swarm.getGlobalBest().value[i] - value[i]) + swarm.params.cLocal
 							* random.nextDouble()
 							* (getLocalBest().value[i] - value[i]))
 							/ d;
 					// restrict velocities ?
-					velocity[i] = MathUtility.restrict(velocity[i],
-							-swarm.params.maxV, swarm.params.maxV);
+					velocity[i] = MathUtility.restrict(velocity[i], -swarm.params.maxV, swarm.params.maxV);
 				}
+
+//				System.out.print(", new velocity = " + velocity[i] + ", old value = " + value[i]);
 
 				// move particle
 				value[i] += velocity[i] * (U[i] - L[i]);
 				outOfBox = false;
 
-				if (value[i] < L[i]) {
-					if (swarm.params.reflect) {
-						value[i] = L[i];
-						velocity[i] = Math.abs(velocity[i]);
-					} else {
-						outOfBox = true;
-					}
-				} else {
-					if (value[i] > U[i]) {
+//				System.out.print(", new value = " + value[i] + "\n");
+
+				if(i < (value.length / 5 * 4))
+				{
+					if (value[i] < L[i]) {
 						if (swarm.params.reflect) {
-							value[i] = U[i];
-							velocity[i] = -Math.abs(velocity[i]);
+							value[i] = L[i];
+							velocity[i] = Math.abs(velocity[i]);
 						} else {
 							outOfBox = true;
 						}
+					} else {
+						if (value[i] > U[i]) {
+							if (swarm.params.reflect) {
+								value[i] = U[i];
+								velocity[i] = -Math.abs(velocity[i]);
+							} else {
+								outOfBox = true;
+							}
+						}
 					}
+				}
+				else	// rotation
+				{
+					value[i] = value[i] % 1;
 				}
 			}
 
@@ -375,10 +389,12 @@ public class ParallelSwarmOptimizer extends AbstractOptimizer {
 
 		public Parameters() {
 			numParticles = 30;
+//			numParticles = 60;
 			cGlobal = 1.0;
 			cLocal = 0.5;
 			maxV = 0.05;
 			maxIterations = 200;
+//			maxIterations = 400;
 			maxConstIterations = 25;
 			reflect = true;
 		}

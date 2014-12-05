@@ -49,13 +49,14 @@ import venn.db.VennFilteredDataModel;
 import venn.event.IVennPanelHasDataListener;
 import venn.event.IsSimulatingListener;
 import venn.event.ResultAvailableListener;
+import venn.geometry.FPolygon;
 
 public final class Gui extends javax.swing.JFrame
 implements ActionListener, KeyListener, ComponentListener,
 IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLabelsListener {
     private static final long serialVersionUID = 1L;
 
-    private final VennPanel 	venn;
+    private final VennPanel 	vennP;
 	private AllParameters   	params;
 	private final JScrollPane 	scroller;
     private final JPanel        progressPanel;
@@ -124,13 +125,13 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		vennArrsOptim = new VennArrangementsOptimizer();
 		vennArrsOptim.addIsSimulatingListener(this);
 
-		venn = new VennPanel(vennArrsOptim);      
-		venn.addKeyListener(this);		
+		vennP = new VennPanel(vennArrsOptim);      
+		vennP.addKeyListener(this);		
         
-		catTable = new CategoryTable(venn);
+		catTable = new CategoryTable(vennP);
 
         scroller = 
-			new JScrollPane(venn, // panel
+			new JScrollPane(vennP, // panel
 							JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
 							JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scroller.setAutoscrolls(true);
@@ -191,20 +192,20 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 	  	inconsistencyInfo.setDisabledTextColor(new Color(0,0,0));
 		infoPane.addTab("Inconsistencies",new JScrollPane(inconsistencyInfo));
         infoPane.setToolTipTextAt(numPanels++,"Show missing overlaps: groups/cardinalities");
-        venn.setInconsistencyJTextArea(inconsistencyInfo);
+        vennP.setInconsistencyJTextArea(inconsistencyInfo);
         
 
         infoPane.addTab("Categories", catTable.getJSplitPane());
         
-        thresholdPanel= new ThesholdPanel(venn.getDataModel(),venn); // very bad form. i apologize! but there is no time to figure this out!
+        thresholdPanel= new ThesholdPanel(vennP.getDataModel(),vennP); // very bad form. i apologize! but there is no time to figure this out!
         infoPane.addTab("Thresholds", thresholdPanel);
 		
 		// topPanel.setMinimumSize(new Dimension(100,100));
-		topPanel.setPreferredSize(new Dimension(400,400));
+		topPanel.setPreferredSize(new Dimension(800,800));
 		
 		splitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT,topPanel,infoPane);
 		//splitter.setDividerLocation(0.8);
-        splitter.setDividerLocation(400);
+        splitter.setDividerLocation(800);
 		
 		getContentPane().add(splitter);
 		
@@ -214,16 +215,17 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 	  	filterPanelOff();
     
         if (parameters == null) {
+        	// [ME] can't happen... remove?
 			setParameters(new AllParameters());
 		} else {
 			setParameters(parameters);
 		}
         
-        venn.addVennPanelHasDataListener(this);
+        vennP.addVennPanelHasDataListener(this);
         vennArrsOptim.addResultAvailableListener(this);
-        venn.addHasLabelsListener(this);
+        vennP.addHasLabelsListener(this);
         
-        assert ! venn.hasData();
+        assert ! vennP.hasData();
         setVennPanelHasData(false);
 
 	
@@ -246,6 +248,8 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 			assert false;
 			break;
 		}
+		
+		venn.Main.loadedFile = loadFiles;			// [MS] for instance testing output:
 		
 		showGui();
 	}
@@ -469,19 +473,19 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		
 		if( cmd.equalsIgnoreCase("save"))
 		{
-			venn.fileSave();
+			vennP.fileSave();
 			return;
 		}
 
         if( cmd.equalsIgnoreCase("export profile"))
         {
-            venn.actionExportProfile();
+            vennP.actionExportProfile();
             return;
         }
 
         if( cmd.equalsIgnoreCase("export graph info"))
         {
-            venn.actionExportGraphInfo();
+            vennP.actionExportGraphInfo();
             return;
         }
 		
@@ -530,8 +534,8 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
         
 		if( cmd.equalsIgnoreCase("remove all labels") )
 		{
-			venn.removeLabels();
-			venn.repaint();
+			vennP.removeLabels();
+			vennP.repaint();
 			return;
 		}
 				
@@ -568,22 +572,22 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		switch( zoomChooser.getSelectedIndex() )
 		{
 			case 0:
-				venn.setZoomLevel(400);
+				vennP.setZoomLevel(400);
 				break;				
 			case 1:
-				venn.setZoomLevel(200);
+				vennP.setZoomLevel(200);
 				break;
 			case 2:
-				venn.setZoomLevel(150);
+				vennP.setZoomLevel(150);
 				break;
 			case 3:
-				venn.setZoomLevel(100);
+				vennP.setZoomLevel(100);
 				break;
 			case 4:
-				venn.setZoomLevel(75);
+				vennP.setZoomLevel(75);
 				break;
 			case 5:
-				venn.setZoomLevel(50);
+				vennP.setZoomLevel(50);
 				break;
 			default:
 				assert false;
@@ -599,7 +603,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		vennArrsOptim.stopForRestart(); // stop if running
 
 		final VennFilteredDataModel filteredDataModel = filterPanel.getFilteredDataModel();
-		venn.setDataModel( filteredDataModel );
+		vennP.setDataModel( filteredDataModel );
 		catTable.setDataModel(filteredDataModel); // for table header (p/fdr)
 		
 		vennArrsOptim.restart();
@@ -621,8 +625,9 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		}
 		assert loadFiles.getSourceType() == LoadFiles.SourceType.GO;
 		
-		setGoHTGoSourceDataModel(loadFiles.getSourceDataModel(), loadFiles
-				.getFileName(), null);
+		setGoHTGoSourceDataModel(loadFiles.getSourceDataModel(), loadFiles.getFileName(), null);
+		
+		venn.Main.loadedFile = loadFiles;			// [MS] for instance testing output:
 	}
 	
 	/**
@@ -635,8 +640,9 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
     	}
     	assert loadFiles.getSourceType() == LoadFiles.SourceType.HTGO;
     	
-    	setGoHTGoSourceDataModel(loadFiles.getSourceDataModel(), loadFiles
-				.getFileName(), null);
+    	setGoHTGoSourceDataModel(loadFiles.getSourceDataModel(), loadFiles.getFileName(), null);
+
+    	venn.Main.loadedFile = loadFiles;			// [MS] for instance testing output:
     }
 
     public void setGoHTGoSourceDataModel(IVennDataModel sourceDataModel, String filename, GODistanceFilter filter)
@@ -647,7 +653,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
     	
     	filterPanel.setDataModel( sourceDataModel, filter );
     	
-    	venn.setDataModel(null);
+    	vennP.setDataModel(null);
     	
     	infoPane.setSelectedIndex(0);
     }
@@ -667,6 +673,8 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		
 		//TODO change this to column specific method
 		setColumnDataModel(loadFiles.getSourceDataModel(), loadFiles.getFileName());
+
+		venn.Main.loadedFile = loadFiles;			// [MS] for instance testing output:
 	}
 
 
@@ -682,13 +690,15 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 		assert loadFiles.getSourceType() == LoadFiles.SourceType.LIST;
 		
 		setListSourceDataModel(loadFiles.getSourceDataModel(), loadFiles.getFileName());
-	}
+
+		venn.Main.loadedFile = loadFiles;			// [MS] for instance testing output:
+}
 
 	public void setListSourceDataModel(IVennDataModel sourceDataModel, String filename)
 	{
 		setTitle("Venn Master - "+filename);
 		filterPanelOff();
-		venn.setDataModel( sourceDataModel );
+		vennP.setDataModel( sourceDataModel );
 		infoPane.setSelectedIndex( infoPane.getTabCount() - 1);
 		
 		vennArrsOptim.stopAndRestartOptimization();
@@ -699,7 +709,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 	{
 		setTitle("Venn Master - "+filename);
 		filterPanelOff();
-		venn.setDataModel( sourceDataModel );
+		vennP.setDataModel( sourceDataModel );
 		infoPane.setSelectedIndex( infoPane.getTabCount() - 1);
 		thresholdPanel.setDataModel(sourceDataModel);
 		vennArrsOptim.stopAndRestartOptimization();
@@ -767,7 +777,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 			//System.out.println(params.mutationParameters);
 			setParameters(params);
 			
-			if (venn.hasData()) {
+			if (vennP.hasData()) {
 				vennArrsOptim.stopAndRestartOptimization();
 			}
 		}
@@ -775,7 +785,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
     
     protected void actionOptionsSaveOptions()
     {
-    	LoadSaveOptions.saveOptions(this, venn.getParameters());
+    	LoadSaveOptions.saveOptions(this, vennP.getParameters());
     }
     
 	/**
@@ -789,7 +799,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
     	if (p != null) {
     		setParameters(p);
 
-    		if (venn.hasData()) {
+    		if (vennP.hasData()) {
     			vennArrsOptim.stopAndRestartOptimization();
     		}
     	}
@@ -799,7 +809,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
     {
         this.params = param;
         
-        venn.setParameters( param );
+        vennP.setParameters( param );
         vennArrsOptim.setParameters(param);
         filterPanel.setParameters(param);
         catTable.setParameters(param);
@@ -894,7 +904,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 			buffer.append("["+loadFiles.getFileName()+"]\n");
 		}
 
-		buffer.append(venn.getGlobalInfo());
+		buffer.append(vennP.getGlobalInfo());
 
 		if (filterPanel.isVisible()) {
 			GODistanceFilter filter = filterPanel.getFilterToUse();
@@ -984,7 +994,7 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
     }
     
     private void showGui() {
-        setSize(400,650);
+        setSize(600,1000);
         setVisible(true);
     }
 	
@@ -1029,6 +1039,6 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
 
 //	@Override
 	public void hasLabelsChanged() {
-		menuItemRemove.setEnabled(venn.hasLabels());
-	}
+		menuItemRemove.setEnabled(vennP.hasLabels());
+	}	
 }

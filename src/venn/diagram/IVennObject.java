@@ -46,6 +46,14 @@ public interface IVennObject extends Cloneable, Serializable
     
     public void setScale( double scale );
     
+    public double getRotation();
+    
+    public void setRotation(double _rotation);
+    
+    public double getRatio();
+    
+    public void setRatio(double _ratio);
+    
     
     public FPoint getCenter();
 	

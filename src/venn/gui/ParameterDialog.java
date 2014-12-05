@@ -12,6 +12,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.DecimalFormat;
 import java.text.ParseException;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -23,6 +24,7 @@ import javax.swing.JDialog;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -60,12 +62,14 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
     //////////////////////////////////////////////////////////////////////////
     // Global parameters
     private JPanel              glob_panel;
+
     private JFormattedTextField glob_sizeFactor,
-                                glob_numEdges,
                                 glob_randomSeed,
                                 glob_updateInterval,
                                 glob_maxGroupsBeforeWarning;
     
+    private JSlider glob_numEdges;
+
     private JCheckBox			glob_colorMode,
     							glob_logNElements;
     
@@ -133,8 +137,6 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
     
     private JCheckBox           p_swarm_reflect;
 
-    
-
 	LinkedList					fields;
 	
 	private boolean	checking;
@@ -170,7 +172,7 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         // GLOBAL PANEL
         glob_panel = new JPanel();
         panel = glob_panel;
-        panel.setLayout(new GridLayout(7,2));
+        panel.setLayout(new GridLayout(8,2));
         
 
         panel.add(new JLabel("Size factor"));
@@ -178,9 +180,24 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         fields.add(glob_sizeFactor);
         panel.add(glob_sizeFactor);
 
-        
+
         panel.add(new JLabel("Number of Edges"));
-        glob_numEdges = new JFormattedTextField(intFormat);
+        glob_numEdges = new JSlider(0, 8, 3);
+        Hashtable labelTable = new Hashtable();
+        labelTable.put( new Integer( 0 ), new JLabel("4") );
+//        labelTable.put( new Integer( 1 ), new JLabel("8") );
+        labelTable.put( new Integer( 2 ), new JLabel("16") );
+//        labelTable.put( new Integer( 3 ), new JLabel("32") );
+        labelTable.put( new Integer( 4 ), new JLabel("64") );
+//        labelTable.put( new Integer( 5 ), new JLabel("128") );
+//        labelTable.put( new Integer( 6 ), new JLabel("256") );
+//        labelTable.put( new Integer( 7 ), new JLabel("512") );
+        labelTable.put( new Integer( 8 ), new JLabel("1024") );
+        glob_numEdges.setLabelTable( labelTable );
+        glob_numEdges.setPaintLabels(true);
+        glob_numEdges.setPaintTicks(true);
+        glob_numEdges.setSnapToTicks(true);
+        glob_numEdges.setMajorTickSpacing(1);
         fields.add(glob_numEdges);
         panel.add(glob_numEdges);
         
@@ -620,7 +637,43 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
 	{        
         // global Parameters
         glob_sizeFactor.setValue(new Double(parameters.sizeFactor));
-        glob_numEdges.setValue(new Integer(parameters.numEdges));
+        
+//        glob_numEdges.setValue(new Integer(parameters.numEdges));
+        switch (new Integer(parameters.numEdges)) 
+        {
+		case 4:
+			glob_numEdges.setValue(0);
+			break;
+		case 8:
+			glob_numEdges.setValue(1);
+			break;
+		case 16:
+			glob_numEdges.setValue(2);
+			break;
+		case 32:
+			glob_numEdges.setValue(3);
+			break;
+		case 64:
+			glob_numEdges.setValue(4);
+			break;
+		case 128:
+			glob_numEdges.setValue(5);
+			break;
+		case 256:
+			glob_numEdges.setValue(6);
+			break;
+		case 512:
+			glob_numEdges.setValue(7);
+			break;
+		case 1024:
+			glob_numEdges.setValue(8);
+			break;
+
+		default:
+			glob_numEdges.setValue(3);
+			break;
+		}
+        
         glob_randomSeed.setValue(new Long(parameters.randomSeed));
         glob_updateInterval.setValue(new Integer(parameters.updateInterval));
         glob_maxGroupsBeforeWarning.setValue(Integer.valueOf(parameters.maxCategories));
@@ -722,8 +775,45 @@ implements java.awt.event.ActionListener, java.awt.event.KeyListener, PropertyCh
         if( glob_sizeFactor.getValue() != null )
             param.sizeFactor = ((Number)glob_sizeFactor.getValue()).doubleValue();
         
-        if( glob_numEdges.getValue() != null )
-            param.numEdges = ((Number)glob_numEdges.getValue()).intValue();        
+//        if( glob_numEdges.getValue() != null )
+//            param.numEdges = ((Number)glob_numEdges.getValue()).intValue();  
+        
+        // TODO [ME] fix slider: System.out.println("slider: " + glob_numEdges.getValue());
+        switch (glob_numEdges.getValue()) 
+        {
+		case 0:
+			param.numEdges = 4;
+			break;
+		case 1:
+			param.numEdges = 8;
+			break;
+		case 2:
+			param.numEdges = 16;
+			break;
+		case 3:
+			param.numEdges = 32;
+			break;
+		case 4:
+			param.numEdges = 64;
+			break;
+		case 5:
+			param.numEdges = 128;
+			break;
+		case 6:
+			param.numEdges = 256;
+			break;
+		case 7:
+			param.numEdges = 512;
+			break;
+		case 8:
+			param.numEdges = 1024;
+			break;
+
+		default:
+			System.out.println("Error processing edge numbers!");
+			param.numEdges = 32;
+			break;
+		}
         
         if( glob_randomSeed.getValue() != null )
             param.randomSeed = ((Number)glob_randomSeed.getValue()).intValue();

@@ -6,11 +6,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
 
 import javax.swing.SwingUtilities;
 
@@ -30,7 +30,6 @@ import venn.optim.IOptimizer;
 import venn.optim.OptimizerObserver;
 import venn.optim.StateObserver;
 import venn.parallel.ExecutorServiceFactory;
-import venn.utility.MathUtility;
 import venn.utility.SystemUtility;
 import argparser.ArgParser;
 import argparser.BooleanHolder;
@@ -38,6 +37,9 @@ import argparser.StringHolder;
 
 public class Main {
 
+	public static AllParameters params; 
+	public static LoadFiles loadedFile;	// [MS] for instance testing output
+	
 	public synchronized static void main(String[] args) {
 		new Main(args);
 	}
@@ -79,6 +81,7 @@ public class Main {
 				simFile 		= new StringHolder(), 
 				profFile 		= new StringHolder(), 
 				profilingFile 	= new StringHolder(), 
+				costValue = new StringHolder(), 
 				cpus			= new StringHolder(), 
 				profCount 		= new StringHolder();
 
@@ -104,6 +107,8 @@ public class Main {
 		parser.addOption("--profiling %s #do some profiling", profilingFile);
 		parser.addOption("--profcount %s #number of repeats for profiling",
 				profCount);
+		parser.addOption("--cost %s #write cost into file",
+				costValue);
 		parser.addOption(
 				"--cpus %s #number of threads to use in parallel optimizing. Default is number of detected cores.",
 				cpus);
@@ -118,12 +123,11 @@ public class Main {
 		}
 
 		// common (GUI and command line)
-		final AllParameters params;
+//		final AllParameters params;
 
 		// LOAD CONFIG FILE
 		if (configFile.value != null) { // load parameters from file
-			params = (AllParameters) SystemUtility.readXMLObject(new File(
-					configFile.value));
+			params = (AllParameters) SystemUtility.readXMLObject(new File(configFile.value));
 			if (params == null)
 				System.exit(-1);
 			params.check();
@@ -139,7 +143,9 @@ public class Main {
 
 		// LOAD DATA
 		final LoadFiles loadFiles = new LoadFiles();
-		final GoTree goTree = loadFiles.loadGoDB();
+//		final GoTree goTree = loadFiles.loadGoDB();	// [ME] this does not have to be loaded here!
+		
+		final GoTree goTree = null;
 		IDataFilter filter = null;
 		boolean flag = false;
 
@@ -182,7 +188,8 @@ public class Main {
 				final IDataFilter outFilter;
 				if (filter != null) {
 					outFilter = filter;
-				} else {
+				} 
+				else {
 					outFilter = new GODistanceFilter(goTree);
 				}
 				if (!SystemUtility.writeXMLObject(outFilter, new File(
@@ -262,6 +269,9 @@ public class Main {
 					.println("You have to specify input data with --gce and --se, --htgce, or --list");
 			System.exit(-1);
 		}
+		else			// [MS] for instance testing output:
+			loadedFile = loadFiles;
+		
 		VennArrangementsOptimizer vennArrsOptim = new VennArrangementsOptimizer();
 		vennArrsOptim.setParameters(params);
 		VennPanel venn = new VennPanel(vennArrsOptim);
@@ -427,6 +437,33 @@ public class Main {
 			} catch (IOException e) {
 				e.printStackTrace();
 				System.err.println("I/O error while exporting SVG.");
+				System.exit(-1);
+			}
+		}
+		
+		// Write final cost into file
+		if (costValue.value != null) 
+		{
+			File costOutput = new File(loadedFile.getFileName() + ".costs");
+			try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(costOutput, true)))) 
+			{
+				out.println(params.numEdges + "\t" + costValue.value + "\t" + -venn.getCost());
+			} 
+			catch (IOException e) {
+				e.printStackTrace();
+				System.err.println("Could not write cost into file.");
+				System.exit(-1);
+			}
+
+			// also write them all in one big file
+			costOutput = new File("all.costs");
+			try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(costOutput, true)))) 
+			{
+				out.println(loadedFile.getFileName() + "\t" + params.numEdges + "\t" + costValue.value + "\t" + -venn.getCost());
+			} 
+			catch (IOException e) {
+				e.printStackTrace();
+				System.err.println("Could not write cost into file.");
 				System.exit(-1);
 			}
 		}
