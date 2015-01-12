@@ -47,7 +47,7 @@ public class VennDataSplitterTest extends TestCase
         */
         try {
             model = new ListReaderModel();
-            model.loadFromFile("examples/VennDataSplitterTest.list");
+            model.loadFromFile("data_examples/VennDataSplitterTest.list");
         }
         catch (FileFormatException e) 
         {

@@ -19,7 +19,7 @@ import venn.utility.MathUtility;
 import venn.utility.SystemUtility;
 
 /**
- * Original version of the evolutionary optimizer.
+ * New version of the evolutionary optimizer.
  * A generation consists of a number of individuals and provides mutation, selection, and replication.
  * 
  * @author muellera
@@ -292,13 +292,13 @@ extends AbstractOptimizer
         return (numIterations >= params.maxIterations) || (numConstIterations >= params.maxConstIterations);
     }
 
-
+    // TODO [ME] this should called getBestValue or something else
     public double[] getOptimum() 
     {
         return getBest().getValue();
     }
 
-
+    // TODO [ME] this should called getBestFitness or something else
     public double getValue() 
     {
         return getBest().getFitness();
@@ -356,7 +356,7 @@ extends AbstractOptimizer
             this.random = random;
             this.parent = parent;           
 
-            int n = parent.errf.getNumInput();
+            int n = parent.errf.getNumInput();	// = 5 * tree.getNumOfSets()
             
             value = new double[n];
             mutation = new double[n];
@@ -410,11 +410,21 @@ extends AbstractOptimizer
             double[] L = parent.errf.getLowerBounds(),
                      U = parent.errf.getUpperBounds();
             
-            for(int i=0; i<mutation.length; ++i )
+            int N = mutation.length / 5;		// # of venn objects ( <=> parent.errf.tree.arrangement.vennObjects.length <=> tree.getNumOfSets() )
+
+            // initializing random values for x, y, scale
+            for(int i=0; i < N * 4; ++i )
             {
                 value[i]    = L[i] + random.nextDouble() * (U[i]-L[i]);
                 mutation[i] = parent.params.minMutation + 
                                 random.nextDouble()*(parent.params.maxMutation-parent.params.minMutation);
+            }
+            // initializing random values for ratio, rotation in [0...1] (ignoring L & U as they will be transposed later)
+            for(int i = (N * 4); i < mutation.length; i++)
+            {
+            	value[i] = random.nextDouble();
+                mutation[i] = parent.params.minMutation + 
+                        random.nextDouble()*(parent.params.maxMutation-parent.params.minMutation);
             }
         }
         
@@ -426,30 +436,31 @@ extends AbstractOptimizer
          * <li>Mutate mutation parameters
          * <li>Mutate polygon scales
          * <li>Mutate polygon offsets
+         * <li>Mutate polygon ratio
+         * <li>Mutate polygon rotation
          * </ol>
          * 
          */
         public void mutate()
         {
-            double[] L          = parent.errf.getLowerBounds(),
-                     U          = parent.errf.getUpperBounds();
+            double[]	L = parent.errf.getLowerBounds(),
+                     		U = parent.errf.getUpperBounds();
                         
             valid = false;
             
-            int         n = value.length;
+            int n = value.length;
             
-            // Formula (2.18), page 72, Bï¿½ck
-            double      tau   = parent.params.tau / Math.sqrt(2.0*Math.sqrt((double)n)),
-                        tau1  = parent.params.tau1 / Math.sqrt(2.0*(double)n);
+            // Formula (2.18), page 72, Bäck
+            double     tau   = parent.params.tau / Math.sqrt(2.0*Math.sqrt((double)n)),
+                        	tau1  = parent.params.tau1 / Math.sqrt(2.0*(double)n);
 
             double glob_mut = tau1 * random.nextGaussian();
 
             // mutate mutation parameter            
-            for(int i = 0; i < value.length; ++i)
+            for(int i = 0; i < n; ++i)
             {
                 mutation[i] *= Math.exp( glob_mut + random.nextGaussian() * tau );
-                mutation[i] = MathUtility.restrict( mutation[i], 
-                                                    parent.params.minMutation,parent.params.maxMutation );                                
+                mutation[i] = MathUtility.restrict( mutation[i], parent.params.minMutation,parent.params.maxMutation );                                
             }
 
             // mutate rotation angles
@@ -498,14 +509,21 @@ extends AbstractOptimizer
             
             MathUtility.matrixProduct(R,sigma_u,sigma_c);
             
-            // mutate parameters
-            for( int i=0; i<n; ++i )
+            // mutate x/y, scale, ratio => first four value segments
+            for( int i = 0; i < (n / 5 * 4); ++i )
             {
                 value[i] += sigma_c[i][0];
 //              restrict to bounding box
-                MathUtility.restrict(value[i],L[i],U[i]);
+                value[i] = MathUtility.restrict(value[i],L[i],U[i]);
             }
 
+            /*
+             * mutate rotation and adjust ratio if needed
+             */
+            for(int i = (n / 5 * 4); i < n; i++)
+            {
+            	value[i] = (value[i] + sigma_c[i][0]) % 1.0;		// mod 1 , so no range restriction necessary 
+            }
         }
     }
     
