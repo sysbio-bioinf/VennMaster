@@ -143,9 +143,7 @@ public class Main {
 
 		// LOAD DATA
 		final LoadFiles loadFiles = new LoadFiles();
-//		final GoTree goTree = loadFiles.loadGoDB();	// [ME] this does not have to be loaded here!
-		
-		final GoTree goTree = null;
+		final GoTree goTree = loadFiles.loadGoDB();	// [ME] this does not have to be loaded here!
 		IDataFilter filter = null;
 		boolean flag = false;
 
@@ -444,7 +442,12 @@ public class Main {
 		// Write final cost into file
 		if (costValue.value != null) 
 		{
-			File costOutput = new File(loadedFile.getFileName() + ".costs");
+			String inputFile = "";
+			if(listFile.value != null) { inputFile += listFile.value; }
+			else if(seFile.value != null) { inputFile += seFile.value; }
+			else if(htGceFile.value != null) { inputFile += htGceFile.value; }
+			else { inputFile += "VMCosts"; }
+			File costOutput = new File(inputFile + ".costs");
 			try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(costOutput, true)))) 
 			{
 				out.println(params.numEdges + "\t" + costValue.value + "\t" + -venn.getCost());
@@ -456,10 +459,9 @@ public class Main {
 			}
 
 			// also write them all in one big file
-			costOutput = new File("all.costs");
-			try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(costOutput, true)))) 
+			try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(new File("all.costs"), true)))) 
 			{
-				out.println(loadedFile.getFileName() + "\t" + params.numEdges + "\t" + costValue.value + "\t" + -venn.getCost());
+				out.println(inputFile + "\t" + params.numEdges + "\t" + costValue.value);
 			} 
 			catch (IOException e) {
 				e.printStackTrace();

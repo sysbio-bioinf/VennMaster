@@ -640,11 +640,11 @@ implements IFunction, ChangeListener
             gamma = 5.0;
             eta = 1.0;
             delta = 400.0;
-//            alpha = 200.0;
-//            beta = 200.0;
-//            gamma = 10.0;
+//            alpha = 1.0;
+//            beta = 1.0;
+//            gamma = 1.0;
 //            eta = 1.0;
-//            delta =200.0;
+//            delta =100.0;
 
             minScale = 1.0;
             maxScale = 1.0;

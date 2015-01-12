@@ -71,6 +71,8 @@ import venn.event.IFilterChainSucc;
 import venn.event.IVennPanelHasDataListener;
 import venn.event.ResultAvailableListener;
 import venn.geometry.DragLabel;
+import venn.geometry.FPoint;
+import venn.geometry.FPolygon;
 import venn.optim.IOptimizer;
 
 import com.sun.image.codec.jpeg.JPEGCodec;
@@ -167,6 +169,18 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 		//setPreferredSize(new Dimension(400,400));
         setBackground( Color.WHITE );
 		//setFocusable(true);
+        
+        // TODO [MS] TESTING (remove):
+//		FPolygon a = FPolygon.createNgon(1024, 1.4142);
+//		FPolygon b = FPolygon.createNgon(1024, 1);
+//		FPolygon a = FPolygon.createEllipse(2, 90, (Math.PI));
+//		FPolygon b = FPolygon.createEllipse(2, 90, (Math.PI));
+//		b.translate(new FPoint(0, (1.5731)));
+//		FPolygon c = a.intersect(b);
+//		double areaAB = c.area();
+//		System.out.println("a: " + a.area() + ", b: " + b.area() + ", c: " + areaAB);
+//        FPolygon a = FPolygon.createNgon(128, 1);
+//        System.out.println(a.area());
 	}
 
  	public void setInconsistencyJTextArea(JTextArea inconsistencyInfo) {

@@ -389,12 +389,10 @@ public class ParallelSwarmOptimizer extends AbstractOptimizer {
 
 		public Parameters() {
 			numParticles = 30;
-//			numParticles = 60;
 			cGlobal = 1.0;
 			cLocal = 0.5;
 			maxV = 0.05;
 			maxIterations = 200;
-//			maxIterations = 400;
 			maxConstIterations = 25;
 			reflect = true;
 		}

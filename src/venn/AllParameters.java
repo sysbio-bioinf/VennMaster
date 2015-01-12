@@ -67,7 +67,7 @@ public class AllParameters implements Serializable
         sizeFactor = 1.0;
         numEdges = 32;
         ellipseTemplates = null;	// only initialize on demand
-        maxRatio = 10;
+        maxRatio = 5;
         randomSeed = -1;
         updateInterval = 20;
         maxCategories = Constants.MAX_NUM_GROUPS;

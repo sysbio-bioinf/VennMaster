@@ -994,7 +994,8 @@ IsSimulatingListener, IVennPanelHasDataListener, ResultAvailableListener, HasLab
     }
     
     private void showGui() {
-        setSize(600,1000);
+//        setSize(400,650);
+        setSize(800,1000);
         setVisible(true);
     }
 	

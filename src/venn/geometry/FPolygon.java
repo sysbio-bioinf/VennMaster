@@ -803,11 +803,14 @@ implements FGeometricObject
 //
 //		System.out.println("Polygon P/Q area = " + inters.area());
 //		System.out.println(inters);
-		double A = 5.0;
-		int n = 8;
 		
-		double r = radiusNgon(n, A);
-		System.out.println("r: " + r);
+		FPolygon a = createNgon(128, 1.4142);
+//		FPolygon b = createNgon(128, 1);
+		FPolygon b = createEllipse(2, 90, (Math.PI));
+//		b.translate(new FPoint(0, (1.4142/2)));
+		FPolygon c = a.intersect(b);
+		double areaAB = c.area();
+		System.out.println(areaAB);
 	}
 	
 	public FPoint intersect(FSegment seg)
