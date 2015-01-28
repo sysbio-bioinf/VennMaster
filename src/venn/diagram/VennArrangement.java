@@ -71,7 +71,7 @@ implements Cloneable, Serializable, IFilterChainSucc
     }
     
     
-    public VennArrangement( IVennDataModel model, IVennObjectFactory vennObjectFactory )
+    public VennArrangement( IVennDataModel model, IVennObjectFactory vennObjectFactory, AllParameters ap )
     {
         listeners = new LinkedList();
         
@@ -80,7 +80,7 @@ implements Cloneable, Serializable, IFilterChainSucc
         this.vennObjectFactory = vennObjectFactory;
         this.valid = false;
         
-        this.params=new AllParameters();
+        this.params=ap;
         
         setDataModel( model );
     }

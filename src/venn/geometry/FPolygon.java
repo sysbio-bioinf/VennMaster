@@ -7,8 +7,10 @@
 package venn.geometry;
 
 import java.awt.Graphics;
+import java.awt.geom.AffineTransform;
 
 import junit.framework.Assert;
+import venn.AllParameters;
 
 
 /**
@@ -665,6 +667,59 @@ implements FGeometricObject
 		}
 		return poly;
 	}
+	
+	public static FPolygon createEllipse(double rat, double rot, double area)
+	{
+		AllParameters params = venn.Main.params;
+		if( params.numEdges < 3 )
+			throw new IllegalArgumentException("Number of edges must be >= 3");
+		
+		FPolygon poly = new FPolygon(params.numEdges);
+		
+		double ratio = rat >= 1.0 ? rat : (1 / rat);
+		double rotation = rat >= 1.0 ? (rot % 180) : ((rot + 90) % 180);		// rotate 90° if width is supposed to be shorter than height 
+        double stretchFactor = Math.sqrt(area / (Math.PI * ratio));		// adjustment so the area of the ellipse will be the area
+        
+        int templateRatioIndex = params.getTemplateRatioIndex(ratio);
+		double templateRatio = params.getTemplateRatio(templateRatioIndex);	
+		double[] templateVertices = params.getTemplateEllipses(templateRatioIndex);
+		double[] halfOfThePoints = new double[params.numEdges];
+		double[] allPoints = new double[params.numEdges * 2];
+		
+		// creating one half off the stretched & resized polygon coordinates
+		for(int i = 0; i < (params.numEdges / 4); i++)
+		{
+			// stretch 1st quadrant
+			halfOfThePoints[2 * i] = templateVertices[2 * i] * stretchFactor * ratio / templateRatio;
+			halfOfThePoints[(2 * i) + 1] = templateVertices[(2 * i) + 1] * stretchFactor;
+			// create 2nd quadrant from first
+			halfOfThePoints[(params.numEdges) - ((1 + i) * 2)] = -halfOfThePoints[2 * i];
+			halfOfThePoints[(params.numEdges) - ((1 + i) * 2) + 1] = halfOfThePoints[(2 * i) + 1];
+		}
+		// rotate points
+		AffineTransform.getRotateInstance(Math.toRadians(rotation), 0.0, 0.0)
+		  .transform(halfOfThePoints, 0, halfOfThePoints, 0, (params.numEdges / 2));
+
+//		TODO [ME] enable offset in the creation?
+
+		// create other half of the ellipse coordinates
+		for(int i = 0; i < (params.numEdges); i += 2)
+		{
+			allPoints[i] = halfOfThePoints[i];
+			allPoints[i + 1] = halfOfThePoints[i + 1];
+			
+			allPoints[(params.numEdges) + i] = -halfOfThePoints[i];
+			allPoints[(params.numEdges) + i + 1] = -halfOfThePoints[i + 1];			
+		}
+		
+		// create actual polygon
+		for(int i = 0; i < params.numEdges; i++)
+		{
+			poly.add(new FPoint(allPoints[(2 * i)], allPoints[(2 * i) + 1]));
+		}
+		
+		return poly;
+	}
 
 	/**
 	 * 
@@ -686,7 +741,7 @@ implements FGeometricObject
 	public static double radiusNgon(int n, double area)
 	{
 		return Math.sqrt(2 * area
-				/ ((double) n * Math.sin(2.0 * Math.PI / (double) n)));
+				/ ((double) n * Math.sin(2.0 * Math.PI / (double) n)));		// [ME] correct, but why not just "return Math.sqrt(area/Math.PI)" ???
 	}
 
 	/**
@@ -735,19 +790,24 @@ implements FGeometricObject
 		 * p.scale(1.0/100.0); q.scale(1.0/100.0);
 		 */
 
-		p = FPolygon.createNgon(5, 0.2);
-		q = FPolygon.createNgon(6, 0.9);
-
-		System.out.println("Polygon P area = " + p.area());
-		System.out.println(p);
-
-		System.out.println("Polygon Q area = " + q.area());
-		System.out.println(q);
-
-		FPolygon inters = p.intersect(q);
-
-		System.out.println("Polygon P/Q area = " + inters.area());
-		System.out.println(inters);
+//		p = FPolygon.createNgon(5, 0.2);
+//		q = FPolygon.createNgon(6, 0.9);
+//
+//		System.out.println("Polygon P area = " + p.area());
+//		System.out.println(p);
+//
+//		System.out.println("Polygon Q area = " + q.area());
+//		System.out.println(q);
+//
+//		FPolygon inters = p.intersect(q);
+//
+//		System.out.println("Polygon P/Q area = " + inters.area());
+//		System.out.println(inters);
+		double A = 5.0;
+		int n = 8;
+		
+		double r = radiusNgon(n, A);
+		System.out.println("r: " + r);
 	}
 	
 	public FPoint intersect(FSegment seg)

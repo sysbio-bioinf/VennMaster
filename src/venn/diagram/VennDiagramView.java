@@ -234,8 +234,7 @@ public class VennDiagramView extends JPanel implements IVennDiagramView,
 			return;
 
 		IVennObject[] objsUnsorted = arrangement.getVennObjects();
-		IVennObject[] objs = (IVennObject[]) arrangement.getVennObjects()
-				.clone();
+		IVennObject[] objs = (IVennObject[]) arrangement.getVennObjects().clone();
 		if (objs == null)
 			return;
 

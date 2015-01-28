@@ -34,7 +34,7 @@
 	<classpathentry kind="lib" path="lib/junit.jar"/>
 	<classpathentry kind="lib" path="lib/xpp3.jar"/>
 	<classpathentry kind="lib" path="lib/xstream.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/JVM 1.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/commons-lang3-3.1.jar" sourcepath="lib/commons-lang3-3.1-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:platform:/resource/VennMaster/lib/commons-lang3-3.1-javadoc.jar!/"/>

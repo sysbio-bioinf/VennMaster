@@ -83,6 +83,7 @@ implements IFunction, ChangeListener
         upperBounds = new double[getNumInput()];
         
         // lower/upper bounds for x,y coordinates
+        // TODO [ME] change from x,y-based to based on ratio
         int idx = 0;
         for( int i=0; i<getNumOfSets(); ++i )
         {
@@ -99,13 +100,29 @@ implements IFunction, ChangeListener
             upperBounds[idx] = 1.0 - bbox.getHeight()/2;
             ++idx;
         }
-
+        
         // lower/upper bounds for the scale parameters
         for( int i=0; i<getNumOfSets(); ++i )
         {
-            lowerBounds[idx] = params.minScale;
-            upperBounds[idx] = params.maxScale;
+        	lowerBounds[idx] = params.minScale;
+        	upperBounds[idx] = params.maxScale;
+        	++idx;
+        }           
+
+        // lower/upper bounds for the ratio parameters
+        for( int i=0; i<getNumOfSets(); ++i )
+        {
+            lowerBounds[idx] = params.minRatio;
+            upperBounds[idx] = params.maxRatio;
             ++idx;
+        }
+        
+        // lower/upper bounds for the ratio parameters
+        for( int i=0; i<getNumOfSets(); ++i )
+        {
+        	lowerBounds[idx] = params.minRotation;
+        	upperBounds[idx] = params.maxRotation;
+        	++idx;
         }           
     }
     
@@ -469,6 +486,11 @@ implements IFunction, ChangeListener
         return cost;
     }    
     
+    
+    /*
+     * it is assumed that ratio and rotation values in input need to be converted
+     * @see venn.optim.IFunction#setInput(double[])
+     */
     public void setInput(double[] input) 
     {
         Assert.assertEquals(input.length,getNumInput());
@@ -476,12 +498,32 @@ implements IFunction, ChangeListener
         int N = getNumOfSets();
         IVennObject[] sets = tree.getArrangement().getVennObjects();
                 
-        int idx = 0;
-        for( int i=0; i<N; ++i )
-            sets[i].setOffset( new FPoint(input[idx++],input[idx++]) );
+//        int idx = 0;
+//        for( int i=0; i<N; ++i )
+//            sets[i].setOffset( new FPoint(input[idx++],input[idx++]) );
+//        
+//        for( int i=0; i<N; ++i )
+//            sets[i].setScale( input[idx++] );
         
-        for( int i=0; i<N; ++i )
-            sets[i].setScale( input[idx++] );
+        for(int i = 0; i < N; i++)
+        {
+        	sets[i].setOffset( new FPoint(input[i * 2],input[(i * 2) + 1]) );
+        	sets[i].setScale(input[i + (N * 2)]);
+        	
+        	// converting ratio with [-1...1) to [1/max...max)
+        	double ratioFactor =  (Math.abs(input[i + (N * 3)]) * (venn.Main.params.maxRatio - 1)) + 1;
+        	if(input[i + (N * 3)] >= 0.0)		// [0...1) => [1...maxRatio)
+        	{
+        		sets[i].setRatio(ratioFactor);
+        	}
+        	else	// [-1...0) => [1/maxRatio...1)
+        	{
+        		sets[i].setRatio( 1/ratioFactor );
+        	}
+        	// same for rotation: [0...1) to [0...180)
+        	sets[i].setRotation(input[i + (N * 4)] * 180);
+        }
+        
         
         tree.invalidate();
         
@@ -506,7 +548,7 @@ implements IFunction, ChangeListener
 
     public int getNumInput()
     {
-        return 3 * tree.getNumOfSets();
+        return 5 * tree.getNumOfSets();	// [ME] + 2 variables for ratio and rotation
     }
 
     public double getOutput()
@@ -583,6 +625,8 @@ implements IFunction, ChangeListener
                         delta;              // gradient pressure
         public double   minScale,
                         maxScale;
+        public double minRatio, maxRatio;		// min/max ratio
+        public double minRotation, maxRotation;	// min/max rotation 
         public boolean logCardinalities;
         
         public Parameters()
@@ -590,13 +634,26 @@ implements IFunction, ChangeListener
             errorFunc = 1;
             factor = 0.001;
             maxIntersections = 6;
+
             alpha = 10.0;
             beta = 200.0;
             gamma = 5.0;
             eta = 1.0;
             delta = 400.0;
+//            alpha = 200.0;
+//            beta = 200.0;
+//            gamma = 10.0;
+//            eta = 1.0;
+//            delta =200.0;
+
             minScale = 1.0;
             maxScale = 1.0;
+            
+            // ratio & rotation calculations will be done in [0...1] and then later converted to actual values 
+            minRatio = -1;
+            maxRatio = 1;
+            minRotation = 0;
+            maxRotation = 1;	
         }
         
         public Object clone()
@@ -639,6 +696,8 @@ implements IFunction, ChangeListener
             
             olddouble = maxScale;
             if (olddouble != (maxScale = MathUtility.restrict(maxScale,1.0,1.5))) changed = true;
+            
+            // TODO [ME] add rot/rat
             
             return ! changed;
         }
