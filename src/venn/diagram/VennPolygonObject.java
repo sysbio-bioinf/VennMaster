@@ -10,11 +10,12 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Polygon;
 import java.awt.Shape;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Ellipse2D.Float;
 import java.util.BitSet;
 
 import junit.framework.Assert;
+import venn.AllParameters;
 import venn.db.AbstractGOCategoryProperties;
 import venn.geometry.FPoint;
 import venn.geometry.FPolygon;
@@ -43,15 +44,21 @@ extends AbstractVennObject
 
     private final double areaFactor;
 
-
-	private boolean isIntersection;
+    private boolean isIntersection;
     
     
-    public VennPolygonObject( FPolygon polygon, BitSet elements, double areaFactor, boolean isIntersection )
+    public VennPolygonObject( FPolygon polygon, BitSet elements, double areaFactor, boolean isIntersection, double rotation, double ratio )
     {
         super( elements );
-        this.isIntersection =isIntersection;
+        
+        this.isIntersection = isIntersection;
+        if(isIntersection) 
+        { 
+//        	System.out.println("is intersection");
+        }
         this.areaFactor = areaFactor;
+        setRotation(rotation);
+        setRatio(ratio);
         
         origPolygon = polygon;
         cachedPolygon = polygon;
@@ -59,23 +66,31 @@ extends AbstractVennObject
     }
     
     
-    
-    public VennPolygonObject( int numEdges, double areaFactor, BitSet elements, boolean logCardinalities, boolean isIntersection)
+    // create a completely new ellipse
+    public VennPolygonObject(double areaFactor, BitSet elements, boolean isIntersection)
     {
         super( elements );
-        this.isIntersection = isIntersection;
+        
+        this.isIntersection = isIntersection;	// this is never true for this constructor
+        // TODO ME throw exception if intersection
+        
         this.areaFactor = areaFactor;
         
 //      double radius = FPolygon.radiusNgon(numEdges,(double)elements.cardinality()/areaFactor);
+        
         int card = elements.cardinality();
-        if (logCardinalities) card = AbstractGOCategoryProperties.log(card);
-        double radius = FPolygon.radiusNgon(numEdges,(double)card/areaFactor);
-        origPolygon = FPolygon.createNgon(numEdges,radius);   
+        if (venn.Main.params.logNumElements) card = AbstractGOCategoryProperties.log(card);
+        
+//        double radius = FPolygon.radiusNgon(params.numEdges,(double)card/areaFactor);
+//        origPolygon = FPolygon.createNgon(params.numEdges,radius);   
+
+        origPolygon = FPolygon.createEllipse(getRatio(), getRotation(), (double)card/areaFactor);
 
         invalidate();
     }
 
     
+    // ME never used...
     public double getAreaFactor()
     {
         return areaFactor; 
@@ -104,10 +119,15 @@ extends AbstractVennObject
         {
             if( origPolygon != null )
             {
-                cachedPolygon = (FPolygon)origPolygon.clone();
+            	if(isIntersection) { cachedPolygon = (FPolygon)origPolygon.clone(); }        		// ME this never happens...
+            	else	// ME polygon is an ellipse
+            	{
+                	cachedPolygon = FPolygon.createEllipse(getRatio(), getRotation(), (double)cardinality()/areaFactor);  
+            	}
                 cachedPolygon.scale( getScale() );
                 cachedPolygon.translate( getOffset() );
-            } else
+            } 
+            else
             {
                 cachedPolygon = null;
             }
@@ -132,35 +152,13 @@ extends AbstractVennObject
         if( (poly != null) && (poly.getSize() > 0 ) )
         {
         	
-        	if (isIntersection){
-        	
-            Polygon p = poly.transform(t);
-//            System.out.println(x);
-            
-            g.setColor( getFillColor() );
-            g.fillPolygon(p);
-            g.setColor( getBorderColor() );
-            g.drawPolygon(p);
-            
-        	}else{
-
-            //circle stuff
-        	
-        	Point a = t.transform(getBoundingBox().getA());
-        	Point b = t.transform(getBoundingBox().getB());
-        	
-        	float h = Math.abs(a.x-b.x);
-        	float x = (float) a.x;
-        	float y = (float) a.y;
-        	
-        	
-            Shape circle = new Ellipse2D.Float(x, y,h, h);
-            Graphics2D ga = (Graphics2D)g;
-            ga.setPaint(getFillColor());
-            ga.fill(circle);
-            ga.draw(circle);
-            
-        	}
+	            Polygon p = poly.transform(t);
+	//            System.out.println(x);
+	            
+	            g.setColor( getFillColor() );
+	            g.fillPolygon(p);
+	            g.setColor( getBorderColor() );
+	            g.drawPolygon(p);
         }
     }
 
@@ -184,7 +182,7 @@ extends AbstractVennObject
         BitSet            elem = (BitSet)getElements().clone();
         elem.and( obj.getElements() );
         
-        VennPolygonObject newObj = new VennPolygonObject( poly, elem, areaFactor,true );
+        VennPolygonObject newObj = new VennPolygonObject( poly, elem, areaFactor,true, 0.0, 0.0 );
         
         // interpolate colors
         float[] a = new float[4], 
@@ -237,7 +235,7 @@ extends AbstractVennObject
     
     public IVennObject duplicate()
     {
-        IVennObject dup = new VennPolygonObject( origPolygon, getElements(), areaFactor,isIntersection );
+        IVennObject dup = new VennPolygonObject( origPolygon, getElements(), areaFactor, isIntersection, getRotation(), getRatio() );
         
         dup.setLock( getLock() );
         
@@ -246,6 +244,7 @@ extends AbstractVennObject
 
     public FPoint getCenter() 
     {
+    	validate();
         return getPolygon().center();
     }
 }

@@ -29,28 +29,35 @@ public class VennObjectFactory implements IVennObjectFactory
     private int numEdges;
     private double areaFactor;
     
-    public VennObjectFactory()
-    {
-        this(VIEW_POLYGON);
-    }
-    
-    /**
-     * Generates a new DiagramView factory.
-     * 
-     * @param view
-     */
-    public VennObjectFactory( int view )
-    {
-        numEdges 	= 10;
-        areaFactor 	= 0.001;
-        this.view = view;
-    }
-    
-    public void setPolygonParameters( int numEdges, double areaFactor )
+//    public VennObjectFactory()
+//    {
+//        this(VIEW_POLYGON);
+//    }
+
+    public VennObjectFactory( int numEdges, double areaFactor )
     {
         this.numEdges = numEdges;
         this.areaFactor = areaFactor;
+        this.view = VIEW_POLYGON;
     }
+    
+//    /**
+//     * Generates a new DiagramView factory.
+//     * 
+//     * @param view
+//     */
+//    public VennObjectFactory( int view )
+//    {
+//        numEdges 	= 10;
+//        areaFactor 	= 0.001;
+//        this.view = view;
+//    }
+    
+//    public void setPolygonParameters( int numEdges, double areaFactor )
+//    {
+//        this.numEdges = numEdges;
+//        this.areaFactor = areaFactor;
+//    }
 
 //    /**
 //     *  
@@ -104,7 +111,7 @@ public class VennObjectFactory implements IVennObjectFactory
         switch( view )
         {
         	case VIEW_POLYGON:
-        	    obj = new VennPolygonObject(numEdges,areaFactor,elements, params.logNumElements,false); 
+        	    obj = new VennPolygonObject(areaFactor,elements, false); 
                 break;
         	    
         	default:

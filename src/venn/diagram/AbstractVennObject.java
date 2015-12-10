@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.util.BitSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Random;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -31,11 +32,14 @@ implements IVennObject
     private final int       card;
     private FPoint 	        center;
     private double          scale;
+
+    private double rotation;
+    private double ratio;
+
     private Object          properties;
     private Color           fillColor,
                             borderColor;
     private boolean         locked;
-    
     /**
      * 
      */
@@ -46,8 +50,13 @@ implements IVennObject
         this.card = elements.cardinality();
         this.fillColor = Color.BLUE;
         this.borderColor = Color.BLACK;
-        center = new FPoint(0.5,0.5);
+        
+        center = new FPoint(0.5,0.5);		// TODO ME this should not be always so, right? -> getCenter(), furthermore...randomize?
         scale = 1.0;
+        
+        this.ratio = 1.0;	// [ME] TODO start with 1.0? randomize?
+        this.rotation = 0.0;	// [ME] randomize?
+        
         listeners = new LinkedList(); 
         this.locked = false;
     }
@@ -103,6 +112,46 @@ implements IVennObject
             this.scale = scale;
             invalidate();
         }
+    }
+       
+    public double getRatio()
+    {
+    	return ratio;
+    }
+    
+    public void setRatio(double _ratio)
+    {
+    	if(locked)
+    		return;
+    	
+    	if(this.ratio != _ratio)
+    	{
+    		this.ratio = _ratio;
+    		invalidate();
+    	}
+    }
+
+    public double getRotation()
+    {
+    	return rotation;
+    }
+    
+    /*
+     * [0...180] (other values will be adjusted)
+     * would be easer using radians
+     */
+    public void setRotation(double _rotation)
+    {
+    	if(locked)
+    		return;
+
+    	double rot = _rotation % 180.0;
+    	rot = rot < 0.0 ? (180 + rot) : rot; 
+    	if(rot != this.rotation)
+    	{
+    		this.rotation = rot;
+    		invalidate();
+    	}
     }
 
     /* (non-Javadoc)
@@ -199,7 +248,10 @@ implements IVennObject
         buf.append("\n");
         
         buf.append("SCALE ");
-        buf.append( scale + "\n");
+        buf.append( scale + ", ");
+
+        buf.append("ROTATION: " + Double.toString(getRotation()) + ", ");
+        buf.append("RATIO: " + Double.toString(getRatio()) + "\n");
         return buf.toString();
     }
 
@@ -214,6 +266,8 @@ implements IVennObject
         setLock(false);
         setOffset(source.getOffset());
         setScale(source.getScale());
+        setRatio(source.getRatio());
+        setRotation(source.getRotation());
         setLock(source.getLock());
     }
 }

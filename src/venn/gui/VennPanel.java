@@ -71,6 +71,8 @@ import venn.event.IFilterChainSucc;
 import venn.event.IVennPanelHasDataListener;
 import venn.event.ResultAvailableListener;
 import venn.geometry.DragLabel;
+import venn.geometry.FPoint;
+import venn.geometry.FPolygon;
 import venn.optim.IOptimizer;
 
 import com.sun.image.codec.jpeg.JPEGCodec;
@@ -149,7 +151,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 
         filteredModel = new VennFilteredDataModel();
         
-		params = new AllParameters();
+		params = null;	// [ME] will be set by the Gui
 		
 		setLayout(null);
 				
@@ -167,6 +169,18 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 		//setPreferredSize(new Dimension(400,400));
         setBackground( Color.WHITE );
 		//setFocusable(true);
+        
+        // TODO [MS] TESTING (remove):
+//		FPolygon a = FPolygon.createNgon(1024, 1.4142);
+//		FPolygon b = FPolygon.createNgon(1024, 1);
+//		FPolygon a = FPolygon.createEllipse(2, 90, (Math.PI));
+//		FPolygon b = FPolygon.createEllipse(2, 90, (Math.PI));
+//		b.translate(new FPoint(0, (1.5731)));
+//		FPolygon c = a.intersect(b);
+//		double areaAB = c.area();
+//		System.out.println("a: " + a.area() + ", b: " + b.area() + ", c: " + areaAB);
+//        FPolygon a = FPolygon.createNgon(128, 1);
+//        System.out.println(a.area());
 	}
 
  	public void setInconsistencyJTextArea(JTextArea inconsistencyInfo) {
@@ -219,6 +233,7 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 
 				DecimalFormat format = new DecimalFormat("0.000");
 				views[i].setInfoText("cost = "+format.format(-errf.getOutput()));
+//				System.out.println(venn.Main.loadedFile.getFileName() + ": " + vennArrsOptim.getErrFunc()[0].getOutput() + " vs. " + errf.getOutput());	//	[ME] TODO creating new error function unnecessary				
 			}
 		}
 
@@ -303,8 +318,9 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
                         ((double)params.numEdges*
                         Math.sin(2.0*Math.PI/(double)params.numEdges))/(radius*radius);
 
-        VennObjectFactory factory = new VennObjectFactory();
-        factory.setPolygonParameters( params.numEdges, factor );
+//        VennObjectFactory factory = new VennObjectFactory();
+//        factory.setPolygonParameters( params.numEdges, factor );
+        VennObjectFactory factory = new VennObjectFactory(params.numEdges, factor);
         
         
         setLayout(new GridLayout(1,models.length));
@@ -315,8 +331,8 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         for( int i=0; i<models.length; ++i )
         {
         	models[i].setSucc(null); // because we make new VennArrangements
-            arrangements[i] = new VennArrangement( models[i], factory );
-    		arrangements[i].setParameters(params);
+            arrangements[i] = new VennArrangement(models[i], factory, params);
+//    		arrangements[i].setParameters(params);
             VennDiagramView v = new VennDiagramView( arrangements[i], 
                                                      params.errorFunction.maxIntersections, params.logNumElements );
             views[i] = v;
@@ -368,12 +384,11 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 
         double radius = params.sizeFactor*0.5/Math.max(2.0,Math.sqrt((double)maxNum));
         
-        double factor = 2.0*(double)maxCard /
-                        ((double)params.numEdges*
-                        Math.sin(2.0*Math.PI/(double)params.numEdges))/(radius*radius);
+        double factor = 2.0 * (double)maxCard / 
+        		((double)params.numEdges * Math.sin (2.0 * Math.PI / (double)params.numEdges)) / (radius*radius);
 
-        VennObjectFactory factory = new VennObjectFactory();
-        factory.setPolygonParameters( params.numEdges, factor );
+        VennObjectFactory factory = new VennObjectFactory(params.numEdges, factor);
+//        factory.setPolygonParameters( params.numEdges, factor );
         
         
         unfilteredArrangements = new VennArrangement[models.length];
@@ -382,8 +397,8 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         for( int i=0; i<models.length; ++i )
         {
         	models[i].setSucc(null); // because we make new VennArrangements
-            unfilteredArrangements[i] = new VennArrangement( models[i], factory );
-    		unfilteredArrangements[i].setParameters(params);
+            unfilteredArrangements[i] = new VennArrangement( models[i], factory, params );
+//    		unfilteredArrangements[i].setParameters(params);
             VennDiagramView v = new VennDiagramView( unfilteredArrangements[i], 
                                                      params.errorFunction.maxIntersections, params.logNumElements );
             unfilteredViews[i] = v;
@@ -1097,6 +1112,9 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
         Writer out;
         out = new OutputStreamWriter(os, "UTF-8");
         svgGenerator.stream(root, out, useCSS);
+        
+        // [MS] test routine - write costs to file
+        
     }
     
 	public void fileSave()
@@ -1476,4 +1494,8 @@ implements ChangeListener, ResultAvailableListener, HasLabelsListener
 		}
 	}
 	
+	public double getCost()
+	{
+		return vennArrsOptim.getErrFunc()[0].getOutput();
+	}
 }
